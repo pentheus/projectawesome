@@ -74,7 +74,10 @@ namespace TestScene
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            modelRotation += (float)gameTime.ElapsedGameTime.TotalMilliseconds * MathHelper.ToRadians(0.1f);
+            c.Pos += new Vector3(5*GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X, 5*GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.Y,0.0f);
+            c.Rotation += new Vector3(0.2f * GamePad.GetState(PlayerIndex.One).ThumbSticks.Right.Y, 0.0f, 0.2f * GamePad.GetState(PlayerIndex.One).ThumbSticks.Right.X);
+
+            
 
             base.Update(gameTime);
         }
@@ -84,8 +87,7 @@ namespace TestScene
         float modelRotation = 0.0f;
 
         // Set the position of the camera in world space, for our view matrix.
-        
-
+       
         protected override void Draw(GameTime gameTime)
         {
             graphics.GraphicsDevice.Clear(Color.CornflowerBlue);
@@ -93,6 +95,8 @@ namespace TestScene
             // Copy any parent transforms.
             Matrix[] transforms = new Matrix[myModel.Bones.Count];
             myModel.CopyAbsoluteBoneTransformsTo(transforms);
+
+            
 
             // Draw the model. A model can have multiple meshes, so loop.
             foreach (ModelMesh mesh in myModel.Meshes)
@@ -103,7 +107,7 @@ namespace TestScene
                     effect.EnableDefaultLighting();
                     effect.World = transforms[mesh.ParentBone.Index] * Matrix.CreateRotationY(modelRotation)
                         * Matrix.CreateTranslation(modelPosition);
-                    effect.View = Matrix.CreateLookAt(c.Pos, Vector3.Zero, Vector3.Up);
+                    effect.View = c.View;
                     effect.Projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45.0f),
                         c.AspectRatio, 1.0f, 10000.0f);
                 }
