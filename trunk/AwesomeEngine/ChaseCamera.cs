@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Storage;
 
 namespace AwesomeEngine
 {
-    class ChaseCamera : Camera
+    public class ChaseCamera : Camera
     {
         protected Vector3 lookAt;
 
