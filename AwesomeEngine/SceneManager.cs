@@ -17,7 +17,7 @@ namespace AwesomeEngine
     /// <summary>
     /// This is a game component that implements IUpdateable.
     /// </summary>
-    public class SceneManager : Microsoft.Xna.Framework.GameComponent
+    public class SceneManager : Microsoft.Xna.Framework.DrawableGameComponent
     {
         public SceneManager(Game game)
             : base(game)
@@ -45,6 +45,11 @@ namespace AwesomeEngine
             // TODO: Add your update code here
 
             base.Update(gameTime);
+        }
+
+        public override void Draw(GameTime gameTime)
+        {
+            base.Draw(gameTime);
         }
     }
 }

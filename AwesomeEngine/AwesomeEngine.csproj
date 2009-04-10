@@ -84,6 +84,7 @@
   <ItemGroup>
     <Compile Include="Camera.cs" />
     <Compile Include="ChaseCamera.cs" />
+    <Compile Include="Octree.cs" />
     <Compile Include="RegCam.cs" />
     <Compile Include="SceneManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

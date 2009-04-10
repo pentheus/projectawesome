@@ -4,9 +4,3 @@ C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\AwesomeEngine\Awe
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\AwesomeEngine\AwesomeEngine\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\AwesomeEngine\AwesomeEngine\obj\x86\Debug\AwesomeEngine.dll
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\AwesomeEngine\AwesomeEngine\obj\x86\Debug\AwesomeEngine.pdb
-C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\AwesomeEngine\bin\x86\Debug\AwesomeEngine.dll
-C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\AwesomeEngine\bin\x86\Debug\AwesomeEngine.pdb
-C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\AwesomeEngine\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\AwesomeEngine\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
-C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\AwesomeEngine\obj\x86\Debug\AwesomeEngine.dll
-C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\AwesomeEngine\obj\x86\Debug\AwesomeEngine.pdb
