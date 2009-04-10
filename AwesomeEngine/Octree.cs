@@ -69,73 +69,21 @@ namespace AwesomeEngine
             objects = new List<ModelInfo>();
             boundingBox = new BoundingBox();//Need the add the proper calculations for creating a new bounding box
         }
-
-        public void addChild(int nodeIndex, float parentSize, Vector3 parentCenter)
+        
+        //Add a child node to this node
+        public void addChild(int nodeIndex, Node child)
         {
-            //Compute the distance
-            float nodeSize = parentSize / 2;
-            //Determine how to compute the min, max, and center based on the index of the node
-            Vector3 min;
-            Vector3 max;
-            Vector3 center;
-            switch(nodeIndex)
-            {    
-                case 0:
-                    min = new Vector3(parentCenter.X-nodeSize, parentCenter.Y, parentCenter.Z-nodeSize);
-                    max = new Vector3(parentCenter.X, parentCenter.Y+nodeSize, parentCenter.Z);
-                    center = new Vector3(parentCenter.X-(nodeSize/2), parentCenter.Y+(nodeSize/2), parentCenter.Z-(nodeSize/2));
-                    break;
-                
-                case 1:
-                    min = new Vector3(parentCenter.X, parentCenter.Y, parentCenter.Z - nodeSize);
-                    max = new Vector3(parentCenter.X + nodeSize, parentCenter.Y + nodeSize, parentCenter.Z);
-                    center = new Vector3(parentCenter.X + (nodeSize / 2), parentCenter.Y + (nodeSize / 2), parentCenter.Z - (nodeSize / 2));
-                    break;
+            children[nodeIndex] = child;
+        }
 
-                case 2:
-                    min = new Vector3(parentCenter.X - nodeSize, parentCenter.Y - nodeSize, parentCenter.Z - nodeSize);
-                    max = new Vector3(parentCenter.X, parentCenter.Y, parentCenter.Z);
-                    center = new Vector3(parentCenter.X - (nodeSize / 2), parentCenter.Y - (nodeSize / 2), parentCenter.Z - (nodeSize / 2));
-                    break;
+        public float getSize()
+        {
+            return size;
+        }
 
-                case 3:
-                    min = new Vector3(parentCenter.X, parentCenter.Y - nodeSize, parentCenter.Z - nodeSize);
-                    max = new Vector3(parentCenter.X + nodeSize, parentCenter.Y, parentCenter.Z);
-                    center = new Vector3(parentCenter.X + (nodeSize / 2), parentCenter.Y - (nodeSize / 2), parentCenter.Z - (nodeSize / 2));
-                    break;
-
-                case 4:
-                    min = new Vector3(parentCenter.X - nodeSize, parentCenter.Y, parentCenter.Z);
-                    max = new Vector3(parentCenter.X, parentCenter.Y + nodeSize, parentCenter.Z + nodeSize);
-                    center = new Vector3(parentCenter.X - (nodeSize / 2), parentCenter.Y + (nodeSize / 2), parentCenter.Z + (nodeSize / 2));
-                    break;
-
-                case 5:
-                    min = new Vector3(parentCenter.X, parentCenter.Y, parentCenter.Z);
-                    max = new Vector3(parentCenter.X + nodeSize, parentCenter.Y + nodeSize, parentCenter.Z + nodeSize);
-                    center = new Vector3(parentCenter.X + (nodeSize / 2), parentCenter.Y + (nodeSize / 2), parentCenter.Z + (nodeSize / 2));
-                    break;
-
-                case 6:
-                    min = new Vector3(parentCenter.X - nodeSize, parentCenter.Y - nodeSize, parentCenter.Z);
-                    max = new Vector3(parentCenter.X, parentCenter.Y, parentCenter.Z + nodeSize);
-                    center = new Vector3(parentCenter.X - (nodeSize / 2), parentCenter.Y - (nodeSize / 2), parentCenter.Z + (nodeSize / 2));
-                    break;
-
-                case 7:
-                    min = new Vector3(parentCenter.X, parentCenter.Y - nodeSize, parentCenter.Z);
-                    max = new Vector3(parentCenter.X + nodeSize, parentCenter.Y, parentCenter.Z + nodeSize);
-                    center = new Vector3(parentCenter.X + (nodeSize / 2), parentCenter.Y - (nodeSize / 2), parentCenter.Z + (nodeSize / 2));
-                    break;
-
-                default:
-                    min = new Vector3(0);
-                    max = new Vector3(2);
-                    center = new Vector3(1);
-                    break;
-            }
-            //Create the new node and add it to the parent
-            children[nodeIndex] = new Node(nodeSize, min, max, center);
+        public Vector3 getCenter()
+        {
+            return center;
         }
     }
     #endregion 
@@ -156,7 +104,21 @@ namespace AwesomeEngine
             this.treeSize = treeSize;
         }
 
-        public void addNode(int nodeIndex, float parentSize, Vector3 parentCenter)
+        //Creates the tree with nodes  to the given depth
+        public void createTree(int depth, Node buildon)
+        {
+            if(depth > 0)
+            {
+                for(int i = 0; i < 8; i++)
+                {
+                    Node added =  createChild(i, buildon.getSize(), buildon.getCenter();
+                    buildon.addChild(i,added);
+                    createTree(depth-1, added);
+                }
+            }
+        }
+
+        public Node createChild(int nodeIndex, float parentSize, Vector3 parentCenter)
         {
             //Compute the distance
             float nodeSize = parentSize / 2;
@@ -164,14 +126,14 @@ namespace AwesomeEngine
             Vector3 min;
             Vector3 max;
             Vector3 center;
-            switch(nodeIndex)
-            {    
+            switch (nodeIndex)
+            {
                 case 0:
-                    min = new Vector3(parentCenter.X-nodeSize, parentCenter.Y, parentCenter.Z-nodeSize);
-                    max = new Vector3(parentCenter.X, parentCenter.Y+nodeSize, parentCenter.Z);
-                    center = new Vector3(parentCenter.X-(nodeSize/2), parentCenter.Y+(nodeSize/2), parentCenter.Z-(nodeSize/2));
+                    min = new Vector3(parentCenter.X - nodeSize, parentCenter.Y, parentCenter.Z - nodeSize);
+                    max = new Vector3(parentCenter.X, parentCenter.Y + nodeSize, parentCenter.Z);
+                    center = new Vector3(parentCenter.X - (nodeSize / 2), parentCenter.Y + (nodeSize / 2), parentCenter.Z - (nodeSize / 2));
                     break;
-                
+
                 case 1:
                     min = new Vector3(parentCenter.X, parentCenter.Y, parentCenter.Z - nodeSize);
                     max = new Vector3(parentCenter.X + nodeSize, parentCenter.Y + nodeSize, parentCenter.Z);
@@ -220,12 +182,11 @@ namespace AwesomeEngine
                     center = new Vector3(1);
                     break;
             }
-            //Create the new node
-            root.addChild(
+            //Return the node
+            return new Node(nodeSize, min, max, center);
         }
-
         //TODO:
-        //Need add(Nodes only, no models), remove, lookup, buildTree(but that kind of goes along with add).
+        //Need remove, lookup, buildTree(but that kind of goes along with add).
         //It is probably not necessary to have specific object lookups in this class
         //For good OO programming purposes, we'll have another class that handles dealing with objects.
 
