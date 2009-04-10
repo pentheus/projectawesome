@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Storage;
 
 namespace AwesomeEngine
 {
-    public abstract class Camera
+    abstract class Camera
     {
         protected Vector3 pos;
         protected Vector3 rotation;

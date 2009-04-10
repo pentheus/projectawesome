@@ -6,10 +6,10 @@
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\AwesomeEngine\AwesomeEngine\Content\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\AwesomeEngine\AwesomeEngine\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\AwesomeEngine\AwesomeEngine\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\AwesomeEngine\AwesomeEngine\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\AwesomeEngine\TestScene\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\AwesomeEngine\TestScene\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\AwesomeEngine\TestScene\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\AwesomeEngine\TestScene\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

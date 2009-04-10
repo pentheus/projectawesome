@@ -10,7 +10,6 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
-using AwesomeEngine;
 
 namespace TestScene
 {
@@ -21,8 +20,6 @@ namespace TestScene
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        Camera c;
-        Model myModel;
 
         public Game1()
         {
@@ -39,7 +36,7 @@ namespace TestScene
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            
+
             base.Initialize();
         }
 
@@ -51,10 +48,7 @@ namespace TestScene
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            myModel = Content.Load<Model>("testscene");
-            c = new RegCamera();
-            c.AspectRatio = graphics.GraphicsDevice.Viewport.AspectRatio;
-            c.Pos = new Vector3(0.0f, 50.0f, 5000.0f);
+
             // TODO: use this.Content to load your game content here
         }
 
@@ -65,57 +59,35 @@ namespace TestScene
         protected override void UnloadContent()
         {
             // TODO: Unload any non ContentManager content here
-            Content.Unload();
         }
 
+        /// <summary>
+        /// Allows the game to run logic such as updating the world,
+        /// checking for collisions, gathering input, and playing audio.
+        /// </summary>
+        /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            c.Pos += new Vector3(5*GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X, 5*GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.Y,0.0f);
-            c.Rotation += new Vector3(0.2f * GamePad.GetState(PlayerIndex.One).ThumbSticks.Right.Y, 0.0f, 0.2f * GamePad.GetState(PlayerIndex.One).ThumbSticks.Right.X);
-
-            
+            // TODO: Add your update logic here
 
             base.Update(gameTime);
         }
 
-        // Set the position of the model in world space, and set the rotation.
-        Vector3 modelPosition = Vector3.Zero;
-        float modelRotation = 0.0f;
-
-        // Set the position of the camera in world space, for our view matrix.
-       
+        /// <summary>
+        /// This is called when the game should draw itself.
+        /// </summary>
+        /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            graphics.GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // Copy any parent transforms.
-            Matrix[] transforms = new Matrix[myModel.Bones.Count];
-            myModel.CopyAbsoluteBoneTransformsTo(transforms);
+            // TODO: Add your drawing code here
 
-            
-
-            // Draw the model. A model can have multiple meshes, so loop.
-            foreach (ModelMesh mesh in myModel.Meshes)
-            {
-                // This is where the mesh orientation is set, as well as our camera and projection.
-                foreach (BasicEffect effect in mesh.Effects)
-                {
-                    effect.EnableDefaultLighting();
-                    effect.World = transforms[mesh.ParentBone.Index] * Matrix.CreateRotationY(modelRotation)
-                        * Matrix.CreateTranslation(modelPosition);
-                    effect.View = c.View;
-                    effect.Projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45.0f),
-                        c.AspectRatio, 1.0f, 10000.0f);
-                }
-                // Draw the mesh, using the effects set above.
-                mesh.Draw();
-            }
             base.Draw(gameTime);
         }
-
     }
 }
