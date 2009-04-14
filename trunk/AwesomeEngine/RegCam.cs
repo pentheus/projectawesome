@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Storage;
 
 namespace AwesomeEngine
 {
-    class RegCamera : Camera
+    public class RegCamera : Camera
     {
         public RegCamera()
         {

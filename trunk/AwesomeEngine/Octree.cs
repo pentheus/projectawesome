@@ -47,7 +47,7 @@ namespace AwesomeEngine
         float size;
         Vector3 min;
         Vector3 max;
-        Vecotr3 center;
+        Vector3 center;
         //TODO:
         //Later we'll add an array list for lights once we create a class that stores lighting data
         //This will also mean we have to implement better lighting shaders that allow for more than 2
@@ -111,7 +111,7 @@ namespace AwesomeEngine
             {
                 for(int i = 0; i < 8; i++)
                 {
-                    Node added =  createChild(i, buildon.getSize(), buildon.getCenter();
+                    Node added =  createChild(i, buildon.getSize(), buildon.getCenter());
                     buildon.addChild(i,added);
                     createTree(depth-1, added);
                 }
