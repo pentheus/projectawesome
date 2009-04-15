@@ -48,6 +48,7 @@ namespace AwesomeEngine
         Vector3 min;
         Vector3 max;
         Vector3 center;
+        Boolean haschildren;
         //TODO:
         //Later we'll add an array list for lights once we create a class that stores lighting data
         //This will also mean we have to implement better lighting shaders that allow for more than 2
@@ -68,6 +69,7 @@ namespace AwesomeEngine
             children = new Node[8];
             objects = new List<ModelInfo>();
             boundingBox = new BoundingBox();//Need the add the proper calculations for creating a new bounding box
+            haschildren = false;
         }
         
         //Add a child node to this node
@@ -84,6 +86,21 @@ namespace AwesomeEngine
         public Vector3 getCenter()
         {
             return center;
+        }
+
+        public void setHasChildren(Boolean v)
+        {
+            haschildren = v;
+        }
+
+        public Boolean hasChildren()
+        {
+            return haschildren;
+        }
+
+        public Node[] getChildren()
+        {
+            return children;
         }
     }
     #endregion 
@@ -113,6 +130,7 @@ namespace AwesomeEngine
                 {
                     Node added =  createChild(i, buildon.getSize(), buildon.getCenter());
                     buildon.addChild(i,added);
+                    buildon.setHasChildren(true);
                     createTree(depth-1, added);
                 }
             }
@@ -184,6 +202,17 @@ namespace AwesomeEngine
             }
             //Return the node
             return new Node(nodeSize, min, max, center);
+        }
+
+        public void addObject(Vector3 pos, FObject data)
+        {
+            Node lowlevel = root;
+            //Recurse to find the needed box
+            while(lowlevel.hasChildren)
+            {
+                foreach(Node n in lowlevel.getChildren())
+                {
+
         }
         //TODO:
         //Need remove, lookup, buildTree(but that kind of goes along with add).
