@@ -78,6 +78,46 @@ namespace AwesomeEngine
             children[nodeIndex] = child;
         }
 
+        //Remove the designated child
+        public void removeChild(Node child)
+        {
+            for (int i = 0; i < 8; i++ )
+            {
+                if (children[i].Equals(child))
+                {
+                    children[i] = null;
+                }
+            }
+        }
+
+        
+        //--------------Affecting objects contained by the node-----------------
+
+        //Add an object to the node
+        public void addObject(ModelInfo addobject)
+        {
+            objects.Add(addobject);
+        }
+
+        //Returns whether this node's bounding box contains the given vector position
+        public Boolean containsPos(Vector3 pos)
+        {
+            if(boundingBox.Intersects(new BoundingSphere(pos, 0)))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        //Returns whether this node intersects with a given bounding box
+        public Boolean intersectsWith(BoundingBox box)
+        {
+            if(boundingBox.Intersects(box))
+                return true;
+            else
+                return false;
+        }
+
         public float getSize()
         {
             return size;
@@ -204,18 +244,88 @@ namespace AwesomeEngine
             return new Node(nodeSize, min, max, center);
         }
 
-        public void addObject(Vector3 pos, FObject data)
+        //Top level function for removing intersecting nodes
+        public void remove(BoundingBox subspace)
+        {
+            removeNodes(subspace, root, null);
+        }
+
+        //Recursive function for removing nodes
+        public void removeNodes(BoundingBox subspace, Node lookup, Node parent)
+        {
+            //If the node has children, recurse to them.
+            if(lookup.hasChildren())
+            {
+                foreach(Node n in lookup.getChildren())
+                    removeNodes(subspace, n, lookup);
+            }
+            //If the node has no children, determine if it's intersecting and needs to be deleted
+            else
+            {
+                if (lookup.intersectsWith(subspace))
+                {
+                    parent.removeChild(lookup);
+                    if (parent.getChildren().Equals(null))
+                        parent.setHasChildren(false);
+                }
+            }
+        }
+
+        //Top level function to lookup nodes
+        public List<Node> lookup(BoundingBox subspace)
+        {
+            return lookupNodes(subspace, root);
+        }
+
+        //Recurrsive function to lookup nodes
+        public List<Node> lookupNodes(BoundingBox subspace, Node lookup)
+        {
+            //Create a new list to append the results to
+            List<Node> resultnodes = new List<Node>();
+            //If the node has children, recurse to them.
+            if (lookup.hasChildren())
+            {
+                foreach (Node n in lookup.getChildren())
+                    resultnodes.AddRange(lookupNodes(subspace, n));
+            }
+            //If the node has no children, determine if it's intersecting and needs to be returned
+            else
+            {
+                if (lookup.intersectsWith(subspace))
+                    resultnodes.Add(lookup);
+            }
+            return resultnodes;
+        }
+
+
+
+        //----------------------------Object Manipulation--------------------------------
+        public void addObject(Vector3 pos, ModelInfo data)
         {
             Node lowlevel = root;
-            //Recurse to find the needed box
-            while(lowlevel.hasChildren)
+            //While the current node has children...
+            while (lowlevel.hasChildren())
             {
-                foreach(Node n in lowlevel.getChildren())
+                //...Find the one that contains the given point
+                foreach (Node n in lowlevel.getChildren())
                 {
+                    if (n.containsPos(pos))
+                    {
+                        lowlevel = n;
+                        break;
+                    }
+                }
+            }
+            //Add the object into the node
+            lowlevel.addObject(data);
+        }
 
+        public void removeObject(Vector3 pos, ModelInfo data)
+        {
+            //Need code here.
         }
         //TODO:
-        //Need remove, lookup, buildTree(but that kind of goes along with add).
+        //Need remove (remove node completed), lookup, buildTree(but that kind of goes along with add).
         //It is probably not necessary to have specific object lookups in this class
         //For good OO programming purposes, we'll have another class that handles dealing with objects.
 
