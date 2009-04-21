@@ -10,6 +10,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
+using AwesomeEngine.Camera;
 
 namespace TestScene
 {
@@ -48,7 +49,14 @@ namespace TestScene
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+<<<<<<< .mine
+            myModel = Content.Load<Model>("testscene");
+            c = new FirstPersonCamera();
+            c.AspectRatio = graphics.GraphicsDevice.Viewport.AspectRatio;
+            c.Pos = new Vector3(0.0f, 50.0f, 5000.0f);
+=======
 
+>>>>>>> .r13
             // TODO: use this.Content to load your game content here
         }
 
@@ -87,6 +95,25 @@ namespace TestScene
 
             // TODO: Add your drawing code here
 
+<<<<<<< .mine
+            // Draw the model. A model can have multiple meshes, so loop.
+            foreach (ModelMesh mesh in myModel.Meshes)
+            {
+                // This is where the mesh orientation is set, as well as our camera and projection.
+                foreach (BasicEffect effect in mesh.Effects)
+                {
+                    effect.EnableDefaultLighting();
+                    effect.World = transforms[mesh.ParentBone.Index] * Matrix.CreateRotationY(modelRotation)
+                        * Matrix.CreateTranslation(modelPosition);
+                    effect.View = c.View;
+                    effect.Projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45.0f),
+                        c.AspectRatio, 1.0f, 10000.0f);
+                }
+                // Draw the mesh, using the effects set above.
+                mesh.Draw();
+            }
+=======
+>>>>>>> .r13
             base.Draw(gameTime);
         }
     }
