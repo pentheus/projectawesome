@@ -15,10 +15,12 @@ namespace AwesomeEngine.Camera
         float ymin;
         float ymax;
 
+        Vector3 cameraTarget;
+
         public OrthoCamera()
         {
             pos = Vector3.Zero;
-            rotation = Vector3.Zero;
+            cameraTarget = Vector3.Zero;
             xmin = -400.0f;
             xmax = 400.0f;
             ymin = -300.0f;
@@ -35,10 +37,10 @@ namespace AwesomeEngine.Camera
         /// <param name="aspectRatio"></param>
         /// <param name="near">Distance of the near plane from the camera</param>
         /// <param name="far">Distance of the far plane from the camera</param>
-        public OrthoCamera(Vector3 pos, Vector3 rotation, float width, float height, float near, float far)
+        public OrthoCamera(Vector3 pos, Vector3 cameraTarget, float width, float height, float near, float far)
         {
             this.pos = pos;
-            this.rotation = rotation;
+            this.cameraTarget = cameraTarget;
             this.xmin = -(width / 2.0f);
             this.xmax = width / 2.0f;
             this.ymin = -(height / 2.0f);
@@ -51,8 +53,7 @@ namespace AwesomeEngine.Camera
         {
             get
             {
-                view = Matrix.CreateTranslation(-pos) * Matrix.CreateRotationX(rotation.X) *
-                       Matrix.CreateRotationY(rotation.Y) * Matrix.CreateRotationZ(rotation.Z);
+                view = Matrix.CreateLookAt(pos, cameraTarget, Vector3.Up);
                 return view;
             }
         }
