@@ -132,7 +132,7 @@ namespace TestScene
             {
                 foreach (Effect effect in mesh.Effects)
                 {
-                    Matrix worldMatrix = modelTransforms[mesh.ParentBone.Index] * Matrix.Identity;
+                    Matrix worldMatrix = modelTransforms[mesh.ParentBone.Index] * model.WorldMatrix;
                     Matrix lightWorldViewProjection = worldMatrix * light.ViewMatrix * lightProjection;
                     effect.CurrentTechnique = effect.Techniques["CreateShadowMap"];
                     effect.Parameters["LightWorldViewProjection"].SetValue(lightWorldViewProjection);
