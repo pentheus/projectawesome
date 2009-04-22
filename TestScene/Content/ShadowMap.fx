@@ -2,7 +2,7 @@ float4x4 World;
 float4x4 View;
 float4x4 Projection;
 
-float4x4 LightWorld;
+float4x4 LightWorldViewProjection;
 
 
 // TODO: add effect parameters here.
@@ -24,7 +24,7 @@ ShadowVSOutput ShadowMapVertexShader(float4 inPos : POSITION)
 {
 	ShadowVSOutput Output = (ShadowVSOutput)0;
 	
-	Output.Position = mul(inPos, LightWorld);
+	Output.Position = mul(inPos, LightWorldViewProjection);
 	Output.Position2D = Output.Position;
 	
 	return Output;
@@ -33,9 +33,8 @@ ShadowVSOutput ShadowMapVertexShader(float4 inPos : POSITION)
 SMapPixel ShadowMapPixelShader(ShadowVSOutput input)
 {
 	SMapPixel Output = (SMapPixel)0;
-	
-	Output.Depth = input.Position2D.z/input.Position2D.w;
-	
+
+	Output.Depth = 0.2;
 	return Output;
 }
 

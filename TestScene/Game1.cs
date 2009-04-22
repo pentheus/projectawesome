@@ -23,13 +23,13 @@ namespace TestScene
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        //----------------------
-        Camera fpsCam;
-        Camera lightCam;
+        ModelInfo ship;
         Light light;
-        Model ship;
+        Matrix lightProjection;
+        Model ship1;
+
+
         Effect shadowMapEffect;
-        //----------------------
 
         public Game1()
         {
@@ -46,8 +46,7 @@ namespace TestScene
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            light = new Light(new Vector3(10,0,0), new Vector3(0,0,0));
-            
+            ship = new ModelInfo();
             base.Initialize();
         }
 
@@ -59,21 +58,29 @@ namespace TestScene
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-          
-            fpsCam = new FirstPersonCamera(new Vector3(0,0,-10),Vector3.Zero,graphics.GraphicsDevice.DisplayMode.AspectRatio,
-                0.1f,10000.0f);
-            lightCam = new OrthoCamera(light.Position, light.LightTarget,
-                graphics.GraphicsDevice.Viewport.Width, graphics.GraphicsDevice.Viewport.Height,
-                0.1f, 10000.0f);
 
-            ship = Content.Load<Model>("Ship");
             shadowMapEffect = Content.Load<Effect>("ShadowMap");
+            
+            //ship.Model = LoadModel("Ship");
+            ship.Model = LoadModel("Ship");
+            ship1 = Content.Load<Model>("Ship");
+            ship.Position = Vector3.Zero;
+            ship.Rotation = Vector3.Zero;
+            ship.Scale = Vector3.One;
+            light = new Light(new Vector3(2000, 0, 0), Vector3.Zero);
+            // TODO: use this.Content to load your game content here
+        }
 
-            foreach (ModelMesh mesh in ship.Meshes)
+        private Model LoadModel(string assetName)
+        {
+
+            Model newModel = Content.Load<Model>(assetName);
+  
+            foreach (ModelMesh mesh in newModel.Meshes)
                 foreach (ModelMeshPart meshPart in mesh.MeshParts)
                     meshPart.Effect = shadowMapEffect.Clone(graphics.GraphicsDevice);
-            
-            // TODO: use this.Content to load your game content here
+
+            return newModel;
         }
 
         /// <summary>
@@ -92,10 +99,12 @@ namespace TestScene
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            Viewport viewPort = graphics.GraphicsDevice.Viewport;
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
+            lightProjection = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, viewPort.AspectRatio, 0.1f, 10000.0f);
             // TODO: Add your update logic here
 
             base.Update(gameTime);
@@ -107,36 +116,32 @@ namespace TestScene
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            //GraphicsDevice.Clear(Color.CornflowerBlue);
-            GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.Black, 1.0f, 0);
-            // TODO: Add your drawing code here
+            graphics.GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.Black, 1.0f, 0);
+            //graphics.GraphicsDevice.Clear(Color.CornflowerBlue);
+            DrawModel(ship);
+            base.Draw(gameTime);
+        }
 
+        
+        public void DrawModel(ModelInfo model)
+        {
+            Matrix[] modelTransforms = new Matrix[model.Model.Bones.Count];
+            model.Model.CopyAbsoluteBoneTransformsTo(modelTransforms);
 
-            Matrix[] transforms = new Matrix[ship.Bones.Count];
-
-            ship.CopyAbsoluteBoneTransformsTo(transforms);
-
-            // Draw the model. A model can have multiple meshes, so loop.
-
-            foreach (ModelMesh mesh in ship.Meshes)
+            foreach (ModelMesh mesh in model.Model.Meshes)
             {
                 foreach (Effect effect in mesh.Effects)
                 {
-                    // Specify which effect technique to use.
+                    Matrix worldMatrix = modelTransforms[mesh.ParentBone.Index] * Matrix.Identity;
+                    Matrix lightWorldViewProjection = worldMatrix * light.ViewMatrix * lightProjection;
                     effect.CurrentTechnique = effect.Techniques["CreateShadowMap"];
-
-                    Matrix localWorld = transforms[mesh.ParentBone.Index] * Matrix.CreateWorld(Vector3.Zero,Vector3.Forward,Vector3.Up);
-
-                    //effect.Parameters["World"].SetValue(localWorld);
-                    effect.Parameters["LightWorld"].SetValue(lightCam.View*lightCam.Projection);
-                    //effect.Parameters["Projection"].SetValue(projection);
+                    effect.Parameters["LightWorldViewProjection"].SetValue(lightWorldViewProjection);
                 }
-
+                
                 mesh.Draw();
-
             }
-
-            base.Draw(gameTime);
         }
+
+
     }
 }
