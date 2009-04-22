@@ -88,6 +88,7 @@
     <Compile Include="RegCam.cs" />
     <Compile Include="SceneManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XMLReader.cs" />
   </ItemGroup>
   <ItemGroup>
     <NestedContentProject Include="Content\Content.contentproj">
