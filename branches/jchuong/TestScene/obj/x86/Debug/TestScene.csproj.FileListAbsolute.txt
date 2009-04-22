@@ -6,4 +6,7 @@ C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\TestScene
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\obj\x86\Debug\TestScene.exe
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\obj\x86\Debug\TestScene.pdb
-C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\Content\testscene.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\Content\ShadowMap.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\Content\ShipDiffuse.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\Content\Ship.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\Content\ShipDiffuse_0.xnb

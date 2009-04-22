@@ -10,6 +10,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
+using AwesomeEngine;
 using AwesomeEngine.Camera;
 
 namespace TestScene
@@ -21,6 +22,14 @@ namespace TestScene
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+
+        //----------------------
+        Camera fpsCam;
+        Camera lightCam;
+        Light light;
+        Model ship;
+        Effect shadowMapEffect;
+        //----------------------
 
         public Game1()
         {
@@ -37,7 +46,8 @@ namespace TestScene
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            light = new Light(new Vector3(10,0,0), new Vector3(0,0,0));
+            
             base.Initialize();
         }
 
@@ -49,14 +59,20 @@ namespace TestScene
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-<<<<<<< .mine
-            myModel = Content.Load<Model>("testscene");
-            c = new FirstPersonCamera();
-            c.AspectRatio = graphics.GraphicsDevice.Viewport.AspectRatio;
-            c.Pos = new Vector3(0.0f, 50.0f, 5000.0f);
-=======
+          
+            fpsCam = new FirstPersonCamera(new Vector3(0,0,-10),Vector3.Zero,graphics.GraphicsDevice.DisplayMode.AspectRatio,
+                0.1f,10000.0f);
+            lightCam = new OrthoCamera(light.Position, light.LightTarget,
+                graphics.GraphicsDevice.Viewport.Width, graphics.GraphicsDevice.Viewport.Height,
+                0.1f, 10000.0f);
 
->>>>>>> .r13
+            ship = Content.Load<Model>("Ship");
+            shadowMapEffect = Content.Load<Effect>("ShadowMap");
+
+            foreach (ModelMesh mesh in ship.Meshes)
+                foreach (ModelMeshPart meshPart in mesh.MeshParts)
+                    meshPart.Effect = shadowMapEffect.Clone(graphics.GraphicsDevice);
+            
             // TODO: use this.Content to load your game content here
         }
 
@@ -91,29 +107,35 @@ namespace TestScene
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
-
+            //GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.Black, 1.0f, 0);
             // TODO: Add your drawing code here
 
-<<<<<<< .mine
+
+            Matrix[] transforms = new Matrix[ship.Bones.Count];
+
+            ship.CopyAbsoluteBoneTransformsTo(transforms);
+
             // Draw the model. A model can have multiple meshes, so loop.
-            foreach (ModelMesh mesh in myModel.Meshes)
+
+            foreach (ModelMesh mesh in ship.Meshes)
             {
-                // This is where the mesh orientation is set, as well as our camera and projection.
-                foreach (BasicEffect effect in mesh.Effects)
+                foreach (Effect effect in mesh.Effects)
                 {
-                    effect.EnableDefaultLighting();
-                    effect.World = transforms[mesh.ParentBone.Index] * Matrix.CreateRotationY(modelRotation)
-                        * Matrix.CreateTranslation(modelPosition);
-                    effect.View = c.View;
-                    effect.Projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45.0f),
-                        c.AspectRatio, 1.0f, 10000.0f);
+                    // Specify which effect technique to use.
+                    effect.CurrentTechnique = effect.Techniques["CreateShadowMap"];
+
+                    Matrix localWorld = transforms[mesh.ParentBone.Index] * Matrix.CreateWorld(Vector3.Zero,Vector3.Forward,Vector3.Up);
+
+                    //effect.Parameters["World"].SetValue(localWorld);
+                    effect.Parameters["LightWorld"].SetValue(lightCam.View*lightCam.Projection);
+                    //effect.Parameters["Projection"].SetValue(projection);
                 }
-                // Draw the mesh, using the effects set above.
+
                 mesh.Draw();
+
             }
-=======
->>>>>>> .r13
+
             base.Draw(gameTime);
         }
     }
