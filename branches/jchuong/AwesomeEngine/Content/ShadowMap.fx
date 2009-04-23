@@ -2,8 +2,9 @@ float4x4 World;
 float4x4 View;
 float4x4 Projection;
 
-float4x4 LightWorld;
+float4x4 LightWorldViewProjection;
 
+float LightFar;
 
 // TODO: add effect parameters here.
 
@@ -11,31 +12,32 @@ float4x4 LightWorld;
 //This is the output for the Shadow Map Vertex Shader
 struct ShadowVSOutput
 {
-    float4 Position : POSITION0;
+    float4 Position : POSITION;
 	float4 Position2D : TEXCOORD0;
 };
 
 struct SMapPixel
 {
-	float4 Depth : COLOR0;
+	float4 Color : COLOR0;
 };
 
 ShadowVSOutput ShadowMapVertexShader(float4 inPos : POSITION)
 {
 	ShadowVSOutput Output = (ShadowVSOutput)0;
-	
-	Output.Position = mul(inPos, LightWorld);
+ 
+	Output.Position = mul(inPos, LightWorldViewProjection);
+	//This is a dirty hack. The homogenous coordinate of the 
+	//Output.Position.w = LightWorldViewProjection[3][3];
 	Output.Position2D = Output.Position;
 	
 	return Output;
 }
 
-SMapPixel ShadowMapPixelShader(ShadowVSOutput input)
+SMapPixel ShadowMapPixelShader(ShadowVSOutput input) : COLOR0
 {
 	SMapPixel Output = (SMapPixel)0;
-	
-	Output.Depth = input.Position2D.z/input.Position2D.w;
-	
+
+	Output.Color = input.Position2D.z/LightFar;
 	return Output;
 }
 

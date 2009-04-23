@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\Content\ShipDiffuse.xnb</Output>
-      <Time>2009-04-22T10:01:11.678-07:00</Time>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\Content\ShipDiffuse.xnb</Output>
+      <Time>2009-04-22T16:47:38.661-07:00</Time>
     </Item>
     <Item>
       <Source>Ship.fbx</Source>
@@ -16,13 +16,13 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\Content\Ship.xnb</Output>
-      <Time>2009-04-22T10:01:11.642-07:00</Time>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\Content\Ship.xnb</Output>
+      <Time>2009-04-22T16:47:38.658-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Ship_0.xml</Key>
-        <Value>2009-04-22T15:48:22.943-07:00</Value>
+        <Value>2009-04-22T21:58:05.519-07:00</Value>
       </Dependency>
-      <Request>C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\Content\ShipDiffuse_0.xnb</Request>
+      <Request>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\Content\ShipDiffuse_0.xnb</Request>
     </Item>
     <Item>
       <Source>ShadowMap.fx</Source>
@@ -30,15 +30,24 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\Content\ShadowMap.xnb</Output>
-      <Time>2009-04-22T16:23:42.1013-07:00</Time>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\Content\ShadowMap.xnb</Output>
+      <Time>2009-04-22T22:08:40.314-07:00</Time>
+    </Item>
+    <Item>
+      <Source>DrawModel.fx</Source>
+      <Name>DrawModel</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\Content\DrawModel.xnb</Output>
+      <Time>2008-08-28T16:55:50-07:00</Time>
     </Item>
     <Item>
       <Source>Ship.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Ship_0.xml</Output>
-      <Time>2009-04-22T10:01:11.642-07:00</Time>
+      <Time>2009-04-22T16:47:38.658-07:00</Time>
     </Item>
     <Item>
       <Source>ShipDiffuse.tga</Source>
@@ -52,43 +61,43 @@
         <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\Content\ShipDiffuse_0.xnb</Output>
-      <Time>2009-04-22T10:01:11.678-07:00</Time>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\Content\ShipDiffuse_0.xnb</Output>
+      <Time>2009-04-22T16:47:38.661-07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\Content\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
-        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
-        <Value>2008-10-10T18:42:32-07:00</Value>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2008-10-10T17:42:32-07:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
-        <Value>2008-10-10T18:43:28-07:00</Value>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2008-10-10T17:43:28-07:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
-        <Value>2008-10-10T18:43:18-07:00</Value>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2008-10-10T17:43:18-07:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
-        <Value>2008-10-10T18:48:18-07:00</Value>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2008-10-10T17:48:18-07:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
-        <Value>2008-10-10T18:48:50-07:00</Value>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2008-10-10T17:48:50-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Windows\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.0.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2008-12-22T19:09:43.284-08:00</Value>
+        <Value>2009-04-02T17:25:46.112-07:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>
