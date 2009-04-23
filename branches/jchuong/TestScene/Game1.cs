@@ -26,7 +26,7 @@ namespace TestScene
         ModelInfo ship;
         Light light;
         Matrix lightProjection;
-        Model ship1;
+       
 
 
         Effect shadowMapEffect;
@@ -63,11 +63,10 @@ namespace TestScene
             
             //ship.Model = LoadModel("Ship");
             ship.Model = LoadModel("Ship");
-            ship1 = Content.Load<Model>("Ship");
             ship.Position = Vector3.Zero;
             ship.Rotation = Vector3.Zero;
-            ship.Scale = Vector3.One;
-            light = new Light(new Vector3(2000,0,0), Vector3.Zero, 10000f);
+            ship.Scale = new Vector3(0.002f);
+            light = new Light(new Vector3(10,0,0), Vector3.Zero, 50f);
             // TODO: use this.Content to load your game content here
         }
 
@@ -105,13 +104,13 @@ namespace TestScene
                 this.Exit();
 
             if (Keyboard.GetState().IsKeyDown(Keys.A))
-                light.Position = light.Position - 5*Vector3.UnitX;
+                light.Position = light.Position - 0.5f*Vector3.UnitX;
             if (Keyboard.GetState().IsKeyDown(Keys.D))
-                light.Position = light.Position + 5*Vector3.UnitX;
+                light.Position = light.Position + 0.5f*Vector3.UnitX;
             if (Keyboard.GetState().IsKeyDown(Keys.W))
-                light.Position = light.Position - 5*Vector3.UnitY;
+                light.Position = light.Position - 0.5f*Vector3.UnitY;
             if (Keyboard.GetState().IsKeyDown(Keys.S))
-                light.Position = light.Position + 5*Vector3.UnitY;
+                light.Position = light.Position + 0.5f*Vector3.UnitY;
 
             lightProjection = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, viewPort.AspectRatio, 5f, light.LightFar);
             // TODO: Add your update logic here
