@@ -13,11 +13,13 @@ namespace AwesomeEngine
     {
         Vector3 pos;
         Vector3 lightTarget;
+        float lightFar;
         
-        public Light(Vector3 pos, Vector3 lightTarget)
+        public Light(Vector3 pos, Vector3 lightTarget, float lightFar)
         {
             this.pos = pos;
             this.lightTarget = lightTarget;
+            this.lightFar = lightFar;
         }
 
         public Vector3 Position
@@ -30,6 +32,12 @@ namespace AwesomeEngine
         {
             get { return lightTarget; }
             set { lightTarget = value; }
+        }
+
+        public float LightFar
+        {
+            get { return lightFar; }
+            set { lightFar = value; }
         }
 
         public Matrix ViewMatrix

@@ -67,7 +67,7 @@ namespace TestScene
             ship.Position = Vector3.Zero;
             ship.Rotation = Vector3.Zero;
             ship.Scale = Vector3.One;
-            light = new Light(new Vector3(2000, 0, 0), Vector3.Zero);
+            light = new Light(new Vector3(2000,0,0), Vector3.Zero, 10000f);
             // TODO: use this.Content to load your game content here
         }
 
@@ -104,7 +104,16 @@ namespace TestScene
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            lightProjection = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, viewPort.AspectRatio, 0.1f, 10000.0f);
+            if (Keyboard.GetState().IsKeyDown(Keys.A))
+                light.Position = light.Position - 5*Vector3.UnitX;
+            if (Keyboard.GetState().IsKeyDown(Keys.D))
+                light.Position = light.Position + 5*Vector3.UnitX;
+            if (Keyboard.GetState().IsKeyDown(Keys.W))
+                light.Position = light.Position - 5*Vector3.UnitY;
+            if (Keyboard.GetState().IsKeyDown(Keys.S))
+                light.Position = light.Position + 5*Vector3.UnitY;
+
+            lightProjection = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, viewPort.AspectRatio, 5f, light.LightFar);
             // TODO: Add your update logic here
 
             base.Update(gameTime);
@@ -132,10 +141,11 @@ namespace TestScene
             {
                 foreach (Effect effect in mesh.Effects)
                 {
-                    Matrix worldMatrix = modelTransforms[mesh.ParentBone.Index] * model.WorldMatrix;
+                    Matrix worldMatrix = modelTransforms[mesh.ParentBone.Index] * model.WorldMatrix; 
                     Matrix lightWorldViewProjection = worldMatrix * light.ViewMatrix * lightProjection;
                     effect.CurrentTechnique = effect.Techniques["CreateShadowMap"];
                     effect.Parameters["LightWorldViewProjection"].SetValue(lightWorldViewProjection);
+                    effect.Parameters["LightFar"].SetValue(light.LightFar);
                 }
                 
                 mesh.Draw();
