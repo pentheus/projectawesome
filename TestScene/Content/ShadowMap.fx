@@ -37,7 +37,9 @@ SMapPixel ShadowMapPixelShader(ShadowVSOutput input) : COLOR0
 {
 	SMapPixel Output = (SMapPixel)0;
 
-	Output.Color = input.Position2D.z/LightFar;
+	Output.Color = input.Position2D.z/input.Position2D.w;
+	
+
 	return Output;
 }
 
