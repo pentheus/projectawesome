@@ -24,12 +24,14 @@ namespace TestScene
         SpriteBatch spriteBatch;
 
         ModelInfo ship;
+        ModelInfo floor;
         Light light;
+        Camera camera;
         Matrix lightProjection;
-       
-
-
         Effect shadowMapEffect;
+
+        RenderTarget2D renderTarget;
+        Texture2D shadowMap;
 
         public Game1()
         {
@@ -46,7 +48,7 @@ namespace TestScene
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            ship = new ModelInfo();
+
             base.Initialize();
         }
 
@@ -58,16 +60,27 @@ namespace TestScene
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            ship = new ModelInfo();
+            floor = new ModelInfo();
             shadowMapEffect = Content.Load<Effect>("ShadowMap");
-            
-            //ship.Model = LoadModel("Ship");
-            ship.Model = LoadModel("Ship");
+           
+            ship.Model = LoadModel("Tank");
+            floor.Model = LoadModel("Floor");
             ship.Position = Vector3.Zero;
             ship.Rotation = Vector3.Zero;
-            ship.Scale = new Vector3(0.002f);
+            ship.Scale = Vector3.One;
+            //ship.Scale = new Vector3(0.002f);
+            
+            floor.Position = Vector3.Zero;
+            floor.Rotation = Vector3.Zero;
+            floor.Scale = Vector3.One;
+
             light = new Light(new Vector3(10,0,0), Vector3.Zero, 50f);
-            // TODO: use this.Content to load your game content here
+            
+            camera = new ThirdPersonCamera(new Vector3(10, 10, 10), Vector3.Zero, GraphicsDevice.Viewport.AspectRatio, 0.1f, 10000.0f);
+
+            PresentationParameters pp = GraphicsDevice.PresentationParameters;
+            renderTarget = new RenderTarget2D(GraphicsDevice, pp.BackBufferWidth, pp.BackBufferHeight, 1, GraphicsDevice.DisplayMode.Format);
         }
 
         private Model LoadModel(string assetName)
@@ -124,14 +137,22 @@ namespace TestScene
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
+            GraphicsDevice.SetRenderTarget(0, renderTarget);
             graphics.GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.Black, 1.0f, 0);
-            //graphics.GraphicsDevice.Clear(Color.CornflowerBlue);
-            DrawModel(ship);
+            
+            DrawModel(ship, "CreateShadowMap");
+            DrawModel(floor, "CreateShadowMap");
+            GraphicsDevice.SetRenderTarget(0, null);
+            shadowMap = renderTarget.GetTexture();
+
+            GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.Black, 1.0f, 0);
+            DrawModel(ship, "ShadowedScene");
+            DrawModel(floor, "ShadowedScene");
             base.Draw(gameTime);
         }
 
         
-        public void DrawModel(ModelInfo model)
+        public void DrawModel(ModelInfo model, String technique)
         {
             Matrix[] modelTransforms = new Matrix[model.Model.Bones.Count];
             model.Model.CopyAbsoluteBoneTransformsTo(modelTransforms);
@@ -142,9 +163,11 @@ namespace TestScene
                 {
                     Matrix worldMatrix = modelTransforms[mesh.ParentBone.Index] * model.WorldMatrix; 
                     Matrix lightWorldViewProjection = worldMatrix * light.ViewMatrix * lightProjection;
-                    effect.CurrentTechnique = effect.Techniques["CreateShadowMap"];
+          
+                    effect.CurrentTechnique = effect.Techniques[technique];
+                    effect.Parameters["WorldViewProjection"].SetValue(worldMatrix * camera.View * camera.Projection);
                     effect.Parameters["LightWorldViewProjection"].SetValue(lightWorldViewProjection);
-                    effect.Parameters["LightFar"].SetValue(light.LightFar);
+                    effect.Parameters["ShadowMap"].SetValue(shadowMap);
                 }
                 
                 mesh.Draw();
