@@ -75,7 +75,7 @@ namespace TestScene
             floor.Rotation = Vector3.Zero;
             floor.Scale = Vector3.One;
 
-            light = new Light(new Vector3(10,0,0), Vector3.Zero, 50f);
+            light = new Light(new Vector3(10,5,0), Vector3.Zero, 50f);
             
             camera = new ThirdPersonCamera(new Vector3(10, 10, 10), Vector3.Zero, GraphicsDevice.Viewport.AspectRatio, 0.1f, 10000.0f);
 
@@ -124,6 +124,10 @@ namespace TestScene
                 light.Position = light.Position - 0.5f*Vector3.UnitY;
             if (Keyboard.GetState().IsKeyDown(Keys.S))
                 light.Position = light.Position + 0.5f*Vector3.UnitY;
+            if (Keyboard.GetState().IsKeyDown(Keys.Left))
+                ship.Rotation = ship.Rotation - 0.05f * Vector3.UnitY;
+            if (Keyboard.GetState().IsKeyDown(Keys.Right))
+                ship.Rotation = ship.Rotation + 0.05f * Vector3.UnitY;
 
             lightProjection = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, viewPort.AspectRatio, 5f, light.LightFar);
             // TODO: Add your update logic here
