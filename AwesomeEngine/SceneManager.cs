@@ -20,6 +20,7 @@ namespace AwesomeEngine
     public class SceneManager : Microsoft.Xna.Framework.DrawableGameComponent
     {
         Effect currentEffect;
+        Octree sceneGraph;
         Game game;
 
         public SceneManager(Game game)
