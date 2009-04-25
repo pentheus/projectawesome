@@ -71,7 +71,7 @@ namespace TestScene
             ship.Scale = Vector3.One;
             //ship.Scale = new Vector3(0.002f);
             
-            floor.Position = Vector3.Zero;
+            floor.Position = new Vector3(0,-3,0);
             floor.Rotation = Vector3.Zero;
             floor.Scale = Vector3.One;
 
@@ -80,7 +80,7 @@ namespace TestScene
             camera = new ThirdPersonCamera(new Vector3(10, 10, 10), Vector3.Zero, GraphicsDevice.Viewport.AspectRatio, 0.1f, 10000.0f);
 
             PresentationParameters pp = GraphicsDevice.PresentationParameters;
-            renderTarget = new RenderTarget2D(GraphicsDevice, pp.BackBufferWidth, pp.BackBufferHeight, 1, GraphicsDevice.DisplayMode.Format);
+            renderTarget = new RenderTarget2D(GraphicsDevice, pp.BackBufferWidth, pp.BackBufferHeight, 1, SurfaceFormat.Single);
         }
 
         private Model LoadModel(string assetName)
@@ -172,6 +172,11 @@ namespace TestScene
                     effect.Parameters["WorldViewProjection"].SetValue(worldMatrix * camera.View * camera.Projection);
                     effect.Parameters["LightWorldViewProjection"].SetValue(lightWorldViewProjection);
                     effect.Parameters["ShadowMap"].SetValue(shadowMap);
+                    effect.Parameters["Ambient"].SetValue(0.4f);
+                    effect.Parameters["LightPos"].SetValue(light.Position);
+                    effect.Parameters["LightPower"].SetValue(2.0f);
+                    effect.Parameters["TextureEnabled"].SetValue(false);
+                    effect.Parameters["World"].SetValue(worldMatrix);
                 }
                 
                 mesh.Draw();

@@ -22,6 +22,7 @@ C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\Te
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\TestScene.pdb
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\AwesomeEngine.dll
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\AwesomeEngine.pdb
-C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\Content\DrawModel.xnb
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\Content\Floor.xnb
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\Content\Tank.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\Content\Floor.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\Content\Tank.xnb
