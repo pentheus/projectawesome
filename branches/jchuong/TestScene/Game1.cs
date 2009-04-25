@@ -71,7 +71,7 @@ namespace TestScene
             ship.Scale = Vector3.One;
             //ship.Scale = new Vector3(0.002f);
             
-            floor.Position = new Vector3(0,-3,0);
+            floor.Position = new Vector3(0,-1,0);
             floor.Rotation = Vector3.Zero;
             floor.Scale = Vector3.One;
 
