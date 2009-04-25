@@ -44,6 +44,8 @@ namespace AwesomeEngine
         BoundingBox boundingBox;
         Node[] children;
         List<ModelInfo> objects;
+        //World geometry is only contained by the root node of the octree
+        ModelInfo worldgeometry;
         float size;
         Vector3 min;
         Vector3 max;
@@ -76,6 +78,12 @@ namespace AwesomeEngine
         public void addChild(int nodeIndex, Node child)
         {
             children[nodeIndex] = child;
+        }
+
+        //Add world geometry to this node
+        public void addGeometry(ModelInfo geometry)
+        {
+            worldgeometry = geometry;
         }
 
         //Remove the designated child
@@ -318,6 +326,12 @@ namespace AwesomeEngine
             }
             //Add the object into the node
             lowlevel.addObject(data);
+        }
+
+        //Add world geometry to the root node of the octree
+        public void addgeometry(ModelInfo geometry)
+        {
+            root.addGeometry(geometry);
         }
 
         public void removeObject(Vector3 pos, ModelInfo data)
