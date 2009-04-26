@@ -1,0 +1,20 @@
+= Template =
+<Scene>
+	<World Geometry>
+		<model>blah</model>
+	</World Geometry>
+	<Content>
+		<Object>
+			<posx>n</posx>
+			</posy>n</posy>
+			<rot>n</rot>
+			<scalex>n</scalex>
+			<scaley>n</scaley>
+			<scalez>n</scalez>
+			<model>t</model>
+		</Object>
+		<Object>
+		...
+		</Object>
+	</Content>
+</Scene>
