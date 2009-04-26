@@ -1,21 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Storage;
 
-namespace AwesomeEngine
+namespace AwesomeEngine.Camera
 {
-    public class RegCamera : Camera
+    public class OrthoCamera : Camera
     {
-        public RegCamera()
+        float xmin;
+        float xmax;
+        float ymin;
+        float ymax;
+
+        Vector3 cameraTarget;
+
+        public OrthoCamera()
         {
             pos = Vector3.Zero;
-            rotation = Vector3.Zero;
-            aspectRatio = 4.0f / 3.0f;
+            cameraTarget = Vector3.Zero;
+            xmin = -400.0f;
+            xmax = 400.0f;
+            ymin = -300.0f;
+            ymax = 300.0f;
             nearPlane = 0.1f;
             farPlane = 1000.0f;
         }
@@ -28,11 +37,14 @@ namespace AwesomeEngine
         /// <param name="aspectRatio"></param>
         /// <param name="near">Distance of the near plane from the camera</param>
         /// <param name="far">Distance of the far plane from the camera</param>
-        public RegCamera(Vector3 pos, Vector3 rotation, float aspectRatio, float near, float far)
+        public OrthoCamera(Vector3 pos, Vector3 cameraTarget, float width, float height, float near, float far)
         {
             this.pos = pos;
-            this.rotation = rotation;
-            this.aspectRatio = aspectRatio;
+            this.cameraTarget = cameraTarget;
+            this.xmin = -(width / 2.0f);
+            this.xmax = width / 2.0f;
+            this.ymin = -(height / 2.0f);
+            this.ymax = height / 2.0f; 
             this.nearPlane = near;
             this.farPlane = far;
         }
@@ -41,8 +53,7 @@ namespace AwesomeEngine
         {
             get
             {
-                view = Matrix.CreateTranslation(-pos) * Matrix.CreateRotationX(rotation.X) *
-                       Matrix.CreateRotationY(rotation.Y) * Matrix.CreateRotationZ(rotation.Z);
+                view = Matrix.CreateLookAt(pos, cameraTarget, Vector3.Up);
                 return view;
             }
         }
@@ -51,7 +62,7 @@ namespace AwesomeEngine
         {
             get
             {
-                projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, aspectRatio, nearPlane, farPlane);
+                projection = Matrix.CreateOrthographicOffCenter(xmin, xmax, ymin, ymax, nearPlane, farPlane);
                 return projection;
             }
         }

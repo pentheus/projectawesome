@@ -19,10 +19,15 @@ namespace AwesomeEngine
     /// </summary>
     public class SceneManager : Microsoft.Xna.Framework.DrawableGameComponent
     {
+        Effect currentEffect;
+        Octree sceneGraph;
+        Game game;
+
         public SceneManager(Game game)
             : base(game)
         {
             // TODO: Construct any child components here
+            this.game = game;
         }
 
         /// <summary>
@@ -34,6 +39,12 @@ namespace AwesomeEngine
             // TODO: Add your initialization code here
 
             base.Initialize();
+        }
+
+        protected override void LoadContent()
+        {
+            currentEffect = game.Content.Load<Effect>("ShadowMap");
+            base.LoadContent();
         }
 
         /// <summary>
@@ -51,5 +62,29 @@ namespace AwesomeEngine
         {
             base.Draw(gameTime);
         }
+
+        public void DrawScene()
+        {
+        }
+
+        /*
+        public void DrawModel(ModelInfo model, Effect currentEffect, String technique)
+        {
+            Matrix[] modelTransforms = new Matrix[model.Model.Bones.Count];
+            model.Model.CopyAbsoluteBoneTransformsTo(modelTransforms);
+
+            foreach (ModelMesh mesh in model.Model.Meshes)
+            {
+                foreach (Effect effect in mesh.Effects)
+                {
+                    Matrix worldMatrix = modelTransforms[mesh.ParentBone.Index] * model.WorldMatrix; 
+                    Matrix lightWorldViewProjection = worldMatrix * light.ViewMatrix * lightProjection;
+                    effect.CurrentTechnique = currentEffect.Techniques[technique];
+                    //effect.Parameters["LightWorldViewProjection"].SetValue(lightWorldViewProjection);
+                }
+                
+                mesh.Draw();
+            }
+        }*/
     }
 }

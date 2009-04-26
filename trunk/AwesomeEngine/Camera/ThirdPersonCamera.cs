@@ -1,19 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Storage;
 
-namespace AwesomeEngine
+namespace AwesomeEngine.Camera
 {
-    public class ChaseCamera : Camera
+    public class ThirdPersonCamera : Camera
     {
         protected Vector3 lookAt;
 
-        public ChaseCamera()
+        public ThirdPersonCamera()
         {
             pos = Vector3.Zero;
             rotation = Vector3.Zero;
@@ -31,7 +30,7 @@ namespace AwesomeEngine
         /// <param name="aspectRatio"></param>
         /// <param name="near">Distance of the near plane from the camera</param>
         /// <param name="far">Distance of the far plane from the camera</param>
-        public ChaseCamera(Vector3 pos, Vector3 lookAt, float aspectRatio, float near, float far)
+        public ThirdPersonCamera(Vector3 pos, Vector3 lookAt, float aspectRatio, float near, float far)
         {
             this.pos = pos;
             this.rotation = Vector3.Zero;
