@@ -10,6 +10,8 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
+using AwesomeEngine;
+using AwesomeEngine.Camera;
 
 namespace TestScene
 {
@@ -20,6 +22,16 @@ namespace TestScene
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+
+        ModelInfo ship;
+        ModelInfo floor;
+        Light light;
+        Camera camera;
+        Matrix lightProjection;
+        Effect shadowMapEffect;
+
+        RenderTarget2D renderTarget;
+        Texture2D shadowMap;
 
         public Game1()
         {
@@ -48,8 +60,39 @@ namespace TestScene
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            ship = new ModelInfo();
+            floor = new ModelInfo();
+            shadowMapEffect = Content.Load<Effect>("ShadowMap");
+           
+            ship.Model = LoadModel("Tank");
+            floor.Model = LoadModel("Floor");
+            ship.Position = Vector3.Zero;
+            ship.Rotation = Vector3.Zero;
+            ship.Scale = Vector3.One;
+            //ship.Scale = new Vector3(0.002f);
+            
+            floor.Position = new Vector3(0,-1,0);
+            floor.Rotation = Vector3.Zero;
+            floor.Scale = Vector3.One;
 
-            // TODO: use this.Content to load your game content here
+            light = new Light(new Vector3(10,5,0), Vector3.Zero, 50f);
+            
+            camera = new ThirdPersonCamera(new Vector3(10, 10, 10), Vector3.Zero, GraphicsDevice.Viewport.AspectRatio, 0.1f, 10000.0f);
+
+            PresentationParameters pp = GraphicsDevice.PresentationParameters;
+            renderTarget = new RenderTarget2D(GraphicsDevice, pp.BackBufferWidth, pp.BackBufferHeight, 1, SurfaceFormat.Single);
+        }
+
+        private Model LoadModel(string assetName)
+        {
+
+            Model newModel = Content.Load<Model>(assetName);
+  
+            foreach (ModelMesh mesh in newModel.Meshes)
+                foreach (ModelMeshPart meshPart in mesh.MeshParts)
+                    meshPart.Effect = shadowMapEffect.Clone(graphics.GraphicsDevice);
+
+            return newModel;
         }
 
         /// <summary>
@@ -68,10 +111,25 @@ namespace TestScene
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            Viewport viewPort = graphics.GraphicsDevice.Viewport;
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
+            if (Keyboard.GetState().IsKeyDown(Keys.A))
+                light.Position = light.Position - 0.5f*Vector3.UnitX;
+            if (Keyboard.GetState().IsKeyDown(Keys.D))
+                light.Position = light.Position + 0.5f*Vector3.UnitX;
+            if (Keyboard.GetState().IsKeyDown(Keys.W))
+                light.Position = light.Position - 0.5f*Vector3.UnitY;
+            if (Keyboard.GetState().IsKeyDown(Keys.S))
+                light.Position = light.Position + 0.5f*Vector3.UnitY;
+            if (Keyboard.GetState().IsKeyDown(Keys.Left))
+                ship.Rotation = ship.Rotation - 0.05f * Vector3.UnitY;
+            if (Keyboard.GetState().IsKeyDown(Keys.Right))
+                ship.Rotation = ship.Rotation + 0.05f * Vector3.UnitY;
+
+            lightProjection = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, viewPort.AspectRatio, 5f, light.LightFar);
             // TODO: Add your update logic here
 
             base.Update(gameTime);
@@ -83,11 +141,48 @@ namespace TestScene
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.SetRenderTarget(0, renderTarget);
+            graphics.GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.Black, 1.0f, 0);
+            
+            DrawModel(ship, "CreateShadowMap");
+            DrawModel(floor, "CreateShadowMap");
+            GraphicsDevice.SetRenderTarget(0, null);
+            shadowMap = renderTarget.GetTexture();
 
-            // TODO: Add your drawing code here
-
+            GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.Black, 1.0f, 0);
+            DrawModel(ship, "ShadowedScene");
+            DrawModel(floor, "ShadowedScene");
             base.Draw(gameTime);
         }
+
+        
+        public void DrawModel(ModelInfo model, String technique)
+        {
+            Matrix[] modelTransforms = new Matrix[model.Model.Bones.Count];
+            model.Model.CopyAbsoluteBoneTransformsTo(modelTransforms);
+
+            foreach (ModelMesh mesh in model.Model.Meshes)
+            {
+                foreach (Effect effect in mesh.Effects)
+                {
+                    Matrix worldMatrix = modelTransforms[mesh.ParentBone.Index] * model.WorldMatrix; 
+                    Matrix lightWorldViewProjection = worldMatrix * light.ViewMatrix * lightProjection;
+          
+                    effect.CurrentTechnique = effect.Techniques[technique];
+                    effect.Parameters["WorldViewProjection"].SetValue(worldMatrix * camera.View * camera.Projection);
+                    effect.Parameters["LightWorldViewProjection"].SetValue(lightWorldViewProjection);
+                    effect.Parameters["ShadowMap"].SetValue(shadowMap);
+                    effect.Parameters["Ambient"].SetValue(0.4f);
+                    effect.Parameters["LightPos"].SetValue(light.Position);
+                    effect.Parameters["LightPower"].SetValue(2.0f);
+                    effect.Parameters["TextureEnabled"].SetValue(false);
+                    effect.Parameters["World"].SetValue(worldMatrix);
+                }
+                
+                mesh.Draw();
+            }
+        }
+
+
     }
 }

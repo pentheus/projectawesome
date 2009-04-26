@@ -9,34 +9,6 @@ using Microsoft.Xna.Framework.Storage;
 
 namespace AwesomeEngine
 {
-    #region ModelInfo
-
-    /// <summary>
-    /// This is wrapper for XNA's model class. It provides pertinent information about the
-    /// model. For example, its position, rotation, scale, the model itself, the bounding volume,
-    /// and a pointer to the node in which in resides.
-    /// </summary>
-    public class ModelInfo
-    {
-        Vector3 pos;
-        Vector3 rotation;
-        Vector3 scale;
-        Model model;
-        BoundingSphere boundingSphere;
-        Node node;
-        
-        public ModelInfo(Vector3 pos, Vector3 rotation, Vector3 scale, Model model, BoundingSphere boundingSphere, Node node)
-        {
-            this.pos = pos;
-            this.rotation = rotation;
-            this.scale = scale;
-            this.model = model;
-            this.boundingSphere = boundingSphere;
-            this.node = node;
-        }
-    }
-    #endregion
-
     #region Node
 
     public class Node
