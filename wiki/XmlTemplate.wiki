@@ -1,12 +1,12 @@
 = Template =
 <Scene>
-	<World Geometry>
+	<WorldGeometry>
 		<model>blah</model>
-	</World Geometry>
+	</WorldGeometry>
 	<Content>
 		<Object>
 			<posx>n</posx>
-			</posy>n</posy>
+			<posy>n</posy>
 			<rot>n</rot>
 			<scalex>n</scalex>
 			<scaley>n</scaley>
