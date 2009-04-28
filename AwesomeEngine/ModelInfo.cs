@@ -59,9 +59,9 @@ namespace AwesomeEngine
         {
             get
             {
-                return (Matrix.CreateTranslation(pos) * Matrix.CreateRotationX(MathHelper.ToRadians(rotation.X)) * 
+                return (Matrix.CreateRotationX(MathHelper.ToRadians(rotation.X)) * 
                     Matrix.CreateRotationY(rotation.Y) *Matrix.CreateRotationZ(MathHelper.ToRadians(rotation.Z)) * 
-                    Matrix.CreateScale(scale.X, scale.Y, scale.Z));
+                    Matrix.CreateScale(scale.X, scale.Y, scale.Z)*Matrix.CreateTranslation(pos));
             }
         }
 

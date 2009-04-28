@@ -119,9 +119,13 @@ SScenePixelToFrame SSPixelShader(SSceneVertexToPixel input)
 		
 		if ((realDistance - 1.0f/100.0f) <= depthStoredInSMap) // 1/100 is our shadow bias 
 		{
-			diffuseLightingFactor = DotProduct(LightPos, input.Position3D, input.Normal);
+			//diffuseLightingFactor = DotProduct(LightPos, input.Position3D, input.Normal);
+			float3 normalizedPos = normalize(input.Position3D+LightPos);
+			diffuseLightingFactor = dot(normalizedPos, input.Normal);
             diffuseLightingFactor = saturate(diffuseLightingFactor);
             diffuseLightingFactor *= LightPower;  
+            
+          
 		}
 	}
 	
