@@ -20,6 +20,8 @@ namespace AwesomeEngine
 
 
             //Models
+            //Read each model from the XMLDocument
+            scenedoc.
 
             //AI scripts, triggers
             return scene;
