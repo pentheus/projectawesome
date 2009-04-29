@@ -57,7 +57,11 @@
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\Content\ShadowMap.xnb</Output>
+<<<<<<< .mine
+      <Time>2009-04-28T13:06:28.97-07:00</Time>
+=======
       <Time>2009-04-25T09:28:23.374-07:00</Time>
+>>>>>>> .r41
     </Item>
     <Item>
       <Source>Ship.fbx</Source>
