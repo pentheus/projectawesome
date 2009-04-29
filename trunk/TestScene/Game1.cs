@@ -79,6 +79,13 @@ namespace TestScene
             
             camera = new ThirdPersonCamera(new Vector3(10, 10, 10), Vector3.Zero, GraphicsDevice.Viewport.AspectRatio, 0.1f, 10000.0f);
 
+<<<<<<< .mine
+            light = new Light(new Vector3(-18,5,-2), new Vector3(0f),  500f);
+
+            camera = new ThirdPersonCamera(new Vector3(-10, 10, 10), new Vector3(0, 0, 0), GraphicsDevice.Viewport.AspectRatio, 0.1f, 10000.0f);
+
+=======
+>>>>>>> .r41
             PresentationParameters pp = GraphicsDevice.PresentationParameters;
             renderTarget = new RenderTarget2D(GraphicsDevice, pp.BackBufferWidth, pp.BackBufferHeight, 1, SurfaceFormat.Single);
         }
