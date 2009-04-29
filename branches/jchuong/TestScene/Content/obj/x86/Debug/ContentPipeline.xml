@@ -8,7 +8,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\Content\ShipDiffuse.xnb</Output>
-      <Time>2009-04-22T16:47:38.661-07:00</Time>
+      <Time>2009-04-28T17:51:19.8006197-07:00</Time>
     </Item>
     <Item>
       <Source>Ship.fbx</Source>
@@ -17,10 +17,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\Content\Ship.xnb</Output>
-      <Time>2009-04-22T16:47:38.658-07:00</Time>
+      <Time>2009-04-28T17:51:19.7276197-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Ship_0.xml</Key>
-        <Value>2009-04-27T22:48:08.2-07:00</Value>
+        <Value>2009-04-28T17:52:29.5876197-07:00</Value>
       </Dependency>
       <Request>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\Content\ShipDiffuse_0.xnb</Request>
     </Item>
@@ -31,10 +31,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\Content\Floor.xnb</Output>
-      <Time>2009-04-24T15:41:00.27-07:00</Time>
+      <Time>2009-04-28T17:51:19.7236197-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Floor_0.xml</Key>
-        <Value>2009-04-27T22:48:08.866-07:00</Value>
+        <Value>2009-04-28T17:52:30.0986197-07:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -44,10 +44,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\Content\Tank.xnb</Output>
-      <Time>2009-04-24T15:41:00.276-07:00</Time>
+      <Time>2009-04-28T17:51:19.8086197-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Tank_0.xml</Key>
-        <Value>2009-04-27T22:48:10.359-07:00</Value>
+        <Value>2009-04-28T17:52:30.7616197-07:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -57,14 +57,14 @@
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\Content\ShadowMap.xnb</Output>
-      <Time>2009-04-28T09:36:41.955-07:00</Time>
+      <Time>2009-04-28T17:51:19.7106197-07:00</Time>
     </Item>
     <Item>
       <Source>Ship.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Ship_0.xml</Output>
-      <Time>2009-04-22T16:47:38.658-07:00</Time>
+      <Time>2009-04-28T17:51:19.7276197-07:00</Time>
     </Item>
     <Item>
       <Source>ShipDiffuse.tga</Source>
@@ -79,21 +79,21 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\Content\ShipDiffuse_0.xnb</Output>
-      <Time>2009-04-22T16:47:38.661-07:00</Time>
+      <Time>2009-04-28T17:51:19.8006197-07:00</Time>
     </Item>
     <Item>
       <Source>Floor.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Floor_0.xml</Output>
-      <Time>2009-04-24T15:41:00.27-07:00</Time>
+      <Time>2009-04-28T17:51:19.7236197-07:00</Time>
     </Item>
     <Item>
       <Source>Tank.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Tank_0.xml</Output>
-      <Time>2009-04-24T15:41:00.276-07:00</Time>
+      <Time>2009-04-28T17:51:19.8086197-07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
