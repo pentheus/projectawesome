@@ -25,6 +25,8 @@ namespace TestScene
 
         ModelInfo ship;
         ModelInfo floor;
+        ModelInfo wall;
+
         Light light;
         Camera camera;
         Matrix lightProjection;
@@ -62,30 +64,29 @@ namespace TestScene
             spriteBatch = new SpriteBatch(GraphicsDevice);
             ship = new ModelInfo();
             floor = new ModelInfo();
+            wall = new ModelInfo();
             shadowMapEffect = Content.Load<Effect>("ShadowMap");
-           
+
             ship.Model = LoadModel("Tank");
             floor.Model = LoadModel("Floor");
+            wall.Model = LoadModel("Floor");
             ship.Position = Vector3.Zero;
             ship.Rotation = Vector3.Zero;
             ship.Scale = Vector3.One;
             //ship.Scale = new Vector3(0.002f);
-            
-            floor.Position = new Vector3(0,-1,0);
+
+            floor.Position = new Vector3(0, -1, 0);
             floor.Rotation = Vector3.Zero;
             floor.Scale = Vector3.One;
 
-            light = new Light(new Vector3(10,5,0), Vector3.Zero, 50f);
-            
-            camera = new ThirdPersonCamera(new Vector3(10, 10, 10), Vector3.Zero, GraphicsDevice.Viewport.AspectRatio, 0.1f, 10000.0f);
+            wall.Position = new Vector3(8, 0, 0);
+            wall.Rotation = new Vector3(0, 0, 90);
+            wall.Scale = Vector3.One;
 
-<<<<<<< .mine
-            light = new Light(new Vector3(-18,5,-2), new Vector3(0f),  500f);
+            light = new Light(new Vector3(-18, 5, 0), new Vector3(0f), 100f);
 
             camera = new ThirdPersonCamera(new Vector3(-10, 10, 10), new Vector3(0, 0, 0), GraphicsDevice.Viewport.AspectRatio, 0.1f, 10000.0f);
 
-=======
->>>>>>> .r41
             PresentationParameters pp = GraphicsDevice.PresentationParameters;
             renderTarget = new RenderTarget2D(GraphicsDevice, pp.BackBufferWidth, pp.BackBufferHeight, 1, SurfaceFormat.Single);
         }
@@ -94,7 +95,7 @@ namespace TestScene
         {
 
             Model newModel = Content.Load<Model>(assetName);
-  
+
             foreach (ModelMesh mesh in newModel.Meshes)
                 foreach (ModelMeshPart meshPart in mesh.MeshParts)
                     meshPart.Effect = shadowMapEffect.Clone(graphics.GraphicsDevice);
@@ -124,19 +125,19 @@ namespace TestScene
                 this.Exit();
 
             if (Keyboard.GetState().IsKeyDown(Keys.A))
-                light.Position = light.Position - 0.5f*Vector3.UnitX;
+                light.Position = light.Position - 0.5f * Vector3.UnitX;
             if (Keyboard.GetState().IsKeyDown(Keys.D))
-                light.Position = light.Position + 0.5f*Vector3.UnitX;
+                light.Position = light.Position + 0.5f * Vector3.UnitX;
             if (Keyboard.GetState().IsKeyDown(Keys.W))
-                light.Position = light.Position - 0.5f*Vector3.UnitY;
+                light.Position = light.Position - 0.5f * Vector3.UnitY;
             if (Keyboard.GetState().IsKeyDown(Keys.S))
-                light.Position = light.Position + 0.5f*Vector3.UnitY;
+                light.Position = light.Position + 0.5f * Vector3.UnitY;
             if (Keyboard.GetState().IsKeyDown(Keys.Left))
                 ship.Rotation = ship.Rotation - 0.05f * Vector3.UnitY;
             if (Keyboard.GetState().IsKeyDown(Keys.Right))
                 ship.Rotation = ship.Rotation + 0.05f * Vector3.UnitY;
 
-            lightProjection = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, viewPort.AspectRatio, 5f, light.LightFar);
+            lightProjection = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver2, 1f, 1f, light.LightFar);
             // TODO: Add your update logic here
 
             base.Update(gameTime);
@@ -150,19 +151,23 @@ namespace TestScene
         {
             GraphicsDevice.SetRenderTarget(0, renderTarget);
             graphics.GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.Black, 1.0f, 0);
-            
+
             DrawModel(ship, "CreateShadowMap");
             DrawModel(floor, "CreateShadowMap");
+            DrawModel(wall, "CreateShadowMap");
             GraphicsDevice.SetRenderTarget(0, null);
             shadowMap = renderTarget.GetTexture();
 
-            GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.Black, 1.0f, 0);
+            GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.AliceBlue, 1.0f, 0);
+
             DrawModel(ship, "ShadowedScene");
             DrawModel(floor, "ShadowedScene");
+            DrawModel(wall, "ShadowedScene");
+
             base.Draw(gameTime);
         }
 
-        
+
         public void DrawModel(ModelInfo model, String technique)
         {
             Matrix[] modelTransforms = new Matrix[model.Model.Bones.Count];
@@ -172,20 +177,20 @@ namespace TestScene
             {
                 foreach (Effect effect in mesh.Effects)
                 {
-                    Matrix worldMatrix = modelTransforms[mesh.ParentBone.Index] * model.WorldMatrix; 
+                    Matrix worldMatrix = modelTransforms[mesh.ParentBone.Index] * model.WorldMatrix;
                     Matrix lightWorldViewProjection = worldMatrix * light.ViewMatrix * lightProjection;
-          
+
                     effect.CurrentTechnique = effect.Techniques[technique];
                     effect.Parameters["WorldViewProjection"].SetValue(worldMatrix * camera.View * camera.Projection);
                     effect.Parameters["LightWorldViewProjection"].SetValue(lightWorldViewProjection);
                     effect.Parameters["ShadowMap"].SetValue(shadowMap);
-                    effect.Parameters["Ambient"].SetValue(0.4f);
+                    effect.Parameters["Ambient"].SetValue(0.2f);
                     effect.Parameters["LightPos"].SetValue(light.Position);
-                    effect.Parameters["LightPower"].SetValue(2.0f);
+                    effect.Parameters["LightPower"].SetValue(1.5f);
                     effect.Parameters["TextureEnabled"].SetValue(false);
                     effect.Parameters["World"].SetValue(worldMatrix);
                 }
-                
+
                 mesh.Draw();
             }
         }
