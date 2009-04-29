@@ -77,6 +77,7 @@ namespace AwesomeEngine
         public void addObject(ModelInfo addobject)
         {
             objects.Add(addobject);
+            addobject.Node = this;
         }
 
         //Returns whether this node's bounding box contains the given vector position
