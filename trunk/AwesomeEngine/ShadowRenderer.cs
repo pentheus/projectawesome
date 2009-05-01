@@ -17,11 +17,14 @@ namespace AwesomeEngine
 {
     class ShadowRenderer
     {
-        public void CreateShadowMap()
+        Effect shadowEffect;
+
+        public ShadowRenderer(Effect effect)
         {
+            shadowEffect = effect;
         }
 
-        public void DrawWithShadow()
+        public void CreateShadowMap(ModelInfo model)
         {
         }
     }
