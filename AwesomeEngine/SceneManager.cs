@@ -19,9 +19,10 @@ namespace AwesomeEngine
     /// </summary>
     public class SceneManager : Microsoft.Xna.Framework.DrawableGameComponent
     {
-        Effect currentEffect;
         Octree sceneGraph;
         Game game;
+        ShadowRenderer shadowRenderer;
+        Texture2D renderTarget;
 
         public SceneManager(Game game)
             : base(game)
@@ -43,7 +44,7 @@ namespace AwesomeEngine
 
         protected override void LoadContent()
         {
-            currentEffect = game.Content.Load<Effect>("ShadowMap");
+            shadowRenderer = new ShadowRenderer(game.Content.Load<Effect>("ShadowMap"));
             base.LoadContent();
         }
 
@@ -65,16 +66,45 @@ namespace AwesomeEngine
             base.Draw(gameTime);
         }
 
+        /// <summary>
+        /// Draws a scene
+        /// </summary>
         public void DrawScene()
         {
         }
 
+        /// <summary>
+        /// Draws visible objects in the node
+        /// </summary>
+        /// <param name="node">A node from the Octree scene graph. Contains a list of drawable objects</param>
         public void DrawNode(Node node)
+        {
+            foreach (ModelInfo model in node.DrawableObjects)
+            {
+                shadowRenderer.CreateShadowMap(model, renderTarget);
+                if (!CheckIfCullable(model))
+                {
+                    DrawLitModel(model);
+                }  
+            }
+        }
+
+        /// <summary>
+        /// Draws the completely lit scene with shadows
+        /// </summary>
+        /// <param name="model"></param>
+        public void DrawLitModel(ModelInfo model)
         {
         }
 
-        public void DrawLitModel(ModelInfo model)
+        /// <summary>
+        /// Checks if model's bounding volume intersects the view frustum.
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public bool CheckIfCullable(ModelInfo model)
         {
+            return false;
         }
     }
 }

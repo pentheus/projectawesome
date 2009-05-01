@@ -45,7 +45,12 @@ namespace AwesomeEngine
             boundingBox = new BoundingBox();//Need the add the proper calculations for creating a new bounding box
             haschildren = false;
         }
-        
+
+        public List<ModelInfo> DrawableObjects
+        {
+            get { return objects; }
+        }
+
         //Add a child node to this node
         public void addChild(int nodeIndex, Node child)
         {

@@ -24,8 +24,9 @@ namespace AwesomeEngine
             shadowEffect = effect;
         }
 
-        public void CreateShadowMap(ModelInfo model)
+        public void CreateShadowMap(ModelInfo model, out Texture2D renderTarget)
         {
+            renderTarget = null;
         }
     }
 }
