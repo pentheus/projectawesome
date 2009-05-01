@@ -60,6 +60,8 @@ namespace AwesomeEngine
 
         public override void Draw(GameTime gameTime)
         {
+            DrawScene();
+
             base.Draw(gameTime);
         }
 
@@ -67,24 +69,12 @@ namespace AwesomeEngine
         {
         }
 
-        /*
-        public void DrawModel(ModelInfo model, Effect currentEffect, String technique)
+        public void DrawNode(Node node)
         {
-            Matrix[] modelTransforms = new Matrix[model.Model.Bones.Count];
-            model.Model.CopyAbsoluteBoneTransformsTo(modelTransforms);
+        }
 
-            foreach (ModelMesh mesh in model.Model.Meshes)
-            {
-                foreach (Effect effect in mesh.Effects)
-                {
-                    Matrix worldMatrix = modelTransforms[mesh.ParentBone.Index] * model.WorldMatrix; 
-                    Matrix lightWorldViewProjection = worldMatrix * light.ViewMatrix * lightProjection;
-                    effect.CurrentTechnique = currentEffect.Techniques[technique];
-                    //effect.Parameters["LightWorldViewProjection"].SetValue(lightWorldViewProjection);
-                }
-                
-                mesh.Draw();
-            }
-        }*/
+        public void DrawLitModel(ModelInfo model)
+        {
+        }
     }
 }
