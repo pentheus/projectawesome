@@ -94,8 +94,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShadowRenderer.cs" />
     <Compile Include="XMLParser.cs" />
-    <Compile Include="XMLReader.cs" />
-    <Compile Include="XMLWriter.cs" />
   </ItemGroup>
   <ItemGroup>
     <NestedContentProject Include="Content\Content.contentproj">
