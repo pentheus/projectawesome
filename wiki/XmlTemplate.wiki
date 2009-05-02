@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scene>
 	<WorldGeometry>
+		<scalex>5</scalex>
+		<scaley>5</scaley>
+		<scalez>5</scalez>
 		<model>blah</model>
 	</WorldGeometry>
 	<Content>
