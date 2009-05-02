@@ -58,9 +58,10 @@ namespace AwesomeEngine
         }
 
         //Add world geometry to this node
-        public void addGeometry(ModelInfo geometry)
+        public ModelInfo WGeometry
         {
-            worldgeometry = geometry;
+            get { return worldgeometry; }
+            set { worldgeometry = value; }
         }
 
         //Remove the designated child
@@ -306,10 +307,35 @@ namespace AwesomeEngine
             lowlevel.addObject(data);
         }
 
-        //Add world geometry to the root node of the octree
-        public void addgeometry(ModelInfo geometry)
+        //Return a list of all objects contained in the tree
+        public List<ModelInfo> getDrawableObjects()
         {
-            root.addGeometry(geometry);
+            List<ModelInfo> objects = new List<ModelInfo>();
+            recurseObjects(objects, root);
+            return objects;
+        }
+
+        public List<ModelInfo> recurseObjects(List<ModelInfo> objects, Node node)
+        {
+            objects.AddRange(node.DrawableObjects);
+            if (node.hasChildren())
+            {
+                foreach (Node n in node.getChildren())
+                    recurseObjects(objects, n);
+            }
+            return objects;
+        }
+
+        //Add world geometry to the root node of the octree
+        public void addGeometry(ModelInfo geometry)
+        {
+            root.WGeometry = geometry;
+        }
+
+        //Retrieve the tree's world geometry
+        public ModelInfo getGeometry()
+        {
+            return root.WGeometry;
         }
 
         public void removeObject(Vector3 pos, ModelInfo data)
