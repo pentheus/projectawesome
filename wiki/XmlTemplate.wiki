@@ -1,20 +1,21 @@
-= Template =
+<?xml version="1.0" encoding="UTF-8"?>
 <Scene>
 	<WorldGeometry>
 		<model>blah</model>
 	</WorldGeometry>
 	<Content>
 		<Object>
-			<posx>n</posx>
-			<posy>n</posy>
-			<rot>n</rot>
-			<scalex>n</scalex>
-			<scaley>n</scaley>
-			<scalez>n</scalez>
+			<posx>5</posx>
+			<posy>5</posy>
+			<posz>5</posz>
+			<rotx>5</rotx>
+			<roty>5</roty>
+			<rotz>5</rotz>
+			<scalex>5</scalex>
+			<scaley>5</scaley>
+			<scalez>5</scalez>
 			<model>t</model>
-		</Object>
-		<Object>
-		...
+			<boundingr>5</boundingr>
 		</Object>
 	</Content>
 </Scene>
