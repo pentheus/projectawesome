@@ -12,6 +12,13 @@ namespace TestScene
 {
     class XMLParser
     {
+        Game game;
+
+        public XMLParser(Game received)
+        {
+            game = received;
+        }
+
         public void readScene(string filename)
         {
             XmlTextReader scenereader = new XmlTextReader(filename);
@@ -26,7 +33,18 @@ namespace TestScene
 
         public ModelInfo readGeometry(XmlDocument scenedoc)
         {
-            ModelInfo geometry = new ModelInfo();
+            XmlNode geometrynode = scenedoc.GetElementsByTagName("WorldGeometry").Item(0);
+
+            String modelname = geometrynode.SelectSingleNode("model").InnerText;
+            Model objmodel = game.Content.Load<Model>(modelname);
+
+            int geoscalex = Convert.ToInt32(geometrynode.SelectSingleNode("scalex").InnerText);
+            int geoscaley = Convert.ToInt32(geometrynode.SelectSingleNode("scaley").InnerText);
+            int geoscalez = Convert.ToInt32(geometrynode.SelectSingleNode("scalez").InnerText);
+            Vector3 geoscale = new Vector3(geoscalex, geoscaley, geoscalez);
+
+            ModelInfo geometry = new ModelInfo(new Vector3(0), new Vector3(0), geoscale, 
+                objmodel, new BoundingSphere(new Vector3(0), 0), null);
             return geometry;
         }
 
@@ -56,11 +74,13 @@ namespace TestScene
                     Vector3 objscale = new Vector3(objscalex, objscaley, objscalez);
 
                     String modelname = node.SelectSingleNode("model").InnerText;
-
-                    //BoundingSphere objbound = new BoundingSphere(objvect, objmodel.g
+                    Model objmodel = game.Content.Load<Model>(modelname);
+                    
+                    int boundingrad = Convert.ToInt32(node.SelectSingleNode("boundingr").InnerText);
+                    BoundingSphere objbound = new BoundingSphere(objvect, boundingrad);
 
                     //Create the ModelInfo object
-                    ModelInfo obj = new ModelInfo(objvect, objrot, objscale, null, null, null);
+                    ModelInfo obj = new ModelInfo(objvect, objrot, objscale, objmodel, objbound, null);
                     objects.Add(obj);
                 }
                 catch (FormatException)
@@ -91,8 +111,19 @@ namespace TestScene
         {
             scenesaver.WriteStartElement("Scene");
             scenesaver.WriteStartElement("World Geometry");
+
+            scenesaver.WriteStartElement("scalex");
+            scenesaver.WriteString(geometry.Scale.X.ToString());
+            scenesaver.WriteEndElement();
+            scenesaver.WriteStartElement("scaley");
+            scenesaver.WriteString(geometry.Scale.Y.ToString());
+            scenesaver.WriteEndElement();
+            scenesaver.WriteStartElement("scalez");
+            scenesaver.WriteString(geometry.Scale.Z.ToString());
+            scenesaver.WriteEndElement();
+
             scenesaver.WriteStartElement("model");
-            scenesaver.WriteString("Blah");
+            scenesaver.WriteString("blah");
             scenesaver.WriteEndElement();
             scenesaver.WriteEndElement();
         }
