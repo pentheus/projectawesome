@@ -95,6 +95,15 @@ namespace AwesomeEngine
         /// <param name="model"></param>
         public void DrawLitModel(ModelInfo model)
         {
+            foreach (ModelMesh mesh in model.Model)
+            {
+                foreach (Effect effect in mesh)
+                {
+                    Matrix worldMatrix = modelTransforms[mesh.ParentBone.Index] * model.WorldMatrix;
+                    //insert set effects and properties
+                }
+                mesh.Draw();
+            }
         }
 
         /// <summary>
@@ -105,6 +114,7 @@ namespace AwesomeEngine
         public bool CheckIfCullable(ModelInfo model)
         {
             return false;
+            
         }
     }
 }
