@@ -23,6 +23,7 @@ namespace AwesomeEngine
         Game game;
         ShadowRenderer shadowRenderer;
         Texture2D renderTarget;
+        Camera.Camera mainCamera;
 
         public SceneManager(Game game)
             : base(game)
@@ -84,7 +85,7 @@ namespace AwesomeEngine
                 shadowRenderer.CreateShadowMap(model, renderTarget);
                 if (!CheckIfCullable(model))
                 {
-                    DrawLitModel(model);
+                    DrawLitModel(model); 
                 }  
             }
         }
@@ -99,9 +100,12 @@ namespace AwesomeEngine
             {
                 foreach (Effect effect in mesh)
                 {
+                    //(effect as BasicEffect).Texture;
                     Matrix worldMatrix = modelTransforms[mesh.ParentBone.Index] * model.WorldMatrix;
+                    
                     //insert set effects and properties
                 }
+                
                 mesh.Draw();
             }
         }
