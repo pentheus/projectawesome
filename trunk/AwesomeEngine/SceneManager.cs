@@ -70,8 +70,13 @@ namespace AwesomeEngine
         /// <summary>
         /// Draws a scene
         /// </summary>
-        public void DrawScene()
+        public void DrawScene() 
         {
+            foreach (Node node in sceneGraph)
+            {
+                if(node.intersectsWith(mainCamera.BoundingFrustum));
+                    DrawNode(node);
+            }
         }
 
         /// <summary>
@@ -82,7 +87,7 @@ namespace AwesomeEngine
         {
             foreach (ModelInfo model in node.DrawableObjects)
             {
-                shadowRenderer.CreateShadowMap(model, renderTarget);
+                shadowRenderer.CreateShadowMap(model, out renderTarget);
                 if (!CheckIfCullable(model))
                 {
                     DrawLitModel(model); 
@@ -96,16 +101,16 @@ namespace AwesomeEngine
         /// <param name="model"></param>
         public void DrawLitModel(ModelInfo model)
         {
-            foreach (ModelMesh mesh in model.Model)
+            Matrix[] modelTransforms = new Matrix[model.Model.Bones.Count];
+            model.Model.CopyAbsoluteBoneTransformsTo(modelTransforms);
+            foreach (ModelMesh mesh in model.Model.Meshes)
             {
-                foreach (Effect effect in mesh)
+                foreach (Effect effect in mesh.Effects)
                 {
-                    //(effect as BasicEffect).Texture;
                     Matrix worldMatrix = modelTransforms[mesh.ParentBone.Index] * model.WorldMatrix;
-                    
+                    //(effect as BasicEffect).Texture;
                     //insert set effects and properties
                 }
-                
                 mesh.Draw();
             }
         }
@@ -117,8 +122,12 @@ namespace AwesomeEngine
         /// <returns></returns>
         public bool CheckIfCullable(ModelInfo model)
         {
-            return false;
-            
+            foreach (ModelMesh mesh in model.Model.Meshes)
+            {
+                if (mesh.BoundingSphere.Intersects(mainCamera.BoundingFrustum))
+                    return false;
+            }
+            return true;
         }
     }
 }

@@ -44,7 +44,7 @@ namespace TestScene
             Vector3 geoscale = new Vector3(geoscalex, geoscaley, geoscalez);
 
             ModelInfo geometry = new ModelInfo(new Vector3(0), new Vector3(0), geoscale, 
-                objmodel, new BoundingSphere(new Vector3(0), 0), null);
+                objmodel, null);
             return geometry;
         }
 
@@ -80,7 +80,7 @@ namespace TestScene
                     BoundingSphere objbound = new BoundingSphere(objvect, boundingrad);
 
                     //Create the ModelInfo object
-                    ModelInfo obj = new ModelInfo(objvect, objrot, objscale, objmodel, objbound, null);
+                    ModelInfo obj = new ModelInfo(objvect, objrot, objscale, objmodel, null);
                     objects.Add(obj);
                 }
                 catch (FormatException)

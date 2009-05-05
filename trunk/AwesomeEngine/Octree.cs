@@ -105,6 +105,14 @@ namespace AwesomeEngine
                 return false;
         }
 
+        public Boolean intersectsWith(BoundingFrustum box)
+        {
+            if (boundingBox.Intersects(box))
+                return true;
+            else
+                return false;
+        }
+
         public float getSize()
         {
             return size;
@@ -133,7 +141,7 @@ namespace AwesomeEngine
     #endregion 
 
     #region Octree
-    public class Octree
+    public class Octree 
     {
         Node root;
         int treeSize;
