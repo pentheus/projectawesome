@@ -19,65 +19,42 @@ namespace AwesomeEngine.Camera
         protected float nearPlane;
         protected float farPlane;
         protected float aspectRatio; 
+        protected BoundingFrustum boundingFrustum;
+
 
         public Vector3 Pos
         {
-            get
-            {
-                return pos;
-            }
-            set
-            {
-                pos = value;
-            }
+            get { return pos; }
+            set { pos = value; }
         }
 
         public Vector3 Rotation
         {
-            get
-            {
-                return rotation;
-            }
-            set
-            {
-                rotation = value;
-            }
+            get { return rotation; }
+            set { rotation = value; }
         }
 
         public float NearPlane
         {
-            get
-            {
-                return nearPlane;
-            }
-            set
-            {
-                nearPlane = value;
-            }
+            get { return nearPlane; }
+            set { nearPlane = value; }
         }
 
         public float FarPlane
         {
-            get
-            {
-                return farPlane;
-            }
-            set
-            {
-                farPlane = value;
-            }
+            get { return farPlane; }
+            set { farPlane = value; }
         }
 
         public float AspectRatio
         {
-            get
-            {
-                return aspectRatio;
-            }
-            set
-            {
-                aspectRatio = value;
-            }
+            get { return aspectRatio; }
+            set { aspectRatio = value; } 
+        }
+
+        public BoundingFrustum BoundingFrustum
+        {
+            get { return new BoundingFrustum(View * Projection); }
         }
 
         public abstract Matrix View

@@ -20,20 +20,18 @@ namespace AwesomeEngine
         Vector3 rotation;
         Vector3 scale;
         Model model;
-        BoundingSphere boundingSphere;
         Node node;
 
         public ModelInfo()
         {
         }
         
-        public ModelInfo(Vector3 pos, Vector3 rotation, Vector3 scale, Model model, BoundingSphere boundingSphere, Node node)
+        public ModelInfo(Vector3 pos, Vector3 rotation, Vector3 scale, Model model, Node node)
         {
             this.pos = pos;
             this.rotation = rotation;
             this.scale = scale;
             this.model = model;
-            this.boundingSphere = boundingSphere;
             this.node = node;
         }
 
@@ -69,12 +67,6 @@ namespace AwesomeEngine
         {
             get { return model; }
             set { model = value; }
-        }
-
-        public BoundingSphere BoundingVolume
-        {
-            get { return boundingSphere; }
-            set { boundingSphere = value; }
         }
 
         public Node Node
