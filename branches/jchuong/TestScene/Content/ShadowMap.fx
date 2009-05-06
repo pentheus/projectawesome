@@ -84,7 +84,7 @@ SMapPixel ShadowMapPixelShader(ShadowVSOutput input) : COLOR0
 	SMapPixel Output = (SMapPixel)0;
 
 	Output.Color = input.Position2D.z/input.Position2D.w;
-	
+	//Output.Color.x = smoothstep(0, 100, input.Position2D.z);
 
 	return Output;
 }
@@ -116,7 +116,7 @@ SScenePixelToFrame SSPixelShader(SSceneVertexToPixel input)
 	{
 		float depthStoredInSMap = tex2D(ShadowMapSampler, ProjectedTexCoords).r;
 		float realDistance = input.Pos2DAsSeenByLight.z/input.Pos2DAsSeenByLight.w;
-		
+		//float realDistance = smoothstep(0, 100, input.Pos2DAsSeenByLight.z);
 		if ((realDistance - 1.0f/100.0f) <= depthStoredInSMap) // 1/100 is our shadow bias 
 		{
 			//diffuseLightingFactor = DotProduct(LightPos, input.Position3D, input.Normal);
