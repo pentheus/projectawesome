@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 using AwesomeEngine;
+using System.Collections;
 
 namespace TestScene
 {
@@ -19,19 +20,22 @@ namespace TestScene
             game = received;
         }
 
-        public void readScene(string filename)
+        public Octree readScene(string filename)
         {
             XmlTextReader scenereader = new XmlTextReader(filename);
             XmlDocument scenedoc = new XmlDocument();
+            Octree scene = new Octree(1);
             scenedoc.Load(scenereader);
 
             //Load world geometry
-            readGeometry(scenedoc);
+            readGeometry(scenedoc, scene);
             //Load objects
-            readObjects(scenedoc);
+            readObjects(scenedoc, scene);
+
+            return scene;
         }
 
-        public ModelInfo readGeometry(XmlDocument scenedoc)
+        public void readGeometry(XmlDocument scenedoc, Octree scene)
         {
             XmlNode geometrynode = scenedoc.GetElementsByTagName("WorldGeometry").Item(0);
 
@@ -43,45 +47,50 @@ namespace TestScene
             int geoscalez = Convert.ToInt32(geometrynode.SelectSingleNode("scalez").InnerText);
             Vector3 geoscale = new Vector3(geoscalex, geoscaley, geoscalez);
 
-            ModelInfo geometry = new ModelInfo(new Vector3(0), new Vector3(0), geoscale, 
+            ModelInfo geometry = new ModelInfo(new Vector3(0), new Vector3(0), geoscale,
                 objmodel, null);
-            return geometry;
+            scene.addGeometry(geometry);
         }
 
-        public List<ModelInfo> readObjects(XmlDocument scenedoc)
+        public void readObjects(XmlDocument scenedoc, Octree scene)
         {
             //Generate a list of the objects to be placed in the scene
             XmlNodeList models = scenedoc.GetElementsByTagName("Object");
             List<ModelInfo> objects = new List<ModelInfo>();
+            Hashtable modelsloaded = new Hashtable();
             //Create a ModelInfo object for each object, then add it to the octree
             foreach (XmlNode node in models)
             {
                 try
                 {
-                    int objx = Convert.ToInt32(node.SelectSingleNode("posx").InnerText);
-                    int objy = Convert.ToInt32(node.SelectSingleNode("posy").InnerText);
-                    int objz = Convert.ToInt32(node.SelectSingleNode("posz").InnerText);
+                    float objx = (float)Convert.ToDouble(node.SelectSingleNode("posx").InnerText);
+                    float objy = (float)Convert.ToDouble(node.SelectSingleNode("posy").InnerText);
+                    float objz = (float)Convert.ToDouble(node.SelectSingleNode("posz").InnerText);
                     Vector3 objvect = new Vector3(objx, objy, objz);
 
-                    int objrotx = Convert.ToInt32(node.SelectSingleNode("rotx").InnerText);
-                    int objroty = Convert.ToInt32(node.SelectSingleNode("roty").InnerText);
-                    int objrotz = Convert.ToInt32(node.SelectSingleNode("rotz").InnerText);
+                    float objrotx = (float)Convert.ToDouble(node.SelectSingleNode("rotx").InnerText);
+                    float objroty = (float)Convert.ToDouble(node.SelectSingleNode("roty").InnerText);
+                    float objrotz = (float)Convert.ToDouble(node.SelectSingleNode("rotz").InnerText);
                     Vector3 objrot = new Vector3(objrotx, objroty, objrotz);
 
-                    int objscalex = Convert.ToInt32(node.SelectSingleNode("scalex").InnerText);
-                    int objscaley = Convert.ToInt32(node.SelectSingleNode("scaley").InnerText);
-                    int objscalez = Convert.ToInt32(node.SelectSingleNode("scalez").InnerText);
+                    float objscalex = (float)Convert.ToDouble(node.SelectSingleNode("scalex").InnerText);
+                    float objscaley = (float)Convert.ToDouble(node.SelectSingleNode("scaley").InnerText);
+                    float objscalez = (float)Convert.ToDouble(node.SelectSingleNode("scalez").InnerText);
                     Vector3 objscale = new Vector3(objscalex, objscaley, objscalez);
 
                     String modelname = node.SelectSingleNode("model").InnerText;
-                    Model objmodel = game.Content.Load<Model>(modelname);
-                    
-                    int boundingrad = Convert.ToInt32(node.SelectSingleNode("boundingr").InnerText);
-                    BoundingSphere objbound = new BoundingSphere(objvect, boundingrad);
+                    Model objmodel;
+                    if (modelsloaded.Contains(modelname))
+                        objmodel = (Model)modelsloaded[modelname];
+                    else
+                    {
+                        objmodel = game.Content.Load<Model>(modelname);
+                        modelsloaded.Add(modelname, objmodel);
+                    }
 
                     //Create the ModelInfo object
                     ModelInfo obj = new ModelInfo(objvect, objrot, objscale, objmodel, null);
-                    objects.Add(obj);
+                    scene.addObject(objvect, obj);
                 }
                 catch (FormatException)
                 {
@@ -89,7 +98,6 @@ namespace TestScene
                         + node.SelectSingleNode("model").InnerText);
                 }
             }
-            return objects;
         }
         public Boolean saveScene(Octree scene)
         {
@@ -130,7 +138,7 @@ namespace TestScene
 
         public void saveObjects(XmlTextWriter scenesaver, List<ModelInfo> objects)
         {
-            foreach(ModelInfo obj in objects)
+            foreach (ModelInfo obj in objects)
             {
                 scenesaver.WriteStartElement("Conent");
                 scenesaver.WriteStartElement("Object");
