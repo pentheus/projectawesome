@@ -62,7 +62,7 @@ namespace AwesomeEngine
 
         public override void Draw(GameTime gameTime)
         {
-            DrawScene();
+            DrawScene(sceneGraph.Root);
 
             base.Draw(gameTime);
         }
@@ -70,12 +70,18 @@ namespace AwesomeEngine
         /// <summary>
         /// Draws a scene
         /// </summary>
-        public void DrawScene() 
+        public void DrawScene(Node parent) 
         {
-            foreach (Node node in sceneGraph)
+            if (!parent.HasChildren)
             {
-                if(node.intersectsWith(mainCamera.BoundingFrustum));
-                    DrawNode(node);
+                DrawNode(parent);
+                return;
+            }
+
+            foreach (Node child in parent.getChildren())
+            {
+                if(child.BoundingBox.Intersects(mainCamera.BoundingFrustum))
+                    DrawScene(child);
             }
         }
 

@@ -16,19 +16,13 @@ namespace AwesomeEngine
         BoundingBox boundingBox;
         Node[] children;
         List<ModelInfo> objects;
-        //World geometry is only contained by the root node of the octree
-        ModelInfo worldgeometry;
+        ModelInfo worldgeometry; //null in all nodes except root
         float size;
         Vector3 min;
         Vector3 max;
         Vector3 center;
         Boolean haschildren;
-        //TODO:
-        //Later we'll add an array list for lights once we create a class that stores lighting data
-        //This will also mean we have to implement better lighting shaders that allow for more than 2
-        //dynamic lights.
-        //List<Lights> lights 
-
+   
         /// <summary>
         /// A constructor for the Node object
         /// </summary>
@@ -79,13 +73,6 @@ namespace AwesomeEngine
         
         //--------------Affecting objects contained by the node-----------------
 
-        //Add an object to the node
-        public void addObject(ModelInfo addobject)
-        {
-            objects.Add(addobject);
-            addobject.Node = this;
-        }
-
         //Returns whether this node's bounding box contains the given vector position
         public Boolean containsPos(Vector3 pos)
         {
@@ -123,19 +110,20 @@ namespace AwesomeEngine
             return center;
         }
 
-        public void setHasChildren(Boolean v)
+        public Boolean HasChildren
         {
-            haschildren = v;
-        }
-
-        public Boolean hasChildren()
-        {
-            return haschildren;
+            get { return haschildren; }
+            set { haschildren = value; }
         }
 
         public Node[] getChildren()
         {
             return children;
+        }
+
+        public BoundingBox BoundingBox
+        {
+            get { return boundingBox; }
         }
     }
     #endregion 
@@ -165,7 +153,7 @@ namespace AwesomeEngine
                 {
                     Node added =  createChild(i, buildon.getSize(), buildon.getCenter());
                     buildon.addChild(i,added);
-                    buildon.setHasChildren(true);
+                    buildon.hasChildren = true;
                     createTree(depth-1, added);
                 }
             }
@@ -249,7 +237,7 @@ namespace AwesomeEngine
         public void removeNodes(BoundingBox subspace, Node lookup, Node parent)
         {
             //If the node has children, recurse to them.
-            if(lookup.hasChildren())
+            if(lookup.HasChildren)
             {
                 foreach(Node n in lookup.getChildren())
                     removeNodes(subspace, n, lookup);
@@ -261,7 +249,7 @@ namespace AwesomeEngine
                 {
                     parent.removeChild(lookup);
                     if (parent.getChildren().Equals(null))
-                        parent.setHasChildren(false);
+                        parent.HasChildren = false;
                 }
             }
         }
@@ -278,7 +266,7 @@ namespace AwesomeEngine
             //Create a new list to append the results to
             List<Node> resultnodes = new List<Node>();
             //If the node has children, recurse to them.
-            if (lookup.hasChildren())
+            if (lookup.HasChildren)
             {
                 foreach (Node n in lookup.getChildren())
                     resultnodes.AddRange(lookupNodes(subspace, n));
@@ -299,20 +287,23 @@ namespace AwesomeEngine
         {
             Node lowlevel = root;
             //While the current node has children...
-            while (lowlevel.hasChildren())
+
+            while (lowlevel.HasChildren)
             {
                 //...Find the one that contains the given point
                 foreach (Node n in lowlevel.getChildren())
                 {
-                    if (n.containsPos(pos))
+                    foreach (ModelMesh mesh in data.Model.Meshes)
                     {
-                        lowlevel = n;
-                        break;
+                        if (n.BoundingBox.Intersects(mesh.BoundingSphere))
+                        {
+                            lowlevel = n;
+                        }
                     }
                 }
             }
             //Add the object into the node
-            lowlevel.addObject(data);
+            lowlevel.DrawableObjects.Add(data);
         }
 
         //Return a list of all objects contained in the tree
@@ -326,7 +317,7 @@ namespace AwesomeEngine
         public List<ModelInfo> recurseObjects(List<ModelInfo> objects, Node node)
         {
             objects.AddRange(node.DrawableObjects);
-            if (node.hasChildren())
+            if (node.HasChildren)
             {
                 foreach (Node n in node.getChildren())
                     recurseObjects(objects, n);
@@ -346,15 +337,10 @@ namespace AwesomeEngine
             return root.WGeometry;
         }
 
-        public void removeObject(Vector3 pos, ModelInfo data)
+        public Node Root
         {
-            //Need code here.
+            get { return root; }
         }
-        //TODO:
-        //Need remove (remove node completed), lookup, buildTree(but that kind of goes along with add).
-        //It is probably not necessary to have specific object lookups in this class
-        //For good OO programming purposes, we'll have another class that handles dealing with objects.
-
     }
     #endregion
 }
