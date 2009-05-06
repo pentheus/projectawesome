@@ -183,7 +183,7 @@ namespace TestScene
                     effect.Parameters["WorldViewProjection"].SetValue(worldMatrix * camera.View * camera.Projection);
                     effect.Parameters["LightWorldViewProjection"].SetValue(lightWorldViewProjection);
                     effect.Parameters["ShadowMap"].SetValue(shadowMap);
-                    effect.Parameters["Ambient"].SetValue(0.2f);
+                    effect.Parameters["Ambient"].SetValue(0.5f);
                     effect.Parameters["LightPos"].SetValue(light.Position);
                     effect.Parameters["LightPower"].SetValue(1.5f);
                     effect.Parameters["TextureEnabled"].SetValue(false);
