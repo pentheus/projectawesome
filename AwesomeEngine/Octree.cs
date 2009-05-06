@@ -100,6 +100,16 @@ namespace AwesomeEngine
                 return false;
         }
 
+        public Boolean intersectsWith(ModelInfo model)
+        {
+            foreach (ModelMesh mesh in model.Model.Meshes)
+            {
+                if(mesh.BoundingSphere.Intersects(BoundingBox)
+                    return true;
+            }
+            return false;
+        }
+
         public float getSize()
         {
             return size;
@@ -298,12 +308,34 @@ namespace AwesomeEngine
                         if (n.BoundingBox.Intersects(mesh.BoundingSphere))
                         {
                             lowlevel = n;
+                            break;
                         }
                     }
                 }
             }
             //Add the object into the node
             lowlevel.DrawableObjects.Add(data);
+        }
+
+        /// <summary>
+        /// When the number of DrawableObjects exceed a certain threshold in
+        /// the parent's list of DrawableObjects. This method should be called
+        /// to distribute the nodes among the children of the parent node.
+        /// </summary>
+        /// <param name="parent">The node that you want to distribute DrawableObjects from</param>
+        public void DistributeObjects(Node parent)
+        {
+            foreach (Node child in parent.getChildren())
+            {
+                foreach (ModelInfo model in parent.DrawableObjects)
+                {
+                    if (child.intersectsWith(model))
+                    {
+                        child.DrawableObjects.Add(model);
+                        parent.DrawableObjects.Remove(model);
+                    }
+                }
+            }
         }
 
         //Return a list of all objects contained in the tree
