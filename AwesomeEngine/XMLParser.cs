@@ -20,7 +20,7 @@ namespace TestScene
             game = received;
         }
 
-        public Octree readScene(string filename)
+        public Octree ReadScene(string filename)
         {
             XmlTextReader scenereader = new XmlTextReader(filename);
             XmlDocument scenedoc = new XmlDocument();
@@ -28,14 +28,14 @@ namespace TestScene
             scenedoc.Load(scenereader);
 
             //Load world geometry
-            readGeometry(scenedoc, scene);
+            ReadGeometry(scenedoc, scene);
             //Load objects
-            readObjects(scenedoc, scene);
+            ReadObjects(scenedoc, scene);
 
             return scene;
         }
 
-        public void readGeometry(XmlDocument scenedoc, Octree scene)
+        public void ReadGeometry(XmlDocument scenedoc, Octree scene)
         {
             XmlNode geometrynode = scenedoc.GetElementsByTagName("WorldGeometry").Item(0);
 
@@ -52,7 +52,7 @@ namespace TestScene
             scene.addGeometry(geometry);
         }
 
-        public void readObjects(XmlDocument scenedoc, Octree scene)
+        public void ReadObjects(XmlDocument scenedoc, Octree scene)
         {
             //Generate a list of the objects to be placed in the scene
             XmlNodeList models = scenedoc.GetElementsByTagName("Object");
@@ -99,23 +99,23 @@ namespace TestScene
                 }
             }
         }
-        public Boolean saveScene(Octree scene)
+        public Boolean SaveScene(Octree scene)
         {
             ModelInfo savegeo = scene.getGeometry();
             List<ModelInfo> objects = scene.getDrawableObjects();
             XmlTextWriter scenesaver = new XmlTextWriter("C:/Documents and Settings/Alex/My Documents/Inf 125/ProjectAwesome/Scenedata.xml", null);
             scenesaver.WriteStartDocument();
             //Write the world geometry to the file
-            saveGeometry(scenesaver, savegeo);
+            SaveGeometry(scenesaver, savegeo);
             //Write objects to the file
-            saveObjects(scenesaver, objects);
+            SaveObjects(scenesaver, objects);
             scenesaver.WriteEndDocument();
             scenesaver.Flush();
             scenesaver.Close();
             return true;
         }
 
-        public void saveGeometry(XmlTextWriter scenesaver, ModelInfo geometry)
+        public void SaveGeometry(XmlTextWriter scenesaver, ModelInfo geometry)
         {
             scenesaver.WriteStartElement("Scene");
             scenesaver.WriteStartElement("World Geometry");
@@ -136,7 +136,7 @@ namespace TestScene
             scenesaver.WriteEndElement();
         }
 
-        public void saveObjects(XmlTextWriter scenesaver, List<ModelInfo> objects)
+        public void SaveObjects(XmlTextWriter scenesaver, List<ModelInfo> objects)
         {
             foreach (ModelInfo obj in objects)
             {
