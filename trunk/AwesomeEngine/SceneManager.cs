@@ -22,9 +22,10 @@ namespace AwesomeEngine
         Octree sceneGraph;
         Game game;
         ShadowRenderer shadowRenderer;
+        Effect drawModelEffect;
         Texture2D renderTarget;
         Camera.Camera mainCamera;
-
+        
         public SceneManager(Game game)
             : base(game)
         {
@@ -46,6 +47,7 @@ namespace AwesomeEngine
         protected override void LoadContent()
         {
             shadowRenderer = new ShadowRenderer(game.Content.Load<Effect>("ShadowMap"));
+            drawModelEffect = game.Content.Load<Effect>("DrawModel");
             base.LoadContent();
         }
 
@@ -114,8 +116,12 @@ namespace AwesomeEngine
                 foreach (Effect effect in mesh.Effects)
                 {
                     Matrix worldMatrix = modelTransforms[mesh.ParentBone.Index] * model.WorldMatrix;
-                    //(effect as BasicEffect).Texture;
-                    //insert set effects and properties
+                    effect.CurrentTechnique = drawModelEffect.Techniques["DrawModel"];
+                    effect.Parameters["xWorld"] = worldMatrix;
+                    effect.Parameters["ColorMap"] = (effect as BasicEffect).Texture;
+                    effect.Parameters["Ambient"] = 0.5; //Later have have a global variable for ambient that we will use for this.
+                    effect.Parameters["TextureEnabled"] = true; //have to change this later...
+                    //insert more parameters
                 }
                 mesh.Draw();
             }
