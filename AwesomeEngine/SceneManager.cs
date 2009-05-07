@@ -99,7 +99,7 @@ namespace AwesomeEngine
                 if (!CheckIfCullable(model))
                 {
                     DrawLitModel(model); 
-                }  
+                } 
             }
         }
 
