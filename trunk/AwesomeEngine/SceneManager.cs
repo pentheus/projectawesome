@@ -74,13 +74,13 @@ namespace AwesomeEngine
         /// </summary>
         public void DrawScene(Node parent) 
         {
-            if (!parent.HasChildren)
+            if (!parent.HasChildren())
             {
                 DrawNode(parent);
                 return;
             }
 
-            foreach (Node child in parent.getChildren())
+            foreach (Node child in parent.Children)
             {
                 if(child.BoundingBox.Intersects(mainCamera.BoundingFrustum))
                     DrawScene(child);
@@ -117,10 +117,10 @@ namespace AwesomeEngine
                 {
                     Matrix worldMatrix = modelTransforms[mesh.ParentBone.Index] * model.WorldMatrix;
                     effect.CurrentTechnique = drawModelEffect.Techniques["DrawModel"];
-                    effect.Parameters["xWorld"] = worldMatrix;
-                    effect.Parameters["ColorMap"] = (effect as BasicEffect).Texture;
-                    effect.Parameters["Ambient"] = 0.5; //Later have have a global variable for ambient that we will use for this.
-                    effect.Parameters["TextureEnabled"] = true; //have to change this later...
+                    effect.Parameters["xWorld"].SetValue(worldMatrix);
+                    effect.Parameters["ColorMap"].SetValue((effect as BasicEffect).Texture);
+                    effect.Parameters["Ambient"].SetValue(0.5f); //Later have have a global variable for ambient that we will use for this.
+                    effect.Parameters["TextureEnabled"].SetValue(false); //have to change this later...
                     //insert more parameters
                 }
                 mesh.Draw();
