@@ -14,9 +14,9 @@ namespace AwesomeEngine
         public const int OBJECT_LIMIT = 8;
 
         Node root;
-        int treeSize;
+        float treeSize;
 
-        public Octree(int treeSize)
+        public Octree(float treeSize)
         {
             //Compute octree min and max values
             Vector3 min = new Vector3(-treeSize/2);
@@ -24,6 +24,11 @@ namespace AwesomeEngine
             //Assign values
             root = new Node(treeSize, min, max, new Vector3(0));
             this.treeSize = treeSize;
+        }
+
+        public float TreeSize
+        {
+            get { return treeSize; }
         }
 
         public Node createChild(int nodeIndex, float parentSize, Vector3 parentCenter)
