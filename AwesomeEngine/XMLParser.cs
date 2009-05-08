@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Content;
 using AwesomeEngine;
 using System.Collections;
 
-namespace TestScene
+namespace AwessomeEngine
 {
     class XMLParser
     {
@@ -24,9 +24,12 @@ namespace TestScene
         {
             XmlTextReader scenereader = new XmlTextReader(filename);
             XmlDocument scenedoc = new XmlDocument();
-            Octree scene = new Octree(1);
             scenedoc.Load(scenereader);
 
+            XmlNode sceneinfo = scenedoc.GetElementsByTagName("SceneInfo").Item(0);
+            float scenesize = (float)Convert.ToDouble(sceneinfo.SelectSingleNode("size").InnerText);
+            
+            Octree scene = new Octree(scenesize);
             //Load world geometry
             ReadGeometry(scenedoc, scene);
             //Load objects
@@ -42,9 +45,9 @@ namespace TestScene
             String modelname = geometrynode.SelectSingleNode("model").InnerText;
             Model objmodel = game.Content.Load<Model>(modelname);
 
-            int geoscalex = Convert.ToInt32(geometrynode.SelectSingleNode("scalex").InnerText);
-            int geoscaley = Convert.ToInt32(geometrynode.SelectSingleNode("scaley").InnerText);
-            int geoscalez = Convert.ToInt32(geometrynode.SelectSingleNode("scalez").InnerText);
+            float geoscalex = (float)Convert.ToDouble(geometrynode.SelectSingleNode("scalex").InnerText);
+            float geoscaley = (float)Convert.ToDouble(geometrynode.SelectSingleNode("scaley").InnerText);
+            float geoscalez = (float)Convert.ToDouble(geometrynode.SelectSingleNode("scalez").InnerText);
             Vector3 geoscale = new Vector3(geoscalex, geoscaley, geoscalez);
 
             ModelInfo geometry = new ModelInfo(new Vector3(0), new Vector3(0), geoscale,
@@ -104,7 +107,15 @@ namespace TestScene
             ModelInfo savegeo = scene.getGeometry();
             List<ModelInfo> objects = scene.getDrawableObjects();
             XmlTextWriter scenesaver = new XmlTextWriter("C:/Documents and Settings/Alex/My Documents/Inf 125/ProjectAwesome/Scenedata.xml", null);
+            scenesaver.Indentation = 5;
             scenesaver.WriteStartDocument();
+
+            scenesaver.WriteStartElement("SceneInfo");
+            scenesaver.WriteStartElement("size");
+            scenesaver.WriteString(scene.TreeSize.ToString());
+            scenesaver.WriteEndElement();
+            scenesaver.WriteEndElement()
+
             //Write the world geometry to the file
             SaveGeometry(scenesaver, savegeo);
             //Write objects to the file
@@ -175,7 +186,6 @@ namespace TestScene
 
                 scenesaver.WriteStartElement("model");
                 scenesaver.WriteString(obj.Model.Tag.ToString());
-                scenesaver.WriteEndElement();
 
                 scenesaver.WriteEndElement();
                 scenesaver.WriteEndElement();
