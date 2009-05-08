@@ -85,6 +85,7 @@
     <Compile Include="Camera\Camera.cs" />
     <Compile Include="Camera\OrthoCamera.cs" />
     <Compile Include="Camera\ThirdPersonCamera.cs" />
+    <Compile Include="Node.cs" />
     <Compile Include="FullScreenQuad.cs" />
     <Compile Include="Light.cs" />
     <Compile Include="ModelInfo.cs" />
