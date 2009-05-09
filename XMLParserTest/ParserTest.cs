@@ -11,6 +11,8 @@ using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
 using AwesomeEngine;
+using System.IO;
+
 
 namespace XMLParserTest
 {
@@ -22,14 +24,16 @@ namespace XMLParserTest
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Octree testtree;
-        Game game;
         Effect shadowMapEffect;
+        FileInfo outfile;
+        StreamWriter writer;
 
         public ParserTest()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            game = new Game();
+            outfile = new FileInfo("C:/Documents and Settings/Alex/My Documents/Inf 125/ProjectAwesome/TestingOutput.txt");
+            writer = outfile.CreateText();
         }
 
         /// <summary>
@@ -53,6 +57,9 @@ namespace XMLParserTest
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            BuildTree();
+            SaveScene();
+            LoadScene();
 
             // TODO: use this.Content to load your game content here
         }
@@ -98,21 +105,21 @@ namespace XMLParserTest
         public void BuildTree()
         {
             testtree = new Octree(54);
-                testtree.addGeometry(new ModelInfo(new Vector3(0), new Vector3(0), new Vector3(0), LoadModel("Floor"), "Floor"));
-            testtree.addObject(new ModelInfo(new Vector3(2), new Vector3(0), new Vector3(0), LoadModel("Tank"), "Tank"));
-            testtree.addObject(new ModelInfo(new Vector3(5), new Vector3(0), new Vector3(0), LoadModel("Floor"), "Floor"));
-            testtree.addObject(new ModelInfo(new Vector3(8), new Vector3(0), new Vector3(0), LoadModel("Tank"), "Tank"));
+                testtree.addGeometry(new ModelInfo(new Vector3(0), new Vector3(0), new Vector3(0), Content.Load<Model>("Floor"), "Floor"));
+                testtree.addObject(new ModelInfo(new Vector3(2), new Vector3(0), new Vector3(0), Content.Load<Model>("Tank"), "Tank"));
+                testtree.addObject(new ModelInfo(new Vector3(5), new Vector3(0), new Vector3(0), Content.Load<Model>("Floor"), "Floor"));
+                testtree.addObject(new ModelInfo(new Vector3(8), new Vector3(0), new Vector3(0), Content.Load<Model>("Tank"), "Tank"));
         }
 
         public void SaveScene()
         {
-            XMLParser parser = new XMLParser(game);
+            XMLParser parser = new XMLParser(this);
             parser.SaveScene(testtree, "C:/Documents and Settings/Alex/My Documents/Inf 125/ProjectAwesome/XMLParserTest", "TestScene.xml");
         }
 
         public void LoadScene()
         {
-            XMLParser parser = new XMLParser(game);
+            XMLParser parser = new XMLParser(this);
             testtree = parser.ReadScene("C:/Documents and Settings/Alex/My Documents/Inf 125/ProjectAwesome/XMLParserTest", "TestScene.xml");
             DrawTree(testtree);
         }
@@ -120,34 +127,23 @@ namespace XMLParserTest
         private void DrawTree(Octree tree)
         {
             ModelInfo minfo;
-            Console.WriteLine("Tree's size is " + tree.TreeSize);
+            writer.WriteLine("Tree's size is " + tree.TreeSize);
 
             minfo = tree.getGeometry();
-            Console.WriteLine("Geometry's scale is " + minfo.Scale.ToString());
-            Console.WriteLine("Geometry's model is " + minfo.FileName);
-            Console.WriteLine("");
+            writer.WriteLine("Geometry's scale is " + minfo.Scale.ToString());
+            writer.WriteLine("Geometry's model is " + minfo.FileName);
+            writer.WriteLine("");
 
             foreach (ModelInfo nextone in tree.getDrawableObjects())
             {
                 minfo = nextone;
-                Console.WriteLine("Object's position is " + minfo.Position.ToString());
-                Console.WriteLine("Object's rotation is " + minfo.Rotation.ToString());
-                Console.WriteLine("Object's scale is " + minfo.Scale.ToString());
-                Console.WriteLine("Object's model is " + minfo.FileName);
+                writer.WriteLine("Object's position is " + minfo.Position.ToString());
+                writer.WriteLine("Object's rotation is " + minfo.Rotation.ToString());
+                writer.WriteLine("Object's scale is " + minfo.Scale.ToString());
+                writer.WriteLine("Object's model is " + minfo.FileName);
             }
-        }
-
-
-        private Model LoadModel(string assetName)
-        {
-
-            Model newModel = game.Content.Load<Model>(assetName);
-
-            foreach (ModelMesh mesh in newModel.Meshes)
-                foreach (ModelMeshPart meshPart in mesh.MeshParts)
-                    meshPart.Effect = shadowMapEffect.Clone(graphics.GraphicsDevice);
-
-            return newModel;
+            writer.Flush();
+            writer.Close();
         }
     }
 }
