@@ -44,7 +44,7 @@ namespace OctreeTest
         {
             // TODO: Add your initialization logic here
             basicEffect = new BasicEffect(GraphicsDevice, null);
-            mainCamera = new ThirdPersonCamera(new Vector3(5, 0, -10), Vector3.Zero, GraphicsDevice.Viewport.AspectRatio, 1f, 10000f);
+            mainCamera = new ThirdPersonCamera(new Vector3(5, 0, -30), Vector3.Zero, GraphicsDevice.Viewport.AspectRatio, 1f, 10000f);
 
             octree = new Octree(4);
             octree.SplitNode(octree.Root);
@@ -65,7 +65,8 @@ namespace OctreeTest
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             tankModel = Content.Load<Model>("Tank");
-            //tank = new ModelInfo(new Vector3(-5f, 10f, 3f),Vector3.Zero,Vector3.One, tankModel, 
+            tank = new ModelInfo(new Vector3(-5f, 10f, 3f), Vector3.Zero, Vector3.One, tankModel, "Tank");
+            octree.addObject(tank);
             // TODO: use this.Content to load your game content here
         }
 
