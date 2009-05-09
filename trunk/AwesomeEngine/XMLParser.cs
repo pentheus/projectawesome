@@ -51,7 +51,7 @@ namespace AwessomeEngine
             Vector3 geoscale = new Vector3(geoscalex, geoscaley, geoscalez);
 
             ModelInfo geometry = new ModelInfo(new Vector3(0), new Vector3(0), geoscale,
-                objmodel, null);
+                objmodel);
             scene.addGeometry(geometry);
         }
 
