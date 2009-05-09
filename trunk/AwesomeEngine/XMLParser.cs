@@ -20,9 +20,9 @@ namespace AwessomeEngine
             game = received;
         }
 
-        public Octree ReadScene(string filename)
+        public Octree ReadScene(string pathname, string filename)
         {
-            XmlTextReader scenereader = new XmlTextReader(filename);
+            XmlTextReader scenereader = new XmlTextReader(pathname + filename);
             XmlDocument scenedoc = new XmlDocument();
             scenedoc.Load(scenereader);
 
@@ -102,11 +102,11 @@ namespace AwessomeEngine
                 }
             }
         }
-        public Boolean SaveScene(Octree scene)
+        public Boolean SaveScene(Octree scene, string pathname, string filename)
         {
             ModelInfo savegeo = scene.getGeometry();
             List<ModelInfo> objects = scene.getDrawableObjects();
-            XmlTextWriter scenesaver = new XmlTextWriter("C:/Documents and Settings/Alex/My Documents/Inf 125/ProjectAwesome/Scenedata.xml", null);
+            XmlTextWriter scenesaver = new XmlTextWriter(pathname + filename, null);
             scenesaver.Indentation = 5;
             scenesaver.WriteStartDocument();
 
@@ -114,7 +114,7 @@ namespace AwessomeEngine
             scenesaver.WriteStartElement("size");
             scenesaver.WriteString(scene.TreeSize.ToString());
             scenesaver.WriteEndElement();
-            scenesaver.WriteEndElement()
+            scenesaver.WriteEndElement();
 
             //Write the world geometry to the file
             SaveGeometry(scenesaver, savegeo);
