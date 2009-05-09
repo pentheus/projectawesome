@@ -92,7 +92,7 @@ namespace AwessomeEngine
                     }
 
                     //Create the ModelInfo object
-                    ModelInfo obj = new ModelInfo(objvect, objrot, objscale, objmodel, null);
+                    ModelInfo obj = new ModelInfo(objvect, objrot, objscale, objmodel);
                     scene.addObject(objvect, obj);
                 }
                 catch (FormatException)
