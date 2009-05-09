@@ -1,0 +1,16 @@
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\XMLParserTest\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\XMLParserTest\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\XMLParserTest\bin\x86\Debug\Content\ShadowMap.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\XMLParserTest\bin\x86\Debug\Content\DrawModel.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\XMLParserTest\bin\x86\Debug\XMLParserTest.exe
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\XMLParserTest\bin\x86\Debug\XMLParserTest.pdb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\XMLParserTest\bin\x86\Debug\AwesomeEngine.dll
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\XMLParserTest\bin\x86\Debug\AwesomeEngine.pdb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\XMLParserTest\obj\x86\Debug\XMLParserTest.exe
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\XMLParserTest\obj\x86\Debug\XMLParserTest.pdb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\XMLParserTest\bin\x86\Debug\Content\Floor.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\XMLParserTest\bin\x86\Debug\Content\Ship.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\XMLParserTest\bin\x86\Debug\Content\Tank.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\XMLParserTest\bin\x86\Debug\Content\testscene.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\XMLParserTest\bin\x86\Debug\Content\ShipDiffuse.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\XMLParserTest\bin\x86\Debug\Content\ShipDiffuse_0.xnb
