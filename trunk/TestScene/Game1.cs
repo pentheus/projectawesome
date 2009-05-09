@@ -88,6 +88,7 @@ namespace TestScene
 
             camera = new ThirdPersonCamera(new Vector3(-10, 10, 10), new Vector3(0, 0, 0), GraphicsDevice.Viewport.AspectRatio, 0.1f, 10000.0f);
 
+            shadowMap = new Texture2D(GraphicsDevice, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
             PresentationParameters pp = GraphicsDevice.PresentationParameters;
             renderTarget = new RenderTarget2D(GraphicsDevice, pp.BackBufferWidth, pp.BackBufferHeight, 1, SurfaceFormat.Single);
         }
@@ -184,7 +185,7 @@ namespace TestScene
                     effect.CurrentTechnique = effect.Techniques[technique];
                     effect.Parameters["WorldViewProjection"].SetValue(worldMatrix * camera.View * camera.Projection);
                     effect.Parameters["LightWorldViewProjection"].SetValue(lightWorldViewProjection);
-                    effect.Parameters["ShadowMap"].SetValue(shadowMap);
+                    effect.Parameters["ShadowMap"].SetValue(this.shadowMap);
                     effect.Parameters["Ambient"].SetValue(0.2f);
                     effect.Parameters["LightPos"].SetValue(light.Position);
                     effect.Parameters["LightPower"].SetValue(1.5f);
