@@ -22,7 +22,7 @@ namespace AwesomeEngine
             Vector3 min = new Vector3(-treeSize/2);
             Vector3 max = new Vector3(treeSize/2);
             //Assign values
-            root = new Node(treeSize, min, max, new Vector3(0));
+            root = new Node(treeSize, min, max, Vector3.Zero);
             this.treeSize = treeSize;
         }
 

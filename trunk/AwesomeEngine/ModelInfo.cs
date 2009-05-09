@@ -21,18 +21,19 @@ namespace AwesomeEngine
         Vector3 scale;
         Model model;
         Node node;
+        String fileName;
 
         public ModelInfo()
         {
         }
         
-        public ModelInfo(Vector3 pos, Vector3 rotation, Vector3 scale, Model model, Node node)
+        public ModelInfo(Vector3 pos, Vector3 rotation, Vector3 scale, Model model, String fileName)
         {
             this.pos = pos;
             this.rotation = rotation;
             this.scale = scale;
             this.model = model;
-            this.node = node;
+            this.fileName = fileName;
         }
 
         public Vector3 Position
@@ -73,6 +74,12 @@ namespace AwesomeEngine
         {
             get { return node; }
             set { node = value; }
+        }
+
+        public String FileName
+        {
+            get { return fileName; }
+            set { fileName = value; }
         }
     }
 
