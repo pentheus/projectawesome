@@ -51,7 +51,7 @@ namespace AwessomeEngine
             Vector3 geoscale = new Vector3(geoscalex, geoscaley, geoscalez);
 
             ModelInfo geometry = new ModelInfo(new Vector3(0), new Vector3(0), geoscale,
-                objmodel);
+                objmodel, modelname);
             scene.addGeometry(geometry);
         }
 
@@ -92,7 +92,7 @@ namespace AwessomeEngine
                     }
 
                     //Create the ModelInfo object
-                    ModelInfo obj = new ModelInfo(objvect, objrot, objscale, objmodel);
+                    ModelInfo obj = new ModelInfo(objvect, objrot, objscale, objmodel, modelname);
                     scene.addObject(objvect, obj);
                 }
                 catch (FormatException)
@@ -142,7 +142,7 @@ namespace AwessomeEngine
             scenesaver.WriteEndElement();
 
             scenesaver.WriteStartElement("model");
-            scenesaver.WriteString("blah");
+            scenesaver.WriteString(geometry.FileName);
             scenesaver.WriteEndElement();
             scenesaver.WriteEndElement();
         }
@@ -185,7 +185,7 @@ namespace AwessomeEngine
                 scenesaver.WriteEndElement();
 
                 scenesaver.WriteStartElement("model");
-                scenesaver.WriteString(obj.Model.Tag.ToString());
+                scenesaver.WriteString(obj.FileName);
 
                 scenesaver.WriteEndElement();
                 scenesaver.WriteEndElement();
