@@ -23,7 +23,10 @@ namespace OctreeTest
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         BasicEffect basicEffect;
+        Octree octree;
         Camera mainCamera;
+        ModelInfo tank;
+        Model tankModel;
 
         public OctreeTest()
         {
@@ -41,7 +44,15 @@ namespace OctreeTest
         {
             // TODO: Add your initialization logic here
             basicEffect = new BasicEffect(GraphicsDevice, null);
-            mainCamera = new ThirdPersonCamera(new Vector3(0, 0, -10), Vector3.Zero, GraphicsDevice.Viewport.AspectRatio, 1f, 10000f);
+            mainCamera = new ThirdPersonCamera(new Vector3(5, 0, -10), Vector3.Zero, GraphicsDevice.Viewport.AspectRatio, 1f, 10000f);
+
+            octree = new Octree(4);
+            octree.SplitNode(octree.Root);
+            octree.SplitNode(octree.Root.Children[0]);
+            octree.SplitNode(octree.Root.Children[1]);
+            octree.SplitNode(octree.Root.Children[2]);
+            octree.SplitNode(octree.Root.Children[6]);
+            octree.SplitNode(octree.Root.Children[7]);
             base.Initialize();
         }
 
@@ -53,7 +64,8 @@ namespace OctreeTest
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            tankModel = Content.Load<Model>("Tank");
+            //tank = new ModelInfo(new Vector3(-5f, 10f, 3f),Vector3.Zero,Vector3.One, tankModel, 
             // TODO: use this.Content to load your game content here
         }
 
@@ -82,6 +94,20 @@ namespace OctreeTest
             base.Update(gameTime);
         }
 
+        public void DrawOctree(Node parent)
+        {
+            if (!parent.HasChildren())
+            {
+                DrawBoundingBox(parent.BoundingBox);
+                return;
+            }
+
+            foreach (Node child in parent.Children)
+            {
+                DrawOctree(child);
+            }
+        }
+
         /// <summary>
         /// This is called when the game should draw itself.
         /// </summary>
@@ -91,9 +117,11 @@ namespace OctreeTest
             GraphicsDevice.Clear(Color.Black);
 
             // TODO: Add your drawing code here
-            DrawBoundingBox(new BoundingBox(new Vector3(-1,-1,-1), new Vector3(1,1,1)));
+            DrawOctree(octree.Root);
             base.Draw(gameTime);
         }
+
+        
 
         public void DrawBoundingBox(BoundingBox boundingBox)
         {
@@ -109,17 +137,16 @@ namespace OctreeTest
             points[6] = new VertexPositionColor(corners[6], Color.Red);
             points[7] = new VertexPositionColor(corners[7], Color.Red);
 
-            short[] inds = {
-                            0, 1, 0, 2, 1, 3, 2, 3,
+            short[] inds = {0, 1, 0, 2, 1, 3, 2, 3,
                             4, 5, 4, 6, 5, 7, 6, 7,
-                            0, 4, 1, 5, 2, 6, 3, 7
-                            };
+                            0, 4, 1, 5, 2, 6, 3, 7};
 
             GraphicsDevice.VertexDeclaration = new VertexDeclaration(GraphicsDevice, VertexPositionColor.VertexElements);
 
             basicEffect.World = Matrix.Identity;
             basicEffect.View = mainCamera.View;
             basicEffect.Projection = mainCamera.Projection;
+            basicEffect.DiffuseColor = new Vector3(0.6f, 0f, 0f);
 
             basicEffect.Begin(SaveStateMode.SaveState);
             for (int pass = 0; pass < basicEffect.CurrentTechnique.Passes.Count; pass++)

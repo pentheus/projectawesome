@@ -33,7 +33,7 @@ namespace AwesomeEngine
             this.center = center;
             children = new Node[8];
             objects = new List<ModelInfo>();
-            boundingBox = new BoundingBox();//Need the add the proper calculations for creating a new bounding box
+            boundingBox = new BoundingBox(min, max);
         }
 
         public List<ModelInfo> DrawableObjects
@@ -123,8 +123,9 @@ namespace AwesomeEngine
 
         public Boolean HasChildren()
         {
-            if (children.Length > 0)
-                return true;
+            foreach (Node child in this.children)
+                if (child != null)
+                    return true;
             return false;
         }
             
