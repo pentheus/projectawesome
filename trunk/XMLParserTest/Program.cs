@@ -11,9 +11,7 @@ namespace XMLParserTest
         {
             using (ParserTest game = new ParserTest())
             {
-                game.BuildTree();
-                game.SaveScene();
-                game.LoadScene();
+                game.Run();
             }
         }
     }
