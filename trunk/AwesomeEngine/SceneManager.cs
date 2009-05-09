@@ -95,7 +95,7 @@ namespace AwesomeEngine
         {
             foreach (ModelInfo model in node.DrawableObjects)
             {
-                shadowRenderer.CreateShadowMap(model, out renderTarget);
+                //shadowRenderer.CreateShadowMap(model, out renderTarget);
                 if (!CheckIfCullable(model))
                 {
                     DrawLitModel(model); 
