@@ -29,7 +29,7 @@ namespace AwesomeEngine
         public SceneManager(Game game)
             : base(game)
         {
-            // TODO: Construct any child components here
+            sceneGraph = new Octree(100f);
             this.game = game;
         }
 
@@ -48,6 +48,7 @@ namespace AwesomeEngine
         {
             shadowRenderer = new ShadowRenderer(game.Content.Load<Effect>("ShadowMap"));
             drawModelEffect = game.Content.Load<Effect>("DrawModel");
+      
             base.LoadContent();
         }
 
@@ -153,6 +154,18 @@ namespace AwesomeEngine
                     return false;
             }
             return true;
+        }
+
+        public Octree SceneGraph
+        {
+            get { return sceneGraph; }
+            set { sceneGraph = value; }
+        }
+
+        public Camera.Camera MainCamera
+        {
+            get { return mainCamera; }
+            set { mainCamera = value; }
         }
     }
 }

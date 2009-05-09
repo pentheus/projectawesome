@@ -13,6 +13,7 @@ using Microsoft.Xna.Framework.Storage;
 using AwesomeEngine;
 using AwesomeEngine.Camera;
 
+
 namespace OctreeTest
 {
     /// <summary>
@@ -23,7 +24,7 @@ namespace OctreeTest
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         BasicEffect basicEffect;
-        Octree octree;
+        SceneManager sceneMgr;
         Camera mainCamera;
         ModelInfo tank;
         Model tankModel;
@@ -32,6 +33,7 @@ namespace OctreeTest
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            sceneMgr = new SceneManager(this);
         }
 
         /// <summary>
@@ -44,15 +46,14 @@ namespace OctreeTest
         {
             // TODO: Add your initialization logic here
             basicEffect = new BasicEffect(GraphicsDevice, null);
-            mainCamera = new ThirdPersonCamera(new Vector3(5, 0, -30), Vector3.Zero, GraphicsDevice.Viewport.AspectRatio, 1f, 10000f);
+            mainCamera = new ThirdPersonCamera(new Vector3(0, 200, 200), Vector3.Zero, GraphicsDevice.Viewport.AspectRatio, 1f, 10000f);
 
-            octree = new Octree(4);
-            octree.SplitNode(octree.Root);
-            octree.SplitNode(octree.Root.Children[0]);
-            octree.SplitNode(octree.Root.Children[1]);
-            octree.SplitNode(octree.Root.Children[2]);
-            octree.SplitNode(octree.Root.Children[6]);
-            octree.SplitNode(octree.Root.Children[7]);
+            sceneMgr.SceneGraph.SplitNode(sceneMgr.SceneGraph.Root);
+            sceneMgr.SceneGraph.SplitNode(sceneMgr.SceneGraph.Root.Children[0]);
+            sceneMgr.SceneGraph.SplitNode(sceneMgr.SceneGraph.Root.Children[1]);
+            sceneMgr.SceneGraph.SplitNode(sceneMgr.SceneGraph.Root.Children[2]);
+            sceneMgr.SceneGraph.SplitNode(sceneMgr.SceneGraph.Root.Children[6]);
+            sceneMgr.SceneGraph.SplitNode(sceneMgr.SceneGraph.Root.Children[7]);
             base.Initialize();
         }
 
@@ -65,8 +66,9 @@ namespace OctreeTest
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             tankModel = Content.Load<Model>("Tank");
-            tank = new ModelInfo(new Vector3(-5f, 10f, 3f), Vector3.Zero, Vector3.One, tankModel, "Tank");
-            octree.addObject(tank);
+            tank = new ModelInfo(new Vector3(0f, 0f, 0f), Vector3.Zero, Vector3.One, tankModel, "Tank");
+            sceneMgr.SceneGraph.addObject(tank);
+            sceneMgr.MainCamera = mainCamera;
             // TODO: use this.Content to load your game content here
         }
 
@@ -116,9 +118,9 @@ namespace OctreeTest
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
-
+            sceneMgr.Draw(gameTime);
             // TODO: Add your drawing code here
-            DrawOctree(octree.Root);
+            DrawOctree(sceneMgr.SceneGraph.Root);
             base.Draw(gameTime);
         }
 
