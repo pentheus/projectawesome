@@ -9,9 +9,9 @@ using Microsoft.Xna.Framework.Content;
 using AwesomeEngine;
 using System.Collections;
 
-namespace AwessomeEngine
+namespace AwesomeEngine
 {
-    class XMLParser
+    public class XMLParser
     {
         Game game;
 
@@ -38,7 +38,7 @@ namespace AwessomeEngine
             return scene;
         }
 
-        public void ReadGeometry(XmlDocument scenedoc, Octree scene)
+        private void ReadGeometry(XmlDocument scenedoc, Octree scene)
         {
             XmlNode geometrynode = scenedoc.GetElementsByTagName("WorldGeometry").Item(0);
 
@@ -55,7 +55,7 @@ namespace AwessomeEngine
             scene.addGeometry(geometry);
         }
 
-        public void ReadObjects(XmlDocument scenedoc, Octree scene)
+        private void ReadObjects(XmlDocument scenedoc, Octree scene)
         {
             //Generate a list of the objects to be placed in the scene
             XmlNodeList models = scenedoc.GetElementsByTagName("Object");
@@ -84,11 +84,15 @@ namespace AwessomeEngine
                     String modelname = node.SelectSingleNode("model").InnerText;
                     Model objmodel;
                     if (modelsloaded.Contains(modelname))
+                    {
                         objmodel = (Model)modelsloaded[modelname];
+                        Console.WriteLine("model exists");
+                    }
                     else
                     {
                         objmodel = game.Content.Load<Model>(modelname);
                         modelsloaded.Add(modelname, objmodel);
+                        Console.WriteLine("new model");
                     }
 
                     //Create the ModelInfo object
@@ -126,7 +130,7 @@ namespace AwessomeEngine
             return true;
         }
 
-        public void SaveGeometry(XmlTextWriter scenesaver, ModelInfo geometry)
+        private void SaveGeometry(XmlTextWriter scenesaver, ModelInfo geometry)
         {
             scenesaver.WriteStartElement("Scene");
             scenesaver.WriteStartElement("World Geometry");
@@ -147,7 +151,7 @@ namespace AwessomeEngine
             scenesaver.WriteEndElement();
         }
 
-        public void SaveObjects(XmlTextWriter scenesaver, List<ModelInfo> objects)
+        private void SaveObjects(XmlTextWriter scenesaver, List<ModelInfo> objects)
         {
             foreach (ModelInfo obj in objects)
             {
