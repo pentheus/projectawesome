@@ -113,15 +113,28 @@ namespace AwesomeEngine
             model.Model.CopyAbsoluteBoneTransformsTo(modelTransforms);
             foreach (ModelMesh mesh in model.Model.Meshes)
             {
-                foreach (Effect effect in mesh.Effects)
+                foreach (BasicEffect effect in mesh.Effects)
                 {
                     Matrix worldMatrix = modelTransforms[mesh.ParentBone.Index] * model.WorldMatrix;
+                    /*
                     effect.CurrentTechnique = drawModelEffect.Techniques["DrawModel"];
                     effect.Parameters["xWorld"].SetValue(worldMatrix);
                     effect.Parameters["ColorMap"].SetValue((effect as BasicEffect).Texture);
                     effect.Parameters["Ambient"].SetValue(0.5f); //Later have have a global variable for ambient that we will use for this.
                     effect.Parameters["TextureEnabled"].SetValue(false); //have to change this later...
-                    //insert more parameters
+                    //insert more parameters*/
+                    effect.AmbientLightColor = Vector3.One;
+                    effect.DirectionalLight0.DiffuseColor= new Vector3(0.5f,0.5f,0.5f);
+                    effect.DirectionalLight0.Direction = new Vector3(-1f,-1f,-1f);
+                    effect.DirectionalLight0.Enabled = true;
+                    effect.LightingEnabled = true;
+
+                    effect.PreferPerPixelLighting = true;
+                    effect.SpecularColor = Vector3.Zero;
+                    effect.SpecularPower = 0f;
+                    effect.View = mainCamera.View;
+                    effect.Projection = mainCamera.Projection;
+                    effect.World = worldMatrix;
                 }
                 mesh.Draw();
             }
