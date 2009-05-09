@@ -111,13 +111,12 @@ namespace AwesomeEngine
             ModelInfo savegeo = scene.getGeometry();
             List<ModelInfo> objects = scene.getDrawableObjects();
             XmlTextWriter scenesaver = new XmlTextWriter(pathname + filename, null);
-            scenesaver.Indentation = 5;
+            scenesaver.Formatting = Formatting.Indented;
             scenesaver.WriteStartDocument();
 
             scenesaver.WriteStartElement("SceneInfo");
             scenesaver.WriteStartElement("size");
             scenesaver.WriteString(scene.TreeSize.ToString());
-            scenesaver.WriteEndElement();
             scenesaver.WriteEndElement();
 
             //Write the world geometry to the file
@@ -132,8 +131,7 @@ namespace AwesomeEngine
 
         private void SaveGeometry(XmlTextWriter scenesaver, ModelInfo geometry)
         {
-            scenesaver.WriteStartElement("Scene");
-            scenesaver.WriteStartElement("World Geometry");
+            scenesaver.WriteStartElement("WorldGeometry");
 
             scenesaver.WriteStartElement("scalex");
             scenesaver.WriteString(geometry.Scale.X.ToString());
