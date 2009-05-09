@@ -88,6 +88,7 @@
     <Compile Include="FullScreenQuad.cs" />
     <Compile Include="Light.cs" />
     <Compile Include="ModelInfo.cs" />
+    <Compile Include="Node.cs" />
     <Compile Include="Octree.cs" />
     <Compile Include="Camera\FirstPersonCamera.cs" />
     <Compile Include="SceneManager.cs" />
