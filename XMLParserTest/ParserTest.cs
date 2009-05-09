@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
 using AwesomeEngine;
+using AwesomeEngine.Camera;
 using System.IO;
 
 
@@ -27,13 +28,17 @@ namespace XMLParserTest
         Effect shadowMapEffect;
         FileInfo outfile;
         StreamWriter writer;
+        SceneManager sceneMgr;
+        Camera mainCamera;
 
         public ParserTest()
         {
+            testtree = new Octree(54);
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             outfile = new FileInfo("C:/Documents and Settings/Alex/My Documents/Inf 125/ProjectAwesome/TestingOutput.txt");
             writer = outfile.CreateText();
+            sceneMgr = new SceneManager(this);
         }
 
         /// <summary>
@@ -46,6 +51,7 @@ namespace XMLParserTest
         {
             // TODO: Add your initialization logic here
 
+            mainCamera = new ThirdPersonCamera(new Vector3(0, 200, 200), Vector3.Zero, GraphicsDevice.Viewport.AspectRatio, 1f, 10000f);
             base.Initialize();
         }
 
@@ -96,7 +102,7 @@ namespace XMLParserTest
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
+            sceneMgr.Draw(gameTime);
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);
@@ -104,7 +110,6 @@ namespace XMLParserTest
 
         public void BuildTree()
         {
-            testtree = new Octree(54);
                 testtree.addGeometry(new ModelInfo(new Vector3(0), new Vector3(0), new Vector3(0), Content.Load<Model>("Floor"), "Floor"));
                 testtree.addObject(new ModelInfo(new Vector3(2), new Vector3(0), new Vector3(0), Content.Load<Model>("Tank"), "Tank"));
                 testtree.addObject(new ModelInfo(new Vector3(5), new Vector3(0), new Vector3(0), Content.Load<Model>("Floor"), "Floor"));
@@ -121,6 +126,7 @@ namespace XMLParserTest
         {
             XMLParser parser = new XMLParser(this);
             testtree = parser.ReadScene("C:/Documents and Settings/Alex/My Documents/Inf 125/ProjectAwesome/XMLParserTest", "TestScene.xml");
+            sceneMgr.SceneGraph = testtree;
             DrawTree(testtree);
         }
 
