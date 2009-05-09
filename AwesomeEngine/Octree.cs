@@ -159,22 +159,22 @@ namespace AwesomeEngine
 
 
         //----------------------------Object Manipulation--------------------------------
-        public void addObject(Vector3 pos, ModelInfo obj)
+        public void addObject(ModelInfo obj)
         {
             
             //Add the object into the node
-            AddRecursiveObject(pos, obj, root);
+            AddRecursiveObject(obj, root);
         }
 
         //Recursively find lowest node and add the given object
-        public void AddRecursiveObject(Vector3 pos, ModelInfo obj, Node node)
+        public void AddRecursiveObject(ModelInfo obj, Node node)
         {
             if (node.HasChildren())
             {
                 foreach (Node n in node.Children)
                 {
                     if (n.intersectsWith(obj))
-                        AddRecursiveObject(pos, obj, n);
+                        AddRecursiveObject(obj, n);
                 }
             }
             else
