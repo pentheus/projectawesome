@@ -1,0 +1,11 @@
+C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\GameEditor.exe
+C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\GameEditor.pdb
+C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\obj\x86\Debug\GameEditor.exe
+C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\obj\x86\Debug\GameEditor.pdb
+C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\ShadowMap.xnb
+C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\DrawModel.xnb
+C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\AwesomeEngine.dll
+C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\AwesomeEngine.pdb
+C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Tank.xnb
