@@ -36,7 +36,7 @@ namespace XMLParserTest
             testtree = new Octree(54);
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            outfile = new FileInfo("C:/Documents and Settings/Alex/My Documents/Inf 125/ProjectAwesome/TestingOutput.txt");
+            outfile = new FileInfo("C:/Users/Jonathan Chuong/Documents/Visual Studio 2008/Projects/projectawesomeTestingOutput.txt");
             writer = outfile.CreateText();
             sceneMgr = new SceneManager(this);
         }

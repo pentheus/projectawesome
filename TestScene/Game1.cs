@@ -101,7 +101,7 @@ namespace TestScene
             foreach (ModelMesh mesh in newModel.Meshes)
                 foreach (ModelMeshPart meshPart in mesh.MeshParts)
                     meshPart.Effect = shadowMapEffect.Clone(graphics.GraphicsDevice);
-
+       
             return newModel;
         }
 

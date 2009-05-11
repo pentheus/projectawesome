@@ -11,7 +11,7 @@ namespace AwesomeEngine
 {
     public class Octree 
     {
-        public const int OBJECT_LIMIT = 8;
+        public const int OBJECT_LIMIT = 2;
 
         Node root;
         float treeSize;
@@ -180,11 +180,11 @@ namespace AwesomeEngine
             else
             {
                 node.DrawableObjects.Add(obj);
-                if(node.Children.Length > OBJECT_LIMIT)
+                if (node.DrawableObjects.Count > OBJECT_LIMIT)
                 {
                     SplitNode(node);
                     DistributeObjects(node);
-                }
+                } 
             }
         }
 
@@ -198,13 +198,15 @@ namespace AwesomeEngine
         {
             foreach (Node child in parent.Children)
             {
-                foreach (ModelInfo model in parent.DrawableObjects)
+                Stack<ModelInfo> tempStack = new Stack<ModelInfo>(parent.DrawableObjects);
+                while (tempStack.Count != 0) 
                 {
-                    if (child.intersectsWith(model))
+                    if (child.intersectsWith(tempStack.Peek()))
                     {
-                        child.DrawableObjects.Add(model);
-                        parent.DrawableObjects.Remove(model);
+                        child.DrawableObjects.Add(tempStack.Peek());
+                        parent.DrawableObjects.Remove(tempStack.Peek());
                     }
+                    tempStack.Pop();
                 }
             }
         }
