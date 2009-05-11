@@ -27,7 +27,10 @@ namespace OctreeTest
         SceneManager sceneMgr;
         Camera mainCamera;
         ModelInfo tank;
+        ModelInfo tank2;
+        ModelInfo tank3;
         Model tankModel;
+        XMLParser parser;
 
         public OctreeTest()
         {
@@ -47,13 +50,13 @@ namespace OctreeTest
             // TODO: Add your initialization logic here
             basicEffect = new BasicEffect(GraphicsDevice, null);
             mainCamera = new ThirdPersonCamera(new Vector3(0, 200, 200), Vector3.Zero, GraphicsDevice.Viewport.AspectRatio, 1f, 10000f);
-
-            sceneMgr.SceneGraph.SplitNode(sceneMgr.SceneGraph.Root);
-            sceneMgr.SceneGraph.SplitNode(sceneMgr.SceneGraph.Root.Children[0]);
-            sceneMgr.SceneGraph.SplitNode(sceneMgr.SceneGraph.Root.Children[1]);
-            sceneMgr.SceneGraph.SplitNode(sceneMgr.SceneGraph.Root.Children[2]);
-            sceneMgr.SceneGraph.SplitNode(sceneMgr.SceneGraph.Root.Children[6]);
-            sceneMgr.SceneGraph.SplitNode(sceneMgr.SceneGraph.Root.Children[7]);
+            parser = new XMLParser(this);
+            //sceneMgr.SceneGraph.SplitNode(sceneMgr.SceneGraph.Root);
+            //sceneMgr.SceneGraph.SplitNode(sceneMgr.SceneGraph.Root.Children[0]);
+            //sceneMgr.SceneGraph.SplitNode(sceneMgr.SceneGraph.Root.Children[1]);
+            //sceneMgr.SceneGraph.SplitNode(sceneMgr.SceneGraph.Root.Children[2]);
+            //sceneMgr.SceneGraph.SplitNode(sceneMgr.SceneGraph.Root.Children[6]);
+            //sceneMgr.SceneGraph.SplitNode(sceneMgr.SceneGraph.Root.Children[7]);
             base.Initialize();
         }
 
@@ -65,10 +68,20 @@ namespace OctreeTest
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            sceneMgr.MainCamera = mainCamera;
+            
             tankModel = Content.Load<Model>("Tank");
             tank = new ModelInfo(new Vector3(0f, 0f, 0f), Vector3.Zero, Vector3.One, tankModel, "Tank");
+            tank2 = new ModelInfo(new Vector3(-20f, 30f, 40f), Vector3.Zero, Vector3.One, tankModel, "Tank");
+            tank3 = new ModelInfo(new Vector3(40f, -30f, -30f), Vector3.Zero, Vector3.One, tankModel, "Tank");
             sceneMgr.SceneGraph.addObject(tank);
-            sceneMgr.MainCamera = mainCamera;
+            sceneMgr.SceneGraph.addObject(tank2);
+            sceneMgr.SceneGraph.addObject(tank3);
+            sceneMgr.SceneGraph.addGeometry(tank);
+            parser.SaveScene(sceneMgr.SceneGraph, "C:/Users/Jonathan Chuong/Documents/Visual Studio 2008/Projects/projectawesome", "shitsingiggles.xml");
+            sceneMgr.SceneGraph = null;
+            sceneMgr.SceneGraph = parser.ReadScene( "C:/Users/Jonathan Chuong/Documents/Visual Studio 2008/Projects/projectawesome", "shitsingiggles.xml");
             // TODO: use this.Content to load your game content here
         }
 

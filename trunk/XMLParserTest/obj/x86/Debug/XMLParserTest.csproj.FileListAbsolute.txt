@@ -14,3 +14,19 @@ C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\XMLParserTest
 C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\XMLParserTest\bin\x86\Debug\Content\testscene.xnb
 C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\XMLParserTest\bin\x86\Debug\Content\ShipDiffuse.xnb
 C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\XMLParserTest\bin\x86\Debug\Content\ShipDiffuse_0.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\bin\x86\Debug\Content\ShadowMap.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\bin\x86\Debug\Content\DrawModel.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\bin\x86\Debug\Content\Floor.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\bin\x86\Debug\Content\Ship.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\bin\x86\Debug\Content\Tank.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\bin\x86\Debug\Content\testscene.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\bin\x86\Debug\Content\ShipDiffuse.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\bin\x86\Debug\Content\ShipDiffuse_0.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\bin\x86\Debug\XMLParserTest.exe
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\bin\x86\Debug\XMLParserTest.pdb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\bin\x86\Debug\AwesomeEngine.dll
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\bin\x86\Debug\AwesomeEngine.pdb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\obj\x86\Debug\XMLParserTest.exe
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\obj\x86\Debug\XMLParserTest.pdb
