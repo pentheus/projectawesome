@@ -173,7 +173,7 @@ namespace AwesomeEngine
             {
                 foreach (Node n in node.Children)
                 {
-                    if (n.intersectsWith(obj))
+                    if (n.containsPos(obj.Position))
                         AddRecursiveObject(obj, n);
                 }
             }
@@ -182,7 +182,6 @@ namespace AwesomeEngine
                 node.DrawableObjects.Add(obj);
                 if (node.DrawableObjects.Count > OBJECT_LIMIT)
                 {
-                    SplitNode(node);
                     DistributeObjects(node);
                 } 
             }
@@ -196,18 +195,23 @@ namespace AwesomeEngine
         /// <param name="parent">The node that you want to distribute DrawableObjects from</param>
         public void DistributeObjects(Node parent)
         {
+            SplitNode(parent);
             foreach (Node child in parent.Children)
             {
                 Stack<ModelInfo> tempStack = new Stack<ModelInfo>(parent.DrawableObjects);
                 while (tempStack.Count != 0) 
                 {
-                    if (child.intersectsWith(tempStack.Peek()))
+                    if (child.containsPos(tempStack.Peek().Position))
                     {
                         child.DrawableObjects.Add(tempStack.Peek());
                         parent.DrawableObjects.Remove(tempStack.Peek());
                     }
+
                     tempStack.Pop();
                 }
+                if (child.DrawableObjects.Count > OBJECT_LIMIT)
+                    DistributeObjects(child);
+
             }
         }
 
