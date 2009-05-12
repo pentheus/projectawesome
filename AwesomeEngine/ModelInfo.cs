@@ -22,6 +22,7 @@ namespace AwesomeEngine
         Model model;
         Node node;
         String fileName;
+     
 
         public ModelInfo()
         {
