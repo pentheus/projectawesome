@@ -26,9 +26,9 @@ namespace OctreeTest
         BasicEffect basicEffect;
         SceneManager sceneMgr;
         Camera mainCamera;
-        ModelInfo tank, tank2,tank3,tank4,tank5,tank6;
+        ModelInfo Ship, Ship2,Ship3,Ship4,Ship5,Ship6;
  
-        Model tankModel;
+        Model ShipModel;
         XMLParser parser;
 
         public OctreeTest()
@@ -70,20 +70,20 @@ namespace OctreeTest
 
             sceneMgr.MainCamera = mainCamera;
             
-            tankModel = Content.Load<Model>("Tank");
-            tank = new ModelInfo(new Vector3(0f, 0f, 0f), Vector3.Zero, Vector3.One, tankModel, "Tank");
-            tank2 = new ModelInfo(new Vector3(-20f, 30f, 40f), Vector3.Zero, Vector3.One, tankModel, "Tank");
-            tank3 = new ModelInfo(new Vector3(40f, -30f, -30f), Vector3.Zero, Vector3.One, tankModel, "Tank");
-            tank4 = new ModelInfo(new Vector3(-35f, -21f, -30f), Vector3.Zero, Vector3.One, tankModel, "Tank");
-            tank5 = new ModelInfo(new Vector3(-35f, -20f, -30f), Vector3.Zero, Vector3.One, tankModel, "Tank");
-            tank6 = new ModelInfo(new Vector3(-35f, -24f, -30f), Vector3.Zero, Vector3.One, tankModel, "Tank");
-            sceneMgr.SceneGraph.addObject(tank);
-            sceneMgr.SceneGraph.addObject(tank2);
-            sceneMgr.SceneGraph.addObject(tank3);
-            sceneMgr.SceneGraph.addObject(tank4);
-            sceneMgr.SceneGraph.addObject(tank5);
-            sceneMgr.SceneGraph.addObject(tank6);
-            sceneMgr.SceneGraph.addGeometry(tank);
+            ShipModel = Content.Load<Model>("Ship");
+            Ship = new ModelInfo(new Vector3(0f, 0f, 0f), Vector3.Zero,new Vector3(0.01f), ShipModel, "Ship");
+            Ship2 = new ModelInfo(new Vector3(-20f, 30f, 40f), Vector3.Zero, new Vector3(0.01f), ShipModel, "Ship");
+            Ship3 = new ModelInfo(new Vector3(40f, -30f, -30f), Vector3.Zero, new Vector3(0.01f), ShipModel, "Ship");
+            Ship4 = new ModelInfo(new Vector3(-35f, -21f, -30f), Vector3.Zero, new Vector3(0.01f), ShipModel, "Ship");
+            Ship5 = new ModelInfo(new Vector3(-35f, -20f, -30f), Vector3.Zero, new Vector3(0.01f), ShipModel, "Ship");
+            Ship6 = new ModelInfo(new Vector3(-35f, -24f, -30f), Vector3.Zero, new Vector3(0.01f), ShipModel, "Ship");
+            sceneMgr.SceneGraph.addObject(Ship);
+            sceneMgr.SceneGraph.addObject(Ship2);
+            sceneMgr.SceneGraph.addObject(Ship3);
+            sceneMgr.SceneGraph.addObject(Ship4);
+            sceneMgr.SceneGraph.addObject(Ship5);
+            sceneMgr.SceneGraph.addObject(Ship6);
+            sceneMgr.SceneGraph.addGeometry(Ship);
             parser.SaveScene(sceneMgr.SceneGraph, "C:/Users/Jonathan/Documents/Visual Studio 2008/Projects/projectawesome", "shitsingiggles.xml");
             sceneMgr.SceneGraph = null;
             sceneMgr.SceneGraph = parser.ReadScene( "C:/Users/Jonathan/Documents/Visual Studio 2008/Projects/projectawesome", "shitsingiggles.xml");

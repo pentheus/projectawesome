@@ -11,7 +11,7 @@
       <Time>2009-05-11T15:40:07.581-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Floor_0.xml</Key>
-        <Value>2009-05-11T15:40:55.099-07:00</Value>
+        <Value>2009-05-12T20:58:26.828-07:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -24,7 +24,7 @@
       <Time>2009-05-11T15:40:07.587-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Ship_0.xml</Key>
-        <Value>2009-05-11T15:40:56.789-07:00</Value>
+        <Value>2009-05-12T20:58:28.392-07:00</Value>
       </Dependency>
       <Request>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\bin\x86\Debug\Content\ShipDiffuse_0.xnb</Request>
     </Item>
@@ -38,7 +38,7 @@
       <Time>2009-05-11T15:40:07.595-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Tank_0.xml</Key>
-        <Value>2009-05-11T15:40:57.934-07:00</Value>
+        <Value>2009-05-12T20:58:29.469-07:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -51,7 +51,7 @@
       <Time>2009-05-11T15:40:07.596-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\testscene_0.xml</Key>
-        <Value>2009-05-11T15:40:58.096-07:00</Value>
+        <Value>2009-05-12T20:58:29.606-07:00</Value>
       </Dependency>
     </Item>
     <Item>

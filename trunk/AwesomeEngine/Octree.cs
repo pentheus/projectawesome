@@ -169,21 +169,12 @@ namespace AwesomeEngine
         //Recursively find lowest node and add the given object
         public void AddRecursiveObject(ModelInfo obj, Node node)
         {
-            if (node.HasChildren())
-            {
-                foreach (Node n in node.Children)
-                {
-                    if (n.containsPos(obj.Position))
-                        AddRecursiveObject(obj, n);
-                }
-            }
-            else
+            if (node.BoundingBox.Contains(obj.BoundingSphere) == ContainmentType.Contains)
             {
                 node.DrawableObjects.Add(obj);
+
                 if (node.DrawableObjects.Count > OBJECT_LIMIT)
-                {
                     DistributeObjects(node);
-                } 
             }
         }
 
@@ -195,8 +186,10 @@ namespace AwesomeEngine
         /// <param name="parent">The node that you want to distribute DrawableObjects from</param>
         public void DistributeObjects(Node parent)
         {
-            SplitNode(parent);
-            foreach (Node child in parent.Children)
+            if(!parent.HasChildren())
+                SplitNode(parent);
+
+            /*foreach (Node child in parent.Children)
             {
                 Stack<ModelInfo> tempStack = new Stack<ModelInfo>(parent.DrawableObjects);
                 while (tempStack.Count != 0) 
@@ -212,6 +205,21 @@ namespace AwesomeEngine
                 if (child.DrawableObjects.Count > OBJECT_LIMIT)
                     DistributeObjects(child);
 
+            }*/
+
+            for (int i = parent.DrawableObjects.Count-1; i > 0; i--)
+            {
+                foreach (Node child in parent.Children)
+                {
+                    if(child.BoundingBox.Contains(parent.DrawableObjects[i].BoundingSphere) == ContainmentType.Contains)
+                    {
+                        child.DrawableObjects.Add(parent.DrawableObjects[i]);
+                        parent.DrawableObjects.Remove(parent.DrawableObjects[i]);
+                        if(child.DrawableObjects.Count > OBJECT_LIMIT)
+                            DistributeObjects(child);
+                        break;
+                    }
+                }
             }
         }
 
