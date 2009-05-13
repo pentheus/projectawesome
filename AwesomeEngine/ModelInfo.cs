@@ -22,7 +22,7 @@ namespace AwesomeEngine
         Model model;
         Node node;
         String fileName;
-     
+        BoundingSphere boundingSphere;
 
         public ModelInfo()
         {
@@ -35,6 +35,21 @@ namespace AwesomeEngine
             this.scale = scale;
             this.model = model;
             this.fileName = fileName;
+            CreateBoundingSphere(out boundingSphere);
+        }
+
+        public void CreateBoundingSphere(out BoundingSphere mergedSphere)
+        {
+            mergedSphere = new BoundingSphere();
+            foreach(ModelMesh mesh in Model.Meshes)
+            {
+                mergedSphere = BoundingSphere.CreateMerged(mesh.BoundingSphere, mergedSphere);
+            }
+        }
+
+        public BoundingSphere BoundingSphere
+        {
+            get{ return boundingSphere.Transform(WorldMatrix); } 
         }
 
         public Vector3 Position

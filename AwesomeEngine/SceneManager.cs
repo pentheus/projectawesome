@@ -29,7 +29,7 @@ namespace AwesomeEngine
         public SceneManager(Game game)
             : base(game)
         {
-            sceneGraph = new Octree(100f);
+            sceneGraph = new Octree(200f);
             this.game = game;
         }
 
@@ -75,16 +75,18 @@ namespace AwesomeEngine
         /// </summary>
         public void DrawScene(Node parent) 
         {
-            if (!parent.HasChildren())
-            {
-                DrawNode(parent);
-                return;
-            }
 
-            foreach (Node child in parent.Children)
+            DrawNode(parent);
+            if (parent.HasChildren())
             {
-                if(child.BoundingBox.Intersects(mainCamera.BoundingFrustum))
-                    DrawScene(child);
+                foreach (Node child in parent.Children)
+                {
+                    if (child.BoundingBox.Intersects(mainCamera.BoundingFrustum))
+                    {
+                        DrawNode(child);
+                        DrawScene(child);
+                    }
+                }
             }
         }
 
