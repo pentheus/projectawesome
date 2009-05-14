@@ -35,6 +35,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DrawModel.fx">
+      <Name>DrawModel</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+    </Compile>
     <Compile Include="Floor.fbx">
       <Name>Floor</Name>
       <Importer>FbxImporter</Importer>
@@ -74,4 +79,8 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
 </Project>
