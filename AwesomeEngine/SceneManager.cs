@@ -65,6 +65,7 @@ namespace AwesomeEngine
 
         public override void Draw(GameTime gameTime)
         {
+            DrawLitModel(sceneGraph.getGeometry());
             DrawScene(sceneGraph.Root);
 
             base.Draw(gameTime);
@@ -75,7 +76,7 @@ namespace AwesomeEngine
         /// </summary>
         public void DrawScene(Node parent) 
         {
-
+            
             DrawNode(parent);
             if (parent.HasChildren())
             {

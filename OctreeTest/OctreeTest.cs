@@ -30,6 +30,9 @@ namespace OctreeTest
  
         Model ShipModel;
         XMLParser parser;
+        float theta = 0f;
+        float phi = 10f;
+        float radius = 100f;
 
         public OctreeTest()
         {
@@ -75,8 +78,8 @@ namespace OctreeTest
             Ship2 = new ModelInfo(new Vector3(-20f, 30f, 40f), Vector3.Zero, new Vector3(0.01f), ShipModel, "Ship");
             Ship3 = new ModelInfo(new Vector3(40f, -30f, -30f), Vector3.Zero, new Vector3(0.01f), ShipModel, "Ship");
             Ship4 = new ModelInfo(new Vector3(-35f, -21f, -30f), Vector3.Zero, new Vector3(0.01f), ShipModel, "Ship");
-            Ship5 = new ModelInfo(new Vector3(-35f, -20f, -30f), Vector3.Zero, new Vector3(0.01f), ShipModel, "Ship");
-            Ship6 = new ModelInfo(new Vector3(-35f, -24f, -30f), Vector3.Zero, new Vector3(0.01f), ShipModel, "Ship");
+            Ship5 = new ModelInfo(new Vector3(-35f, -21f, -30f), Vector3.Zero, new Vector3(0.01f), ShipModel, "Ship");
+            Ship6 = new ModelInfo(new Vector3(-35f, -21f, -30f), Vector3.Zero, new Vector3(0.01f), ShipModel, "Ship");
             sceneMgr.SceneGraph.addObject(Ship);
             sceneMgr.SceneGraph.addObject(Ship2);
             sceneMgr.SceneGraph.addObject(Ship3);
@@ -107,15 +110,21 @@ namespace OctreeTest
         protected override void Update(GameTime gameTime)
         {
             KeyboardState k = Keyboard.GetState();
-
-            if(k.IsKeyDown(Keys.W))
-                mainCamera.Pos = mainCamera.Pos+(new Vector3(0,0,1));
+            //Spherical Camera controls
+            if (k.IsKeyDown(Keys.W))
+                phi += 1f;
             if (k.IsKeyDown(Keys.S))
-                mainCamera.Pos = mainCamera.Pos + (new Vector3(0, 0, -1));
+                phi -= 1f;
             if (k.IsKeyDown(Keys.A))
-                mainCamera.Pos = mainCamera.Pos + (new Vector3(-1, 0, 0));
+                theta -= 1f;
             if (k.IsKeyDown(Keys.D))
-                mainCamera.Pos = mainCamera.Pos + (new Vector3(1, 0, 0));
+                theta += 1f;
+ 
+            float x = (float)(radius * Math.Sin(MathHelper.ToRadians(theta)) * Math.Sin(MathHelper.ToRadians(phi))); ;
+            float y = (float)(radius * Math.Cos(MathHelper.ToRadians(phi)));
+            float z = (float)(radius * Math.Cos(MathHelper.ToRadians(theta)) * Math.Sin(MathHelper.ToRadians(phi)));
+
+            mainCamera.Pos = (new Vector3(x,y,z));
             base.Update(gameTime);
         }
 

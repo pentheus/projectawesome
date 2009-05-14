@@ -30,9 +30,6 @@ C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\XM
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\obj\x86\Debug\XMLParserTest.exe
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\obj\x86\Debug\XMLParserTest.pdb
-C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
-C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\obj\x86\Debug\XMLParserTest.exe
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\bin\x86\Debug\Content\ShadowMap.xnb
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\bin\x86\Debug\Content\DrawModel.xnb
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\bin\x86\Debug\Content\Floor.xnb
@@ -45,4 +42,7 @@ C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\XMLParser
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\bin\x86\Debug\XMLParserTest.pdb
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\bin\x86\Debug\AwesomeEngine.dll
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\bin\x86\Debug\AwesomeEngine.pdb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\obj\x86\Debug\XMLParserTest.exe
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\obj\x86\Debug\XMLParserTest.pdb
