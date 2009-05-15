@@ -7,5 +7,6 @@ namespace AwesomeEngine
 {
     abstract class ScriptClass
     {
+
     }
 }
