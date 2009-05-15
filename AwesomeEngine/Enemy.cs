@@ -5,18 +5,14 @@ using System.Text;
 
 namespace AwesomeEngine
 {
-    class Enemy
+    class Enemy:ScriptClass
     {
-        String type;
+        ModelInfo model;
 
-        public Enemy(String enemytype)
+        public Enemy(types settotype, ModelInfo model)
         {
-            type = enemytype;
-        }
-
-        public string Type
-        {
-            get { return type; }
+            this.thisType = settotype;
+            this.model = model;
         }
 
         public void runScript(ScriptDelegate function)
