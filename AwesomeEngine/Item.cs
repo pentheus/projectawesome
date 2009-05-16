@@ -5,18 +5,18 @@ using System.Text;
 
 namespace AwesomeEngine
 {
-    class Item:ScriptClass
+    class Item
     {
         ModelInfo model;
 
-        public Item(types settotype, ModelInfo model)
+        public Item(ModelInfo model)
         {
-            this.thisType = settotype;
             this.model = model;
         }
 
-        public void runScript(ScriptDelegate function)
+        public void runScript()
         {
 
         }
+    }
 }
