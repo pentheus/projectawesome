@@ -159,7 +159,7 @@ namespace AwesomeEngine
 
 
         //----------------------------Object Manipulation--------------------------------
-        public void addObject(ModelInfo obj)
+        public void AddObject(ModelInfo obj)
         {
             
             //Add the object into the node
@@ -177,6 +177,28 @@ namespace AwesomeEngine
                     DistributeObjects(node);
             }
         }
+
+        public void AddItem(Item item)
+        {
+            AddRecursiveItem(item, root);
+        }
+
+        public void AddRecursiveItem(Item item, Node node)
+        {
+            if (node.HasChildren())
+            {
+                foreach (Node n in node.Children)
+                {
+                    if (node.BoundingBox.Contains(item.Model.BoundingSphere) == ContainmentType.Contains)
+                    {
+                        AddRecursiveItem(item, n);
+                        return;
+                    }
+                }
+            }
+            node.Items.Add(item);
+        }
+
 
         /// <summary>
         /// When the number of DrawableObjects exceed a certain threshold in
