@@ -242,6 +242,44 @@ namespace AwesomeEngine
             return objects;
         }
 
+        //Return a list of the enemies contained in the tree
+        public List<Enemy> GetEnemies()
+        {
+            List<Enemy> enemies = new List<Enemy>();
+            recurseEnemies(enemies, root);
+            return enemies;
+        }
+
+        public List<Enemy> recurseEnemies(List<Enemy> enemies, Node node)
+        {
+            enemies.AddRange(node.Enemies);
+            if (node.HasChildren())
+            {
+                foreach (Node n in node.Children)
+                    recurseEnemies(enemies, n);
+            }
+            return enemies;
+        }
+
+        //Return a list of the items contained in the tree
+        public List<Item> GetItems()
+        {
+            List<Item> items = new List<Item>();
+            recurseItems(items, root);
+            return items;
+        }
+
+        public List<Item> recurseItems(List<Item> items, Node node)
+        {
+            items.AddRange(node.Items);
+            if (node.HasChildren())
+            {
+                foreach (Node n in node.Children)
+                    recurseItems(items, n);
+            }
+            return items;
+        }
+
         //Add world geometry to the root node of the octree
         public void addGeometry(ModelInfo geometry)
         {

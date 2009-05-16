@@ -14,6 +14,8 @@ namespace AwesomeEngine
         BoundingBox boundingBox;
         Node[] children;
         List<ModelInfo> objects;
+        List<Enemy> enemies;
+        List<Item> items;
         ModelInfo worldgeometry; //null in all nodes except root
         float size;
         Vector3 min;
@@ -33,12 +35,24 @@ namespace AwesomeEngine
             this.center = center;
             children = new Node[8];
             objects = new List<ModelInfo>();
+            enemies = new List<Enemy>();
+            items = new List<Item>();
             boundingBox = new BoundingBox(min, max);
         }
 
         public List<ModelInfo> DrawableObjects
         {
             get { return objects; }
+        }
+
+        public List<Enemy> Enemies
+        {
+            get { return enemies; }
+        }
+
+        public List<Item> Items
+        {
+            get { return items; }
         }
 
         public Node[] Children

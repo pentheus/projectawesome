@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Xna;
+using Microsoft.Xna.Framework;
 
 namespace AwesomeEngine
 {
-    class Enemy
+    class Enemy:GameComponent
     {
         enum state { Idle, Seeking, Attacking, Damaged };
 
@@ -13,14 +15,25 @@ namespace AwesomeEngine
         SceneManager scene;
         state currentstate;
 
-        public Enemy(SceneManager scene, ModelInfo model)
+        public Enemy(Game game, SceneManager scene, ModelInfo model): base(game)
         {
             this.scene = scene;
             this.model = model;
             currentstate = state.Idle;
         }
 
+        public ModelInfo Model
+        {
+            get { return model; }
+            set { model = value; }
+        }
+
         public void Act()
+        {
+
+        }
+
+        public void MoveTowards(Vector3 pos)
         {
 
         }
