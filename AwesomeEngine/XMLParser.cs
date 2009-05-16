@@ -59,7 +59,6 @@ namespace AwesomeEngine
         {
             //Generate a list of the objects to be placed in the scene
             XmlNodeList models = scenedoc.GetElementsByTagName("Object");
-            List<ModelInfo> objects = new List<ModelInfo>();
             Hashtable modelsloaded = new Hashtable();
             //Create a ModelInfo object for each object, then add it to the octree
             foreach (XmlNode node in models)
@@ -86,18 +85,16 @@ namespace AwesomeEngine
                     if (modelsloaded.Contains(modelname))
                     {
                         objmodel = (Model)modelsloaded[modelname];
-                        Console.WriteLine("model exists");
                     }
                     else
                     {
                         objmodel = game.Content.Load<Model>(modelname);
                         modelsloaded.Add(modelname, objmodel);
-                        Console.WriteLine("new model");
                     }
 
                     //Create the ModelInfo object
                     ModelInfo obj = new ModelInfo(objvect, objrot, objscale, objmodel, modelname);
-                    scene.addObject(obj);
+                    scene.AddObject(obj);
                 }
                 catch (FormatException)
                 {
@@ -106,10 +103,67 @@ namespace AwesomeEngine
                 }
             }
         }
+
+        public void ReadItems(XmlDocument scenedoc, Octree scene)
+        {
+            //Generate a list of the objects to be placed in the scene
+            XmlNodeList items = scenedoc.GetElementsByTagName("Item");
+            Hashtable modelsloaded = new Hashtable();
+            //Create a ModelInfo object for each object, then add it to the octree
+            foreach (XmlNode node in items)
+            {
+                try
+                {
+                    float objx = (float)Convert.ToDouble(node.SelectSingleNode("posx").InnerText);
+                    float objy = (float)Convert.ToDouble(node.SelectSingleNode("posy").InnerText);
+                    float objz = (float)Convert.ToDouble(node.SelectSingleNode("posz").InnerText);
+                    Vector3 objvect = new Vector3(objx, objy, objz);
+
+                    float objrotx = (float)Convert.ToDouble(node.SelectSingleNode("rotx").InnerText);
+                    float objroty = (float)Convert.ToDouble(node.SelectSingleNode("roty").InnerText);
+                    float objrotz = (float)Convert.ToDouble(node.SelectSingleNode("rotz").InnerText);
+                    Vector3 objrot = new Vector3(objrotx, objroty, objrotz);
+
+                    float objscalex = (float)Convert.ToDouble(node.SelectSingleNode("scalex").InnerText);
+                    float objscaley = (float)Convert.ToDouble(node.SelectSingleNode("scaley").InnerText);
+                    float objscalez = (float)Convert.ToDouble(node.SelectSingleNode("scalez").InnerText);
+                    Vector3 objscale = new Vector3(objscalex, objscaley, objscalez);
+
+                    String modelname = node.SelectSingleNode("model").InnerText;
+                    Model objmodel;
+                    if (modelsloaded.Contains(modelname))
+                    {
+                        objmodel = (Model)modelsloaded[modelname];
+                    }
+                    else
+                    {
+                        objmodel = game.Content.Load<Model>(modelname);
+                        modelsloaded.Add(modelname, objmodel);
+                    }
+
+                    //Create the ModelInfo object
+                    ModelInfo obj = new ModelInfo(objvect, objrot, objscale, objmodel, modelname);
+                    
+                    //Create the Item object
+                    Item item;
+                    //Determine the type of item from what was listed
+                    item = new Item(game, obj);
+
+                    scene.AddItem(item);
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("XML not properly formatted: Value in object with model "
+                        + node.SelectSingleNode("model").InnerText);
+                }
+            }
+        }
+
         public Boolean SaveScene(Octree scene, string pathname, string filename)
         {
             ModelInfo savegeo = scene.getGeometry();
             List<ModelInfo> objects = scene.getDrawableObjects();
+            List<Item> items = scene.GetItems();
             XmlTextWriter scenesaver = new XmlTextWriter(pathname + filename, null);
             scenesaver.Formatting = Formatting.Indented;
             scenesaver.WriteStartDocument();
@@ -123,6 +177,9 @@ namespace AwesomeEngine
             SaveGeometry(scenesaver, savegeo);
             //Write objects to the file
             SaveObjects(scenesaver, objects);
+            //Write items to the file
+            SaveItems(scenesaver, items);
+
             scenesaver.WriteEndDocument();
             scenesaver.Flush();
             scenesaver.Close();
@@ -188,8 +245,8 @@ namespace AwesomeEngine
 
                 scenesaver.WriteStartElement("model");
                 scenesaver.WriteString(obj.FileName);
-
                 scenesaver.WriteEndElement();
+
                 scenesaver.WriteEndElement();
             }
         }
@@ -197,12 +254,52 @@ namespace AwesomeEngine
         private void SaveItems(XmlTextWriter scenesaver, List<Item> items)
         {
             ModelInfo obj;
-            foreach(Item item in items)
+            foreach (Item item in items)
             {
-                //Save what type of item it is based on the exact class type
-
                 //Store the item's ModelInfo information
-                obj = item.m
+                obj = item.Model;
+
+                scenesaver.WriteStartElement("Item");
+
+                scenesaver.WriteStartElement("posx");
+                scenesaver.WriteString(obj.Position.X.ToString());
+                scenesaver.WriteEndElement();
+                scenesaver.WriteStartElement("posy");
+                scenesaver.WriteString(obj.Position.Y.ToString());
+                scenesaver.WriteEndElement();
+                scenesaver.WriteStartElement("posz");
+                scenesaver.WriteString(obj.Position.Z.ToString());
+                scenesaver.WriteEndElement();
+
+                scenesaver.WriteStartElement("rotx");
+                scenesaver.WriteString(obj.Rotation.X.ToString());
+                scenesaver.WriteEndElement();
+                scenesaver.WriteStartElement("roty");
+                scenesaver.WriteString(obj.Rotation.Y.ToString());
+                scenesaver.WriteEndElement();
+                scenesaver.WriteStartElement("rotz");
+                scenesaver.WriteString(obj.Rotation.Z.ToString());
+                scenesaver.WriteEndElement();
+
+                scenesaver.WriteStartElement("scalex");
+                scenesaver.WriteString(obj.Scale.X.ToString());
+                scenesaver.WriteEndElement();
+                scenesaver.WriteStartElement("scaley");
+                scenesaver.WriteString(obj.Scale.Y.ToString());
+                scenesaver.WriteEndElement();
+                scenesaver.WriteStartElement("scalez");
+                scenesaver.WriteString(obj.Scale.Z.ToString());
+                scenesaver.WriteEndElement();
+
+                scenesaver.WriteStartElement("model");
+                scenesaver.WriteString(obj.FileName);
+                scenesaver.WriteEndElement();
+
+                //Save what type of item it is based on the exact class type
+                
+
+                scenesaver.WriteEndElement();
+            }
         }
     }
 }
