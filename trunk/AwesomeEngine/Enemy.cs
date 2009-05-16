@@ -5,17 +5,22 @@ using System.Text;
 
 namespace AwesomeEngine
 {
-    class Enemy:ScriptClass
+    class Enemy
     {
-        ModelInfo model;
+        enum state { Idle, Seeking, Attacking, Damaged };
 
-        public Enemy(types settotype, ModelInfo model)
+        ModelInfo model;
+        SceneManager scene;
+        state currentstate;
+
+        public Enemy(SceneManager scene, ModelInfo model)
         {
-            this.thisType = settotype;
+            this.scene = scene;
             this.model = model;
+            currentstate = state.Idle;
         }
 
-        public void runScript(ScriptDelegate function)
+        public void Act()
         {
 
         }
