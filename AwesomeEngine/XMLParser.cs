@@ -193,5 +193,16 @@ namespace AwesomeEngine
                 scenesaver.WriteEndElement();
             }
         }
+
+        private void SaveItems(XmlTextWriter scenesaver, List<Item> items)
+        {
+            ModelInfo obj;
+            foreach(Item item in items)
+            {
+                //Save what type of item it is based on the exact class type
+
+                //Store the item's ModelInfo information
+                obj = item.m
+        }
     }
 }
