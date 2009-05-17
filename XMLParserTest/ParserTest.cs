@@ -111,9 +111,9 @@ namespace XMLParserTest
         public void BuildTree()
         {
                 testtree.addGeometry(new ModelInfo(new Vector3(0), new Vector3(0), new Vector3(0), Content.Load<Model>("Floor"), "Floor"));
-                testtree.addObject(new ModelInfo(new Vector3(2), new Vector3(0), new Vector3(0), Content.Load<Model>("Tank"), "Tank"));
-                testtree.addObject(new ModelInfo(new Vector3(5), new Vector3(0), new Vector3(0), Content.Load<Model>("Floor"), "Floor"));
-                testtree.addObject(new ModelInfo(new Vector3(8), new Vector3(0), new Vector3(0), Content.Load<Model>("Tank"), "Tank"));
+                testtree.AddObject(new ModelInfo(new Vector3(2), new Vector3(0), new Vector3(0), Content.Load<Model>("Tank"), "Tank"));
+                testtree.AddObject(new ModelInfo(new Vector3(5), new Vector3(0), new Vector3(0), Content.Load<Model>("Floor"), "Floor"));
+                testtree.AddObject(new ModelInfo(new Vector3(8), new Vector3(0), new Vector3(0), Content.Load<Model>("Tank"), "Tank"));
         }
 
         public void SaveScene()

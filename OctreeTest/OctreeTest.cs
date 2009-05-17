@@ -80,12 +80,12 @@ namespace OctreeTest
             Ship4 = new ModelInfo(new Vector3(-35f, -21f, -30f), Vector3.Zero, new Vector3(0.01f), ShipModel, "Ship");
             Ship5 = new ModelInfo(new Vector3(-35f, -21f, -30f), Vector3.Zero, new Vector3(0.01f), ShipModel, "Ship");
             Ship6 = new ModelInfo(new Vector3(-35f, -21f, -30f), Vector3.Zero, new Vector3(0.01f), ShipModel, "Ship");
-            sceneMgr.SceneGraph.addObject(Ship);
-            sceneMgr.SceneGraph.addObject(Ship2);
-            sceneMgr.SceneGraph.addObject(Ship3);
-            sceneMgr.SceneGraph.addObject(Ship4);
-            sceneMgr.SceneGraph.addObject(Ship5);
-            sceneMgr.SceneGraph.addObject(Ship6);
+            sceneMgr.SceneGraph.AddObject(Ship);
+            sceneMgr.SceneGraph.AddObject(Ship2);
+            sceneMgr.SceneGraph.AddObject(Ship3);
+            sceneMgr.SceneGraph.AddObject(Ship4);
+            sceneMgr.SceneGraph.AddObject(Ship5);
+            sceneMgr.SceneGraph.AddObject(Ship6);
             sceneMgr.SceneGraph.addGeometry(Ship);
             parser.SaveScene(sceneMgr.SceneGraph, "C:/Users/Jonathan/Documents/Visual Studio 2008/Projects/projectawesome", "shitsingiggles.xml");
             sceneMgr.SceneGraph = null;
