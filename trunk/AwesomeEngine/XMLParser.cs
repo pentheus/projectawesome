@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 using AwesomeEngine;
+using AwesomeEngine.Items;
 using System.Collections;
 
 namespace AwesomeEngine
@@ -146,8 +147,24 @@ namespace AwesomeEngine
                     
                     //Create the Item object
                     Item item;
+                    
                     //Determine the type of item from what was listed
-                    item = new Item(game, obj);
+                    String itemtype = Convert.ToString(node.SelectSingleNode("itemtype").InnerText);
+                    switch (itemtype)
+                    {
+                        case "BatteryItem":
+                            item = new BatteryItem(game, obj);
+                            break;
+                        case "FuseItem":
+                            item = new FuseItem(game, obj);
+                            break;
+                        case "GlowStickItem":
+                            item = new GlowStickItem(game, obj);
+                            break;
+                        default:
+                            item = new Item(game, obj);
+                            break;
+                    }
 
                     scene.AddItem(item);
                 }
@@ -296,7 +313,12 @@ namespace AwesomeEngine
                 scenesaver.WriteEndElement();
 
                 //Save what type of item it is based on the exact class type
-                
+                Type itemtype = item.GetType();
+                scenesaver.WriteStartElement("itemtype");
+                scenesaver.WriteString(item.GetType().ToString());
+                scenesaver.WriteEndElement();
+
+
 
                 scenesaver.WriteEndElement();
             }
