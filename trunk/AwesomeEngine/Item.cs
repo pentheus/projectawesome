@@ -10,6 +10,7 @@ namespace AwesomeEngine
     class Item:GameComponent
     {
         ModelInfo model;
+        bool movable, picked; // movable means that an item can be moved/picked up; picked means that the item has been picked up
 
         public Item(Game game, ModelInfo model):base(game)
         {
@@ -22,9 +23,14 @@ namespace AwesomeEngine
             set { model = value; }
         }
 
+        public void setMovable(bool m)
+        {
+            movable = m;
+        }
+
         public void runScript()
         {
-
+            //if bounding box of item intersects bounding box of character, pick up/move if movable is true
         }
     }
 }
