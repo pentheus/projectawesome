@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AwesomeEngine.Enemies
 {
-    class FirstBossEnemy
+    public class FirstBossEnemy
     {
 
     }

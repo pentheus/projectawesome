@@ -43,6 +43,7 @@ namespace GameEditor
         /// </summary>
         protected override void Initialize()
         {
+            IsMouseVisible = true;
             // TODO: Add your initialization logic here
 
             base.Initialize();
@@ -103,7 +104,7 @@ namespace GameEditor
             if (Keyboard.GetState().IsKeyDown(Keys.X))
                 rot += 0.01f;
 
-            //cameraViewMatrix = Matrix.CreateTranslation(new Vector3(xMatrix, yMatrix, zMatrix)) * Matrix.CreateRotationX(rot);
+            cameraViewMatrix = Matrix.CreateTranslation(new Vector3(xMatrix, yMatrix, zMatrix)) * Matrix.CreateRotationX(rot);
             base.Update(gameTime);
         }
 

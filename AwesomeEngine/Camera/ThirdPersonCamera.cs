@@ -57,5 +57,11 @@ namespace AwesomeEngine.Camera
                 return projection;
             }
         }
+
+        public Vector3 LookAt
+        {
+            get { return lookAt; }
+            set { lookAt = value; }
+        }
     }
 }

@@ -27,3 +27,18 @@ C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\Te
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\obj\x86\Debug\TestScene.exe
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\obj\x86\Debug\TestScene.pdb
+C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\Content\ShadowMap.xnb
+C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\Content\DrawModel.xnb
+C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\Content\ShipDiffuse.xnb
+C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\Content\Ship.xnb
+C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\Content\Floor.xnb
+C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\Content\Tank.xnb
+C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\Content\ShipDiffuse_0.xnb
+C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\TestScene.exe
+C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\TestScene.pdb
+C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\AwesomeEngine.dll
+C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\bin\x86\Debug\AwesomeEngine.pdb
+C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\obj\x86\Debug\TestScene.exe
+C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\TestScene\obj\x86\Debug\TestScene.pdb
