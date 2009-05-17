@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>Floor.fbx</Source>
+      <Name>Floor</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\OctreeTest\bin\x86\Debug\Content\Floor.xnb</Output>
+      <Time>2009-05-13T22:28:50.8-07:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Floor_0.xml</Key>
+        <Value>2009-05-16T14:35:04.085-07:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Ship.fbx</Source>
+      <Name>Ship</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\OctreeTest\bin\x86\Debug\Content\Ship.xnb</Output>
+      <Time>2009-05-13T22:28:51.797-07:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Ship_0.xml</Key>
+        <Value>2009-05-16T14:35:06.059-07:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Tank.fbx</Source>
+      <Name>Tank</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\OctreeTest\bin\x86\Debug\Content\Tank.xnb</Output>
+      <Time>2009-05-13T22:28:30.956-07:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Tank_0.xml</Key>
+        <Value>2009-05-16T14:35:08.135-07:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>testscene.fbx</Source>
+      <Name>testscene</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\OctreeTest\bin\x86\Debug\Content\testscene.xnb</Output>
+      <Time>2009-05-13T22:28:39.082-07:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\testscene_0.xml</Key>
+        <Value>2009-05-16T14:35:10.586-07:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Floor.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Floor_0.xml</Output>
+      <Time>2009-05-13T22:28:50.8-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Ship.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Ship_0.xml</Output>
+      <Time>2009-05-13T22:28:51.797-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Tank.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Tank_0.xml</Output>
+      <Time>2009-05-13T22:28:30.956-07:00</Time>
+    </Item>
+    <Item>
+      <Source>testscene.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\testscene_0.xml</Output>
+      <Time>2009-05-13T22:28:39.082-07:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <TargetPlatform>Windows</TargetPlatform>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\OctreeTest\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\OctreeTest\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\OctreeTest\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\OctreeTest\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2008-10-10T17:42:32-07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2008-10-10T17:43:28-07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2008-10-10T17:43:18-07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2008-10-10T17:48:18-07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2008-10-10T17:48:50-07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.0.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2009-04-07T21:17:49.095-07:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>
