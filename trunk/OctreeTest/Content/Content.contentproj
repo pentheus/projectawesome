@@ -35,30 +35,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DrawModel.fx">
-      <Name>DrawModel</Name>
-      <Importer>EffectImporter</Importer>
-      <Processor>EffectProcessor</Processor>
-    </Compile>
     <Compile Include="Floor.fbx">
       <Name>Floor</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="ShadowMap.fx">
-      <Name>ShadowMap</Name>
-      <Importer>EffectImporter</Importer>
-      <Processor>EffectProcessor</Processor>
-    </Compile>
     <Compile Include="Ship.fbx">
       <Name>Ship</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
-    </Compile>
-    <Compile Include="ShipDiffuse.tga">
-      <Name>ShipDiffuse</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="Tank.fbx">
       <Name>Tank</Name>

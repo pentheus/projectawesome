@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 
 namespace AwesomeEngine
 {
-    class Enemy:GameComponent
+    public class Enemy:GameComponent
     {
         enum state { Idle, Seeking, Attacking, Damaged };
 

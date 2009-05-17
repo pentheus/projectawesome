@@ -87,9 +87,9 @@ namespace OctreeTest
             sceneMgr.SceneGraph.AddObject(Ship5);
             sceneMgr.SceneGraph.AddObject(Ship6);
             sceneMgr.SceneGraph.addGeometry(Ship);
-            parser.SaveScene(sceneMgr.SceneGraph, "C:/Users/Jonathan/Documents/Visual Studio 2008/Projects/projectawesome", "shitsingiggles.xml");
+            parser.SaveScene(sceneMgr.SceneGraph, "C:/Users/Spike/Documents/Visual Studio 2008/Projects/projectawesome", "shitsingiggles.xml");
             sceneMgr.SceneGraph = null;
-            sceneMgr.SceneGraph = parser.ReadScene( "C:/Users/Jonathan/Documents/Visual Studio 2008/Projects/projectawesome", "shitsingiggles.xml");
+            sceneMgr.SceneGraph = parser.ReadScene( "C:/Users/Spike/Documents/Visual Studio 2008/Projects/projectawesome", "shitsingiggles.xml");
             // TODO: use this.Content to load your game content here
         }
 

@@ -85,9 +85,14 @@
     <Compile Include="Camera\Camera.cs" />
     <Compile Include="Camera\OrthoCamera.cs" />
     <Compile Include="Camera\ThirdPersonCamera.cs" />
-    <Compile Include="Item.cs" />
-    <Compile Include="Enemy.cs" />
+    <Compile Include="Enemies\Enemy.cs" />
+    <Compile Include="Enemies\FirstBossEnemy.cs" />
+    <Compile Include="Enemies\ShadowEnemy.cs" />
     <Compile Include="FullScreenQuad.cs" />
+    <Compile Include="Items\BatteryItem.cs" />
+    <Compile Include="Items\FuseItem.cs" />
+    <Compile Include="Items\GlowStickItem.cs" />
+    <Compile Include="Items\Item.cs" />
     <Compile Include="Light.cs" />
     <Compile Include="ModelInfo.cs" />
     <Compile Include="Node.cs" />
@@ -130,6 +135,20 @@
       <ProductName>Microsoft XNA Framework Redistributable 3.0</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Enemies\.svn\all-wcprops" />
+    <None Include="Enemies\.svn\entries" />
+    <None Include="Enemies\.svn\text-base\Enemy.cs.svn-base" />
+    <None Include="Enemies\.svn\text-base\FirstBossEnemy.cs.svn-base" />
+    <None Include="Enemies\.svn\text-base\ShadowEnemy.cs.svn-base" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Enemies\.svn\prop-base\" />
+    <Folder Include="Enemies\.svn\props\" />
+    <Folder Include="Enemies\.svn\tmp\prop-base\" />
+    <Folder Include="Enemies\.svn\tmp\props\" />
+    <Folder Include="Enemies\.svn\tmp\text-base\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />

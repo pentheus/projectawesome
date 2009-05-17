@@ -3,7 +3,7 @@
   <Asset Type="Graphics:MeshContent">
     <Name>tank_geo</Name>
     <Identity>
-      <SourceFilename>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\Content\Tank.fbx</SourceFilename>
+      <SourceFilename>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\Content\Tank.fbx</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <Transform>0.01 0 0 0 0 0.01 0 0 0 0 0.01 0 0 0 0 1</Transform>
@@ -236,7 +236,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>Scene_Root_ncl1_2</Name>
       <Identity>
-        <SourceFilename>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\Content\Tank.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\Content\Tank.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -250,7 +250,7 @@
     <Resource ID="#Resource2" Type="Graphics:BasicMaterialContent">
       <Name>Scene_Root_ncl1_4</Name>
       <Identity>
-        <SourceFilename>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\Content\Tank.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\Content\Tank.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -264,7 +264,7 @@
     <Resource ID="#Resource3" Type="Graphics:BasicMaterialContent">
       <Name>Scene_Root_ncl1_3</Name>
       <Identity>
-        <SourceFilename>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\Content\Tank.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\Content\Tank.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -278,7 +278,7 @@
     <Resource ID="#Resource4" Type="Graphics:BasicMaterialContent">
       <Name>Scene_Root_ncl1_1</Name>
       <Identity>
-        <SourceFilename>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\Content\Tank.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\Content\Tank.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -292,7 +292,7 @@
     <Resource ID="#Resource5" Type="Graphics:BasicMaterialContent">
       <Name>Scene_Root_ncl1_6</Name>
       <Identity>
-        <SourceFilename>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\Content\Tank.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\Content\Tank.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -306,7 +306,7 @@
     <Resource ID="#Resource6" Type="Graphics:BasicMaterialContent">
       <Name>Scene_Root_ncl1_8</Name>
       <Identity>
-        <SourceFilename>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\Content\Tank.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\Content\Tank.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -320,7 +320,7 @@
     <Resource ID="#Resource7" Type="Graphics:BasicMaterialContent">
       <Name>Scene_Root_ncl1_7</Name>
       <Identity>
-        <SourceFilename>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\Content\Tank.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\Content\Tank.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -334,7 +334,7 @@
     <Resource ID="#Resource8" Type="Graphics:BasicMaterialContent">
       <Name>Scene_Root_ncl1_5</Name>
       <Identity>
-        <SourceFilename>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\Content\Tank.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\Content\Tank.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -348,7 +348,7 @@
     <Resource ID="#Resource9" Type="Graphics:BasicMaterialContent">
       <Name>Scene_Root_ncl1_10</Name>
       <Identity>
-        <SourceFilename>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\Content\Tank.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\Content\Tank.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -362,7 +362,7 @@
     <Resource ID="#Resource10" Type="Graphics:BasicMaterialContent">
       <Name>Scene_Root_ncl1_11</Name>
       <Identity>
-        <SourceFilename>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\Content\Tank.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\Content\Tank.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -376,7 +376,7 @@
     <Resource ID="#Resource11" Type="Graphics:BasicMaterialContent">
       <Name>Scene_Root_ncl1_9</Name>
       <Identity>
-        <SourceFilename>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\Content\Tank.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\Content\Tank.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -390,7 +390,7 @@
     <Resource ID="#Resource12" Type="Graphics:BasicMaterialContent">
       <Name>Scene_Root</Name>
       <Identity>
-        <SourceFilename>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\Content\Tank.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\Content\Tank.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
