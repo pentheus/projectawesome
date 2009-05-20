@@ -6,3 +6,11 @@ C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\AwesomeEngin
 C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\AwesomeEngine\bin\x86\Debug\AwesomeEngine.pdb
 C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\AwesomeEngine\obj\x86\Debug\AwesomeEngine.dll
 C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\AwesomeEngine\obj\x86\Debug\AwesomeEngine.pdb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\AwesomeEngine\bin\x86\Debug\Content\ShadowMap.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\AwesomeEngine\bin\x86\Debug\Content\DrawModel.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\AwesomeEngine\bin\x86\Debug\AwesomeEngine.dll
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\AwesomeEngine\bin\x86\Debug\AwesomeEngine.pdb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\AwesomeEngine\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\AwesomeEngine\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\AwesomeEngine\obj\x86\Debug\AwesomeEngine.dll
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\AwesomeEngine\obj\x86\Debug\AwesomeEngine.pdb
