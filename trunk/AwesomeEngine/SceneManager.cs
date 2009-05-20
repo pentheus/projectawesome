@@ -102,7 +102,8 @@ namespace AwesomeEngine
                 //shadowRenderer.CreateShadowMap(model, out renderTarget);
                 if (!CheckIfCullable(model))
                 {
-                    DrawLitModel(model); 
+                    //DrawLitModel(model); 
+                    model.DrawBasic(mainCamera.View, mainCamera.Projection);
                 } 
             }
         }

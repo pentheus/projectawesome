@@ -23,6 +23,9 @@ namespace AwesomeEngine
         Node node;
         String fileName;
         BoundingSphere boundingSphere;
+        Dictionary<ModelMeshPart,Texture2D> textures;
+
+        public delegate void RenderHandler();
 
         public ModelInfo()
         {
@@ -35,7 +38,64 @@ namespace AwesomeEngine
             this.scale = scale;
             this.model = model;
             this.fileName = fileName;
+            textures = new Dictionary<ModelMeshPart, Texture2D>();
             CreateBoundingSphere(out boundingSphere);
+            LoadModelTextures(model);
+        }
+
+        public void LoadModelTextures(Model model)
+        {
+            foreach (ModelMesh mesh in model.Meshes)
+                foreach(ModelMeshPart part in mesh.MeshParts)
+                {
+                    textures.Add(part, (part.Effect as BasicEffect).Texture);
+                }
+        }
+
+        public void DrawEffect(Effect effect, RenderHandler SetParameter)
+        {
+            Matrix[] modelTransforms = new Matrix[model.Bones.Count];
+            model.CopyAbsoluteBoneTransformsTo(modelTransforms);
+            SetParameter.Invoke();
+            foreach (ModelMesh mesh in model.Meshes)
+            {
+                foreach (ModelMeshPart part in mesh.MeshParts)
+                {
+                    if (textures[part] != null)
+                        effect.Parameters["xTexture"].SetValue(textures[part]);
+                    part.Effect = effect;
+                }
+                mesh.Draw();
+            }
+        }
+
+        public void DrawBasic(Matrix View, Matrix Projection)
+        {
+            Matrix[] modelTransforms = new Matrix[model.Bones.Count];
+            model.CopyAbsoluteBoneTransformsTo(modelTransforms);
+            foreach (ModelMesh mesh in model.Meshes)
+            {
+                foreach (BasicEffect effect in mesh.Effects)
+                {
+                    Matrix worldMatrix = modelTransforms[mesh.ParentBone.Index] * WorldMatrix;
+                    effect.EnableDefaultLighting();
+                    effect.World = worldMatrix;
+                    effect.View = View;
+                    effect.TextureEnabled = true;
+                    effect.Projection = Projection;
+                }
+                mesh.Draw();
+            }
+        }
+
+        public void SwitchEffect(Effect effect, GraphicsDevice device)
+        {
+            foreach(ModelMesh mesh in model.Meshes)
+                foreach (ModelMeshPart part in mesh.MeshParts)
+                {
+                    part.Effect = effect.Clone(device);
+                    part.Effect.Parameters["xTexture"].SetValue(textures[part]);
+                }
         }
 
         public void CreateBoundingSphere(out BoundingSphere mergedSphere)
