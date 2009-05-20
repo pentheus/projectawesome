@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 
 namespace AwesomeEngine
 {
-    class Item : GameComponent
+    public class Item:GameComponent
     {
         ModelInfo model;
         bool movable, picked; // movable means that an item can be moved/picked up; picked means that the item has been picked up
