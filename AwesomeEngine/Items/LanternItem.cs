@@ -12,6 +12,7 @@ namespace AwesomeEngine.Items
         public LanternItem(Game game, ModelInfo model) :
             base(game, model)
         {
+            this.setPickable(true);
         }
     }
 }

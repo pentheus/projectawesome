@@ -12,6 +12,7 @@ namespace AwesomeEngine.Items
         public FuseItem(Game game, ModelInfo model) :
             base(game, model)
         {
+            this.setPickable(true);
         }
     }
 }

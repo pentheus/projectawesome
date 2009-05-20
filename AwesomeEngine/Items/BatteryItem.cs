@@ -12,6 +12,7 @@ namespace AwesomeEngine.Items
         public BatteryItem(Game game, ModelInfo model)
             : base(game, model)
         {
+            this.setPickable(true);
         }
     }
 }
