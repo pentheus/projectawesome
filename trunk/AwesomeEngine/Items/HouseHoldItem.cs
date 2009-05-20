@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,12 +7,10 @@ using Microsoft.Xna.Framework;
 
 namespace AwesomeEngine.Items
 {
-    public class GlowStickItem:Item
+    public class HouseHoldItem : Item
     {
-        public GlowStickItem(Game game, ModelInfo model) :
-            base(game, model)
+        public HouseHoldItem(Game game, ModelInfo model):base(game, model)
         {
-            this.setPickable(true);
         }
     }
 }
