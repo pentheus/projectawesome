@@ -40,7 +40,7 @@ namespace AwesomeEngine
             this.fileName = fileName;
             textures = new Dictionary<ModelMeshPart, Texture2D>();
             CreateBoundingSphere(out boundingSphere);
-            LoadModelTextures(model);
+            //LoadModelTextures(model);
             
         }
 
@@ -53,13 +53,14 @@ namespace AwesomeEngine
                 }
         }
          
-        public static void LoadModel(ref Model model, Game game, String assetName, Effect effect)
+        public static void LoadModel(ref Model model, Dictionary<ModelMeshPart, Texture2D> textures, Game game, String assetName, Effect effect)
         {
             model = game.Content.Load<Model>(assetName);
 
             foreach(ModelMesh mesh in model.Meshes)
                 foreach (ModelMeshPart part in mesh.MeshParts)
                 {
+                    textures.Add(part, (part.Effect as BasicEffect).Texture);
                     part.Effect = effect.Clone(game.GraphicsDevice);
                 }
         }

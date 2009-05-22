@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>Scene_Root</Name>
     <Identity>
-      <SourceFilename>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\Content\Models\bigship1.x</SourceFilename>
+      <SourceFilename>C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\Content\Models\bigship1.x</SourceFilename>
       <SourceTool>XImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
@@ -82,7 +82,7 @@
   <Resources>
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Identity>
-        <SourceFilename>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\Content\Models\bigship1.x</SourceFilename>
+        <SourceFilename>C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\Content\Models\bigship1.x</SourceFilename>
         <SourceTool>XImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -95,7 +95,7 @@
     </Resource>
     <Resource ID="#Resource2" Type="Graphics:BasicMaterialContent">
       <Identity>
-        <SourceFilename>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\Content\Models\bigship1.x</SourceFilename>
+        <SourceFilename>C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\Content\Models\bigship1.x</SourceFilename>
         <SourceTool>XImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -108,7 +108,7 @@
     </Resource>
     <Resource ID="#Resource3" Type="Graphics:BasicMaterialContent">
       <Identity>
-        <SourceFilename>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\Content\Models\bigship1.x</SourceFilename>
+        <SourceFilename>C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\Content\Models\bigship1.x</SourceFilename>
         <SourceTool>XImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -121,7 +121,7 @@
     </Resource>
     <Resource ID="#Resource4" Type="Graphics:BasicMaterialContent">
       <Identity>
-        <SourceFilename>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\Content\Models\bigship1.x</SourceFilename>
+        <SourceFilename>C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\Content\Models\bigship1.x</SourceFilename>
         <SourceTool>XImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -134,7 +134,7 @@
     </Resource>
     <Resource ID="#Resource5" Type="Graphics:BasicMaterialContent">
       <Identity>
-        <SourceFilename>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\Content\Models\bigship1.x</SourceFilename>
+        <SourceFilename>C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\Content\Models\bigship1.x</SourceFilename>
         <SourceTool>XImporter</SourceTool>
       </Identity>
       <OpaqueData>

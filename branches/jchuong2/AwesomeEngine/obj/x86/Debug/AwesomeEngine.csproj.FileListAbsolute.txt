@@ -14,3 +14,4 @@ C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\Aw
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\AwesomeEngine\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\AwesomeEngine\obj\x86\Debug\AwesomeEngine.dll
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\AwesomeEngine\obj\x86\Debug\AwesomeEngine.pdb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\AwesomeEngine\bin\x86\Debug\Content\Simple.xnb
