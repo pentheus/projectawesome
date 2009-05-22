@@ -1,2 +1,3 @@
 Content\ShadowMap.xnb
 Content\DrawModel.xnb
+Content\Simple.xnb
