@@ -25,7 +25,8 @@ namespace AwesomeEngine
         Effect drawModelEffect;
         Texture2D renderTarget;
         Camera.Camera mainCamera;
-        
+        IGraphicsDeviceService graphicsService;
+
         public SceneManager(Game game)
             : base(game)
         {
@@ -40,14 +41,14 @@ namespace AwesomeEngine
         public override void Initialize()
         {
             // TODO: Add your initialization code here
-
+            graphicsService = (IGraphicsDeviceService)Game.Services.GetService(typeof(IGraphicsDeviceService));
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
             shadowRenderer = new ShadowRenderer(game.Content.Load<Effect>("ShadowMap"));
-            drawModelEffect = game.Content.Load<Effect>("DrawModel");
+            drawModelEffect = game.Content.Load<Effect>("Simple");
       
             base.LoadContent();
         }
@@ -65,7 +66,7 @@ namespace AwesomeEngine
 
         public override void Draw(GameTime gameTime)
         {
-            DrawLitModel(sceneGraph.getGeometry());
+            DrawModel(sceneGraph.getGeometry());
             DrawScene(sceneGraph.Root);
 
             base.Draw(gameTime);
@@ -102,8 +103,7 @@ namespace AwesomeEngine
                 //shadowRenderer.CreateShadowMap(model, out renderTarget);
                 if (!CheckIfCullable(model))
                 {
-                    //DrawLitModel(model); 
-                    model.DrawBasic(mainCamera.View, mainCamera.Projection);
+                    DrawModel(model); 
                 } 
             }
         }
@@ -112,34 +112,24 @@ namespace AwesomeEngine
         /// Draws the completely lit scene with shadows
         /// </summary>
         /// <param name="model"></param>
-        public void DrawLitModel(ModelInfo model)
+        public void DrawModel(ModelInfo model)
         {
             Matrix[] modelTransforms = new Matrix[model.Model.Bones.Count];
             model.Model.CopyAbsoluteBoneTransformsTo(modelTransforms);
+           
+
             foreach (ModelMesh mesh in model.Model.Meshes)
             {
-                foreach (BasicEffect effect in mesh.Effects)
+                
+                foreach (ModelMeshPart part in mesh.MeshParts)
                 {
-                    Matrix worldMatrix = modelTransforms[mesh.ParentBone.Index] * model.WorldMatrix;
-                    /*
-                    effect.CurrentTechnique = drawModelEffect.Techniques["DrawModel"];
-                    effect.Parameters["xWorld"].SetValue(worldMatrix);
-                    effect.Parameters["ColorMap"].SetValue((effect as BasicEffect).Texture);
-                    effect.Parameters["Ambient"].SetValue(0.5f); //Later have have a global variable for ambient that we will use for this.
-                    effect.Parameters["TextureEnabled"].SetValue(false); //have to change this later...
-                    //insert more parameters*/
-                    effect.AmbientLightColor = Vector3.One;
-                    effect.DirectionalLight0.DiffuseColor= new Vector3(0.5f,0.5f,0.5f);
-                    effect.DirectionalLight0.Direction = new Vector3(-1f,-1f,-1f);
-                    effect.DirectionalLight0.Enabled = true;
-                    effect.LightingEnabled = true;
-
-                    effect.PreferPerPixelLighting = true;
-                    effect.SpecularColor = Vector3.Zero;
-                    effect.SpecularPower = 0f;
-                    effect.View = mainCamera.View;
-                    effect.Projection = mainCamera.Projection;
-                    effect.World = worldMatrix;
+                    Effect e = drawModelEffect.Clone(graphicsService.GraphicsDevice);
+                    e.CurrentTechnique = drawModelEffect.Techniques["Textured"];
+                    e.Parameters["xWorld"].SetValue(modelTransforms[mesh.ParentBone.Index] * model.WorldMatrix);
+                    e.Parameters["xView"].SetValue(mainCamera.View);
+                    e.Parameters["xProjection"].SetValue(mainCamera.Projection);
+                    e.Parameters["xTexture"].SetValue(model.Textures[part]);
+                    part.Effect = e;
                 }
                 mesh.Draw();
             }
@@ -170,6 +160,11 @@ namespace AwesomeEngine
         {
             get { return mainCamera; }
             set { mainCamera = value; }
+        }
+
+        public Effect CurrentEffect
+        {
+            get{ return drawModelEffect; }
         }
     }
 }
