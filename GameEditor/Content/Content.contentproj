@@ -35,7 +35,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Tank.fbx">
+    <Compile Include="Models\Tank.fbx">
       <Name>Tank</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
@@ -53,13 +53,6 @@
       <Name>DemoFont</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Models\bigship1.x">
-      <Name>bigship1</Name>
-      <Importer>XImporter</Importer>
-      <Processor>ModelProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -84,21 +77,21 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Floor.fbx">
+    <Compile Include="Models\Floor.fbx">
       <Name>Floor</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="testscene.fbx">
+    <Compile Include="Models\testscene.fbx">
       <Name>testscene</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ship.fbx">
+    <Compile Include="Models\Ship.fbx">
       <Name>Ship</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
