@@ -21,7 +21,7 @@ namespace GameEditor
     /// <summary>
     /// This is the main type for your game
     /// </summary>
-    public class OctreeTest : Microsoft.Xna.Framework.Game
+    public class GameEditor : Microsoft.Xna.Framework.Game
     {
         GraphicsDeviceManager graphics;
         List<ModelInfo> modelInfos = new List<ModelInfo>();
@@ -35,16 +35,23 @@ namespace GameEditor
         Vector2 fontPos;
         Vector3 translationVector = Vector3.Zero;
         XMLParser parser;
+        ToolBar toolBar;
         float theta = 0f;
         float phi = 10f;
         Vector3 vector3 = Vector3.Zero;
         float radius = 100f;
 
-        public OctreeTest()
+
+
+        public GameEditor()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             sceneMgr = new SceneManager(this);
+            Components.Add(sceneMgr);
+            toolBar = new ToolBar(this);
+            toolBar.Show();
+            this.IsMouseVisible = true;
         }
 
         /// <summary>
@@ -60,7 +67,7 @@ namespace GameEditor
             mainCamera = new ThirdPersonCamera(new Vector3(35f, -24f, -30f), Vector3.Zero, GraphicsDevice.Viewport.AspectRatio, 1f, 10000f);
             parser = new XMLParser(this);
             fontPos = new Vector2(1.0f, 1.0f);
-            
+       
             base.Initialize();
         }
 
@@ -84,14 +91,17 @@ namespace GameEditor
             //sceneMgr.SceneGraph = null;
             //sceneMgr.SceneGraph = parser.ReadScene( "C:/Users/Spike/Documents/Visual Studio 2008/Projects/projectawesome", "shitsingiggles.xml");
 
-            DirectoryInfo d = new DirectoryInfo("C:\\Users\\Spike\\Documents\\Visual Studio 2008\\Projects\\projectawesome\\GameEditor\\Content");
-            FileInfo[] files = d.GetFiles("*.fbx");
+            DirectoryInfo d = new DirectoryInfo(Content.RootDirectory+"\\Models\\");
+            FileInfo[] files = d.GetFiles("*.xnb");
+            
             foreach (FileInfo f in files)
             {
                 string[] split = f.ToString().Split('.');
-                Model model = Content.Load<Model>(split[0]);
+                //Model model = Content.Load<Model>(split[0]);
+                Model model = new Model();
+                ModelInfo.LoadModel(ref model, sceneMgr.Textures, this, split[0], sceneMgr.Effect);
                 ModelInfo modelInfo = new ModelInfo(new Vector3(0f, 0f, 0f), Vector3.Zero, new Vector3(0.01f), model, split[0]);
-                if(split[0].ToLower().Contains("item"))
+                if (split[0].ToLower().Contains("item"))
                 {
                     if (split[0].ToLower().Contains("battery"))
                     {
@@ -112,7 +122,11 @@ namespace GameEditor
 
                 }
                 else
+                {
                     modelInfos.Add(modelInfo);
+                    Console.WriteLine("Object added");
+                    toolBar.TreeView.Nodes["Props"].Nodes.Add(modelInfo.FileName);
+                }
                 Console.WriteLine(f.ToString());
             }
 
@@ -179,6 +193,7 @@ namespace GameEditor
             
             mainCamera.Pos = (new Vector3(x,y,z));
             mainCamera.Pos = Vector3.Transform(mainCamera.Pos, Matrix.CreateTranslation(translationVector));
+
             mainCamera.LookAt = translationVector;
             
             base.Update(gameTime); 

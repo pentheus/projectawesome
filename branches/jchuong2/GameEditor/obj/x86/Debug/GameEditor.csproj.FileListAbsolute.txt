@@ -18,13 +18,15 @@ C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\b
 C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Floor.xnb
 C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\testscene.xnb
 C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Ship.xnb
-C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Tank.xnb
-C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Floor.xnb
-C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\testscene.xnb
-C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Ship.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\ShadowMap.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\DrawModel.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Simple.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\Tank.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\Floor.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\testscene.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\Ship.xnb
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Effects\parallax_normal_mapping.xnb
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Fonts\DemoFont.xnb
-C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\bigship1.xnb
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Textures\floor_color_map.xnb
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Textures\floor_height_map.xnb
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Textures\floor_normal_map.xnb
@@ -34,8 +36,8 @@ C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\Ga
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\AwesomeEngine.pdb
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\obj\x86\Debug\GameEditor.Properties.Resources.resources
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\obj\x86\Debug\GameEditor.ToolBar.resources
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\obj\x86\Debug\GameEditor.csproj.GenerateResource.Cache
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\obj\x86\Debug\GameEditor.exe
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\obj\x86\Debug\GameEditor.pdb
-C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\ShadowMap.xnb
-C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\DrawModel.xnb
-C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Simple.xnb

@@ -69,7 +69,9 @@ namespace AwesomeEngine
 
         public override void Draw(GameTime gameTime)
         {
-            DrawModel(sceneGraph.getGeometry());
+            
+            if(sceneGraph.getGeometry() != null)
+                DrawModel(sceneGraph.getGeometry());
             DrawScene(sceneGraph.Root);
 
             base.Draw(gameTime);
