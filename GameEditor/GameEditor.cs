@@ -151,45 +151,47 @@ namespace GameEditor
         protected override void Update(GameTime gameTime)
         {
             KeyboardState k = Keyboard.GetState();
-            
-            //Spherical Camera controls
-            if (k.IsKeyDown(Keys.Up))
-                phi += 1f;
-            if (k.IsKeyDown(Keys.Down))
-                phi -= 1f;
-            if (k.IsKeyDown(Keys.Left))
-                theta -= 1f;
-            if (k.IsKeyDown(Keys.Right))
-                theta += 1f;
 
+            if (!toolBar.Focused)
+            {
+                //Spherical Camera controls
+                if (k.IsKeyDown(Keys.Up))
+                    phi += 1f;
+                if (k.IsKeyDown(Keys.Down))
+                    phi -= 1f;
+                if (k.IsKeyDown(Keys.Left))
+                    theta -= 1f;
+                if (k.IsKeyDown(Keys.Right))
+                    theta += 1f;
+
+                
+
+                /*if (k.IsKeyDown(Keys.W))
+                    mainCamera.LookAt = mainCamera.LookAt + new Vector3(0, 0, -3f);
+                if (k.IsKeyDown(Keys.S))
+                    mainCamera.LookAt = mainCamera.LookAt + new Vector3(0, 0, 3f);
+                if (k.IsKeyDown(Keys.A))
+                    mainCamera.LookAt = mainCamera.LookAt + new Vector3(-3f, 0, 0);
+                if (k.IsKeyDown(Keys.D))
+                    mainCamera.LookAt = mainCamera.LookAt + new Vector3(3f, 0, 0);*/
+
+                if (k.IsKeyDown(Keys.E))
+                    radius -= 2f;
+                if (k.IsKeyDown(Keys.F))
+                    radius += 2f;
+
+                if (k.IsKeyDown(Keys.W))
+                    translationVector += new Vector3(0f, 0f, -1f);
+                if (k.IsKeyDown(Keys.S))
+                    translationVector += new Vector3(0f, 0f, 1f);
+                if (k.IsKeyDown(Keys.A))
+                    translationVector += new Vector3(-1f, 0f, 0f);
+                if (k.IsKeyDown(Keys.D))
+                    translationVector += new Vector3(1f, 0f, 0f);
+            }
             float x = (float)(radius * Math.Sin(MathHelper.ToRadians(theta)) * Math.Sin(MathHelper.ToRadians(phi))); ;
             float y = (float)(radius * Math.Cos(MathHelper.ToRadians(phi)));
             float z = (float)(radius * Math.Cos(MathHelper.ToRadians(theta)) * Math.Sin(MathHelper.ToRadians(phi)));
-
-            /*if (k.IsKeyDown(Keys.W))
-                mainCamera.LookAt = mainCamera.LookAt + new Vector3(0, 0, -3f);
-            if (k.IsKeyDown(Keys.S))
-                mainCamera.LookAt = mainCamera.LookAt + new Vector3(0, 0, 3f);
-            if (k.IsKeyDown(Keys.A))
-                mainCamera.LookAt = mainCamera.LookAt + new Vector3(-3f, 0, 0);
-            if (k.IsKeyDown(Keys.D))
-                mainCamera.LookAt = mainCamera.LookAt + new Vector3(3f, 0, 0);*/
-
-            if (k.IsKeyDown(Keys.E))
-                radius -= 2f;
-            if (k.IsKeyDown(Keys.F))
-                radius += 2f;
-
-            if (k.IsKeyDown(Keys.W))
-                translationVector += new Vector3(0f, 0f, -1f);
-            if (k.IsKeyDown(Keys.S))
-                translationVector += new Vector3(0f, 0f, 1f);
-            if (k.IsKeyDown(Keys.A))
-                translationVector += new Vector3(-1f, 0f, 0f);
-            if (k.IsKeyDown(Keys.D))
-                translationVector += new Vector3(1f, 0f, 0f);
-
-
             
             mainCamera.Pos = (new Vector3(x,y,z));
             mainCamera.Pos = Vector3.Transform(mainCamera.Pos, Matrix.CreateTranslation(translationVector));
