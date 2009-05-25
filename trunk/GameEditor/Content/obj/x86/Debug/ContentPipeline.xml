@@ -7,11 +7,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Tank.xnb</Output>
-      <Time>2009-05-15T13:51:35.656-07:00</Time>
+      <Output>C:\Users\Spike\Desktop\projectawesome\GameEditor\bin\x86\Debug\Content\Tank.xnb</Output>
+      <Time>2009-05-23T20:31:43.96-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Tank_0.xml</Key>
-        <Value>2009-05-16T15:16:54.963-07:00</Value>
+        <Value>2009-05-24T11:21:23.139-07:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -20,11 +20,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Floor.xnb</Output>
-      <Time>2009-05-15T13:51:33.445-07:00</Time>
+      <Output>C:\Users\Spike\Desktop\projectawesome\GameEditor\bin\x86\Debug\Content\Floor.xnb</Output>
+      <Time>2009-05-23T20:31:43.519-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Floor_0.xml</Key>
-        <Value>2009-05-16T15:16:56.492-07:00</Value>
+        <Value>2009-05-24T11:21:25.484-07:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -33,11 +33,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\testscene.xnb</Output>
-      <Time>2009-05-15T13:51:33.51-07:00</Time>
+      <Output>C:\Users\Spike\Desktop\projectawesome\GameEditor\bin\x86\Debug\Content\testscene.xnb</Output>
+      <Time>2009-05-23T20:31:44.294-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\testscene_0.xml</Key>
-        <Value>2009-05-16T15:16:57.958-07:00</Value>
+        <Value>2009-05-24T11:21:27.318-07:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -46,11 +46,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Ship.xnb</Output>
-      <Time>2009-05-15T13:51:33.559-07:00</Time>
+      <Output>C:\Users\Spike\Desktop\projectawesome\GameEditor\bin\x86\Debug\Content\Ship.xnb</Output>
+      <Time>2009-05-24T12:55:49.463-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Ship_0.xml</Key>
-        <Value>2009-05-16T15:16:59.456-07:00</Value>
+        <Value>2009-05-24T12:55:58.523-07:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -59,8 +59,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Effects\parallax_normal_mapping.xnb</Output>
-      <Time>2009-05-13T23:53:47.179-07:00</Time>
+      <Output>C:\Users\Spike\Desktop\projectawesome\GameEditor\bin\x86\Debug\Content\Effects\parallax_normal_mapping.xnb</Output>
+      <Time>2009-05-23T20:31:11.149-07:00</Time>
     </Item>
     <Item>
       <Source>Fonts\DemoFont.spritefont</Source>
@@ -68,8 +68,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Fonts\DemoFont.xnb</Output>
-      <Time>2009-05-13T23:53:53.224-07:00</Time>
+      <Output>C:\Users\Spike\Desktop\projectawesome\GameEditor\bin\x86\Debug\Content\Fonts\DemoFont.xnb</Output>
+      <Time>2009-05-23T20:31:23.34-07:00</Time>
     </Item>
     <Item>
       <Source>Models\bigship1.x</Source>
@@ -77,11 +77,11 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\bigship1.xnb</Output>
-      <Time>2009-05-13T23:53:56.452-07:00</Time>
+      <Output>C:\Users\Spike\Desktop\projectawesome\GameEditor\bin\x86\Debug\Content\Models\bigship1.xnb</Output>
+      <Time>2009-05-23T20:31:19.169-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\bigship1_0.xml</Key>
-        <Value>2009-05-16T15:17:01.53-07:00</Value>
+        <Value>2009-05-24T11:21:31.525-07:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -90,8 +90,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Textures\floor_color_map.xnb</Output>
-      <Time>2009-05-13T23:53:58.477-07:00</Time>
+      <Output>C:\Users\Spike\Desktop\projectawesome\GameEditor\bin\x86\Debug\Content\Textures\floor_color_map.xnb</Output>
+      <Time>2009-05-23T20:31:21.817-07:00</Time>
     </Item>
     <Item>
       <Source>Textures\floor_height_map.dds</Source>
@@ -99,8 +99,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Textures\floor_height_map.xnb</Output>
-      <Time>2009-05-13T23:53:58.48-07:00</Time>
+      <Output>C:\Users\Spike\Desktop\projectawesome\GameEditor\bin\x86\Debug\Content\Textures\floor_height_map.xnb</Output>
+      <Time>2009-05-23T20:31:21.743-07:00</Time>
     </Item>
     <Item>
       <Source>Textures\floor_normal_map.dds</Source>
@@ -108,53 +108,53 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Textures\floor_normal_map.xnb</Output>
-      <Time>2009-05-13T23:53:58.516-07:00</Time>
+      <Output>C:\Users\Spike\Desktop\projectawesome\GameEditor\bin\x86\Debug\Content\Textures\floor_normal_map.xnb</Output>
+      <Time>2009-05-23T20:31:21.777-07:00</Time>
     </Item>
     <Item>
       <Source>Tank.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Tank_0.xml</Output>
-      <Time>2009-05-15T13:51:35.656-07:00</Time>
+      <Time>2009-05-23T20:31:43.96-07:00</Time>
     </Item>
     <Item>
       <Source>Floor.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Floor_0.xml</Output>
-      <Time>2009-05-15T13:51:33.445-07:00</Time>
+      <Time>2009-05-23T20:31:43.519-07:00</Time>
     </Item>
     <Item>
       <Source>testscene.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\testscene_0.xml</Output>
-      <Time>2009-05-15T13:51:33.51-07:00</Time>
+      <Time>2009-05-23T20:31:44.294-07:00</Time>
     </Item>
     <Item>
       <Source>Ship.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Ship_0.xml</Output>
-      <Time>2009-05-15T13:51:33.559-07:00</Time>
+      <Time>2009-05-24T12:55:49.463-07:00</Time>
     </Item>
     <Item>
       <Source>Models\bigship1.x</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\bigship1_0.xml</Output>
-      <Time>2009-05-13T23:53:56.452-07:00</Time>
+      <Time>2009-05-23T20:31:19.169-07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\Content\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Spike\Desktop\projectawesome\GameEditor\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Spike\Desktop\projectawesome\GameEditor\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Spike\Desktop\projectawesome\GameEditor\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Spike\Desktop\projectawesome\GameEditor\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
