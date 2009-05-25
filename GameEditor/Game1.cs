@@ -24,6 +24,9 @@ namespace GameEditor
 		Matrix cameraProjectionMatrix;
 		Matrix cameraViewMatrix;
 
+        Vector3 modelPosition = Vector3.Zero;
+        float modelRotation = 0.0f;
+
         int xMatrix = 0;
         int yMatrix = 0;
         int zMatrix = 0;
