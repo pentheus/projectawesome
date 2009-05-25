@@ -19,6 +19,7 @@ namespace GameEditor
             InitializeComponent();
             this.gameEditor = gameEditor;
             openDialog.InitialDirectory = gameEditor.Content.RootDirectory;
+           
         }
 
         public TreeView TreeView
@@ -35,11 +36,12 @@ namespace GameEditor
         {
             openDialog.ShowDialog();
             
+            
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
@@ -49,7 +51,12 @@ namespace GameEditor
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-          
+            
+        }
+
+        private void keyDown(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
 
 
