@@ -14,5 +14,10 @@ namespace AwesomeEngine.Items
         {
             this.setMovable(true);
         }
+
+        public void runScript()
+        {
+
+        }
     }
 }

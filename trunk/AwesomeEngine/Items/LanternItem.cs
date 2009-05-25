@@ -14,5 +14,10 @@ namespace AwesomeEngine.Items
         {
             this.setPickable(true);
         }
+
+        public void runScript()
+        {
+
+        }
     }
 }

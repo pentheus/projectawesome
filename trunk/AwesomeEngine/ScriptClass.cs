@@ -7,7 +7,7 @@ namespace AwesomeEngine
 {
     abstract class ScriptClass
     {
-        public enum types { Shadow, Lamp, Flashlight };
+        public enum types { Shadow, Lantern, Flashlight, Battery, Fuse, Chair, GlowStick };
 
         protected types thisType;
 
