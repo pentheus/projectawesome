@@ -22,11 +22,6 @@ namespace AwesomeEngine
             currentstate = state.Idle;
         }
 
-        public void startModel()
-        {
-            model.AnimationController.StartClip(model.AnimatedModel.AnimationClips["Idle"]);
-        }
-
         public AnimModelInfo Model
         {
             get { return model; }

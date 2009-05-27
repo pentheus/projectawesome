@@ -72,6 +72,7 @@ namespace AwesomeEngine
             model = content.Load<SkinnedModel>(@"Models\" + assetName);
 
             foreach (ModelMesh mesh in model.Model.Meshes)
+            {
                 foreach (ModelMeshPart part in mesh.MeshParts)
                 {
                     Effect e = effect.Clone(graphics);
@@ -87,6 +88,7 @@ namespace AwesomeEngine
                     }
                     part.Effect = e;
                 }
+            }
         }
 
         public void CreateBoundingSphere(out BoundingSphere mergedSphere)

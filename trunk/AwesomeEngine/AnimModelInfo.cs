@@ -33,6 +33,7 @@ namespace AwesomeEngine
             FileName = fileName;
             animationController = new AnimationController(animatedModel.SkeletonBones);
             Model = animatedModel.Model;
+            animationController.StartClip(animatedModel.AnimationClips["Idle"]);
         }
 
         public void CreateBoundingSphere(out BoundingSphere mergedSphere)

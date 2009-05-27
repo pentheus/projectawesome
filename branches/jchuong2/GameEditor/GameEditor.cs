@@ -14,6 +14,7 @@ using AwesomeEngine;
 using AwesomeEngine.Camera;
 using AwesomeEngine.Items;
 using System.IO;
+using XNAnimation;
 
 
 namespace GameEditor
@@ -42,6 +43,8 @@ namespace GameEditor
         float radius = 100f;
         ModelInfo cursor = new ModelInfo();
 
+        //This is for testing and can be deleted
+        AnimModelInfo testmarine;
 
         public GameEditor()
         {
@@ -120,8 +123,13 @@ namespace GameEditor
                     toolBar.TreeView.Nodes["Props"].Nodes[modelInfo.FileName].Name = modelInfo.FileName;
                     cursor = modelInfo;
                 }
+
                 Console.WriteLine(f.ToString());
             }
+
+            SkinnedModel marinemodel = new SkinnedModel();
+            ModelInfo.LoadAnimatedModel(ref marinemodel, sceneMgr.Textures, Content, graphics.GraphicsDevice, "PlayerMarine_mdla", sceneMgr.Effect);
+            testmarine = new AnimModelInfo(new Vector3(0f, 0f, 0f), Vector3.Zero, new Vector3(0.1f), marinemodel, "PlayerMarine_mdla");
 
             grid = new ReferenceGrid(GraphicsDevice, 10, 100, Color.LimeGreen);
             // TODO: use this.Content to load your game content here
@@ -221,6 +229,7 @@ namespace GameEditor
             GraphicsDevice.Clear(Color.Black);
             // TODO: Add your drawing code here
             DrawText();
+            sceneMgr.DrawModel(testmarine);
             sceneMgr.DrawModel(cursor);
             grid.Draw(mainCamera.View, mainCamera.Projection);
             base.Draw(gameTime);
