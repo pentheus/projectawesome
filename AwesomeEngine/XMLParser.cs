@@ -14,9 +14,9 @@ namespace AwesomeEngine
 {
     public class XMLParser
     {
-        ContainsScene game;
+        Game game;
 
-        public XMLParser(ContainsScene received)
+        public XMLParser(Game received)
         {
             game = received;
         }
@@ -44,9 +44,7 @@ namespace AwesomeEngine
             XmlNode geometrynode = scenedoc.GetElementsByTagName("WorldGeometry").Item(0);
 
             String modelname = geometrynode.SelectSingleNode("model").InnerText;
-            Model objmodel = new Model();
-            ModelInfo.LoadModel(ref objmodel, game.GetScene().Textures, game.GetContent(), game.GetGraphics(), 
-                modelname, game.GetScene().Effect);
+            Model objmodel = game.Content.Load<Model>(modelname);
 
             float geoscalex = (float)Convert.ToDouble(geometrynode.SelectSingleNode("scalex").InnerText);
             float geoscaley = (float)Convert.ToDouble(geometrynode.SelectSingleNode("scaley").InnerText);
@@ -91,9 +89,7 @@ namespace AwesomeEngine
                     }
                     else
                     {
-                        objmodel = new Model();
-                        ModelInfo.LoadModel(ref objmodel, game.GetScene().Textures, game.GetContent(), game.GetGraphics(),
-                            modelname, game.GetScene().Effect);
+                        objmodel = game.Content.Load<Model>(modelname);
                         modelsloaded.Add(modelname, objmodel);
                     }
 
@@ -142,9 +138,7 @@ namespace AwesomeEngine
                     }
                     else
                     {
-                        objmodel = new Model();
-                        ModelInfo.LoadModel(ref objmodel, game.GetScene().Textures, game.GetContent(), game.GetGraphics(),
-                            modelname, game.GetScene().Effect);
+                        objmodel = game.Content.Load<Model>(modelname);
                         modelsloaded.Add(modelname, objmodel);
                     }
 
@@ -159,16 +153,16 @@ namespace AwesomeEngine
                     switch (itemtype)
                     {
                         case "BatteryItem":
-                            item = new BatteryItem((Game)game, obj);
+                            item = new BatteryItem(game, obj);
                             break;
                         case "FuseItem":
-                            item = new FuseItem((Game)game, obj);
+                            item = new FuseItem(game, obj);
                             break;
                         case "GlowStickItem":
-                            item = new GlowStickItem((Game)game, obj);
+                            item = new GlowStickItem(game, obj);
                             break;
                         default:
-                            item = new Item((Game)game, obj);
+                            item = new Item(game, obj);
                             break;
                     }
 
@@ -231,9 +225,9 @@ namespace AwesomeEngine
 
         private void SaveObjects(XmlTextWriter scenesaver, List<ModelInfo> objects)
         {
-            scenesaver.WriteStartElement("Conent");
             foreach (ModelInfo obj in objects)
             {
+                scenesaver.WriteStartElement("Conent");
                 scenesaver.WriteStartElement("Object");
 
                 scenesaver.WriteStartElement("posx");

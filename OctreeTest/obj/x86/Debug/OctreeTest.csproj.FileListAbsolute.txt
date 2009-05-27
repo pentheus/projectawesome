@@ -12,3 +12,20 @@ C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\OctreeTest\b
 C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\OctreeTest\bin\x86\Debug\Content\testscene.xnb
 C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\OctreeTest\bin\x86\Debug\Content\Floor.xnb
 C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\OctreeTest\bin\x86\Debug\Content\Ship.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\OctreeTest\bin\x86\Debug\Content\Floor.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\OctreeTest\bin\x86\Debug\Content\Ship.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\OctreeTest\bin\x86\Debug\Content\Tank.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\OctreeTest\bin\x86\Debug\Content\testscene.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\OctreeTest\bin\x86\Debug\OctreeTest.exe
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\OctreeTest\bin\x86\Debug\OctreeTest.pdb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\OctreeTest\bin\x86\Debug\AwesomeEngine.dll
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\OctreeTest\bin\x86\Debug\AwesomeEngine.pdb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\OctreeTest\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\OctreeTest\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\OctreeTest\obj\x86\Debug\OctreeTest.exe
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\OctreeTest\obj\x86\Debug\OctreeTest.pdb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\OctreeTest\bin\x86\Debug\Content\ShipDiffuse_0.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\OctreeTest\bin\x86\Debug\Content\Transparent.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\OctreeTest\bin\x86\Debug\Content\ShadowMap.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\OctreeTest\bin\x86\Debug\Content\DrawModel.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\OctreeTest\bin\x86\Debug\Content\Simple.xnb

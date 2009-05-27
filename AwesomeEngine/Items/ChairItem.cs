@@ -14,11 +14,5 @@ namespace AwesomeEngine.Items
         {
             this.setMovable(true);
         }
-
-        // script: push chair around
-        public override void runScript()
-        {
-
-        }
     }
 }

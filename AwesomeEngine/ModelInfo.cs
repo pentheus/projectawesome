@@ -6,7 +6,6 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Storage;
-using XNAnimation;
 
 namespace AwesomeEngine
 {
@@ -44,15 +43,15 @@ namespace AwesomeEngine
             //LoadModelTextures(model);
             
         }
-        
-        public static void LoadModel(ref Model model, Dictionary<ModelMeshPart, Texture2D> textures, ContentManager content, GraphicsDevice graphics, String assetName, Effect effect)
+
+        public static void LoadModel(ref Model model, Dictionary<ModelMeshPart, Texture2D> textures, Game game, String assetName, Effect effect)
         {
-            model = content.Load<Model>(@"Models\"+assetName);
+            model = game.Content.Load<Model>(@"Models\"+assetName);
 
             foreach(ModelMesh mesh in model.Meshes)
                 foreach (ModelMeshPart part in mesh.MeshParts)
                 {
-                    Effect e = effect.Clone(graphics);
+                    Effect e = effect.Clone(game.GraphicsDevice);
                     if ((part.Effect as BasicEffect).Texture != null)
                     {
                         textures.Add(part, (part.Effect as BasicEffect).Texture);
@@ -65,30 +64,6 @@ namespace AwesomeEngine
                     }
                     part.Effect = e;
                 }
-        }
-
-        public static void LoadAnimatedModel(ref SkinnedModel model, Dictionary<ModelMeshPart, Texture2D> textures, ContentManager content, GraphicsDevice graphics, String assetName, Effect effect)
-        {
-            model = content.Load<SkinnedModel>(@"Models\" + assetName);
-
-            foreach (ModelMesh mesh in model.Model.Meshes)
-            {
-                foreach (ModelMeshPart part in mesh.MeshParts)
-                {
-                    Effect e = effect.Clone(graphics);
-                    if ((part.Effect as BasicEffect).Texture != null)
-                    {
-                        textures.Add(part, (part.Effect as BasicEffect).Texture);
-                        e.Parameters["xTextureEnabled"].SetValue(true);
-                    }
-                    else
-                    {
-                        textures.Add(part, (part.Effect as BasicEffect).Texture);
-                        e.Parameters["xTextureEnabled"].SetValue(false);
-                    }
-                    part.Effect = e;
-                }
-            }
         }
 
         public void CreateBoundingSphere(out BoundingSphere mergedSphere)

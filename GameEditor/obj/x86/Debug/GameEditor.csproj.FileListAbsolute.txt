@@ -18,23 +18,67 @@ C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\b
 C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Floor.xnb
 C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\testscene.xnb
 C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Ship.xnb
-C:\Users\Spike\Desktop\projectawesome\GameEditor\bin\x86\Debug\Content\ShadowMap.xnb
-C:\Users\Spike\Desktop\projectawesome\GameEditor\bin\x86\Debug\Content\DrawModel.xnb
-C:\Users\Spike\Desktop\projectawesome\GameEditor\bin\x86\Debug\Content\Tank.xnb
-C:\Users\Spike\Desktop\projectawesome\GameEditor\bin\x86\Debug\Content\Floor.xnb
-C:\Users\Spike\Desktop\projectawesome\GameEditor\bin\x86\Debug\Content\testscene.xnb
-C:\Users\Spike\Desktop\projectawesome\GameEditor\bin\x86\Debug\Content\Ship.xnb
-C:\Users\Spike\Desktop\projectawesome\GameEditor\bin\x86\Debug\Content\Effects\parallax_normal_mapping.xnb
-C:\Users\Spike\Desktop\projectawesome\GameEditor\bin\x86\Debug\Content\Fonts\DemoFont.xnb
-C:\Users\Spike\Desktop\projectawesome\GameEditor\bin\x86\Debug\Content\Models\bigship1.xnb
-C:\Users\Spike\Desktop\projectawesome\GameEditor\bin\x86\Debug\Content\Textures\floor_color_map.xnb
-C:\Users\Spike\Desktop\projectawesome\GameEditor\bin\x86\Debug\Content\Textures\floor_height_map.xnb
-C:\Users\Spike\Desktop\projectawesome\GameEditor\bin\x86\Debug\Content\Textures\floor_normal_map.xnb
-C:\Users\Spike\Desktop\projectawesome\GameEditor\bin\x86\Debug\GameEditor.exe
-C:\Users\Spike\Desktop\projectawesome\GameEditor\bin\x86\Debug\GameEditor.pdb
-C:\Users\Spike\Desktop\projectawesome\GameEditor\bin\x86\Debug\AwesomeEngine.dll
-C:\Users\Spike\Desktop\projectawesome\GameEditor\bin\x86\Debug\AwesomeEngine.pdb
-C:\Users\Spike\Desktop\projectawesome\GameEditor\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\Spike\Desktop\projectawesome\GameEditor\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
-C:\Users\Spike\Desktop\projectawesome\GameEditor\obj\x86\Debug\GameEditor.exe
-C:\Users\Spike\Desktop\projectawesome\GameEditor\obj\x86\Debug\GameEditor.pdb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\ShadowMap.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\DrawModel.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Simple.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Effects\parallax_normal_mapping.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Fonts\DemoFont.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Textures\floor_color_map.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Textures\floor_height_map.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Textures\floor_normal_map.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\GameEditor.exe
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\GameEditor.pdb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\AwesomeEngine.dll
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\AwesomeEngine.pdb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\obj\x86\Debug\GameEditor.Properties.Resources.resources
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\obj\x86\Debug\GameEditor.ToolBar.resources
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\obj\x86\Debug\GameEditor.csproj.GenerateResource.Cache
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\obj\x86\Debug\GameEditor.exe
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\obj\x86\Debug\GameEditor.pdb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\ShipDiffuse_0.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\Floor_mdl.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\Ship_mdl.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\Tank_mdl.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\testscene_mdl.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\obj\x86\Debug\GameEditor.Properties.Resources.resources
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\obj\x86\Debug\GameEditor.ToolBar.resources
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\obj\x86\Debug\GameEditor.csproj.GenerateResource.Cache
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\obj\x86\Debug\GameEditor.exe
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\ShadowMap.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\DrawModel.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\Simple.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\Effects\parallax_normal_mapping.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\Fonts\DemoFont.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\Textures\floor_color_map.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\Textures\floor_height_map.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\Textures\floor_normal_map.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\Models\Floor_mdl.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\Models\Ship_mdl.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\Models\Tank_mdl.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\Models\testscene_mdl.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\Models\ShipDiffuse_0.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\GameEditor.exe
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\GameEditor.pdb
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\AwesomeEngine.dll
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\XNAnimation.dll
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\AwesomeEngine.pdb
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\obj\x86\Debug\GameEditor.pdb
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\Fonts\Arial.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\Fonts\Calibri.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\Textures\EnemyBeastDiffuse.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\Textures\EnemyBeastNormal.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\Textures\EnemyBeastSpecular.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\Textures\PlayerMarineDiffuse.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\Textures\WeaponMachineGunDiffuse.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\Textures\null_normal.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\Textures\PlayerMarineNormal.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\Textures\rockbump.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\Models\WeaponMachineGun_mdl.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\Textures\PlayerMarineDiffuse_0.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\Textures\WeaponMachineGunDiffuse_0.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\Models\PlayerMarine_mdla.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\PlayerMarineNormal_0.xnb
