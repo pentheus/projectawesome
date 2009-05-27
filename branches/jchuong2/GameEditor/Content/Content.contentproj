@@ -33,6 +33,10 @@
     <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.AudioImporters, Version=3.0.0.0, Culture=neutral, PublicKeyToken=6d5c3888ef60e27d, processorArchitecture=MSIL">
       <Private>False</Private>
     </Reference>
+    <Reference Include="XNAnimationPipeline, Version=0.7.0.0, Culture=neutral, PublicKeyToken=0c21691816f8c6d0, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\ProjectAwesome\AwesomeEngine\Windows\XNAnimationPipeline.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Effects\parallax_normal_mapping.fx">
@@ -87,6 +91,74 @@
     </Compile>
     <Compile Include="Models\testscene_mdl.fbx">
       <Name>testscene_mdl</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Textures\EnemyBeastDiffuse.jpg">
+      <Name>EnemyBeastDiffuse</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\EnemyBeastNormal.png">
+      <Name>EnemyBeastNormal</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\EnemyBeastSpecular.jpg">
+      <Name>EnemyBeastSpecular</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\PlayerMarineDiffuse.jpg">
+      <Name>PlayerMarineDiffuse</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\WeaponMachineGunDiffuse.jpg">
+      <Name>WeaponMachineGunDiffuse</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Textures\null_normal.tga">
+      <Name>null_normal</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\PlayerMarineNormal.tga">
+      <Name>PlayerMarineNormal</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\rockbump.tga">
+      <Name>rockbump</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Fonts\Arial.spritefont">
+      <Name>Arial</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="Fonts\Calibri.spritefont">
+      <Name>Calibri</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\PlayerMarine_mdl.fbx">
+      <Name>PlayerMarine_mdl</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\WeaponMachineGun_mdl.fbx">
+      <Name>WeaponMachineGun_mdl</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>

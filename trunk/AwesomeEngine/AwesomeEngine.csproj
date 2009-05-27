@@ -94,6 +94,7 @@
     <Compile Include="Enemies\FirstBossEnemy.cs" />
     <Compile Include="Enemies\ShadowEnemy.cs" />
     <Compile Include="FullScreenQuad.cs" />
+    <Compile Include="ContainsScene.cs" />
     <Compile Include="Items\BatteryItem.cs" />
     <Compile Include="Items\ChairItem.cs" />
     <Compile Include="Items\FlashLightItem.cs" />
