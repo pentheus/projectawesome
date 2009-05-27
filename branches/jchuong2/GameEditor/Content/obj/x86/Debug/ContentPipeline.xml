@@ -1,58 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline" xmlns:Graphics="Microsoft.Xna.Framework.Graphics" xmlns:Processors="Microsoft.Xna.Framework.Content.Pipeline.Processors">
   <Asset Type="Pipeline:BuildItemCollection">
-    <Item>
-      <Source>Models\Tank.fbx</Source>
-      <Name>Models\Tank</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\Tank.xnb</Output>
-      <Time>2009-05-09T17:35:07.43-07:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\Tank_0.xml</Key>
-        <Value>2009-05-23T21:07:51.95-07:00</Value>
-      </Dependency>
-    </Item>
-    <Item>
-      <Source>Models\Floor.fbx</Source>
-      <Name>Models\Floor</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\Floor.xnb</Output>
-      <Time>2009-05-18T11:16:17.396-07:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\Floor_0.xml</Key>
-        <Value>2009-05-23T21:07:53.367-07:00</Value>
-      </Dependency>
-    </Item>
-    <Item>
-      <Source>Models\testscene.fbx</Source>
-      <Name>Models\testscene</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\testscene.xnb</Output>
-      <Time>2009-05-18T11:16:17.478-07:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\testscene_0.xml</Key>
-        <Value>2009-05-23T21:07:54.797-07:00</Value>
-      </Dependency>
-    </Item>
-    <Item>
-      <Source>Models\Ship.fbx</Source>
-      <Name>Models\Ship</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\Ship.xnb</Output>
-      <Time>2009-05-18T11:16:17.454-07:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\Ship_0.xml</Key>
-        <Value>2009-05-23T21:07:56.196-07:00</Value>
-      </Dependency>
-    </Item>
     <Item>
       <Source>Effects\parallax_normal_mapping.fx</Source>
       <Name>Effects\parallax_normal_mapping</Name>
@@ -99,32 +47,100 @@
       <Time>2009-05-18T11:16:13.248-07:00</Time>
     </Item>
     <Item>
-      <Source>Models\Tank.fbx</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\Tank_0.xml</Output>
-      <Time>2009-05-09T17:35:07.43-07:00</Time>
+      <Source>Models\ShipDiffuse.tga</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\ShipDiffuse_0.xnb</Output>
+      <Time>2009-04-28T14:39:20.479-07:00</Time>
     </Item>
     <Item>
-      <Source>Models\Floor.fbx</Source>
+      <Source>Models\Floor_mdl.fbx</Source>
+      <Name>Models\Floor_mdl</Name>
       <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\Floor_0.xml</Output>
-      <Time>2009-05-18T11:16:17.396-07:00</Time>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\Floor_mdl.xnb</Output>
+      <Time>2009-04-28T14:39:20.412-07:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Floor_mdl_0.xml</Key>
+        <Value>2009-05-26T18:51:48.239-07:00</Value>
+      </Dependency>
     </Item>
     <Item>
-      <Source>Models\testscene.fbx</Source>
+      <Source>Models\Ship_mdl.fbx</Source>
+      <Name>Models\Ship_mdl</Name>
       <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\testscene_0.xml</Output>
-      <Time>2009-05-18T11:16:17.478-07:00</Time>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\Ship_mdl.xnb</Output>
+      <Time>2009-04-28T14:39:20.451-07:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Ship_mdl_0.xml</Key>
+        <Value>2009-05-26T18:51:50.5946-07:00</Value>
+      </Dependency>
+      <Request>C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\ShipDiffuse_0.xnb</Request>
     </Item>
     <Item>
-      <Source>Models\Ship.fbx</Source>
+      <Source>Models\Tank_mdl.fbx</Source>
+      <Name>Models\Tank_mdl</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\Tank_mdl.xnb</Output>
+      <Time>2009-04-28T14:39:20.565-07:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Tank_mdl_0.xml</Key>
+        <Value>2009-05-26T18:51:51.515-07:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Models\testscene_mdl.fbx</Source>
+      <Name>Models\testscene_mdl</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\testscene_mdl.xnb</Output>
+      <Time>2009-04-25T13:31:17.483-07:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\testscene_mdl_0.xml</Key>
+        <Value>2009-05-26T18:51:51.7178-07:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Models\Floor_mdl.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\Ship_0.xml</Output>
-      <Time>2009-05-18T11:16:17.454-07:00</Time>
+      <Output>obj\x86\Debug\Models\Floor_mdl_0.xml</Output>
+      <Time>2009-04-28T14:39:20.412-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Ship_mdl.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Ship_mdl_0.xml</Output>
+      <Time>2009-04-28T14:39:20.451-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Tank_mdl.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Tank_mdl_0.xml</Output>
+      <Time>2009-04-28T14:39:20.565-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\testscene_mdl.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\testscene_mdl_0.xml</Output>
+      <Time>2009-04-25T13:31:17.483-07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
