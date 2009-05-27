@@ -3,7 +3,7 @@
   <Asset Type="Graphics:MeshContent">
     <Name>cube</Name>
     <Identity>
-      <SourceFilename>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\Content\Floor.fbx</SourceFilename>
+      <SourceFilename>C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\Content\Floor.fbx</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <Transform>4 0 0 0 0 0.1 0 0 0 0 4 0 0 0 0 1</Transform>
@@ -26,7 +26,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>cube</Name>
       <Identity>
-        <SourceFilename>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\Content\Floor.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\Content\Floor.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>

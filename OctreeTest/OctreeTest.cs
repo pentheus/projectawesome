@@ -26,8 +26,8 @@ namespace OctreeTest
         BasicEffect basicEffect;
         SceneManager sceneMgr;
         Camera mainCamera;
-        ModelInfo Ship, Ship2,Ship3,Ship4,Ship5,Ship6;
- 
+        ModelInfo Ship, Ship2, Ship3, Ship4, Ship5, Ship6, Ship7, Ship8;
+        Effect transp;
         Model ShipModel;
         XMLParser parser;
         float theta = 0f;
@@ -39,6 +39,7 @@ namespace OctreeTest
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             sceneMgr = new SceneManager(this);
+            Components.Add(sceneMgr);
         }
 
         /// <summary>
@@ -50,15 +51,9 @@ namespace OctreeTest
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            basicEffect = new BasicEffect(GraphicsDevice, null);
+            //basicEffect = new BasicEffect(GraphicsDevice, null);
             mainCamera = new ThirdPersonCamera(new Vector3(35f, -24f, -30f), Vector3.Zero, GraphicsDevice.Viewport.AspectRatio, 1f, 10000f);
             parser = new XMLParser(this);
-            //sceneMgr.SceneGraph.SplitNode(sceneMgr.SceneGraph.Root);
-            //sceneMgr.SceneGraph.SplitNode(sceneMgr.SceneGraph.Root.Children[0]);
-            //sceneMgr.SceneGraph.SplitNode(sceneMgr.SceneGraph.Root.Children[1]);
-            //sceneMgr.SceneGraph.SplitNode(sceneMgr.SceneGraph.Root.Children[2]);
-            //sceneMgr.SceneGraph.SplitNode(sceneMgr.SceneGraph.Root.Children[6]);
-            //sceneMgr.SceneGraph.SplitNode(sceneMgr.SceneGraph.Root.Children[7]);
             base.Initialize();
         }
 
@@ -73,24 +68,21 @@ namespace OctreeTest
 
             sceneMgr.MainCamera = mainCamera;
             
-            ShipModel = Content.Load<Model>("Ship");
+            //ShipModel = Content.Load<Model>("Ship");
+            ModelInfo.LoadModel(ref ShipModel, sceneMgr.Textures, this, "Ship", sceneMgr.Effect);
             Ship = new ModelInfo(new Vector3(0f, 0f, 0f), Vector3.Zero,new Vector3(0.01f), ShipModel, "Ship");
-            Ship2 = new ModelInfo(new Vector3(-20f, 30f, 40f), Vector3.Zero, new Vector3(0.01f), ShipModel, "Ship");
-            Ship3 = new ModelInfo(new Vector3(40f, -30f, -30f), Vector3.Zero, new Vector3(0.01f), ShipModel, "Ship");
-            Ship4 = new ModelInfo(new Vector3(-35f, -21f, -30f), Vector3.Zero, new Vector3(0.01f), ShipModel, "Ship");
-            Ship5 = new ModelInfo(new Vector3(-35f, -21f, -30f), Vector3.Zero, new Vector3(0.01f), ShipModel, "Ship");
-            Ship6 = new ModelInfo(new Vector3(-35f, -21f, -30f), Vector3.Zero, new Vector3(0.01f), ShipModel, "Ship");
+            Ship2 = new ModelInfo(new Vector3(-10f, 10f, 10f), Vector3.Zero, new Vector3(0.01f), ShipModel, "Ship");
+            Ship3 = new ModelInfo(new Vector3(-30f, -40f, 40f), Vector3.Zero, new Vector3(0.01f), ShipModel, "Ship");
+
             sceneMgr.SceneGraph.AddObject(Ship);
             sceneMgr.SceneGraph.AddObject(Ship2);
-            sceneMgr.SceneGraph.AddObject(Ship3);
-            sceneMgr.SceneGraph.AddObject(Ship4);
-            sceneMgr.SceneGraph.AddObject(Ship5);
-            sceneMgr.SceneGraph.AddObject(Ship6);
+            //sceneMgr.SceneGraph.AddObject(Ship3);
             sceneMgr.SceneGraph.addGeometry(Ship);
-            parser.SaveScene(sceneMgr.SceneGraph, "C:/Users/Spike/Documents/Visual Studio 2008/Projects/projectawesome", "shitsingiggles.xml");
-            sceneMgr.SceneGraph = null;
-            sceneMgr.SceneGraph = parser.ReadScene( "C:/Users/Spike/Documents/Visual Studio 2008/Projects/projectawesome", "shitsingiggles.xml");
-            // TODO: use this.Content to load your game content here
+            //parser.SaveScene(sceneMgr.SceneGraph, "C:/Users/Spike/Documents/Visual Studio 2008/Projects/projectawesome", "shitsingiggles.xml");
+            //sceneMgr.SceneGraph = null;
+            //sceneMgr.SceneGraph = parser.ReadScene( "C:/Users/Spike/Documents/Visual Studio 2008/Projects/projectawesome", "shitsingiggles.xml");
+            
+            transp = Content.Load<Effect>("Transparent");
         }
 
         /// <summary>
@@ -149,13 +141,11 @@ namespace OctreeTest
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
-            sceneMgr.Draw(gameTime);
-            // TODO: Add your drawing code here
-            DrawOctree(sceneMgr.SceneGraph.Root);
+            //sceneMgr.Draw(gameTime);
+            sceneMgr.DrawFlat(Ship3);
+            //DrawOctree(sceneMgr.SceneGraph.Root);
             base.Draw(gameTime);
         }
-
-        
 
         public void DrawBoundingBox(BoundingBox boundingBox)
         {
