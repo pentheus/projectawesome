@@ -35,13 +35,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Tank.fbx">
-      <Name>Tank</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Effects\parallax_normal_mapping.fx">
       <Name>parallax_normal_mapping</Name>
       <Importer>EffectImporter</Importer>
@@ -77,22 +70,23 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Floor.fbx">
-      <Name>Floor</Name>
+    <Compile Include="Models\Floor_mdl.fbx">
+      <Name>Floor_mdl</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Models\testscene.fbx">
-      <Name>testscene</Name>
+    <Compile Include="Models\Ship_mdl.fbx">
+      <Name>Ship_mdl</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Models\Ship.fbx">
-      <Name>Ship</Name>
+    <Compile Include="Models\Tank_mdl.fbx">
+      <Name>Tank_mdl</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\testscene_mdl.fbx">
+      <Name>testscene_mdl</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
