@@ -225,9 +225,9 @@ namespace AwesomeEngine
 
         private void SaveObjects(XmlTextWriter scenesaver, List<ModelInfo> objects)
         {
+            scenesaver.WriteStartElement("Conent");
             foreach (ModelInfo obj in objects)
             {
-                scenesaver.WriteStartElement("Conent");
                 scenesaver.WriteStartElement("Object");
 
                 scenesaver.WriteStartElement("posx");

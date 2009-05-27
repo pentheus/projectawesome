@@ -14,3 +14,13 @@ C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\Aw
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\AwesomeEngine\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\AwesomeEngine\obj\x86\Debug\AwesomeEngine.dll
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\AwesomeEngine\obj\x86\Debug\AwesomeEngine.pdb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AwesomeEngine\bin\x86\Debug\Content\ShadowMap.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AwesomeEngine\bin\x86\Debug\Content\DrawModel.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AwesomeEngine\bin\x86\Debug\AwesomeEngine.dll
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AwesomeEngine\bin\x86\Debug\AwesomeEngine.pdb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AwesomeEngine\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AwesomeEngine\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AwesomeEngine\obj\x86\Debug\AwesomeEngine.dll
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AwesomeEngine\obj\x86\Debug\AwesomeEngine.pdb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AwesomeEngine\bin\x86\Debug\XNAnimation.dll
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AwesomeEngine\bin\x86\Debug\Content\Simple.xnb

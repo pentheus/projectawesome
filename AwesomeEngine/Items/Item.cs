@@ -47,16 +47,16 @@ namespace AwesomeEngine
 
         public BoundingSphere BoundingSphere
         {
-            get { return boundingSphere.Transform(WorldMatrix); }
+            get { return itemAOE.Transform(WorldMatrix); }
         }
 
         public Matrix WorldMatrix
         {
             get
             {
-                return (Matrix.CreateRotationX(MathHelper.ToRadians(rotation.X)) *
-                    Matrix.CreateRotationY(rotation.Y) * Matrix.CreateRotationZ(MathHelper.ToRadians(rotation.Z)) *
-                    Matrix.CreateScale(scale.X, scale.Y, scale.Z) * Matrix.CreateTranslation(pos));
+                return (Matrix.CreateRotationX(MathHelper.ToRadians(model.Rotation.X)) *
+                    Matrix.CreateRotationY(Model.Rotation.Y) * Matrix.CreateRotationZ(MathHelper.ToRadians(Model.Rotation.Z)) *
+                    Matrix.CreateScale(Model.Scale.X, Model.Scale.Y, Model.Scale.Z) * Matrix.CreateTranslation(Model.Position));
             }
         }
     }

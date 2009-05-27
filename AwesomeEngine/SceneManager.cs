@@ -66,6 +66,7 @@ namespace AwesomeEngine
 
         public override void Draw(GameTime gameTime)
         {
+            this.LoadContent();
             DrawModel(sceneGraph.getGeometry());
             DrawScene(sceneGraph.Root);
 
@@ -116,7 +117,6 @@ namespace AwesomeEngine
         {
             Matrix[] modelTransforms = new Matrix[model.Model.Bones.Count];
             model.Model.CopyAbsoluteBoneTransformsTo(modelTransforms);
-           
 
             foreach (ModelMesh mesh in model.Model.Meshes)
             {

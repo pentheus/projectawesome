@@ -11,18 +11,23 @@ namespace AwesomeEngine
     {
         enum state { Idle, Seeking, Attacking, Damaged };
 
-        ModelInfo model;
+        AnimModelInfo model;
         SceneManager scene;
         state currentstate;
 
-        public Enemy(Game game, SceneManager scene, ModelInfo model): base(game)
+        public Enemy(Game game, SceneManager scene, AnimModelInfo model): base(game)
         {
             this.scene = scene;
             this.model = model;
             currentstate = state.Idle;
         }
 
-        public ModelInfo Model
+        public void startModel()
+        {
+            model.AnimationController.StartClip(model.AnimatedModel.AnimationClips["Idle"]);
+        }
+
+        public AnimModelInfo Model
         {
             get { return model; }
             set { model = value; }
