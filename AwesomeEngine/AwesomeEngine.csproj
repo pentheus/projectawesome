@@ -80,8 +80,13 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
       <Private>False</Private>
     </Reference>
+    <Reference Include="XNAnimation, Version=0.7.0.0, Culture=neutral, PublicKeyToken=0c21691816f8c6d0, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Windows\XNAnimation.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnimModelInfo.cs" />
     <Compile Include="Camera\Camera.cs" />
     <Compile Include="Camera\OrthoCamera.cs" />
     <Compile Include="Camera\ThirdPersonCamera.cs" />
@@ -90,9 +95,12 @@
     <Compile Include="Enemies\ShadowEnemy.cs" />
     <Compile Include="FullScreenQuad.cs" />
     <Compile Include="Items\BatteryItem.cs" />
+    <Compile Include="Items\ChairItem.cs" />
+    <Compile Include="Items\FlashLightItem.cs" />
     <Compile Include="Items\FuseItem.cs" />
     <Compile Include="Items\GlowStickItem.cs" />
     <Compile Include="Items\Item.cs" />
+    <Compile Include="Items\LanternItem.cs" />
     <Compile Include="Light.cs" />
     <Compile Include="ModelInfo.cs" />
     <Compile Include="Node.cs" />
