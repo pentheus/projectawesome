@@ -40,27 +40,29 @@ namespace AwesomeEngine
             this.fileName = fileName;
             textures = new Dictionary<ModelMeshPart, Texture2D>();
             CreateBoundingSphere(out boundingSphere);
-            LoadModelTextures(model);
+            //LoadModelTextures(model);
             
         }
 
-        public void LoadModelTextures(Model model)
+        public static void LoadModel(ref Model model, Dictionary<ModelMeshPart, Texture2D> textures, Game game, String assetName, Effect effect)
         {
-            foreach (ModelMesh mesh in model.Meshes)
-                foreach(ModelMeshPart part in mesh.MeshParts)
-                {
-                    textures.Add(part, (part.Effect as BasicEffect).Texture);
-                }
-        }
-         
-        public static void LoadModel(ref Model model, Game game, String assetName, Effect effect)
-        {
-            model = game.Content.Load<Model>(assetName);
+            model = game.Content.Load<Model>(@"Models\"+assetName);
 
             foreach(ModelMesh mesh in model.Meshes)
                 foreach (ModelMeshPart part in mesh.MeshParts)
                 {
-                    part.Effect = effect.Clone(game.GraphicsDevice);
+                    Effect e = effect.Clone(game.GraphicsDevice);
+                    if ((part.Effect as BasicEffect).Texture != null)
+                    {
+                        textures.Add(part, (part.Effect as BasicEffect).Texture);
+                        e.Parameters["xTextureEnabled"].SetValue(true);
+                    }
+                    else
+                    {
+                        textures.Add(part, (part.Effect as BasicEffect).Texture);
+                        e.Parameters["xTextureEnabled"].SetValue(false);
+                    }
+                    part.Effect = e;
                 }
         }
 
