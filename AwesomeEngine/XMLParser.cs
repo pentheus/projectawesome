@@ -14,9 +14,9 @@ namespace AwesomeEngine
 {
     public class XMLParser
     {
-        Game game;
+        ContainsScene game;
 
-        public XMLParser(Game received)
+        public XMLParser(ContainsScene received)
         {
             game = received;
         }
@@ -44,7 +44,9 @@ namespace AwesomeEngine
             XmlNode geometrynode = scenedoc.GetElementsByTagName("WorldGeometry").Item(0);
 
             String modelname = geometrynode.SelectSingleNode("model").InnerText;
-            Model objmodel = game.Content.Load<Model>(modelname);
+            Model objmodel = new Model();
+            ModelInfo.LoadModel(ref objmodel, game.GetScene().Textures, game.GetContent(), game.GetGraphics(), 
+                modelname, game.GetScene().Effect);
 
             float geoscalex = (float)Convert.ToDouble(geometrynode.SelectSingleNode("scalex").InnerText);
             float geoscaley = (float)Convert.ToDouble(geometrynode.SelectSingleNode("scaley").InnerText);
@@ -89,7 +91,9 @@ namespace AwesomeEngine
                     }
                     else
                     {
-                        objmodel = game.Content.Load<Model>(modelname);
+                        objmodel = new Model();
+                        ModelInfo.LoadModel(ref objmodel, game.GetScene().Textures, game.GetContent(), game.GetGraphics(),
+                            modelname, game.GetScene().Effect);
                         modelsloaded.Add(modelname, objmodel);
                     }
 
@@ -138,7 +142,9 @@ namespace AwesomeEngine
                     }
                     else
                     {
-                        objmodel = game.Content.Load<Model>(modelname);
+                        objmodel = new Model();
+                        ModelInfo.LoadModel(ref objmodel, game.GetScene().Textures, game.GetContent(), game.GetGraphics(),
+                            modelname, game.GetScene().Effect);
                         modelsloaded.Add(modelname, objmodel);
                     }
 
@@ -153,16 +159,16 @@ namespace AwesomeEngine
                     switch (itemtype)
                     {
                         case "BatteryItem":
-                            item = new BatteryItem(game, obj);
+                            item = new BatteryItem((Game)game, obj);
                             break;
                         case "FuseItem":
-                            item = new FuseItem(game, obj);
+                            item = new FuseItem((Game)game, obj);
                             break;
                         case "GlowStickItem":
-                            item = new GlowStickItem(game, obj);
+                            item = new GlowStickItem((Game)game, obj);
                             break;
                         default:
-                            item = new Item(game, obj);
+                            item = new Item((Game)game, obj);
                             break;
                     }
 
