@@ -44,15 +44,6 @@ namespace AwesomeEngine
             
         }
 
-        public void LoadModelTextures(Model model)
-        {
-            foreach (ModelMesh mesh in model.Meshes)
-                foreach(ModelMeshPart part in mesh.MeshParts)
-                {
-                    textures.Add(part, (part.Effect as BasicEffect).Texture);
-                }
-        }
-         
         public static void LoadModel(ref Model model, Dictionary<ModelMeshPart, Texture2D> textures, Game game, String assetName, Effect effect)
         {
             model = game.Content.Load<Model>(@"Models\"+assetName);
@@ -60,8 +51,18 @@ namespace AwesomeEngine
             foreach(ModelMesh mesh in model.Meshes)
                 foreach (ModelMeshPart part in mesh.MeshParts)
                 {
-                    textures.Add(part, (part.Effect as BasicEffect).Texture);
-                    part.Effect = effect.Clone(game.GraphicsDevice);
+                    Effect e = effect.Clone(game.GraphicsDevice);
+                    if ((part.Effect as BasicEffect).Texture != null)
+                    {
+                        textures.Add(part, (part.Effect as BasicEffect).Texture);
+                        e.Parameters["xTextureEnabled"].SetValue(true);
+                    }
+                    else
+                    {
+                        textures.Add(part, (part.Effect as BasicEffect).Texture);
+                        e.Parameters["xTextureEnabled"].SetValue(false);
+                    }
+                    part.Effect = e;
                 }
         }
 

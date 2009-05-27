@@ -129,7 +129,7 @@ namespace AwesomeEngine
 
                 foreach (Effect effect in mesh.Effects)
                 {
-                    effect.CurrentTechnique = drawModelEffect.Techniques["Textured"];
+                    effect.CurrentTechnique = drawModelEffect.Techniques["Flat"];
                     effect.Parameters["xWorld"].SetValue(modelTransforms[mesh.ParentBone.Index] * model.WorldMatrix);
                     effect.Parameters["xView"].SetValue(mainCamera.View);
                     effect.Parameters["xProjection"].SetValue(mainCamera.Projection);
