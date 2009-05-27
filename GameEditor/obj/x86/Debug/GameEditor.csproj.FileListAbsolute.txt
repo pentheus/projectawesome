@@ -77,7 +77,8 @@ C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEdit
 C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\Textures\null_normal.xnb
 C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\Textures\PlayerMarineNormal.xnb
 C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\Textures\rockbump.xnb
-C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\Models\PlayerMarine_mdl.xnb
 C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\Models\WeaponMachineGun_mdl.xnb
 C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\Textures\PlayerMarineDiffuse_0.xnb
 C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\Textures\WeaponMachineGunDiffuse_0.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\Models\PlayerMarine_mdla.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\PlayerMarineNormal_0.xnb

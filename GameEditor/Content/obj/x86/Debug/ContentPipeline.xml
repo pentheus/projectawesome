@@ -190,20 +190,6 @@
       </Dependency>
     </Item>
     <Item>
-      <Source>Models\PlayerMarine_mdl.fbx</Source>
-      <Name>Models\PlayerMarine_mdl</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\Models\PlayerMarine_mdl.xnb</Output>
-      <Time>2009-05-26T19:34:52.015625-07:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\PlayerMarine_mdl_0.xml</Key>
-        <Value>2009-05-27T11:42:51.703125-07:00</Value>
-      </Dependency>
-      <Request>C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\Textures\PlayerMarineDiffuse_0.xnb</Request>
-    </Item>
-    <Item>
       <Source>Models\WeaponMachineGun_mdl.fbx</Source>
       <Name>Models\WeaponMachineGun_mdl</Name>
       <Importer>FbxImporter</Importer>
@@ -261,13 +247,6 @@
       <Time>2009-05-27T11:30:43.53125-07:00</Time>
     </Item>
     <Item>
-      <Source>Models\PlayerMarine_mdl.fbx</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\PlayerMarine_mdl_0.xml</Output>
-      <Time>2009-05-26T19:34:52.015625-07:00</Time>
-    </Item>
-    <Item>
       <Source>Textures\PlayerMarineDiffuse.jpg</Source>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
@@ -302,6 +281,43 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\Textures\WeaponMachineGunDiffuse_0.xnb</Output>
+      <Time>2009-05-22T13:02:40-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\PlayerMarine_mdla.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\PlayerMarine_mdla_0.xml</Output>
+      <Time>2009-05-26T19:34:52.015625-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\PlayerMarine_mdla.fbx</Source>
+      <Name>Models\PlayerMarine_mdla</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>SkinnedModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\Models\PlayerMarine_mdla.xnb</Output>
+      <Time>2009-05-26T19:34:52.015625-07:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\PlayerMarine_mdla_0.xml</Key>
+        <Value>2009-05-27T12:38:54.09375-07:00</Value>
+      </Dependency>
+      <Request>C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\Textures\PlayerMarineDiffuse_0.xnb</Request>
+      <Request>C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\PlayerMarineNormal_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\Content\Textures\PlayerMarineNormal.tga</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\New Folder\jchuong2\GameEditor\bin\x86\Debug\Content\PlayerMarineNormal_0.xnb</Output>
       <Time>2009-05-22T13:02:40-07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
