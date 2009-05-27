@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Props");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Items");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Logic Entities");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Props");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Items");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Logic Entities");
             this.menuBar = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -118,7 +118,7 @@
             this.objectGroupBox.Controls.Add(this.pos_label);
             this.objectGroupBox.Controls.Add(this.numericUpDown1);
             this.objectGroupBox.Controls.Add(this.treeView1);
-            this.objectGroupBox.Location = new System.Drawing.Point(12, 45);
+            this.objectGroupBox.Location = new System.Drawing.Point(12, 28);
             this.objectGroupBox.Name = "objectGroupBox";
             this.objectGroupBox.Size = new System.Drawing.Size(241, 266);
             this.objectGroupBox.TabIndex = 1;
@@ -235,16 +235,16 @@
             this.treeView1.FullRowSelect = true;
             this.treeView1.Location = new System.Drawing.Point(6, 19);
             this.treeView1.Name = "treeView1";
-            treeNode4.Name = "Props";
-            treeNode4.Text = "Props";
-            treeNode5.Name = "Items";
-            treeNode5.Text = "Items";
-            treeNode6.Name = "LogicEntities";
-            treeNode6.Text = "Logic Entities";
+            treeNode1.Name = "Props";
+            treeNode1.Text = "Props";
+            treeNode2.Name = "Items";
+            treeNode2.Text = "Items";
+            treeNode3.Name = "LogicEntities";
+            treeNode3.Text = "Logic Entities";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode4,
-            treeNode5,
-            treeNode6});
+            treeNode1,
+            treeNode2,
+            treeNode3});
             this.treeView1.Size = new System.Drawing.Size(141, 136);
             this.treeView1.TabIndex = 0;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);

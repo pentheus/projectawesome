@@ -24,7 +24,7 @@ namespace GameEditor
     public class GameEditor : Microsoft.Xna.Framework.Game
     {
         GraphicsDeviceManager graphics;
-        List<ModelInfo> modelInfos = new List<ModelInfo>();
+        Dictionary<String, Model> props = new Dictionary<String, Model>();
         List<Item> items = new List<Item>();
         SpriteBatch spriteBatch;
         BasicEffect basicEffect;
@@ -40,7 +40,7 @@ namespace GameEditor
         float phi = 10f;
         Vector3 vector3 = Vector3.Zero;
         float radius = 100f;
-
+        ModelInfo cursor = new ModelInfo();
 
 
         public GameEditor()
@@ -92,7 +92,7 @@ namespace GameEditor
             //sceneMgr.SceneGraph = parser.ReadScene( "C:/Users/Spike/Documents/Visual Studio 2008/Projects/projectawesome", "shitsingiggles.xml");
 
             DirectoryInfo d = new DirectoryInfo(Content.RootDirectory+"\\Models\\");
-            FileInfo[] files = d.GetFiles("*.xnb");
+            FileInfo[] files = d.GetFiles("*mdl.xnb");
             
             foreach (FileInfo f in files)
             {
@@ -100,7 +100,7 @@ namespace GameEditor
                 //Model model = Content.Load<Model>(split[0]);
                 Model model = new Model();
                 ModelInfo.LoadModel(ref model, sceneMgr.Textures, this, split[0], sceneMgr.Effect);
-                ModelInfo modelInfo = new ModelInfo(new Vector3(0f, 0f, 0f), Vector3.Zero, new Vector3(0.01f), model, split[0]);
+                ModelInfo modelInfo = new ModelInfo(new Vector3(0f, 0f, 0f), Vector3.Zero, new Vector3(0.1f), model, split[0]);
                 if (split[0].ToLower().Contains("item"))
                 {
                     if (split[0].ToLower().Contains("battery"))
@@ -123,9 +123,11 @@ namespace GameEditor
                 }
                 else
                 {
-                    modelInfos.Add(modelInfo);
+                    props.Add(modelInfo.FileName, model);
                     Console.WriteLine("Object added");
-                    toolBar.TreeView.Nodes["Props"].Nodes.Add(modelInfo.FileName);
+                    toolBar.TreeView.Nodes["Props"].Nodes.Add(modelInfo.FileName,modelInfo.FileName);
+                    toolBar.TreeView.Nodes["Props"].Nodes[modelInfo.FileName].Name = modelInfo.FileName;
+                    cursor = modelInfo;
                 }
                 Console.WriteLine(f.ToString());
             }
@@ -240,6 +242,7 @@ namespace GameEditor
             // TODO: Add your drawing code here
             //DrawOctree(sceneMgr.SceneGraph.Root);
             DrawText();
+            sceneMgr.DrawModel(cursor);
             grid.Draw(mainCamera.View, mainCamera.Projection);
             base.Draw(gameTime);
         }
@@ -279,6 +282,19 @@ namespace GameEditor
                 basicEffect.CurrentTechnique.Passes[pass].End();
             }
             basicEffect.End();
+        }
+
+        public void SetCursorModel(String name)
+        {
+            try
+            {
+                cursor = new ModelInfo(Vector3.Zero, Vector3.Zero, Vector3.One, props[name], name);
+                //cursor = props[name];
+            }
+            catch (KeyNotFoundException e)
+            {
+                //do nothing
+            }
         }
     }
 }

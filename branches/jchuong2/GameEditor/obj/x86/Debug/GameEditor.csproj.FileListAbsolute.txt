@@ -21,10 +21,6 @@ C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\b
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\ShadowMap.xnb
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\DrawModel.xnb
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Simple.xnb
-C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\Tank.xnb
-C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\Floor.xnb
-C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\testscene.xnb
-C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\Ship.xnb
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Effects\parallax_normal_mapping.xnb
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Fonts\DemoFont.xnb
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Textures\floor_color_map.xnb
@@ -41,3 +37,8 @@ C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\Ga
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\obj\x86\Debug\GameEditor.csproj.GenerateResource.Cache
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\obj\x86\Debug\GameEditor.exe
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\obj\x86\Debug\GameEditor.pdb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\ShipDiffuse_0.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\Floor_mdl.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\Ship_mdl.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\Tank_mdl.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\testscene_mdl.xnb
