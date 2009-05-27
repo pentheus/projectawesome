@@ -26,11 +26,14 @@ namespace AwesomeEngine
         Texture2D renderTarget;
         Camera.Camera mainCamera;
         IGraphicsDeviceService graphicsService;
+        Dictionary<ModelMeshPart, Texture2D> textures;
+
 
         public SceneManager(Game game)
             : base(game)
         {
             sceneGraph = new Octree(200f);
+            textures = new Dictionary<ModelMeshPart, Texture2D>();
             this.game = game;
         }
 
@@ -66,8 +69,9 @@ namespace AwesomeEngine
 
         public override void Draw(GameTime gameTime)
         {
-            this.LoadContent();
-            DrawModel(sceneGraph.getGeometry());
+            
+            if(sceneGraph.getGeometry() != null)
+                DrawModel(sceneGraph.getGeometry());
             DrawScene(sceneGraph.Root);
 
             base.Draw(gameTime);
@@ -77,8 +81,7 @@ namespace AwesomeEngine
         /// Draws a scene
         /// </summary>
         public void DrawScene(Node parent) 
-        {
-            
+        {  
             DrawNode(parent);
             if (parent.HasChildren())
             {
@@ -117,23 +120,50 @@ namespace AwesomeEngine
         {
             Matrix[] modelTransforms = new Matrix[model.Model.Bones.Count];
             model.Model.CopyAbsoluteBoneTransformsTo(modelTransforms);
+            Vector3 center = model.Position;
 
             foreach (ModelMesh mesh in model.Model.Meshes)
             {
-                
                 foreach (ModelMeshPart part in mesh.MeshParts)
+                    part.Effect.Parameters["xTexture"].SetValue(this.Textures[part]);
+
+                foreach (Effect effect in mesh.Effects)
                 {
-                    Effect e = drawModelEffect.Clone(graphicsService.GraphicsDevice);
-                    e.CurrentTechnique = drawModelEffect.Techniques["Textured"];
-                    e.Parameters["xWorld"].SetValue(modelTransforms[mesh.ParentBone.Index] * model.WorldMatrix);
-                    e.Parameters["xView"].SetValue(mainCamera.View);
-                    e.Parameters["xProjection"].SetValue(mainCamera.Projection);
-                    e.Parameters["xTexture"].SetValue(model.Textures[part]);
-                    part.Effect = e;
+                    effect.CurrentTechnique = drawModelEffect.Techniques["Flat"];
+                    effect.Parameters["xWorld"].SetValue(modelTransforms[mesh.ParentBone.Index] * model.WorldMatrix);
+                    effect.Parameters["xView"].SetValue(mainCamera.View);
+                    effect.Parameters["xProjection"].SetValue(mainCamera.Projection);
+                    effect.Parameters["xCenter"].SetValue(model.Position);
+                    effect.Parameters["xRange"].SetValue(4f);
                 }
                 mesh.Draw();
             }
         }
+
+        public void DrawFlat(ModelInfo model)
+        {
+            Matrix[] modelTransforms = new Matrix[model.Model.Bones.Count];
+            model.Model.CopyAbsoluteBoneTransformsTo(modelTransforms);
+            Vector3 center = model.Position;
+
+            foreach (ModelMesh mesh in model.Model.Meshes)
+            {
+
+                foreach (ModelMeshPart part in mesh.MeshParts)
+                {
+                    //Effect e = drawModelEffect.Clone(graphicsService.GraphicsDevice);
+                    part.Effect.CurrentTechnique = drawModelEffect.Techniques["Flat"];
+                    part.Effect.Parameters["xWorld"].SetValue(modelTransforms[mesh.ParentBone.Index] * model.WorldMatrix);
+                    part.Effect.Parameters["xView"].SetValue(mainCamera.View);
+                    part.Effect.Parameters["xProjection"].SetValue(mainCamera.Projection);
+                    part.Effect.Parameters["xTexture"].SetValue(this.Textures[part]);
+                    part.Effect.Parameters["xCenter"].SetValue(model.Position);
+                    part.Effect.Parameters["xRange"].SetValue(10f);
+                }
+                mesh.Draw();
+            }
+        }
+
 
         /// <summary>
         /// Checks if model's bounding volume intersects the view frustum.
@@ -162,9 +192,15 @@ namespace AwesomeEngine
             set { mainCamera = value; }
         }
 
-        public Effect CurrentEffect
+        public Dictionary<ModelMeshPart, Texture2D> Textures
         {
-            get{ return drawModelEffect; }
+            get { return textures; }
         }
+
+        public Effect Effect
+        {
+            get { return this.drawModelEffect; }
+        }
+        
     }
 }
