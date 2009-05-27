@@ -83,21 +83,12 @@ namespace GameEditor
 
             sceneMgr.MainCamera = mainCamera;
             
-            //ShipModel = Content.Load<Model>("Ship");
-            //Ship = new ModelInfo(new Vector3(0f, 0f, 0f), Vector3.Zero,new Vector3(0.01f), ShipModel, "Ship");
-            //sceneMgr.SceneGraph.addObject(Ship);
-            //sceneMgr.SceneGraph.addGeometry(Ship);
-            //parser.SaveScene(sceneMgr.SceneGraph, "C:/Users/Spike/Documents/Visual Studio 2008/Projects/projectawesome", "shitsingiggles.xml");
-            //sceneMgr.SceneGraph = null;
-            //sceneMgr.SceneGraph = parser.ReadScene( "C:/Users/Spike/Documents/Visual Studio 2008/Projects/projectawesome", "shitsingiggles.xml");
-
             DirectoryInfo d = new DirectoryInfo(Content.RootDirectory+"\\Models\\");
             FileInfo[] files = d.GetFiles("*mdl.xnb");
             
             foreach (FileInfo f in files)
             {
                 string[] split = f.ToString().Split('.');
-                //Model model = Content.Load<Model>(split[0]);
                 Model model = new Model();
                 ModelInfo.LoadModel(ref model, sceneMgr.Textures, Content, graphics.GraphicsDevice, split[0], sceneMgr.Effect);
                 ModelInfo modelInfo = new ModelInfo(new Vector3(0f, 0f, 0f), Vector3.Zero, new Vector3(0.1f), model, split[0]);
@@ -166,17 +157,7 @@ namespace GameEditor
                 if (k.IsKeyDown(Keys.Right))
                     theta += 1f;
 
-                
-
-                /*if (k.IsKeyDown(Keys.W))
-                    mainCamera.LookAt = mainCamera.LookAt + new Vector3(0, 0, -3f);
-                if (k.IsKeyDown(Keys.S))
-                    mainCamera.LookAt = mainCamera.LookAt + new Vector3(0, 0, 3f);
-                if (k.IsKeyDown(Keys.A))
-                    mainCamera.LookAt = mainCamera.LookAt + new Vector3(-3f, 0, 0);
-                if (k.IsKeyDown(Keys.D))
-                    mainCamera.LookAt = mainCamera.LookAt + new Vector3(3f, 0, 0);*/
-
+             
                 if (k.IsKeyDown(Keys.E))
                     radius -= 2f;
                 if (k.IsKeyDown(Keys.F))
@@ -238,9 +219,7 @@ namespace GameEditor
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
-            //sceneMgr.Draw(gameTime);
             // TODO: Add your drawing code here
-            //DrawOctree(sceneMgr.SceneGraph.Root);
             DrawText();
             sceneMgr.DrawModel(cursor);
             grid.Draw(mainCamera.View, mainCamera.Projection);
