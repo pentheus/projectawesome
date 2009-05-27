@@ -10,7 +10,7 @@ namespace AwesomeEngine.Enemies
 {
     public class FirstBossEnemy:Enemy
     {
-        public FirstBossEnemy(Game game, SceneManager scene, ModelInfo model): 
+        public FirstBossEnemy(Game game, SceneManager scene, AnimModelInfo model): 
             base(game, scene, model)
         {
             
