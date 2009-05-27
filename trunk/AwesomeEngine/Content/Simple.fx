@@ -5,6 +5,7 @@ float4x4 xProjection;
 float3 xCenter;
 float xRange;
 float4x4 xWorldViewProjection;  
+bool xTextureEnabled;
  
 //------- Texture Samplers --------    
 Texture xTexture;       // Input a texture from XNA code via effect.Parameters["xTexture"].SetValue(texture)  
@@ -32,9 +33,9 @@ struct VertexShaderIn  // VertexShaderInput
 struct VertexShaderOut // VertexShaderOutput  
 {  
     float4 Position                 : POSITION;   
-    float2 textureCoordinates       : TEXCOORD0; 
-    float4 Position2D				: TEXCOORD1;
-    float4 Center					: TEXCOORD2;		
+    float4 Position2D				: TEXCOORD0;
+    float4 Center					: TEXCOORD2;
+    float2 textureCoordinates       : TEXCOORD1;  
 };  
  
 ///////////////////// VERTEX SHADERS /////////////////////////////////////////////////////////////   
@@ -56,14 +57,20 @@ VertexShaderOut VertexShaderFunction(VertexShaderIn input)
 // The only semantics that a pixel shader can accept as input are COLOR[ n ] and TEXCOORD[ n ].     
 /////////////////////////////////////////////////////////////////////////////////////////////////     
  
-float4 PixelShaderFunction(VertexShaderOut input, float4 pos: POSITION1) : COLOR0  // Takes input from output of Vertex Shader  
+float4 PixelShaderFunction(VertexShaderOut input) : COLOR0  // Takes input from output of Vertex Shader  
 {  
 	float4 output;
+	
 	float4 color = tex2D(TextureSampler, input.textureCoordinates);   
-    float att =saturate(xRange/distance(input.Center, input.Position2D));
+    float att = saturate(xRange/distance(input.Center, input.Position2D));
+    
     //output.a = 0.3; 
     
     output = color*att;
+    
+    if(xTextureEnabled == false)
+		output = 1;
+    
     return output;  
 }  
  
@@ -75,7 +82,6 @@ technique Textured
     {  
 		ZEnable = false;  
         ZWriteEnable = false;  
-        
         AlphaBlendEnable = true;  
         SrcBlend = SrcAlpha;  
         DestBlend = One;   
