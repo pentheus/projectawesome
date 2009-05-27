@@ -51,6 +51,8 @@ namespace GameEditor
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
+
+                gameEditor.SetCursorModel(e.Node.Name);
             
         }
 

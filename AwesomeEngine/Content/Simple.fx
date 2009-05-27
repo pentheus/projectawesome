@@ -5,6 +5,7 @@ float4x4 xProjection;
 float3 xCenter;
 float xRange;
 float4x4 xWorldViewProjection;  
+bool xTextureEnabled;
  
 //------- Texture Samplers --------    
 Texture xTexture;       // Input a texture from XNA code via effect.Parameters["xTexture"].SetValue(texture)  
@@ -59,11 +60,17 @@ VertexShaderOut VertexShaderFunction(VertexShaderIn input)
 float4 PixelShaderFunction(VertexShaderOut input) : COLOR0  // Takes input from output of Vertex Shader  
 {  
 	float4 output;
+	
 	float4 color = tex2D(TextureSampler, input.textureCoordinates);   
     float att = saturate(xRange/distance(input.Center, input.Position2D));
+    
     //output.a = 0.3; 
     
     output = color*att;
+    
+    if(xTextureEnabled == false)
+		output = 1;
+    
     return output;  
 }  
  
