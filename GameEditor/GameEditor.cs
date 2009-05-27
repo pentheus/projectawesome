@@ -21,7 +21,7 @@ namespace GameEditor
     /// <summary>
     /// This is the main type for your game
     /// </summary>
-    public class GameEditor : Microsoft.Xna.Framework.Game
+    public class GameEditor : Microsoft.Xna.Framework.Game, ContainsScene
     {
         GraphicsDeviceManager graphics;
         Dictionary<String, Model> props = new Dictionary<String, Model>();
@@ -99,7 +99,7 @@ namespace GameEditor
                 string[] split = f.ToString().Split('.');
                 //Model model = Content.Load<Model>(split[0]);
                 Model model = new Model();
-                ModelInfo.LoadModel(ref model, sceneMgr.Textures, this, split[0], sceneMgr.Effect);
+                ModelInfo.LoadModel(ref model, sceneMgr.Textures, Content, graphics.GraphicsDevice, split[0], sceneMgr.Effect);
                 ModelInfo modelInfo = new ModelInfo(new Vector3(0f, 0f, 0f), Vector3.Zero, new Vector3(0.1f), model, split[0]);
                 if (split[0].ToLower().Contains("item"))
                 {
@@ -295,6 +295,21 @@ namespace GameEditor
             {
                 //do nothing
             }
+        }
+
+        public SceneManager GetScene()
+        {
+            return sceneMgr;
+        }
+
+        public GraphicsDevice GetGraphics()
+        {
+            return graphics.GraphicsDevice;
+        }
+
+        public ContentManager GetContent()
+        {
+            return Content;
         }
     }
 }
