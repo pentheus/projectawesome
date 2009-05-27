@@ -15,9 +15,17 @@ namespace AwesomeEngine.Items
             this.setPickable(true);
         }
 
-        public void runScript()
+        // two scripts
+        // 1) if not picked up yet, if bounding sphere of character intersects with bounding sphere of fuse, pick it up
+        // 2) if picked up already, if bounding sphere of character intersects with bounding sphere of fuse box, put fuse in
+        public override void runScript()
         {
-
+            if (picked)
+            {
+            }
+            else // if not picked
+            {
+            }
         }
     }
 }
