@@ -22,7 +22,6 @@ namespace GameEditor
             InitializeComponent();
             this.gameEditor = gameEditor;
             openDialog.InitialDirectory = gameEditor.Content.RootDirectory;
-           
         }
 
         public TreeView TreeView
@@ -123,9 +122,14 @@ namespace GameEditor
             gameEditor.GetCursor().Scale = new Vector3((float)scaleX.Value, (float)scaleY.Value, (float)scaleZ.Value);
         }
 
+        private void createButton_Click(object sender, EventArgs e)
+        {
+            gameEditor.GetScene().SceneGraph.AddObject(gameEditor.GetCursor());
+        }
 
-
-
-
+        private void setGeoButton_Click(object sender, EventArgs e)
+        {
+            gameEditor.SetWorldGeometry();
+        }
     }
 }
