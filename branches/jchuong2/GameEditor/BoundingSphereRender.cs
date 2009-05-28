@@ -24,7 +24,7 @@ public static class BoundingSphereRenderer
     static VertexBuffer vertBuffer;
     static VertexDeclaration vertDecl;
     static BasicEffect effect;
-    static int sphereResolution;
+    static int sphereResolution;//
 
     /// <summary>
     /// Initializes the graphics objects for rendering the spheres. If this method isn't

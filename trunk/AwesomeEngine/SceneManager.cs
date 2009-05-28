@@ -18,7 +18,7 @@ namespace AwesomeEngine
     /// This is a game component that implements IUpdateable.
     /// </summary>
     public class SceneManager : Microsoft.Xna.Framework.DrawableGameComponent
-    {
+    {//
         Octree sceneGraph;
         Game game;
         ShadowRenderer shadowRenderer;

@@ -19,7 +19,7 @@ namespace AwesomeEngine
         public XMLParser(ContainsScene received)
         {
             game = received;
-        }
+        }//
 
         public Octree ReadScene(string filename)
         {

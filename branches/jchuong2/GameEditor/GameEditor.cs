@@ -18,7 +18,7 @@ using XNAnimation;
 
 
 namespace GameEditor
-{
+{//
     /// <summary>
     /// This is the main type for your game
     /// </summary>

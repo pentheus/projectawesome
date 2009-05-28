@@ -17,7 +17,7 @@ namespace AwesomeEngine
 
         Node root;
         float treeSize;
-
+        //
         public Octree(float treeSize)
         {
             //Compute octree min and max values
