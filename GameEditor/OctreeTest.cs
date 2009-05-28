@@ -1,4 +1,4 @@
- using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
@@ -14,6 +14,7 @@ using AwesomeEngine;
 using AwesomeEngine.Camera;
 using AwesomeEngine.Items;
 using System.IO;
+using XNAnimation;
 
 
 namespace GameEditor
@@ -21,39 +22,46 @@ namespace GameEditor
     /// <summary>
     /// This is the main type for your game
     /// </summary>
-    public class OctreeTest : Microsoft.Xna.Framework.Game
+    public class GameEditor : Microsoft.Xna.Framework.Game, ContainsScene
     {
         GraphicsDeviceManager graphics;
-        List<ModelInfo> modelInfos = new List<ModelInfo>();
-        List<Item> items = new List<Item>();
+        
+
+        //Game Specific Variables
         SpriteBatch spriteBatch;
         BasicEffect basicEffect;
         SceneManager sceneMgr;
+        XMLParser parser;
+
+        //Camera Variables
         ThirdPersonCamera mainCamera;
+        float theta = 0f;
+        float phi = 10f;
+        float radius = 100f;
+        Vector3 vector3 = Vector3.Zero;
+        Vector3 translationVector = Vector3.Zero;
+        
+        //Editor Variables
+        ToolBar toolBar;
+        ModelInfo cursor = new ModelInfo();
+        Dictionary<String, Model> props = new Dictionary<String, Model>();
+        List<Item> items = new List<Item>();
         ReferenceGrid grid;
         SpriteFont spriteFont;
         Vector2 fontPos;
-        Vector3 translationVector = Vector3.Zero;
-        XMLParser parser;
-        float theta = 0f;
-        float phi = 10f;
-        Vector3 vector3 = Vector3.Zero;
-        float radius = 100f;
+        MouseState oldMouseState = new MouseState();
+        //This is for testing and can be deleted
+        //AnimModelInfo testmarine;
 
-        Vector3 modelPosition = Vector3.Zero;
-        float modelRotation = 0.0f;
-        Vector3 modelVelocity = Vector3.Zero;
-
-        Model cursor;
-        KeyboardState previousKeyboardState = Keyboard.GetState();
-        long timer = 0;
-        int currentIndex = 0;
-
-        public OctreeTest()
+        public GameEditor()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             sceneMgr = new SceneManager(this);
+            Components.Add(sceneMgr);
+            toolBar = new ToolBar(this);
+            toolBar.Show();
+            this.IsMouseVisible = true;
         }
 
         /// <summary>
@@ -69,7 +77,7 @@ namespace GameEditor
             mainCamera = new ThirdPersonCamera(new Vector3(35f, -24f, -30f), Vector3.Zero, GraphicsDevice.Viewport.AspectRatio, 1f, 10000f);
             parser = new XMLParser(this);
             fontPos = new Vector2(1.0f, 1.0f);
-            
+       
             base.Initialize();
         }
 
@@ -85,25 +93,17 @@ namespace GameEditor
 
             sceneMgr.MainCamera = mainCamera;
             
-            //ShipModel = Content.Load<Model>("Ship");
-            //Ship = new ModelInfo(new Vector3(0f, 0f, 0f), Vector3.Zero,new Vector3(0.01f), ShipModel, "Ship");
-            //sceneMgr.SceneGraph.addObject(Ship);
-            //sceneMgr.SceneGraph.addGeometry(Ship);
-            //parser.SaveScene(sceneMgr.SceneGraph, "C:/Users/Spike/Documents/Visual Studio 2008/Projects/projectawesome", "shitsingiggles.xml");
-            //sceneMgr.SceneGraph = null;
-            //sceneMgr.SceneGraph = parser.ReadScene( "C:/Users/Spike/Documents/Visual Studio 2008/Projects/projectawesome", "shitsingiggles.xml");
-
-
-            cursor = Content.Load<Model>(@"Ship");
-
-            DirectoryInfo d = new DirectoryInfo("C:\\Users\\Spike\\Documents\\Visual Studio 2008\\Projects\\projectawesome\\GameEditor\\Content");
-            FileInfo[] files = d.GetFiles("*.fbx");
+            DirectoryInfo d = new DirectoryInfo(Content.RootDirectory+"\\Models\\");
+            FileInfo[] files = d.GetFiles("*mdl.xnb");
+            
             foreach (FileInfo f in files)
             {
                 string[] split = f.ToString().Split('.');
-                Model model = Content.Load<Model>(split[0]);
-                ModelInfo modelInfo = new ModelInfo(new Vector3(0f, 0f, 0f), Vector3.Zero, new Vector3(0.01f), model, split[0]);
-                if(split[0].ToLower().Contains("item"))
+                Model model = new Model();
+                ModelInfo.LoadModel(ref model, sceneMgr.Textures, Content, graphics.GraphicsDevice, split[0], sceneMgr.Effect);
+          
+                ModelInfo modelInfo = new ModelInfo(new Vector3(0f, 0f, 0f), Vector3.Zero, new Vector3(0.1f), model, split[0]);
+                if (split[0].ToLower().Contains("item"))
                 {
                     if (split[0].ToLower().Contains("battery"))
                     {
@@ -124,9 +124,20 @@ namespace GameEditor
 
                 }
                 else
-                    //REMOVE modelInfos.Add(modelInfo);
+                {
+                    props.Add(modelInfo.FileName, model);
+                    Console.WriteLine("Object added");
+                    toolBar.TreeView.Nodes["Props"].Nodes.Add(modelInfo.FileName,modelInfo.FileName);
+                    toolBar.TreeView.Nodes["Props"].Nodes[modelInfo.FileName].Name = modelInfo.FileName;
+                    cursor = modelInfo;
+                }
+
                 Console.WriteLine(f.ToString());
             }
+
+            //SkinnedModel marinemodel = new SkinnedModel();
+            //ModelInfo.LoadAnimatedModel(ref marinemodel, sceneMgr.Textures, Content, graphics.GraphicsDevice, "PlayerMarine_mdla", sceneMgr.Effect);
+            //testmarine = new AnimModelInfo(new Vector3(0f, 0f, 0f), Vector3.Zero, new Vector3(0.1f), marinemodel, "PlayerMarine_mdla");
 
             grid = new ReferenceGrid(GraphicsDevice, 10, 100, Color.LimeGreen);
             // TODO: use this.Content to load your game content here
@@ -149,26 +160,20 @@ namespace GameEditor
         protected override void Update(GameTime gameTime)
         {
             KeyboardState k = Keyboard.GetState();
+            MouseState currentMouseState = Mouse.GetState();
 
-            //Spherical Camera controls
-            if (k.IsKeyDown(Keys.Up))
-                phi += 1f;
-            if (k.IsKeyDown(Keys.Down))
-                phi -= 1f;
-            if (k.IsKeyDown(Keys.Left))
-                theta -= 1f;
-            if (k.IsKeyDown(Keys.Right))
-                theta += 1f;
+            if (currentMouseState.X >= 0 && currentMouseState.X <= GraphicsDevice.Viewport.Width &&
+                currentMouseState.Y >= 0 && currentMouseState.Y <= GraphicsDevice.Viewport.Height)
+            {
+                //Spherical Camera controls
+                if (currentMouseState.LeftButton == ButtonState.Pressed)
+                {
+                    phi -= 0.8f * (currentMouseState.Y - oldMouseState.Y);
+                    theta -= 0.8f * (currentMouseState.X - oldMouseState.X);
 
-            float x = (float)(radius * Math.Sin(MathHelper.ToRadians(theta)) * Math.Sin(MathHelper.ToRadians(phi))); ;
-            float y = (float)(radius * Math.Cos(MathHelper.ToRadians(phi)));
-            float z = (float)(radius * Math.Cos(MathHelper.ToRadians(theta)) * Math.Sin(MathHelper.ToRadians(phi)));
-
-            if (k.IsKeyDown(Keys.E))
-                radius -= 2f;
-            if (k.IsKeyDown(Keys.F))
-                radius += 2f;
-
+                }
+                radius -= 0.03f * (currentMouseState.ScrollWheelValue - oldMouseState.ScrollWheelValue);
+            }
             if (k.IsKeyDown(Keys.W))
                 translationVector += new Vector3(0f, 0f, -1f);
             if (k.IsKeyDown(Keys.S))
@@ -177,109 +182,23 @@ namespace GameEditor
                 translationVector += new Vector3(-1f, 0f, 0f);
             if (k.IsKeyDown(Keys.D))
                 translationVector += new Vector3(1f, 0f, 0f);
-
-            UpdateCursorInput();
-            // Add velocity to the current position.
-            modelPosition += modelVelocity;
-            modelVelocity *= 0f;
-
-            if (k.IsKeyUp(Keys.Enter) && previousKeyboardState.IsKeyDown(Keys.Enter))
-            {
-                AddModel("Tank" + timer);
-            }
-
-            if (k.IsKeyUp(Keys.OemOpenBrackets) && previousKeyboardState.IsKeyDown(Keys.OemOpenBrackets))
-                currentIndex--;
-            if (k.IsKeyUp(Keys.OemCloseBrackets) && previousKeyboardState.IsKeyDown(Keys.OemCloseBrackets))
-                currentIndex++;
-
-            if (currentIndex >= modelInfos.Count)
-                currentIndex = 0;
-            if (currentIndex < 0)
-                 currentIndex = modelInfos.Count -1 ;
-
+            
+            float x = (float)(radius * Math.Sin(MathHelper.ToRadians(theta)) * Math.Sin(MathHelper.ToRadians(phi))); ;
+            float y = (float)(radius * Math.Cos(MathHelper.ToRadians(phi)));
+            float z = (float)(radius * Math.Cos(MathHelper.ToRadians(theta)) * Math.Sin(MathHelper.ToRadians(phi)));
+            
             mainCamera.Pos = (new Vector3(x,y,z));
             mainCamera.Pos = Vector3.Transform(mainCamera.Pos, Matrix.CreateTranslation(translationVector));
+
             mainCamera.LookAt = translationVector;
 
-            base.Update(gameTime);
-
-            previousKeyboardState = k;
-            timer++;
+            oldMouseState = currentMouseState;
+            base.Update(gameTime); 
         }
-
-        private void AddModel(string s)
-        {
-            Model model = Content.Load<Model>(@"Tank");
-            ModelInfo modelInfo = new ModelInfo(new Vector3(0f, 0f, 0f), Vector3.Zero, new Vector3(0.01f), model, s);
-            modelInfos.Add(modelInfo);
-        }
-
-        protected void UpdateCursorInput()
-        {
-            // Get the game pad state.
-            KeyboardState currentState = Keyboard.GetState(PlayerIndex.One);
-
-            // Rotate the model using the left thumbstick, and scale it down.
-            if (currentState.IsKeyDown(Keys.L))
-            {
-                modelRotation -= 0.075f;
-            }
-            if (currentState.IsKeyDown(Keys.J))
-            {
-                modelRotation += 0.075f;
-            }
-            
-
-            // Create some velocity if the right trigger is down.
-            Vector3 modelVelocityAdd = Vector3.Zero;
-
-            // Find out what direction we should be thrusting, using rotation.
-            modelVelocityAdd.X = -(float)Math.Sin(modelRotation);
-            modelVelocityAdd.Z = -(float)Math.Cos(modelRotation);
-
-            // Now scale our direction by how hard the trigger is down.
-
-            bool add = false;
-
-            if (currentState.IsKeyDown(Keys.K))
-            {
-                modelVelocityAdd *= .5f;
-                add = true;
-            }
-
-            if (currentState.IsKeyDown(Keys.I))
-            {
-                modelVelocityAdd *= -.5f;
-                add = true;
-            }
-
-            if (!add)
-            {
-                modelVelocityAdd *= .00f;
-            }
-
-            // Finally, add this vector to our velocity.
-            modelVelocity += modelVelocityAdd;
-
-            // In case you get lost, press A to warp back to the center.
-            if (currentState.IsKeyDown(Keys.Home))
-            {
-                modelPosition = Vector3.Zero;
-                modelVelocity = Vector3.Zero;
-                modelRotation = 0.0f;
-            }
-        }   
 
         private void DrawText()
         {
-            string text = null;
-            System.Text.StringBuilder buffer = new System.Text.StringBuilder();
-
-            if(modelInfos.Count!=0)
-                buffer.Append(modelInfos[currentIndex].FileName);
-
-            text = buffer.ToString();
+            string text = Mouse.GetState().X.ToString() + " " + this.oldMouseState.X;
             
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
             spriteBatch.DrawString(spriteFont, text, fontPos, Color.Yellow);
@@ -307,63 +226,12 @@ namespace GameEditor
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
-
-            DrawCursor();
-            DrawModelInfos();
-
+            // TODO: Add your drawing code here
             DrawText();
+            sceneMgr.DrawModel(cursor);
             grid.Draw(mainCamera.View, mainCamera.Projection);
             base.Draw(gameTime);
         }
-
-        private void DrawCursor()
-        {
-            Matrix[] transforms = new Matrix[cursor.Bones.Count];
-            cursor.CopyAbsoluteBoneTransformsTo(transforms);
-
-            foreach (ModelMesh mesh in cursor.Meshes)
-            {
-                foreach (BasicEffect effect in mesh.Effects)
-                {
-                    effect.EnableDefaultLighting();
-                    effect.PreferPerPixelLighting = true;
-
-                    effect.World = transforms[mesh.ParentBone.Index] * Matrix.CreateRotationY(modelRotation)
-                        * Matrix.CreateTranslation(modelPosition);
-
-                    effect.Projection = mainCamera.Projection;
-                    effect.View = mainCamera.View;
-                }
-                mesh.Draw();
-            }
-        }
-
-        private void DrawModelInfos()
-        {
-            foreach (ModelInfo mi in modelInfos)
-            {
-                Matrix[] transforms = new Matrix[mi.Model.Bones.Count];
-                mi.Model.CopyAbsoluteBoneTransformsTo(transforms);
-
-                foreach (ModelMesh mesh in mi.Model.Meshes)
-                {
-                    foreach (BasicEffect effect in mesh.Effects)
-                    {
-                        effect.EnableDefaultLighting();
-                        effect.PreferPerPixelLighting = true;
-
-                        effect.World = transforms[mesh.ParentBone.Index] * Matrix.CreateRotationY(modelRotation)
-                        * Matrix.CreateTranslation(modelPosition);
-
-                        effect.Projection = mainCamera.Projection;
-                        effect.View = mainCamera.View;
-                    }
-                    mesh.Draw();
-                }
-            }
-
-        }
-
 
         
 
@@ -400,6 +268,38 @@ namespace GameEditor
                 basicEffect.CurrentTechnique.Passes[pass].End();
             }
             basicEffect.End();
+        }
+
+        public void SetCursorModel(String name)
+        {
+            try
+            {
+                cursor = new ModelInfo(Vector3.Zero, Vector3.Zero, Vector3.One, props[name], name);
+            }
+            catch (KeyNotFoundException e)
+            {
+                //do nothing
+            }
+        }
+
+        public ModelInfo GetCursor()
+        {
+            return this.cursor;
+        }
+
+        public SceneManager GetScene()
+        {
+            return sceneMgr;
+        }
+
+        public GraphicsDevice GetGraphics()
+        {
+            return graphics.GraphicsDevice;
+        }
+
+        public ContentManager GetContent()
+        {
+            return Content;
         }
     }
 }
