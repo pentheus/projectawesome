@@ -27,6 +27,6 @@ namespace AwesomeEngine
         public void CreateShadowMap(ModelInfo model, out Texture2D renderTarget)
         {
             renderTarget = null;
-        }
+        }//
     }
 }
