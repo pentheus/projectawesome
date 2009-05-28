@@ -129,7 +129,11 @@ namespace GameEditor
         
         private void openDialog_FileOK(object sender, CancelEventArgs e)
         {
-            gameEditor.GetSceneParser().ReadScene(openDialog.FileName);
+            Octree scene;
+
+            scene = gameEditor.GetSceneParser().ReadScene(openDialog.FileName);
+
+            gameEditor.SetScene(scene);
         }
 
         private void saveDialog_FileOk(object sender, CancelEventArgs e)

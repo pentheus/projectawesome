@@ -201,6 +201,11 @@ namespace AwesomeEngine
         {
             get { return this.drawModelEffect; }
         }
+
+        override public String ToString()
+        {
+            return ""+sceneGraph.getDrawableObjects().Count();
+        }
         
     }
 }

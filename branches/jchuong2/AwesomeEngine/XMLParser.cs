@@ -14,22 +14,23 @@ namespace AwesomeEngine
 {
     public class XMLParser
     {
-        Game game;
+        ContainsScene game;
 
-        public XMLParser(Game received)
+        public XMLParser(ContainsScene received)
         {
             game = received;
         }
 
         public Octree ReadScene(string filename)
         {
+    
             XmlTextReader scenereader = new XmlTextReader(filename);
             XmlDocument scenedoc = new XmlDocument();
             scenedoc.Load(scenereader);
 
             XmlNode sceneinfo = scenedoc.GetElementsByTagName("SceneInfo").Item(0);
             float scenesize = (float)Convert.ToDouble(sceneinfo.SelectSingleNode("size").InnerText);
-            
+
             Octree scene = new Octree(scenesize);
             //Load world geometry
             ReadGeometry(scenedoc, scene);
@@ -44,9 +45,10 @@ namespace AwesomeEngine
             XmlNode geometrynode = scenedoc.GetElementsByTagName("WorldGeometry").Item(0);
 
             String modelname = geometrynode.SelectSingleNode("model").InnerText;
-            Model objmodel = game.Content.Load<Model>(modelname);
-
-            float geoscalex = (float)Convert.ToDouble(geometrynode.SelectSingleNode("scalex").InnerText);
+            Model objmodel = new Model();
+            ModelInfo.LoadModel(ref objmodel, game.GetScene().Textures, game.GetContent(), game.GetGraphics(), modelname, game.GetScene().Effect);
+   
+            float geoscalex = (float)Convert.ToDouble(geometrynode.SelectSingleNode("scaley").InnerText);
             float geoscaley = (float)Convert.ToDouble(geometrynode.SelectSingleNode("scaley").InnerText);
             float geoscalez = (float)Convert.ToDouble(geometrynode.SelectSingleNode("scalez").InnerText);
             Vector3 geoscale = new Vector3(geoscalex, geoscaley, geoscalez);
@@ -82,14 +84,14 @@ namespace AwesomeEngine
                     Vector3 objscale = new Vector3(objscalex, objscaley, objscalez);
 
                     String modelname = node.SelectSingleNode("model").InnerText;
-                    Model objmodel;
+                    Model objmodel = new Model();
                     if (modelsloaded.Contains(modelname))
                     {
                         objmodel = (Model)modelsloaded[modelname];
                     }
                     else
                     {
-                        objmodel = game.Content.Load<Model>(modelname);
+                        ModelInfo.LoadModel(ref objmodel, game.GetScene().Textures, game.GetContent(), game.GetGraphics(), modelname, game.GetScene().Effect);
                         modelsloaded.Add(modelname, objmodel);
                     }
 
@@ -131,14 +133,14 @@ namespace AwesomeEngine
                     Vector3 objscale = new Vector3(objscalex, objscaley, objscalez);
 
                     String modelname = node.SelectSingleNode("model").InnerText;
-                    Model objmodel;
+                    Model objmodel = new Model();
                     if (modelsloaded.Contains(modelname))
                     {
                         objmodel = (Model)modelsloaded[modelname];
                     }
                     else
                     {
-                        objmodel = game.Content.Load<Model>(modelname);
+                        ModelInfo.LoadModel(ref objmodel, game.GetScene().Textures, game.GetContent(), game.GetGraphics(), modelname, game.GetScene().Effect);
                         modelsloaded.Add(modelname, objmodel);
                     }
 
@@ -153,16 +155,16 @@ namespace AwesomeEngine
                     switch (itemtype)
                     {
                         case "BatteryItem":
-                            item = new BatteryItem(game, obj);
+                            item = new BatteryItem((Game)game, obj);
                             break;
                         case "FuseItem":
-                            item = new FuseItem(game, obj);
+                            item = new FuseItem((Game)game, obj);
                             break;
                         case "GlowStickItem":
-                            item = new GlowStickItem(game, obj);
+                            item = new GlowStickItem((Game)game, obj);
                             break;
                         default:
-                            item = new Item(game, obj);
+                            item = new Item((Game)game, obj);
                             break;
                     }
 
@@ -227,7 +229,7 @@ namespace AwesomeEngine
         {
             foreach (ModelInfo obj in objects)
             {
-                scenesaver.WriteStartElement("Conent");
+                scenesaver.WriteStartElement("Content");
                 scenesaver.WriteStartElement("Object");
 
                 scenesaver.WriteStartElement("posx");
