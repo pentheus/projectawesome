@@ -25,24 +25,31 @@ namespace GameEditor
     public class GameEditor : Microsoft.Xna.Framework.Game, ContainsScene
     {
         GraphicsDeviceManager graphics;
-        Dictionary<String, Model> props = new Dictionary<String, Model>();
-        List<Item> items = new List<Item>();
+        
+
+        //Game Specific Variables
         SpriteBatch spriteBatch;
         BasicEffect basicEffect;
         SceneManager sceneMgr;
+        XMLParser parser;
+
+        //Camera Variables
         ThirdPersonCamera mainCamera;
+        float theta = 0f;
+        float phi = 10f;
+        float radius = 100f;
+        Vector3 vector3 = Vector3.Zero;
+        Vector3 translationVector = Vector3.Zero;
+        
+        //Editor Variables
+        ToolBar toolBar;
+        ModelInfo cursor = new ModelInfo();
+        Dictionary<String, Model> props = new Dictionary<String, Model>();
+        List<Item> items = new List<Item>();
         ReferenceGrid grid;
         SpriteFont spriteFont;
         Vector2 fontPos;
-        Vector3 translationVector = Vector3.Zero;
-        XMLParser parser;
-        ToolBar toolBar;
-        float theta = 0f;
-        float phi = 10f;
-        Vector3 vector3 = Vector3.Zero;
-        float radius = 100f;
-        ModelInfo cursor = new ModelInfo();
-
+        MouseState oldMouseState = new MouseState();
         //This is for testing and can be deleted
         //AnimModelInfo testmarine;
 
@@ -153,34 +160,29 @@ namespace GameEditor
         protected override void Update(GameTime gameTime)
         {
             KeyboardState k = Keyboard.GetState();
+            MouseState currentMouseState = Mouse.GetState();
 
-            if (!toolBar.Focused)
+            if (currentMouseState.X >= 0 && currentMouseState.X <= GraphicsDevice.Viewport.Width &&
+                currentMouseState.Y >= 0 && currentMouseState.Y <= GraphicsDevice.Viewport.Height)
             {
                 //Spherical Camera controls
-                if (k.IsKeyDown(Keys.Up))
-                    phi += 1f;
-                if (k.IsKeyDown(Keys.Down))
-                    phi -= 1f;
-                if (k.IsKeyDown(Keys.Left))
-                    theta -= 1f;
-                if (k.IsKeyDown(Keys.Right))
-                    theta += 1f;
+                if (currentMouseState.LeftButton == ButtonState.Pressed)
+                {
+                    phi -= 0.8f * (currentMouseState.Y - oldMouseState.Y);
+                    theta -= 0.8f * (currentMouseState.X - oldMouseState.X);
 
-             
-                if (k.IsKeyDown(Keys.E))
-                    radius -= 2f;
-                if (k.IsKeyDown(Keys.F))
-                    radius += 2f;
-
-                if (k.IsKeyDown(Keys.W))
-                    translationVector += new Vector3(0f, 0f, -1f);
-                if (k.IsKeyDown(Keys.S))
-                    translationVector += new Vector3(0f, 0f, 1f);
-                if (k.IsKeyDown(Keys.A))
-                    translationVector += new Vector3(-1f, 0f, 0f);
-                if (k.IsKeyDown(Keys.D))
-                    translationVector += new Vector3(1f, 0f, 0f);
+                }
+                radius -= 0.03f * (currentMouseState.ScrollWheelValue - oldMouseState.ScrollWheelValue);
             }
+            if (k.IsKeyDown(Keys.W))
+                translationVector += new Vector3(0f, 0f, -1f);
+            if (k.IsKeyDown(Keys.S))
+                translationVector += new Vector3(0f, 0f, 1f);
+            if (k.IsKeyDown(Keys.A))
+                translationVector += new Vector3(-1f, 0f, 0f);
+            if (k.IsKeyDown(Keys.D))
+                translationVector += new Vector3(1f, 0f, 0f);
+            
             float x = (float)(radius * Math.Sin(MathHelper.ToRadians(theta)) * Math.Sin(MathHelper.ToRadians(phi))); ;
             float y = (float)(radius * Math.Cos(MathHelper.ToRadians(phi)));
             float z = (float)(radius * Math.Cos(MathHelper.ToRadians(theta)) * Math.Sin(MathHelper.ToRadians(phi)));
@@ -189,18 +191,14 @@ namespace GameEditor
             mainCamera.Pos = Vector3.Transform(mainCamera.Pos, Matrix.CreateTranslation(translationVector));
 
             mainCamera.LookAt = translationVector;
-            
+
+            oldMouseState = currentMouseState;
             base.Update(gameTime); 
         }
 
         private void DrawText()
         {
-            string text = null;
-            System.Text.StringBuilder buffer = new System.Text.StringBuilder();
-
-            buffer.AppendLine("Testing");
-
-            text = buffer.ToString();
+            string text = Mouse.GetState().X.ToString() + " " + this.oldMouseState.X;
             
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
             spriteBatch.DrawString(spriteFont, text, fontPos, Color.Yellow);
@@ -277,12 +275,16 @@ namespace GameEditor
             try
             {
                 cursor = new ModelInfo(Vector3.Zero, Vector3.Zero, Vector3.One, props[name], name);
-                //cursor = props[name];
             }
             catch (KeyNotFoundException e)
             {
                 //do nothing
             }
+        }
+
+        public ModelInfo GetCursor()
+        {
+            return this.cursor;
         }
 
         public SceneManager GetScene()
