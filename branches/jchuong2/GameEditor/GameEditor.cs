@@ -36,7 +36,7 @@ namespace GameEditor
         //Camera Variables
         ThirdPersonCamera mainCamera;
         float theta = 0f;
-        float phi = 10f;
+        float phi = 45f;
         float radius = 100f;
         Vector3 vector3 = Vector3.Zero;
         Vector3 translationVector = Vector3.Zero;
@@ -229,6 +229,7 @@ namespace GameEditor
             // TODO: Add your drawing code here
             DrawText();
             sceneMgr.DrawModel(cursor);
+            BoundingSphereRenderer.Render(cursor.BoundingSphere, GraphicsDevice, mainCamera.View, mainCamera.Projection, Color.Red);
             grid.Draw(mainCamera.View, mainCamera.Projection);
             base.Draw(gameTime);
         }
@@ -275,11 +276,17 @@ namespace GameEditor
             try
             {
                 cursor = new ModelInfo(Vector3.Zero, Vector3.Zero, Vector3.One, props[name], name);
+                cursor.UpdateBoundingSphere();
             }
             catch (KeyNotFoundException e)
             {
                 //do nothing
             }
+        }
+
+        public void SetWorldGeometry()
+        {
+            sceneMgr.SceneGraph.addGeometry(cursor);
         }
 
         public ModelInfo GetCursor()

@@ -69,15 +69,29 @@ namespace AwesomeEngine
         public void CreateBoundingSphere(out BoundingSphere mergedSphere)
         {
             mergedSphere = new BoundingSphere();
-            foreach(ModelMesh mesh in Model.Meshes)
+
+            foreach (ModelMesh mesh in model.Meshes)
             {
-                mergedSphere = BoundingSphere.CreateMerged(mesh.BoundingSphere, mergedSphere);
+                BoundingSphere meshBoundingSphere = mesh.BoundingSphere;
+
+                BoundingSphere.CreateMerged(ref mergedSphere,
+                                            ref meshBoundingSphere,
+                                            out mergedSphere);
             }
+
+        }
+
+        public void UpdateBoundingSphere()
+        {
+            CreateBoundingSphere(out boundingSphere);
         }
 
         public BoundingSphere BoundingSphere
         {
-            get{ return boundingSphere.Transform(WorldMatrix); } 
+            get
+            {
+                return boundingSphere.Transform(WorldMatrix);
+            }
         }
 
         public Vector3 Position
