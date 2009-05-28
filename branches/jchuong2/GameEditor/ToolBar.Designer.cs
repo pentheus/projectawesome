@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Props");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Items");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Logic Entities");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Props");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Items");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Logic Entities");
             this.menuBar = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,6 +66,7 @@
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.openDialog = new System.Windows.Forms.OpenFileDialog();
             this.setGeoButton = new System.Windows.Forms.Button();
+            this.saveDialog = new System.Windows.Forms.SaveFileDialog();
             this.menuBar.SuspendLayout();
             this.panel1.SuspendLayout();
             this.objectGroupBox.SuspendLayout();
@@ -546,16 +547,16 @@
             this.treeView1.FullRowSelect = true;
             this.treeView1.Location = new System.Drawing.Point(6, 19);
             this.treeView1.Name = "treeView1";
-            treeNode1.Name = "Props";
-            treeNode1.Text = "Props";
-            treeNode2.Name = "Items";
-            treeNode2.Text = "Items";
-            treeNode3.Name = "LogicEntities";
-            treeNode3.Text = "Logic Entities";
+            treeNode4.Name = "Props";
+            treeNode4.Text = "Props";
+            treeNode5.Name = "Items";
+            treeNode5.Text = "Items";
+            treeNode6.Name = "LogicEntities";
+            treeNode6.Text = "Logic Entities";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3});
+            treeNode4,
+            treeNode5,
+            treeNode6});
             this.treeView1.Size = new System.Drawing.Size(168, 174);
             this.treeView1.TabIndex = 0;
             this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_AfterSelect);
@@ -563,7 +564,7 @@
             // openDialog
             // 
             this.openDialog.FileName = "openFileDialog1";
-            this.openDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            this.openDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.openDialog_FileOK);
             // 
             // setGeoButton
             // 
@@ -574,6 +575,10 @@
             this.setGeoButton.Text = "Set World Geometry";
             this.setGeoButton.UseVisualStyleBackColor = true;
             this.setGeoButton.Click += new System.EventHandler(this.setGeoButton_Click);
+            // 
+            // saveDialog
+            // 
+            this.saveDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.saveDialog_FileOk);
             // 
             // ToolBar
             // 
@@ -644,5 +649,6 @@
         private System.Windows.Forms.Label pos_label;
         private System.Windows.Forms.NumericUpDown posX;
         private System.Windows.Forms.Button setGeoButton;
+        private System.Windows.Forms.SaveFileDialog saveDialog;
     }
 }

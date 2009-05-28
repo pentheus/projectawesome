@@ -62,6 +62,7 @@ namespace GameEditor
             toolBar = new ToolBar(this);
             toolBar.Show();
             this.IsMouseVisible = true;
+            parser = new XMLParser(this);
         }
 
         /// <summary>
@@ -75,7 +76,6 @@ namespace GameEditor
             // TODO: Add your initialization logic here
             basicEffect = new BasicEffect(GraphicsDevice, null);
             mainCamera = new ThirdPersonCamera(new Vector3(35f, -24f, -30f), Vector3.Zero, GraphicsDevice.Viewport.AspectRatio, 1f, 10000f);
-            parser = new XMLParser(this);
             fontPos = new Vector2(1.0f, 1.0f);
        
             base.Initialize();
@@ -307,6 +307,11 @@ namespace GameEditor
         public ContentManager GetContent()
         {
             return Content;
+        }
+
+        public XMLParser GetSceneParser()
+        {
+            return parser;
         }
     }
 }
