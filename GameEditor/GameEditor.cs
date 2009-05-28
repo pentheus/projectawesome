@@ -299,6 +299,11 @@ namespace GameEditor
             return sceneMgr;
         }
 
+        public void SetScene(Octree scene)
+        {
+            sceneMgr.SceneGraph = scene;
+        }
+
         public GraphicsDevice GetGraphics()
         {
             return graphics.GraphicsDevice;
