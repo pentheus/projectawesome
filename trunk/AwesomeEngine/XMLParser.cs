@@ -23,7 +23,7 @@ namespace AwesomeEngine
 
         public Octree ReadScene(string filename)
         {
-
+    
             XmlTextReader scenereader = new XmlTextReader(filename);
             XmlDocument scenedoc = new XmlDocument();
             scenedoc.Load(scenereader);
@@ -47,7 +47,7 @@ namespace AwesomeEngine
             String modelname = geometrynode.SelectSingleNode("model").InnerText;
             Model objmodel = new Model();
             ModelInfo.LoadModel(ref objmodel, game.GetScene().Textures, game.GetContent(), game.GetGraphics(), modelname, game.GetScene().Effect);
-
+   
             float geoscalex = (float)Convert.ToDouble(geometrynode.SelectSingleNode("scaley").InnerText);
             float geoscaley = (float)Convert.ToDouble(geometrynode.SelectSingleNode("scaley").InnerText);
             float geoscalez = (float)Convert.ToDouble(geometrynode.SelectSingleNode("scalez").InnerText);

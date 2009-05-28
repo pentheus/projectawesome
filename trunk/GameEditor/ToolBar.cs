@@ -16,13 +16,12 @@ namespace GameEditor
     public partial class ToolBar : Form
     {
         GameEditor gameEditor;
-        
+
         public ToolBar(GameEditor gameEditor)
         {
             InitializeComponent();
             this.gameEditor = gameEditor;
             openDialog.InitialDirectory = gameEditor.Content.RootDirectory;
-           
         }
 
         public TreeView TreeView
@@ -32,29 +31,24 @@ namespace GameEditor
 
         private void ToolBar_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openDialog.ShowDialog();
-            
-            
+
+
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
-        }
-
-        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
-        {
-            Console.WriteLine(openDialog.FileName);
+            saveDialog.ShowDialog();
         }
 
         private void treeView1_AfterSelect(object sender, TreeNodeMouseClickEventArgs e)
         {
-            gameEditor.SetCursorModel(e.Node.Name);      
+            gameEditor.SetCursorModel(e.Node.Name);
         }
 
         private void keyDown(object sender, KeyPressEventArgs e)
@@ -123,9 +117,29 @@ namespace GameEditor
             gameEditor.GetCursor().Scale = new Vector3((float)scaleX.Value, (float)scaleY.Value, (float)scaleZ.Value);
         }
 
+        private void createButton_Click(object sender, EventArgs e)
+        {
+            gameEditor.GetScene().SceneGraph.AddObject(gameEditor.GetCursor());
+        }
 
+        private void setGeoButton_Click(object sender, EventArgs e)
+        {
+            gameEditor.SetWorldGeometry();
+        }
 
+        private void openDialog_FileOK(object sender, CancelEventArgs e)
+        {
+            Octree scene;
 
+            scene = gameEditor.GetSceneParser().ReadScene(openDialog.FileName);
 
+            gameEditor.SetScene(scene);
+        }
+
+        private void saveDialog_FileOk(object sender, CancelEventArgs e)
+        {
+            gameEditor.GetSceneParser().SaveScene(gameEditor.GetScene().SceneGraph, saveDialog.FileName);
+        }
+        //
     }
 }
