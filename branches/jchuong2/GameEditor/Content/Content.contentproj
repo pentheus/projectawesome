@@ -35,7 +35,7 @@
     </Reference>
     <Reference Include="XNAnimationPipeline, Version=0.7.0.0, Culture=neutral, PublicKeyToken=0c21691816f8c6d0, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\ProjectAwesome\AwesomeEngine\Windows\XNAnimationPipeline.dll</HintPath>
+      <HintPath>..\..\..\XNAnimation\XNAnimationPipeline\bin\x86\Release\XNAnimationPipeline.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -163,6 +163,7 @@
       <Name>PlayerMarine_mdla</Name>
       <Importer>FbxImporter</Importer>
       <Processor>SkinnedModelProcessor</Processor>
+      <ProcessorParameters_TexturePath>./../Textures/</ProcessorParameters_TexturePath>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\v3.0\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

@@ -19,10 +19,10 @@ Content\Models\Tank_mdl.xnb
 Content\Models\testscene_mdl.xnb
 Content\Models\WeaponMachineGun_mdl.xnb
 Content\Models\ShipDiffuse_0.xnb
-Content\Textures\PlayerMarineDiffuse_0.xnb
 Content\Textures\WeaponMachineGunDiffuse_0.xnb
+Content\Textures\PlayerMarineDiffuse_0.xnb
 Content\Models\PlayerMarine_mdla.xnb
-Content\PlayerMarineNormal_0.xnb
+Content\Textures\PlayerMarineNormal_0.xnb
 Content\ShadowMap.xnb
 Content\DrawModel.xnb
 Content\Simple.xnb

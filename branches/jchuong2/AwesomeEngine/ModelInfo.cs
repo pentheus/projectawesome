@@ -44,14 +44,14 @@ namespace AwesomeEngine
             
         }
 
-        public static void LoadModel(ref Model model, Dictionary<ModelMeshPart, Texture2D> textures, Game game, String assetName, Effect effect)
+        public static void LoadModel(ref Model model, Dictionary<ModelMeshPart, Texture2D> textures, ContentManager Content, GraphicsDevice graphics, String assetName, Effect effect)
         {
-            model = game.Content.Load<Model>(@"Models\"+assetName);
+            model = Content.Load<Model>(@"Models\"+assetName);
 
             foreach(ModelMesh mesh in model.Meshes)
                 foreach (ModelMeshPart part in mesh.MeshParts)
                 {
-                    Effect e = effect.Clone(game.GraphicsDevice);
+                    Effect e = effect.Clone(graphics);
                     if ((part.Effect as BasicEffect).Texture != null)
                     {
                         textures.Add(part, (part.Effect as BasicEffect).Texture);
