@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Storage;
 using XNAnimation;
+using XNAnimation.Effects;
 
 namespace AwesomeEngine
 {
@@ -44,8 +45,9 @@ namespace AwesomeEngine
             //LoadModelTextures(model);
             
         }
-        
-        public static void LoadModel(ref Model model, Dictionary<ModelMeshPart, Texture2D> textures, ContentManager content, GraphicsDevice graphics, String assetName, Effect effect)
+
+        public static void LoadModel(ref Model model, Dictionary<ModelMeshPart, Texture2D> textures, ContentManager content, GraphicsDevice graphics,
+            String assetName, Effect effect)
         {
             model = content.Load<Model>(@"Models\"+assetName);
 
@@ -67,28 +69,27 @@ namespace AwesomeEngine
                 }
         }
 
-        public static void LoadAnimatedModel(ref SkinnedModel model, Dictionary<ModelMeshPart, Texture2D> textures, ContentManager content, GraphicsDevice graphics, String assetName, Effect effect)
+        public static void LoadModel(ref SkinnedModel model, Dictionary<ModelMeshPart, Texture2D> textures, ContentManager content, GraphicsDevice graphics, 
+            String assetName, Effect effect)
         {
             model = content.Load<SkinnedModel>(@"Models\" + assetName);
 
             foreach (ModelMesh mesh in model.Model.Meshes)
-            {
                 foreach (ModelMeshPart part in mesh.MeshParts)
                 {
                     Effect e = effect.Clone(graphics);
-                    if ((part.Effect as BasicEffect).Texture != null)
+                    if ((part.Effect as SkinnedModelBasicEffect).DiffuseMap != null)
                     {
-                        textures.Add(part, (part.Effect as BasicEffect).Texture);
+                        textures.Add(part, (part.Effect as SkinnedModelBasicEffect).DiffuseMap);
                         e.Parameters["xTextureEnabled"].SetValue(true);
                     }
                     else
                     {
-                        textures.Add(part, (part.Effect as BasicEffect).Texture);
+                        textures.Add(part, (part.Effect as SkinnedModelBasicEffect).DiffuseMap);
                         e.Parameters["xTextureEnabled"].SetValue(false);
                     }
                     part.Effect = e;
                 }
-            }
         }
 
         public void CreateBoundingSphere(out BoundingSphere mergedSphere)

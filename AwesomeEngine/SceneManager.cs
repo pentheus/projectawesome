@@ -10,6 +10,8 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
+using XNAnimation;
+using XNAnimation.Effects;
 
 
 namespace AwesomeEngine
@@ -28,6 +30,9 @@ namespace AwesomeEngine
         IGraphicsDeviceService graphicsService;
         Dictionary<ModelMeshPart, Texture2D> textures;
 
+        private bool enableNormalTexture = false;
+        private bool enableSpecularTexture = false;
+        private Texture2D specularTexture;
 
         public SceneManager(Game game)
             : base(game)
@@ -52,7 +57,8 @@ namespace AwesomeEngine
         {
             shadowRenderer = new ShadowRenderer(game.Content.Load<Effect>("ShadowMap"));
             drawModelEffect = game.Content.Load<Effect>("Simple");
-      
+
+            specularTexture = game.Content.Load<Texture2D>("Textures/EnemyBeastSpecular");
             base.LoadContent();
         }
 
@@ -136,6 +142,33 @@ namespace AwesomeEngine
                     effect.Parameters["xCenter"].SetValue(model.Position);
                     effect.Parameters["xRange"].SetValue(4f);
                 }
+                mesh.Draw();
+            }
+        }
+
+        public void DrawAnimatedModel(AnimModelInfo model)
+        {
+            SkinnedModel skinnedModel = model.AnimatedModel;
+            Matrix[] modelTransforms = model.AnimationController.SkinnedBoneTransforms;
+            Vector3 center = model.Position;
+
+            foreach (ModelMesh mesh in skinnedModel.Model.Meshes)
+            {
+                foreach (ModelMeshPart part in mesh.MeshParts)
+                {
+                    part.Effect.Parameters["xTexture"].SetValue(this.Textures[part]);
+                    part.Effect.Parameters["xWorld"].SetValue(modelTransforms[mesh.ParentBone.Index] * model.WorldMatrix);
+                }
+                foreach (Effect effect in mesh.Effects)
+                {
+                    effect.CurrentTechnique = drawModelEffect.Techniques["Flat"];
+                    effect.Parameters["xTextureEnabled"].SetValue(true);
+                    effect.Parameters["xView"].SetValue(mainCamera.View);
+                    effect.Parameters["xProjection"].SetValue(mainCamera.Projection);
+                    effect.Parameters["xCenter"].SetValue(model.Position);
+                    effect.Parameters["xRange"].SetValue(4f);
+                } 
+
                 mesh.Draw();
             }
         }

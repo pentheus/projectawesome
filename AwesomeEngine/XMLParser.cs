@@ -45,8 +45,7 @@ namespace AwesomeEngine
 
             String modelname = geometrynode.SelectSingleNode("model").InnerText;
             Model objmodel = new Model();
-            ModelInfo.LoadModel(ref objmodel, game.GetScene().Textures, game.GetContent(), game.GetGraphics(), 
-                modelname, game.GetScene().Effect);
+            ModelInfo.LoadModel(ref objmodel, game.GetScene().Textures, game.GetContent(), game.GetGraphics(), modelname, game.GetScene().Effect);
 
             float geoscalex = (float)Convert.ToDouble(geometrynode.SelectSingleNode("scalex").InnerText);
             float geoscaley = (float)Convert.ToDouble(geometrynode.SelectSingleNode("scaley").InnerText);
@@ -92,8 +91,7 @@ namespace AwesomeEngine
                     else
                     {
                         objmodel = new Model();
-                        ModelInfo.LoadModel(ref objmodel, game.GetScene().Textures, game.GetContent(), game.GetGraphics(),
-                            modelname, game.GetScene().Effect);
+                        ModelInfo.LoadModel(ref objmodel, game.GetScene().Textures, game.GetContent(), game.GetGraphics(), modelname, game.GetScene().Effect);
                         modelsloaded.Add(modelname, objmodel);
                     }
 
@@ -143,8 +141,7 @@ namespace AwesomeEngine
                     else
                     {
                         objmodel = new Model();
-                        ModelInfo.LoadModel(ref objmodel, game.GetScene().Textures, game.GetContent(), game.GetGraphics(),
-                            modelname, game.GetScene().Effect);
+                        ModelInfo.LoadModel(ref objmodel, game.GetScene().Textures, game.GetContent(), game.GetGraphics(), modelname, game.GetScene().Effect);
                         modelsloaded.Add(modelname, objmodel);
                     }
 
@@ -231,9 +228,9 @@ namespace AwesomeEngine
 
         private void SaveObjects(XmlTextWriter scenesaver, List<ModelInfo> objects)
         {
-            scenesaver.WriteStartElement("Conent");
             foreach (ModelInfo obj in objects)
             {
+                scenesaver.WriteStartElement("Conent");
                 scenesaver.WriteStartElement("Object");
 
                 scenesaver.WriteStartElement("posx");

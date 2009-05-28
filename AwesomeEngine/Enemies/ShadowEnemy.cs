@@ -9,7 +9,7 @@ namespace AwesomeEngine.Enemies
 {
     public class ShadowEnemy:Enemy
     {
-        public ShadowEnemy(Game game, SceneManager scene, AnimModelInfo model): 
+        public ShadowEnemy(Game game, SceneManager scene, ModelInfo model): 
             base(game, scene, model)
         {
 
