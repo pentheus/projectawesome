@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>blend_root</Name>
     <Identity>
-      <SourceFilename>C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\Content\testscene.fbx</SourceFilename>
+      <SourceFilename>C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\XMLParserTest\Content\testscene.fbx</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <Transform>100 0 0 0 0 100 0 0 0 0 100 0 0 0 0 1</Transform>

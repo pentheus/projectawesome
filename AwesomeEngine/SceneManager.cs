@@ -52,7 +52,7 @@ namespace AwesomeEngine
         {
             shadowRenderer = new ShadowRenderer(game.Content.Load<Effect>("ShadowMap"));
             drawModelEffect = game.Content.Load<Effect>("Simple");
-      
+
             base.LoadContent();
         }
 
@@ -69,8 +69,8 @@ namespace AwesomeEngine
 
         public override void Draw(GameTime gameTime)
         {
-            
-            if(sceneGraph.getGeometry() != null)
+
+            if (sceneGraph.getGeometry() != null)
                 DrawModel(sceneGraph.getGeometry());
             DrawScene(sceneGraph.Root);
 
@@ -80,8 +80,8 @@ namespace AwesomeEngine
         /// <summary>
         /// Draws a scene
         /// </summary>
-        public void DrawScene(Node parent) 
-        {  
+        public void DrawScene(Node parent)
+        {
             DrawNode(parent);
             if (parent.HasChildren())
             {
@@ -107,8 +107,8 @@ namespace AwesomeEngine
                 //shadowRenderer.CreateShadowMap(model, out renderTarget);
                 if (!CheckIfCullable(model))
                 {
-                    DrawModel(model); 
-                } 
+                    DrawModel(model);
+                }
             }
         }
 
@@ -201,6 +201,11 @@ namespace AwesomeEngine
         {
             get { return this.drawModelEffect; }
         }
-        
+
+        override public String ToString()
+        {
+            return "" + sceneGraph.getDrawableObjects().Count();
+        }
+
     }
 }

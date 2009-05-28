@@ -7,12 +7,12 @@ using Microsoft.Xna.Framework;
 
 namespace AwesomeEngine
 {
-    public class Item:GameComponent
+    public abstract class Item:GameComponent
     {
-        ModelInfo model;
-        private bool movable, pickable, picked;
-        BoundingSphere itemAOE; // bounding sphere for the object. when intersected, it is either picked up or pushed
-        int radius; // INITIALIZE THIS FIRST
+        public ModelInfo model;
+        public bool movable, pickable, picked;
+        public BoundingSphere itemAOE; // bounding sphere for the object. when intersected, it is either picked up or pushed
+        public int radius; // INITIALIZE THIS FIRST
 
         public Item(Game game, ModelInfo model) // initializing movable, pickable, picked as false
             : base(game)
@@ -40,10 +40,9 @@ namespace AwesomeEngine
             pickable = p;
         }
 
-        public void runScript()
-        {
-            //if bounding box of item intersects bounding box of character, pick up/move if movable is true
-        }
+        public abstract void runScript();
+        
+
 
         public BoundingSphere BoundingSphere
         {
