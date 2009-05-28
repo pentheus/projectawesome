@@ -21,9 +21,9 @@ namespace AwesomeEngine
             game = received;
         }
 
-        public Octree ReadScene(string pathname, string filename)
+        public Octree ReadScene(string filename)
         {
-            XmlTextReader scenereader = new XmlTextReader(pathname + filename);
+            XmlTextReader scenereader = new XmlTextReader(filename);
             XmlDocument scenedoc = new XmlDocument();
             scenedoc.Load(scenereader);
 
@@ -176,12 +176,12 @@ namespace AwesomeEngine
             }
         }
 
-        public Boolean SaveScene(Octree scene, string pathname, string filename)
+        public Boolean SaveScene(Octree scene, String filename)
         {
             ModelInfo savegeo = scene.getGeometry();
             List<ModelInfo> objects = scene.getDrawableObjects();
             List<Item> items = scene.GetItems();
-            XmlTextWriter scenesaver = new XmlTextWriter(pathname + filename, null);
+            XmlTextWriter scenesaver = new XmlTextWriter(filename, null);
             scenesaver.Formatting = Formatting.Indented;
             scenesaver.WriteStartDocument();
 

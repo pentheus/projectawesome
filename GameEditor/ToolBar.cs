@@ -43,12 +43,7 @@ namespace GameEditor
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
-        }
-
-        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
-        {
-            Console.WriteLine(openDialog.FileName);
+            saveDialog.ShowDialog();
         }
 
         private void treeView1_AfterSelect(object sender, TreeNodeMouseClickEventArgs e)
@@ -130,6 +125,16 @@ namespace GameEditor
         private void setGeoButton_Click(object sender, EventArgs e)
         {
             gameEditor.SetWorldGeometry();
+        }
+        
+        private void openDialog_FileOK(object sender, CancelEventArgs e)
+        {
+            gameEditor.GetSceneParser().ReadScene(openDialog.FileName);
+        }
+
+        private void saveDialog_FileOk(object sender, CancelEventArgs e)
+        {
+            gameEditor.GetSceneParser().SaveScene(gameEditor.GetScene().SceneGraph, saveDialog.FileName);
         }
     }
 }
