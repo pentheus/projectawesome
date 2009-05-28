@@ -1,66 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline" xmlns:Graphics="Microsoft.Xna.Framework.Graphics" xmlns:Processors="Microsoft.Xna.Framework.Content.Pipeline.Processors">
   <Asset Type="Pipeline:BuildItemCollection">
-    <Item>
-      <Source>Tank.fbx</Source>
-      <Name>Tank</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Spike\Desktop\projectawesome\GameEditor\bin\x86\Debug\Content\Tank.xnb</Output>
-      <Time>2009-05-23T20:31:43.96-07:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Tank_0.xml</Key>
-        <Value>2009-05-24T11:21:23.139-07:00</Value>
-      </Dependency>
-    </Item>
-    <Item>
-      <Source>Floor.fbx</Source>
-      <Name>Floor</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Spike\Desktop\projectawesome\GameEditor\bin\x86\Debug\Content\Floor.xnb</Output>
-      <Time>2009-05-23T20:31:43.519-07:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Floor_0.xml</Key>
-        <Value>2009-05-24T11:21:25.484-07:00</Value>
-      </Dependency>
-    </Item>
-    <Item>
-      <Source>testscene.fbx</Source>
-      <Name>testscene</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Spike\Desktop\projectawesome\GameEditor\bin\x86\Debug\Content\testscene.xnb</Output>
-      <Time>2009-05-23T20:31:44.294-07:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\testscene_0.xml</Key>
-        <Value>2009-05-24T11:21:27.318-07:00</Value>
-      </Dependency>
-    </Item>
-    <Item>
-      <Source>Ship.fbx</Source>
-      <Name>Ship</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Spike\Desktop\projectawesome\GameEditor\bin\x86\Debug\Content\Ship.xnb</Output>
-      <Time>2009-05-24T12:55:49.463-07:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Ship_0.xml</Key>
-        <Value>2009-05-24T12:55:58.523-07:00</Value>
-      </Dependency>
-    </Item>
     <Item>
       <Source>Effects\parallax_normal_mapping.fx</Source>
       <Name>Effects\parallax_normal_mapping</Name>
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Spike\Desktop\projectawesome\GameEditor\bin\x86\Debug\Content\Effects\parallax_normal_mapping.xnb</Output>
-      <Time>2009-05-23T20:31:11.149-07:00</Time>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\bin\x86\Debug\Content\Effects\parallax_normal_mapping.xnb</Output>
+      <Time>2009-05-28T15:50:28.779-07:00</Time>
     </Item>
     <Item>
       <Source>Fonts\DemoFont.spritefont</Source>
@@ -68,21 +16,26 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Spike\Desktop\projectawesome\GameEditor\bin\x86\Debug\Content\Fonts\DemoFont.xnb</Output>
-      <Time>2009-05-23T20:31:23.34-07:00</Time>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\bin\x86\Debug\Content\Fonts\DemoFont.xnb</Output>
+      <Time>2009-05-28T15:50:32.78-07:00</Time>
     </Item>
     <Item>
-      <Source>Models\bigship1.x</Source>
-      <Name>Models\bigship1</Name>
-      <Importer>XImporter</Importer>
-      <Processor>ModelProcessor</Processor>
+      <Source>Fonts\Arial.spritefont</Source>
+      <Name>Fonts\Arial</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Spike\Desktop\projectawesome\GameEditor\bin\x86\Debug\Content\Models\bigship1.xnb</Output>
-      <Time>2009-05-23T20:31:19.169-07:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\bigship1_0.xml</Key>
-        <Value>2009-05-24T11:21:31.525-07:00</Value>
-      </Dependency>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\bin\x86\Debug\Content\Fonts\Arial.xnb</Output>
+      <Time>2009-05-28T16:30:18.164-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\Calibri.spritefont</Source>
+      <Name>Fonts\Calibri</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\bin\x86\Debug\Content\Fonts\Calibri.xnb</Output>
+      <Time>2009-05-28T16:30:17.806-07:00</Time>
     </Item>
     <Item>
       <Source>Textures\floor_color_map.dds</Source>
@@ -90,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Spike\Desktop\projectawesome\GameEditor\bin\x86\Debug\Content\Textures\floor_color_map.xnb</Output>
-      <Time>2009-05-23T20:31:21.817-07:00</Time>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\bin\x86\Debug\Content\Textures\floor_color_map.xnb</Output>
+      <Time>2009-05-28T15:50:32.686-07:00</Time>
     </Item>
     <Item>
       <Source>Textures\floor_height_map.dds</Source>
@@ -99,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Spike\Desktop\projectawesome\GameEditor\bin\x86\Debug\Content\Textures\floor_height_map.xnb</Output>
-      <Time>2009-05-23T20:31:21.743-07:00</Time>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\bin\x86\Debug\Content\Textures\floor_height_map.xnb</Output>
+      <Time>2009-05-28T15:50:32.642-07:00</Time>
     </Item>
     <Item>
       <Source>Textures\floor_normal_map.dds</Source>
@@ -108,78 +61,435 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Spike\Desktop\projectawesome\GameEditor\bin\x86\Debug\Content\Textures\floor_normal_map.xnb</Output>
-      <Time>2009-05-23T20:31:21.777-07:00</Time>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\bin\x86\Debug\Content\Textures\floor_normal_map.xnb</Output>
+      <Time>2009-05-28T15:50:32.645-07:00</Time>
     </Item>
     <Item>
-      <Source>Tank.fbx</Source>
+      <Source>Textures\EnemyBeastDiffuse.jpg</Source>
+      <Name>Textures\EnemyBeastDiffuse</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\bin\x86\Debug\Content\Textures\EnemyBeastDiffuse.xnb</Output>
+      <Time>2009-05-28T16:30:08.114-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\EnemyBeastNormal.png</Source>
+      <Name>Textures\EnemyBeastNormal</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\bin\x86\Debug\Content\Textures\EnemyBeastNormal.xnb</Output>
+      <Time>2009-05-28T16:30:11.163-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\EnemyBeastSpecular.jpg</Source>
+      <Name>Textures\EnemyBeastSpecular</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\bin\x86\Debug\Content\Textures\EnemyBeastSpecular.xnb</Output>
+      <Time>2009-05-28T16:30:12.341-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\PlayerMarineDiffuse.jpg</Source>
+      <Name>Textures\PlayerMarineDiffuse</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\bin\x86\Debug\Content\Textures\PlayerMarineDiffuse.xnb</Output>
+      <Time>2009-05-28T16:30:16.886-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\WeaponMachineGunDiffuse.jpg</Source>
+      <Name>Textures\WeaponMachineGunDiffuse</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\bin\x86\Debug\Content\Textures\WeaponMachineGunDiffuse.xnb</Output>
+      <Time>2009-05-28T16:30:15.032-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\null_normal.tga</Source>
+      <Name>Textures\null_normal</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\bin\x86\Debug\Content\Textures\null_normal.xnb</Output>
+      <Time>2009-05-28T16:30:13.078-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\PlayerMarineNormal.tga</Source>
+      <Name>Textures\PlayerMarineNormal</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\bin\x86\Debug\Content\Textures\PlayerMarineNormal.xnb</Output>
+      <Time>2009-05-28T16:30:12.718-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\rockbump.tga</Source>
+      <Name>Textures\rockbump</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\bin\x86\Debug\Content\Textures\rockbump.xnb</Output>
+      <Time>2009-05-28T16:30:14.037-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\ShipDiffuse.tga</Source>
+      <Name>Models\ShipDiffuse</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\bin\x86\Debug\Content\Models\ShipDiffuse.xnb</Output>
+      <Time>2009-05-28T16:29:40.378-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Floor_mdl.fbx</Source>
+      <Name>Models\Floor_mdl</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\bin\x86\Debug\Content\Models\Floor_mdl.xnb</Output>
+      <Time>2009-05-28T16:29:56.933-07:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Floor_mdl_0.xml</Key>
+        <Value>2009-05-28T16:47:59.566-07:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Models\Ship_mdl.fbx</Source>
+      <Name>Models\Ship_mdl</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\bin\x86\Debug\Content\Models\Ship_mdl.xnb</Output>
+      <Time>2009-05-28T16:30:06.75-07:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Ship_mdl_0.xml</Key>
+        <Value>2009-05-28T16:48:01.166-07:00</Value>
+      </Dependency>
+      <Request>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\bin\x86\Debug\Content\Models\ShipDiffuse_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Tank_mdl.fbx</Source>
+      <Name>Models\Tank_mdl</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\bin\x86\Debug\Content\Models\Tank_mdl.xnb</Output>
+      <Time>2009-05-28T16:29:54.047-07:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Tank_mdl_0.xml</Key>
+        <Value>2009-05-28T16:48:02.097-07:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Models\testscene_mdl.fbx</Source>
+      <Name>Models\testscene_mdl</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\bin\x86\Debug\Content\Models\testscene_mdl.xnb</Output>
+      <Time>2009-05-28T16:29:54.588-07:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\testscene_mdl_0.xml</Key>
+        <Value>2009-05-28T16:48:02.249-07:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Models\WeaponMachineGun_mdl.fbx</Source>
+      <Name>Models\WeaponMachineGun_mdl</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\bin\x86\Debug\Content\Models\WeaponMachineGun_mdl.xnb</Output>
+      <Time>2009-05-28T16:29:39.233-07:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\WeaponMachineGun_mdl_0.xml</Key>
+        <Value>2009-05-28T16:48:02.536-07:00</Value>
+      </Dependency>
+      <Request>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\bin\x86\Debug\Content\Textures\WeaponMachineGunDiffuse_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\PlayerMarine_mdla.fbx</Source>
+      <Name>Models\PlayerMarine_mdla</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>SkinnedModelProcessor</Processor>
+      <Parameters>
+        <Data Key="TexturePath">./../Textures/</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\bin\x86\Debug\Content\Models\PlayerMarine_mdla.xnb</Output>
+      <Time>2009-05-28T16:29:46.6-07:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\PlayerMarine_mdla_0.xml</Key>
+        <Value>2009-05-28T16:48:06.639-07:00</Value>
+      </Dependency>
+      <Request>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\bin\x86\Debug\Content\Textures\PlayerMarineDiffuse_0.xnb</Request>
+      <Request>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\bin\x86\Debug\Content\Textures\PlayerMarineNormal_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\lamp_mdl.fbx</Source>
+      <Name>Models\lamp_mdl</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\bin\x86\Debug\Content\Models\lamp_mdl.xnb</Output>
+      <Time>2009-05-28T16:29:48.026-07:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\lamp_mdl_0.xml</Key>
+        <Value>2009-05-28T16:48:07.773-07:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Models\refrigerator_mdl.fbx</Source>
+      <Name>Models\refrigerator_mdl</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\bin\x86\Debug\Content\Models\refrigerator_mdl.xnb</Output>
+      <Time>2009-05-28T16:29:50.476-07:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\refrigerator_mdl_0.xml</Key>
+        <Value>2009-05-28T16:48:07.82-07:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Models\toilet_mdl.fbx</Source>
+      <Name>Models\toilet_mdl</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\bin\x86\Debug\Content\Models\toilet_mdl.xnb</Output>
+      <Time>2009-05-28T16:29:56.386-07:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\toilet_mdl_0.xml</Key>
+        <Value>2009-05-28T16:48:07.871-07:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Models\tv_mdl.fbx</Source>
+      <Name>Models\tv_mdl</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\bin\x86\Debug\Content\Models\tv_mdl.xnb</Output>
+      <Time>2009-05-28T16:29:48.788-07:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\tv_mdl_0.xml</Key>
+        <Value>2009-05-28T16:48:07.889-07:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Models\washer_mdl.fbx</Source>
+      <Name>Models\washer_mdl</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\bin\x86\Debug\Content\Models\washer_mdl.xnb</Output>
+      <Time>2009-05-28T16:29:49.863-07:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\washer_mdl_0.xml</Key>
+        <Value>2009-05-28T16:48:07.949-07:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Models\test_mdl.FBX</Source>
+      <Name>Models\test_mdl</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\bin\x86\Debug\Content\Models\test_mdl.xnb</Output>
+      <Time>2009-05-28T16:29:55.41-07:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\test_mdl_0.xml</Key>
+        <Value>2009-05-28T16:48:08.003-07:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Models\Floor_mdl.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Tank_0.xml</Output>
-      <Time>2009-05-23T20:31:43.96-07:00</Time>
+      <Output>obj\x86\Debug\Models\Floor_mdl_0.xml</Output>
+      <Time>2009-05-28T16:29:56.933-07:00</Time>
     </Item>
     <Item>
-      <Source>Floor.fbx</Source>
+      <Source>Models\Ship_mdl.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Floor_0.xml</Output>
-      <Time>2009-05-23T20:31:43.519-07:00</Time>
+      <Output>obj\x86\Debug\Models\Ship_mdl_0.xml</Output>
+      <Time>2009-05-28T16:30:06.75-07:00</Time>
     </Item>
     <Item>
-      <Source>testscene.fbx</Source>
+      <Source>Models\ShipDiffuse.tga</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\bin\x86\Debug\Content\Models\ShipDiffuse_0.xnb</Output>
+      <Time>2009-05-28T16:29:40.378-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Tank_mdl.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\testscene_0.xml</Output>
-      <Time>2009-05-23T20:31:44.294-07:00</Time>
+      <Output>obj\x86\Debug\Models\Tank_mdl_0.xml</Output>
+      <Time>2009-05-28T16:29:54.047-07:00</Time>
     </Item>
     <Item>
-      <Source>Ship.fbx</Source>
+      <Source>Models\testscene_mdl.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Ship_0.xml</Output>
-      <Time>2009-05-24T12:55:49.463-07:00</Time>
+      <Output>obj\x86\Debug\Models\testscene_mdl_0.xml</Output>
+      <Time>2009-05-28T16:29:54.588-07:00</Time>
     </Item>
     <Item>
-      <Source>Models\bigship1.x</Source>
-      <Importer>XImporter</Importer>
+      <Source>Models\WeaponMachineGun_mdl.fbx</Source>
+      <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\bigship1_0.xml</Output>
-      <Time>2009-05-23T20:31:19.169-07:00</Time>
+      <Output>obj\x86\Debug\Models\WeaponMachineGun_mdl_0.xml</Output>
+      <Time>2009-05-28T16:29:39.233-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\WeaponMachineGunDiffuse.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\bin\x86\Debug\Content\Textures\WeaponMachineGunDiffuse_0.xnb</Output>
+      <Time>2009-05-28T16:30:15.032-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\PlayerMarine_mdla.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\PlayerMarine_mdla_0.xml</Output>
+      <Time>2009-05-28T16:29:46.6-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\PlayerMarineDiffuse.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\bin\x86\Debug\Content\Textures\PlayerMarineDiffuse_0.xnb</Output>
+      <Time>2009-05-28T16:30:16.886-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\PlayerMarineNormal.tga</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\bin\x86\Debug\Content\Textures\PlayerMarineNormal_0.xnb</Output>
+      <Time>2009-05-28T16:30:12.718-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\lamp_mdl.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\lamp_mdl_0.xml</Output>
+      <Time>2009-05-28T16:29:48.026-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\refrigerator_mdl.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\refrigerator_mdl_0.xml</Output>
+      <Time>2009-05-28T16:29:50.476-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\toilet_mdl.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\toilet_mdl_0.xml</Output>
+      <Time>2009-05-28T16:29:56.386-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\tv_mdl.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\tv_mdl_0.xml</Output>
+      <Time>2009-05-28T16:29:48.788-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\washer_mdl.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\washer_mdl_0.xml</Output>
+      <Time>2009-05-28T16:29:49.863-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\test_mdl.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\test_mdl_0.xml</Output>
+      <Time>2009-05-28T16:29:55.41-07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Spike\Desktop\projectawesome\GameEditor\Content\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Spike\Desktop\projectawesome\GameEditor\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Spike\Desktop\projectawesome\GameEditor\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Spike\Desktop\projectawesome\GameEditor\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
-        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Key>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\XNAnimation\XNAnimationPipeline\bin\x86\Release\XNAnimationPipeline.dll</Key>
+        <Value>2009-05-27T15:51:34.555-07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
         <Value>2008-10-10T17:42:32-07:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
         <Value>2008-10-10T17:43:28-07:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
         <Value>2008-10-10T17:43:18-07:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
         <Value>2008-10-10T17:48:18-07:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
         <Value>2008-10-10T17:48:50-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Windows\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.0.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2009-04-07T21:17:49.095-07:00</Value>
+        <Value>2009-04-02T17:25:46.112-07:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

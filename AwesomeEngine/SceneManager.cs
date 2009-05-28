@@ -69,8 +69,8 @@ namespace AwesomeEngine
 
         public override void Draw(GameTime gameTime)
         {
-
-            if (sceneGraph.getGeometry() != null)
+            
+            if(sceneGraph.getGeometry() != null)
                 DrawModel(sceneGraph.getGeometry());
             DrawScene(sceneGraph.Root);
 
@@ -81,7 +81,7 @@ namespace AwesomeEngine
         /// Draws a scene
         /// </summary>
         public void DrawScene(Node parent)
-        {
+        {  
             DrawNode(parent);
             if (parent.HasChildren())
             {
@@ -204,8 +204,8 @@ namespace AwesomeEngine
 
         override public String ToString()
         {
-            return "" + sceneGraph.getDrawableObjects().Count();
+            return ""+sceneGraph.getDrawableObjects().Count();
         }
-
+        
     }
 }

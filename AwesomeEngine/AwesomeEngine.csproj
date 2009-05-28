@@ -82,7 +82,7 @@
     </Reference>
     <Reference Include="XNAnimation, Version=0.7.0.0, Culture=neutral, PublicKeyToken=0c21691816f8c6d0, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Windows\XNAnimation.dll</HintPath>
+      <HintPath>..\..\XNAnimation\XNAnimationPipeline\bin\x86\Release\XNAnimation.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -90,7 +90,6 @@
     <Compile Include="Camera\Camera.cs" />
     <Compile Include="Camera\OrthoCamera.cs" />
     <Compile Include="Camera\ThirdPersonCamera.cs" />
-    <Compile Include="Character.cs" />
     <Compile Include="Enemies\Enemy.cs" />
     <Compile Include="Enemies\FirstBossEnemy.cs" />
     <Compile Include="Enemies\ShadowEnemy.cs" />
