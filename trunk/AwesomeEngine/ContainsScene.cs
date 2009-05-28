@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Content;
 
 namespace AwesomeEngine
 {
-    interface ContainsScene
+    public interface ContainsScene
     {
-        public SceneManager GetScene();
-
-        public GraphicsDevice GetGraphics();
-
-        public ContentManager GetContent();
+        SceneManager GetScene();
+        GraphicsDevice GetGraphics();
+        ContentManager GetContent();
     }
 }

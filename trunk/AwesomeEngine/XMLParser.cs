@@ -21,15 +21,16 @@ namespace AwesomeEngine
             game = received;
         }
 
-        public Octree ReadScene(string pathname, string filename)
+        public Octree ReadScene(string filename)
         {
-            XmlTextReader scenereader = new XmlTextReader(pathname + filename);
+
+            XmlTextReader scenereader = new XmlTextReader(filename);
             XmlDocument scenedoc = new XmlDocument();
             scenedoc.Load(scenereader);
 
             XmlNode sceneinfo = scenedoc.GetElementsByTagName("SceneInfo").Item(0);
             float scenesize = (float)Convert.ToDouble(sceneinfo.SelectSingleNode("size").InnerText);
-            
+
             Octree scene = new Octree(scenesize);
             //Load world geometry
             ReadGeometry(scenedoc, scene);
@@ -45,10 +46,9 @@ namespace AwesomeEngine
 
             String modelname = geometrynode.SelectSingleNode("model").InnerText;
             Model objmodel = new Model();
-            ModelInfo.LoadModel(ref objmodel, game.GetScene().Textures, game.GetContent(), game.GetGraphics(), 
-                modelname, game.GetScene().Effect);
+            ModelInfo.LoadModel(ref objmodel, game.GetScene().Textures, game.GetContent(), game.GetGraphics(), modelname, game.GetScene().Effect);
 
-            float geoscalex = (float)Convert.ToDouble(geometrynode.SelectSingleNode("scalex").InnerText);
+            float geoscalex = (float)Convert.ToDouble(geometrynode.SelectSingleNode("scaley").InnerText);
             float geoscaley = (float)Convert.ToDouble(geometrynode.SelectSingleNode("scaley").InnerText);
             float geoscalez = (float)Convert.ToDouble(geometrynode.SelectSingleNode("scalez").InnerText);
             Vector3 geoscale = new Vector3(geoscalex, geoscaley, geoscalez);
@@ -84,16 +84,14 @@ namespace AwesomeEngine
                     Vector3 objscale = new Vector3(objscalex, objscaley, objscalez);
 
                     String modelname = node.SelectSingleNode("model").InnerText;
-                    Model objmodel;
+                    Model objmodel = new Model();
                     if (modelsloaded.Contains(modelname))
                     {
                         objmodel = (Model)modelsloaded[modelname];
                     }
                     else
                     {
-                        objmodel = new Model();
-                        ModelInfo.LoadModel(ref objmodel, game.GetScene().Textures, game.GetContent(), game.GetGraphics(),
-                            modelname, game.GetScene().Effect);
+                        ModelInfo.LoadModel(ref objmodel, game.GetScene().Textures, game.GetContent(), game.GetGraphics(), modelname, game.GetScene().Effect);
                         modelsloaded.Add(modelname, objmodel);
                     }
 
@@ -135,25 +133,23 @@ namespace AwesomeEngine
                     Vector3 objscale = new Vector3(objscalex, objscaley, objscalez);
 
                     String modelname = node.SelectSingleNode("model").InnerText;
-                    Model objmodel;
+                    Model objmodel = new Model();
                     if (modelsloaded.Contains(modelname))
                     {
                         objmodel = (Model)modelsloaded[modelname];
                     }
                     else
                     {
-                        objmodel = new Model();
-                        ModelInfo.LoadModel(ref objmodel, game.GetScene().Textures, game.GetContent(), game.GetGraphics(),
-                            modelname, game.GetScene().Effect);
+                        ModelInfo.LoadModel(ref objmodel, game.GetScene().Textures, game.GetContent(), game.GetGraphics(), modelname, game.GetScene().Effect);
                         modelsloaded.Add(modelname, objmodel);
                     }
 
                     //Create the ModelInfo object
                     ModelInfo obj = new ModelInfo(objvect, objrot, objscale, objmodel, modelname);
-                    
+
                     //Create the Item object
                     Item item;
-                    
+
                     //Determine the type of item from what was listed
                     String itemtype = Convert.ToString(node.SelectSingleNode("itemtype").InnerText);
                     switch (itemtype)
@@ -168,11 +164,11 @@ namespace AwesomeEngine
                             item = new GlowStickItem((Game)game, obj);
                             break;
                         default:
-                            item = new Item((Game)game, obj);
+                            item = null;
                             break;
                     }
-
-                    scene.AddItem(item);
+                    if(item != null)
+                        scene.AddItem(item);
                 }
                 catch (FormatException)
                 {
@@ -182,12 +178,12 @@ namespace AwesomeEngine
             }
         }
 
-        public Boolean SaveScene(Octree scene, string pathname, string filename)
+        public Boolean SaveScene(Octree scene, String filename)
         {
             ModelInfo savegeo = scene.getGeometry();
             List<ModelInfo> objects = scene.getDrawableObjects();
             List<Item> items = scene.GetItems();
-            XmlTextWriter scenesaver = new XmlTextWriter(pathname + filename, null);
+            XmlTextWriter scenesaver = new XmlTextWriter(filename, null);
             scenesaver.Formatting = Formatting.Indented;
             scenesaver.WriteStartDocument();
 
@@ -231,9 +227,9 @@ namespace AwesomeEngine
 
         private void SaveObjects(XmlTextWriter scenesaver, List<ModelInfo> objects)
         {
-            scenesaver.WriteStartElement("Conent");
             foreach (ModelInfo obj in objects)
             {
+                scenesaver.WriteStartElement("Content");
                 scenesaver.WriteStartElement("Object");
 
                 scenesaver.WriteStartElement("posx");
