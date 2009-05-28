@@ -13,7 +13,7 @@ namespace GameEditor
             using (GameEditor game = new GameEditor())
             {
                 game.Run();
-            }
+            }//
         }
     }
 }
