@@ -7,12 +7,12 @@ float xRange;
 float4x4 xWorldViewProjection;  
 bool xTextureEnabled;
 
-float4 xAmbientColor = {1,1,1,1};
+float4 xAmbientColor = {0,0,1,1};
 float xAmbientIntensity = 0.2f;
 
-float4 xDirectionalColor = {1,1,1,1};
-float3 xLightDirection = {-1,-1,-1};;
-float xLightIntensity = 0.8;
+float4 xDirectionalColor = {0.7,0.7,0.7,1};
+float3 xLightDirection = {-1,-1,-1};
+float xLightIntensity = 1;
 
 float4 xDiffuseColor = {.4,.4,.4,1};
  
@@ -35,18 +35,18 @@ sampler TextureSampler = sampler_state
  
 struct VertexShaderIn  // VertexShaderInput  
 {  
-    float4 Position                 : POSITION;      
+    float4 Position                 : POSITION0;      
     float2 textureCoordinates       : TEXCOORD0;  
     float4 Normal					: NORMAL;
 };  
  
 struct VertexShaderOut // VertexShaderOutput  
 {  
-    float4 Position                 : POSITION;   
+    float4 Position                 : POSITION0;   
     float4 Position2D				: TEXCOORD0;
     float4 Center					: TEXCOORD2;
     float2 textureCoordinates       : TEXCOORD1;  
-    float4 Normal					: NORMAL;
+    float4 Normal					: NORMAL0;
 };  
  
 ///////////////////// VERTEX SHADERS /////////////////////////////////////////////////////////////   
@@ -58,9 +58,10 @@ VertexShaderOut VertexShaderFunction(VertexShaderIn input)
     // input.Position refers to struct VertexShaderIn.Position (POSITION0)  
     float4x4 worldViewProjection = mul(xWorld, mul(xView, xProjection));
     Output.Position = mul(input.Position, worldViewProjection);  
+    Output.Position2D = mul(input.Position, xWorld);
     Output.textureCoordinates = input.textureCoordinates;  
-	Output.Center = mul(xCenter, worldViewProjection);
-	Output.Normal = normalize(mul(input.Normal, worldViewProjection));
+	Output.Center = mul(xCenter, xWorld);
+	Output.Normal = mul(input.Normal, xWorld);
     return Output;  
 }  
  
@@ -79,11 +80,14 @@ float4 PixelShaderFunction(VertexShaderOut input) : COLOR0  // Takes input from 
 		color = xDiffuseColor;
 	
     
-   diffuseLightingFactor = dot(normalize(-xLightDirection), input.Normal);
+   diffuseLightingFactor = max(0,dot(normalize(input.Normal),-normalize(xLightDirection)));
+   diffuseLightingFactor = saturate(diffuseLightingFactor);
+   diffuseLightingFactor *= xLightIntensity;
    
-   //output = color*(xAmbientIntensity + diffuseLightingFactor);
-   output = xAmbientIntensity*(xAmbientColor) + 
-			(diffuseLightingFactor)*(color);
+
+   //output = saturate(color*(diffuseLightingFactor) + xAmbientIntensity*xAmbientColor + 0.2*diffuseLightingFactor*xDirectionalColor);
+			
+	output = color*(diffuseLightingFactor + xAmbientIntensity);
     
     return output;  
 }  
