@@ -148,17 +148,6 @@ C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\Fonts\DemoFont.xnb
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\Fonts\Arial.xnb
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\Fonts\Calibri.xnb
-C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\Textures\floor_color_map.xnb
-C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\Textures\floor_height_map.xnb
-C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\Textures\floor_normal_map.xnb
-C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\Textures\EnemyBeastDiffuse.xnb
-C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\Textures\EnemyBeastNormal.xnb
-C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\Textures\EnemyBeastSpecular.xnb
-C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\Textures\PlayerMarineDiffuse.xnb
-C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\Textures\WeaponMachineGunDiffuse.xnb
-C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\Textures\null_normal.xnb
-C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\Textures\PlayerMarineNormal.xnb
-C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\Textures\rockbump.xnb
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\Models\ShipDiffuse.xnb
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\Models\Floor_mdl.xnb
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\Models\Ship_mdl.xnb
