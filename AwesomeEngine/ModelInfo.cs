@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Storage;
 //using XNAnimation;
+using JigLibX.Math;
+using JigLibX.Physics;
+using JigLibX.Geometry;
+using JigLibX.Collision;
+
 
 namespace AwesomeEngine
 {
