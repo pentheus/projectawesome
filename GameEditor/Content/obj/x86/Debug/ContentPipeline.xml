@@ -155,7 +155,7 @@
       <Time>2009-05-27T14:50:09.778-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Floor_mdl_0.xml</Key>
-        <Value>2009-05-28T12:16:58.622-07:00</Value>
+        <Value>2009-05-28T19:02:37.014-07:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -168,7 +168,7 @@
       <Time>2009-05-27T14:50:09.792-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ship_mdl_0.xml</Key>
-        <Value>2009-05-28T12:17:00.334-07:00</Value>
+        <Value>2009-05-28T19:02:38.69-07:00</Value>
       </Dependency>
       <Request>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\Models\ShipDiffuse_0.xnb</Request>
     </Item>
@@ -182,7 +182,7 @@
       <Time>2009-05-27T14:50:09.775-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Tank_mdl_0.xml</Key>
-        <Value>2009-05-28T12:17:01.371-07:00</Value>
+        <Value>2009-05-28T19:02:39.579-07:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -195,7 +195,7 @@
       <Time>2009-05-27T14:50:09.776-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\testscene_mdl_0.xml</Key>
-        <Value>2009-05-28T12:17:01.592-07:00</Value>
+        <Value>2009-05-28T19:02:39.743-07:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -208,7 +208,7 @@
       <Time>2009-05-27T14:50:09.762-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\WeaponMachineGun_mdl_0.xml</Key>
-        <Value>2009-05-28T12:17:01.963-07:00</Value>
+        <Value>2009-05-28T19:02:40.036-07:00</Value>
       </Dependency>
       <Request>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\Textures\WeaponMachineGunDiffuse_0.xnb</Request>
     </Item>
@@ -225,7 +225,7 @@
       <Time>2009-05-27T14:50:09.77-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\PlayerMarine_mdla_0.xml</Key>
-        <Value>2009-05-28T12:17:06.119-07:00</Value>
+        <Value>2009-05-28T19:02:44.033-07:00</Value>
       </Dependency>
       <Request>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\Textures\PlayerMarineDiffuse_0.xnb</Request>
       <Request>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\Textures\PlayerMarineNormal_0.xnb</Request>
@@ -240,7 +240,7 @@
       <Time>2009-05-27T00:48:22-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\lamp_mdl_0.xml</Key>
-        <Value>2009-05-28T12:17:07.215-07:00</Value>
+        <Value>2009-05-28T19:02:45.165-07:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -253,7 +253,7 @@
       <Time>2009-05-27T00:48:22-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\refrigerator_mdl_0.xml</Key>
-        <Value>2009-05-28T12:17:07.301-07:00</Value>
+        <Value>2009-05-28T19:02:45.231-07:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -266,7 +266,7 @@
       <Time>2009-05-27T00:48:22-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\toilet_mdl_0.xml</Key>
-        <Value>2009-05-28T12:17:07.381-07:00</Value>
+        <Value>2009-05-28T19:02:45.301-07:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -279,7 +279,7 @@
       <Time>2009-05-27T00:48:22-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\tv_mdl_0.xml</Key>
-        <Value>2009-05-28T12:17:07.417-07:00</Value>
+        <Value>2009-05-28T19:02:45.348-07:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -292,7 +292,7 @@
       <Time>2009-05-27T00:48:22-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\washer_mdl_0.xml</Key>
-        <Value>2009-05-28T12:17:07.515-07:00</Value>
+        <Value>2009-05-28T19:02:45.495-07:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -305,7 +305,7 @@
       <Time>2009-05-27T22:07:09.761-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\test_mdl_0.xml</Key>
-        <Value>2009-05-28T12:17:07.596-07:00</Value>
+        <Value>2009-05-28T19:02:45.571-07:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -464,8 +464,8 @@
     </Settings>
     <Assemblies>
       <Assembly>
-        <Key>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\XNAnimation\XNAnimationPipeline\bin\x86\Release\XNAnimationPipeline.dll</Key>
-        <Value>2009-05-27T15:51:34.555-07:00</Value>
+        <Key>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\DLLs\XNAnimationPipeline.dll</Key>
+        <Value>2009-05-28T16:53:27.09-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
