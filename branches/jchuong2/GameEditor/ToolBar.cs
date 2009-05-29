@@ -140,6 +140,11 @@ namespace GameEditor
         {
             gameEditor.GetSceneParser().SaveScene(gameEditor.GetScene().SceneGraph, saveDialog.FileName);
         }
-        //
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            gameEditor.Exit();
+        }
+   
     }
 }

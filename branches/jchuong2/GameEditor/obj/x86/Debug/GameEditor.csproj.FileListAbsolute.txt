@@ -144,9 +144,6 @@ C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\GameEdito
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\test_mdl.xnb
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\asd_mdl.xnb
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\fixed_mdl.xnb
-C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\ShadowMap.xnb
-C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\DrawModel.xnb
-C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\Simple.xnb
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\Effects\parallax_normal_mapping.xnb
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\Fonts\DemoFont.xnb
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\Fonts\Arial.xnb
@@ -184,8 +181,6 @@ C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\AwesomeEngine.dll
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\XNAnimation.dll
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\AwesomeEngine.pdb
-C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\XNAnimation.pdb
-C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\XNAnimation.xml
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\obj\x86\Debug\GameEditor.Properties.Resources.resources
@@ -193,3 +188,7 @@ C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\obj\x
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\obj\x86\Debug\GameEditor.csproj.GenerateResource.Cache
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\obj\x86\Debug\GameEditor.exe
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\obj\x86\Debug\GameEditor.pdb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\JigLibX.dll
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\ShadowMap.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\DrawModel.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\Simple.xnb

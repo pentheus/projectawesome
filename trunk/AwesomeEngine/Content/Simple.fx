@@ -6,6 +6,15 @@ float3 xCenter;
 float xRange;
 float4x4 xWorldViewProjection;  
 bool xTextureEnabled;
+
+float4 xAmbientColor = {1,1,1,1};
+float xAmbientIntensity = 0.2f;
+
+float4 xDirectionalColor = {1,1,1,1};
+float3 xLightDirection = {-1,-1,-1};;
+float xLightIntensity = 0.8;
+
+float4 xDiffuseColor = {.4,.4,.4,1};
  
 //------- Texture Samplers --------    
 Texture xTexture;       // Input a texture from XNA code via effect.Parameters["xTexture"].SetValue(texture)  
@@ -28,6 +37,7 @@ struct VertexShaderIn  // VertexShaderInput
 {  
     float4 Position                 : POSITION;      
     float2 textureCoordinates       : TEXCOORD0;  
+    float4 Normal					: NORMAL;
 };  
  
 struct VertexShaderOut // VertexShaderOutput  
@@ -36,6 +46,7 @@ struct VertexShaderOut // VertexShaderOutput
     float4 Position2D				: TEXCOORD0;
     float4 Center					: TEXCOORD2;
     float2 textureCoordinates       : TEXCOORD1;  
+    float4 Normal					: NORMAL;
 };  
  
 ///////////////////// VERTEX SHADERS /////////////////////////////////////////////////////////////   
@@ -49,7 +60,7 @@ VertexShaderOut VertexShaderFunction(VertexShaderIn input)
     Output.Position = mul(input.Position, worldViewProjection);  
     Output.textureCoordinates = input.textureCoordinates;  
 	Output.Center = mul(xCenter, worldViewProjection);
-	//Output.att = distance(Output.Center,Output.Position)/xRange;
+	Output.Normal = normalize(mul(input.Normal, worldViewProjection));
     return Output;  
 }  
  
@@ -60,16 +71,19 @@ VertexShaderOut VertexShaderFunction(VertexShaderIn input)
 float4 PixelShaderFunction(VertexShaderOut input) : COLOR0  // Takes input from output of Vertex Shader  
 {  
 	float4 output;
+	float diffuseLightingFactor;
 	
 	float4 color = tex2D(TextureSampler, input.textureCoordinates);   
-    float att = saturate(xRange/distance(input.Center, input.Position2D));
     
-    //output.a = 0.3; 
+	if(xTextureEnabled == false)
+		color = xDiffuseColor;
+	
     
-    output = color*att;
-    
-    if(xTextureEnabled == false)
-		output = 1;
+   diffuseLightingFactor = dot(normalize(-xLightDirection), input.Normal);
+   
+   //output = color*(xAmbientIntensity + diffuseLightingFactor);
+   output = xAmbientIntensity*(xAmbientColor) + 
+			(diffuseLightingFactor)*(color);
     
     return output;  
 }  
