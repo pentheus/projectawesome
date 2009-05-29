@@ -7,8 +7,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\AwesomeEngine\bin\x86\Debug\Content\ShadowMap.xnb</Output>
-      <Time>2009-05-28T15:50:53.946-07:00</Time>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\AwesomeEngine\bin\x86\Debug\Content\ShadowMap.xnb</Output>
+      <Time>2009-05-27T14:54:19.379-07:00</Time>
     </Item>
     <Item>
       <Source>DrawModel.fx</Source>
@@ -16,8 +16,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\AwesomeEngine\bin\x86\Debug\Content\DrawModel.xnb</Output>
-      <Time>2009-05-28T15:50:53.95-07:00</Time>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\AwesomeEngine\bin\x86\Debug\Content\DrawModel.xnb</Output>
+      <Time>2009-05-27T14:54:19.382-07:00</Time>
     </Item>
     <Item>
       <Source>Simple.fx</Source>
@@ -25,23 +25,23 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\AwesomeEngine\bin\x86\Debug\Content\Simple.xnb</Output>
-      <Time>2009-05-28T15:50:53.948-07:00</Time>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\AwesomeEngine\bin\x86\Debug\Content\Simple.xnb</Output>
+      <Time>2009-05-28T21:07:36.518-07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\AwesomeEngine\Content\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\AwesomeEngine\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\AwesomeEngine\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\AwesomeEngine\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\AwesomeEngine\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\AwesomeEngine\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\AwesomeEngine\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\AwesomeEngine\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
-        <Key>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\XNAnimation\XNAnimationPipeline\bin\x86\Release\XNAnimationPipeline.dll</Key>
-        <Value>2009-05-27T15:51:34.555-07:00</Value>
+        <Key>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\DLLs\XNAnimationPipeline.dll</Key>
+        <Value>2009-05-28T16:53:27.09-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
