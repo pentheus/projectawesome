@@ -16,7 +16,7 @@ float xAmbientIntensity = 0.1f;
 
 float4 xDirectionalColor = {0.7,0.7,0.7,1};
 float3 xLightDirection = {1,1,1};
-float xLightIntensity = 1;
+float xLightIntensity = 0.7;
 
 float4 xDiffuseColor = { 1, 0, 0, 1};
  
@@ -94,10 +94,11 @@ struct AnimatedVSIn
 
 struct AnimatedVSOut
 {
-	float4 Position			: POSITION;
-    float4 Position3D		: TEXCOORD0;
-    float3 Norm				: TEXCOORD1;
-    float2 TexCoord			: TEXCOORD2;
+	float4 Position : POSITION;
+    float3 Light : TEXCOORD2;
+    float3 Norm : TEXCOORD1;
+    float2 TexCoord : TEXCOORD0;
+    float4 Position3D : TEXCOORD3;
 };
 
 AnimatedVSOut AnimatedVS(AnimatedVSIn input)
@@ -135,3 +136,22 @@ AnimatedVSOut AnimatedVS(AnimatedVSIn input)
 }
 
     
+//I can probably delete the pixel shader and the AnimatedPSOut because it's identical to the other Pixel shader and struct
+float4 AnimatedPS(AnimatedVSOut input) : COLOR
+{
+    float diffuseLightingFactor = saturate(dot(input.Light, input.Norm))*xLightIntensity;
+	float4 diffuseColor = tex2D(TextureSampler, input.TexCoord);
+    if(xTextureEnabled == false)
+		diffuseColor = xDiffuseColor;
+    return xAmbientColor*xAmbientIntensity + diffuseColor * diffuseLightingFactor;
+}
+
+technique AnimatedLambertTest    
+{  
+    pass Pass0      // Always Start at Pass 0  
+    {   
+		CullMode = None;
+        VertexShader = compile vs_3_0 AnimatedVS();   // Vertex Shader Version  
+        PixelShader = compile ps_3_0 AnimatedPS(); 
+    }  
+} 
