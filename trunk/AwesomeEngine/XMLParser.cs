@@ -438,8 +438,6 @@ namespace AwesomeEngine
                 scenesaver.WriteString(entitytype.ToString());
                 scenesaver.WriteEndElement();
 
-
-
                 scenesaver.WriteEndElement();
             }
         }
