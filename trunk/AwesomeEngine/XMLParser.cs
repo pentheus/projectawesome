@@ -21,9 +21,9 @@ namespace AwesomeEngine
             game = received;
         }
 
-        public Octree ReadScene(string pathname, string filename)
+        public Octree ReadScene(string filename)
         {
-            XmlTextReader scenereader = new XmlTextReader(pathname + filename);
+            XmlTextReader scenereader = new XmlTextReader(filename);
             XmlDocument scenedoc = new XmlDocument();
             scenedoc.Load(scenereader);
 
@@ -169,11 +169,11 @@ namespace AwesomeEngine
                             item = new GlowStickItem((Game)game, obj);
                             break;
                         default:
-                            item = new Item((Game)game, obj);
+                            item = null;
                             break;
                     }
-
-                    scene.AddItem(item);
+                    if(item!=null)
+                        scene.AddItem(item);
                 }
                 catch (FormatException)
                 {
@@ -224,20 +224,20 @@ namespace AwesomeEngine
                     switch (itemtype)
                     {
                         case "SpawnEntity":
-                            entity = new SpawnEntity((Game)game, obj);
+                            entity = new SpawnEntity((Game)game, objmodel, objvect, objscale);
                             break;
                         case "EnemySpawnEntity":
-                            entity = new EnemySpawnEntity((Game)game, obj);
+                            entity = new EnemySpawnEntity((Game)game, objmodel, objvect, objscale);
                             break;
                         case "TriggerEntity":
-                            entity = new TriggerEntity((Game)game, obj);
+                            entity = new TriggerEntity((Game)game, objmodel, objvect, objscale);
                             break;
                         default:
-                            entity = new Item((Game)game, obj);
+                            entity = null;
                             break;
                     }
-
-                    scene.AddEntity(entity);
+                    if(entity!=null)
+                        scene.AddEntity(entity);
                 }
                 catch (FormatException)
                 {
@@ -247,13 +247,13 @@ namespace AwesomeEngine
             }
         }
 
-        public Boolean SaveScene(Octree scene, string pathname, string filename)
+        public Boolean SaveScene(Octree scene, string filename)
         {
             ModelInfo savegeo = scene.getGeometry();
             List<ModelInfo> objects = scene.getDrawableObjects();
             List<Item> items = scene.GetItems();
-            List<LogicEntity> entities = scene.getEntities();
-            XmlTextWriter scenesaver = new XmlTextWriter(pathname + filename, null);
+            List<LogicEntity> entities = scene.GetEntities();
+            XmlTextWriter scenesaver = new XmlTextWriter(filename, null);
             scenesaver.Formatting = Formatting.Indented;
             scenesaver.WriteStartDocument();
 
@@ -404,7 +404,7 @@ namespace AwesomeEngine
             foreach (LogicEntity entity in entities)
             {
                 //Store the item's ModelInfo information
-                obj = entity.Model;
+                obj = new ModelInfo(entity.Position, Vector3.Zero, entity.Scale, entity.Model, "entity");
 
                 scenesaver.WriteStartElement("Entity");
 
