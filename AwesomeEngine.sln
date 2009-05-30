@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwesomeEngine", "AwesomeEng
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameEditor", "GameEditor\GameEditor.csproj", "{810E0214-07BA-46AE-B439-4613ECB48922}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AfterDarkGame", "AfterDarkGame\AfterDarkGame.csproj", "{3CD22764-DB26-429D-A1FC-DAC288C29DA6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -33,6 +35,16 @@ Global
 		{DBCE51B1-3D5C-48D0-9637-91C3AAD79942}.Debug|Xbox 360.ActiveCfg = Debug|x86
 		{DBCE51B1-3D5C-48D0-9637-91C3AAD79942}.Release|x86.ActiveCfg = Release|x86
 		{DBCE51B1-3D5C-48D0-9637-91C3AAD79942}.Release|Xbox 360.ActiveCfg = Release|x86
+		{3CD22764-DB26-429D-A1FC-DAC288C29DA6}.Debug|x86.ActiveCfg = Debug|x86
+		{3CD22764-DB26-429D-A1FC-DAC288C29DA6}.Debug|x86.Build.0 = Debug|x86
+		{3CD22764-DB26-429D-A1FC-DAC288C29DA6}.Debug|Xbox 360.ActiveCfg = Debug|x86
+		{3CD22764-DB26-429D-A1FC-DAC288C29DA6}.Release|x86.ActiveCfg = Release|x86
+		{3CD22764-DB26-429D-A1FC-DAC288C29DA6}.Release|x86.Build.0 = Release|x86
+		{3CD22764-DB26-429D-A1FC-DAC288C29DA6}.Release|Xbox 360.ActiveCfg = Release|x86
+		{ABD8F6C5-24BD-4BAC-9A06-481284A80794}.Debug|x86.ActiveCfg = Debug|x86
+		{ABD8F6C5-24BD-4BAC-9A06-481284A80794}.Debug|Xbox 360.ActiveCfg = Debug|x86
+		{ABD8F6C5-24BD-4BAC-9A06-481284A80794}.Release|x86.ActiveCfg = Release|x86
+		{ABD8F6C5-24BD-4BAC-9A06-481284A80794}.Release|Xbox 360.ActiveCfg = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
