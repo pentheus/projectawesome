@@ -18,6 +18,7 @@ namespace AwesomeEngine
         List<ModelInfo> objects;
         List<Enemy> enemies;
         List<Item> items;
+        List<LogicEntity> entities;
         ModelInfo worldgeometry; //null in all nodes except root
         float size;
         Vector3 min;
