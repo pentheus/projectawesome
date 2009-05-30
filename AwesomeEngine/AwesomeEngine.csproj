@@ -101,6 +101,10 @@
     <Compile Include="ContainsScene.cs" />
     <Compile Include="Items\BatteryItem.cs" />
     <Compile Include="Items\ChairItem.cs" />
+    <Compile Include="Items\TriggerEntity.cs" />
+    <Compile Include="Items\EnemySpawnEntity.cs" />
+    <Compile Include="Items\SpawnEntity.cs" />
+    <Compile Include="Items\LogicEntity.cs" />
     <Compile Include="Items\FlashLightItem.cs" />
     <Compile Include="Items\FuseItem.cs" />
     <Compile Include="Items\GlowStickItem.cs" />

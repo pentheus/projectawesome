@@ -58,6 +58,11 @@ namespace AwesomeEngine
             get { return items; }
         }
 
+        public List<LogicEntity> Entities
+        {
+            get { return entities; }
+        }
+
         public Node[] Children
         {
             get { return children; }

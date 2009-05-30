@@ -201,6 +201,27 @@ namespace AwesomeEngine
             node.Items.Add(item);
         }
 
+        public void AddEntity(LogicEntity entity)
+        {
+            AddRecursiveEntity(entity, root);
+        }
+
+        public void AddRecursiveEntity(LogicEntity entity, Node node)
+        {
+            if (node.HasChildren())
+            {
+                foreach (Node n in node.Children)
+                {
+                    if (node.BoundingBox.Contains(entity.BoundingSphere) == ContainmentType.Contains)
+                    {
+                        AddRecursiveEntity(entity, n);
+                        return;
+                    }
+                }
+            }
+            node.Entities.Add(entity);
+        }
+
 
         /// <summary>
         /// When the number of DrawableObjects exceed a certain threshold in
@@ -302,6 +323,24 @@ namespace AwesomeEngine
                     recurseItems(items, n);
             }
             return items;
+        }
+
+        public List<LogicEntity> GetEntities()
+        {
+            List<LogicEntity> entities = new List<LogicEntity>();
+            recurseEntities(entities, root);
+            return entities;
+        }
+
+        public List<LogicEntity> recurseEntities(List<LogicEntity> entities, Node node)
+        {
+            entities.AddRange(node.Entities);
+            if (node.HasChildren())
+            {
+                foreach (Node n in node.Children)
+                    recurseEntities(entities, n);
+            }
+            return entities;
         }
 
         //Add world geometry to the root node of the octree
