@@ -41,14 +41,14 @@ sampler TextureSampler = sampler_state
 struct VS_OUTPUT
 {
     float4 Pos : POSITION;
-    float3 Light : TEXCOORD0;
+    float3 Light : TEXCOORD2;
     float3 Norm : TEXCOORD1;
-    float2 TexCoord : TEXCOORD2;  
+    float2 TexCoord : TEXCOORD0;  
 };
 
 /////////////////// VERTEX SHADERS //////////////////////////
 
-VS_OUTPUT VS(float4 Pos : POSITION, float3 Normal : NORMAL, float2 TexCoord : TEXCOORD2)
+VS_OUTPUT VS(float4 Pos : POSITION, float3 Normal : NORMAL, float2 TexCoord : TEXCOORD0)
 {
     VS_OUTPUT Out = (VS_OUTPUT)0;
     Out.Pos = mul(Pos, mul(xWorld, mul(xView,xProjection))); // transform Position
@@ -60,10 +60,10 @@ VS_OUTPUT VS(float4 Pos : POSITION, float3 Normal : NORMAL, float2 TexCoord : TE
 
 /////////////////// PIXEL SHADERS ////////////////////////////////
 
-float4 PS(float3 Light: TEXCOORD0, float3 Norm : TEXCOORD1, float2 TexCoord : TEXCOORD2) : COLOR
+float4 PS(VS_OUTPUT input) : COLOR
 {
-    float diffuseLightingFactor = saturate(dot(Light, Norm))*xLightIntensity;
-	float4 diffuseColor = tex2D(TextureSampler, TexCoord);
+    float diffuseLightingFactor = saturate(dot(input.Light, input.Norm))*xLightIntensity;
+	float4 diffuseColor = tex2D(TextureSampler, input.TexCoord);
     if(xTextureEnabled == false)
 		diffuseColor = xDiffuseColor;
     return xAmbientColor*xAmbientIntensity + diffuseColor * diffuseLightingFactor;
@@ -76,7 +76,7 @@ technique LambertTest
 {  
     pass Pass0      // Always Start at Pass 0  
     {   
-    CullMode = None;
+		CullMode = None;
         VertexShader = compile vs_3_0 VS();   // Vertex Shader Version  
         PixelShader = compile ps_3_0 PS(); 
     }  

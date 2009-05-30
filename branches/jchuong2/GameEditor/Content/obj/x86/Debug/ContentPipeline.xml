@@ -38,15 +38,6 @@
       <Time>2009-05-27T14:50:16.469-07:00</Time>
     </Item>
     <Item>
-      <Source>Models\ShipDiffuse.tga</Source>
-      <Name>Models\ShipDiffuse</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\Models\ShipDiffuse.xnb</Output>
-      <Time>2009-05-27T14:50:09.764-07:00</Time>
-    </Item>
-    <Item>
       <Source>Models\Floor_mdl.fbx</Source>
       <Name>Models\Floor_mdl</Name>
       <Importer>FbxImporter</Importer>
@@ -56,7 +47,7 @@
       <Time>2009-05-27T14:50:09.778-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Floor_mdl_0.xml</Key>
-        <Value>2009-05-28T19:02:37.014-07:00</Value>
+        <Value>2009-05-29T23:34:11.509-07:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -69,7 +60,7 @@
       <Time>2009-05-27T14:50:09.792-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ship_mdl_0.xml</Key>
-        <Value>2009-05-28T19:02:38.69-07:00</Value>
+        <Value>2009-05-29T23:34:13.3-07:00</Value>
       </Dependency>
       <Request>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\Models\ShipDiffuse_0.xnb</Request>
     </Item>
@@ -83,7 +74,7 @@
       <Time>2009-05-29T17:06:28.319-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Tank_mdl_0.xml</Key>
-        <Value>2009-05-29T17:16:16.639-07:00</Value>
+        <Value>2009-05-29T23:34:14.318-07:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -96,7 +87,7 @@
       <Time>2009-05-27T14:50:09.776-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\testscene_mdl_0.xml</Key>
-        <Value>2009-05-28T19:02:39.743-07:00</Value>
+        <Value>2009-05-29T23:34:14.506-07:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -109,7 +100,7 @@
       <Time>2009-05-27T14:50:09.762-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\WeaponMachineGun_mdl_0.xml</Key>
-        <Value>2009-05-28T19:02:40.036-07:00</Value>
+        <Value>2009-05-29T23:34:14.955-07:00</Value>
       </Dependency>
       <Request>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\Textures\WeaponMachineGunDiffuse_0.xnb</Request>
     </Item>
@@ -126,7 +117,7 @@
       <Time>2009-05-27T14:50:09.77-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\PlayerMarine_mdla_0.xml</Key>
-        <Value>2009-05-28T19:02:44.033-07:00</Value>
+        <Value>2009-05-29T23:34:19.1-07:00</Value>
       </Dependency>
       <Request>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\Textures\PlayerMarineDiffuse_0.xnb</Request>
       <Request>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\Textures\PlayerMarineNormal_0.xnb</Request>
@@ -141,7 +132,7 @@
       <Time>2009-05-27T00:48:22-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\lamp_mdl_0.xml</Key>
-        <Value>2009-05-28T19:02:45.165-07:00</Value>
+        <Value>2009-05-29T23:34:20.498-07:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -154,7 +145,7 @@
       <Time>2009-05-27T00:48:22-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\refrigerator_mdl_0.xml</Key>
-        <Value>2009-05-28T19:02:45.231-07:00</Value>
+        <Value>2009-05-29T23:34:20.552-07:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -167,7 +158,7 @@
       <Time>2009-05-27T00:48:22-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\toilet_mdl_0.xml</Key>
-        <Value>2009-05-28T19:02:45.301-07:00</Value>
+        <Value>2009-05-29T23:34:20.655-07:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -180,7 +171,7 @@
       <Time>2009-05-27T00:48:22-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\tv_mdl_0.xml</Key>
-        <Value>2009-05-28T19:02:45.348-07:00</Value>
+        <Value>2009-05-29T23:34:20.681-07:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -193,7 +184,7 @@
       <Time>2009-05-27T00:48:22-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\washer_mdl_0.xml</Key>
-        <Value>2009-05-28T19:02:45.495-07:00</Value>
+        <Value>2009-05-29T23:34:20.783-07:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -206,8 +197,30 @@
       <Time>2009-05-27T22:07:09.761-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\test_mdl_0.xml</Key>
-        <Value>2009-05-28T19:02:45.571-07:00</Value>
+        <Value>2009-05-29T23:34:20.872-07:00</Value>
       </Dependency>
+    </Item>
+    <Item>
+      <Source>Models\testplane_mdl.FBX</Source>
+      <Name>Models\testplane_mdl</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\Models\testplane_mdl.xnb</Output>
+      <Time>2009-05-29T20:57:32.644-07:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\testplane_mdl_0.xml</Key>
+        <Value>2009-05-29T23:34:20.89-07:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Models\ShipDiffuse.tga</Source>
+      <Name>Models\ShipDiffuse</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\Models\ShipDiffuse.xnb</Output>
+      <Time>2009-05-27T14:50:09.764-07:00</Time>
     </Item>
     <Item>
       <Source>Models\Floor_mdl.fbx</Source>
@@ -352,19 +365,6 @@
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\test_mdl_0.xml</Output>
       <Time>2009-05-27T22:07:09.761-07:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\testplane_mdl.FBX</Source>
-      <Name>Models\testplane_mdl</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\Models\testplane_mdl.xnb</Output>
-      <Time>2009-05-29T20:57:32.644-07:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\testplane_mdl_0.xml</Key>
-        <Value>2009-05-29T20:57:50.554-07:00</Value>
-      </Dependency>
     </Item>
     <Item>
       <Source>Models\testplane_mdl.FBX</Source>

@@ -2,7 +2,6 @@ Content\Effects\parallax_normal_mapping.xnb
 Content\Fonts\DemoFont.xnb
 Content\Fonts\Arial.xnb
 Content\Fonts\Calibri.xnb
-Content\Models\ShipDiffuse.xnb
 Content\Models\Floor_mdl.xnb
 Content\Models\Ship_mdl.xnb
 Content\Models\Tank_mdl.xnb
@@ -15,11 +14,12 @@ Content\Models\toilet_mdl.xnb
 Content\Models\tv_mdl.xnb
 Content\Models\washer_mdl.xnb
 Content\Models\test_mdl.xnb
+Content\Models\testplane_mdl.xnb
+Content\Models\ShipDiffuse.xnb
 Content\Models\ShipDiffuse_0.xnb
 Content\Textures\WeaponMachineGunDiffuse_0.xnb
 Content\Textures\PlayerMarineDiffuse_0.xnb
 Content\Textures\PlayerMarineNormal_0.xnb
-Content\Models\testplane_mdl.xnb
 Content\ShadowMap.xnb
 Content\DrawModel.xnb
 Content\Simple.xnb
