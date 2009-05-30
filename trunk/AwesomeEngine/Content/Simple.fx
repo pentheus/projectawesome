@@ -87,7 +87,7 @@ struct AnimatedVSIn
 {
 	float4 pos : POSITION;
 	float3 Normal : NORMAL;
-	float2 TexCoord : TEXCOORD2; 
+	float2 TexCoord : TEXCOORD0; 
 	float4 inBoneIndex : BLENDINDICES0;
 	float4 inBoneWeight		: BLENDWEIGHT0;
 };
