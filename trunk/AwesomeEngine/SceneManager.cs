@@ -23,8 +23,6 @@ namespace AwesomeEngine
         IGraphicsDeviceService graphicsService;
         Dictionary<ModelMeshPart, Texture2D> textures;
 
-        Player player;
-
 
         public SceneManager(Game game)
             : base(game)
