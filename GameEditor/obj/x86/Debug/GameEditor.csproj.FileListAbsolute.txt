@@ -178,6 +178,7 @@ C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\obj\x
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\obj\x86\Debug\GameEditor.exe
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\obj\x86\Debug\GameEditor.pdb
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\JigLibX.dll
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\Models\testplane_mdl.xnb
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\ShadowMap.xnb
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\DrawModel.xnb
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\bin\x86\Debug\Content\Simple.xnb
