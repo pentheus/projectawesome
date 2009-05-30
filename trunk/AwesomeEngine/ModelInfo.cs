@@ -9,6 +9,8 @@ using JigLibX.Math;
 using JigLibX.Physics;
 using JigLibX.Geometry;
 using JigLibX.Collision;
+using XNAnimation;
+using XNAnimation.Effects;
 
 
 namespace AwesomeEngine
@@ -86,7 +88,30 @@ namespace AwesomeEngine
                         part.Effect = e;
                     }
             }
-            
+
+        }
+
+        public static void LoadModel(ref SkinnedModel model, Dictionary<ModelMeshPart, Texture2D> textures, ContentManager content, GraphicsDevice graphics,
+            String assetName, Effect effect)
+        {
+            model = content.Load<SkinnedModel>(@"Models\" + assetName);
+
+            foreach (ModelMesh mesh in model.Model.Meshes)
+                foreach (ModelMeshPart part in mesh.MeshParts)
+                {
+                    Effect e = effect.Clone(graphics);
+                    if ((part.Effect as SkinnedModelBasicEffect).DiffuseMap != null)
+                    {
+                        textures.Add(part, (part.Effect as SkinnedModelBasicEffect).DiffuseMap);
+                        e.Parameters["xTextureEnabled"].SetValue(true);
+                    }
+                    else
+                    {
+                        textures.Add(part, (part.Effect as SkinnedModelBasicEffect).DiffuseMap);
+                        e.Parameters["xTextureEnabled"].SetValue(false);
+                    }
+                    part.Effect = e;
+                }
         }
 
         public void CreateBoundingSphere(out BoundingSphere mergedSphere)
