@@ -18,9 +18,6 @@ C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\b
 C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Floor.xnb
 C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\testscene.xnb
 C:\Users\Spike\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Ship.xnb
-C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\ShadowMap.xnb
-C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\DrawModel.xnb
-C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Simple.xnb
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Effects\parallax_normal_mapping.xnb
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Fonts\DemoFont.xnb
 C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Textures\floor_color_map.xnb
@@ -242,3 +239,27 @@ C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\obj\x86\D
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\obj\x86\Debug\GameEditor.csproj.GenerateResource.Cache
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\obj\x86\Debug\GameEditor.exe
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\obj\x86\Debug\GameEditor.pdb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Fonts\Arial.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Fonts\Calibri.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Textures\EnemyBeastDiffuse.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Textures\EnemyBeastNormal.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Textures\EnemyBeastSpecular.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Textures\PlayerMarineDiffuse.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Textures\WeaponMachineGunDiffuse.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Textures\null_normal.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Textures\PlayerMarineNormal.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Textures\rockbump.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\ShipDiffuse.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\WeaponMachineGun_mdl.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\lamp_mdl.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\refrigerator_mdl.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\toilet_mdl.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\tv_mdl.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\washer_mdl.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Models\test_mdl.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Textures\WeaponMachineGunDiffuse_0.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\XNAnimation.pdb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\XNAnimation.xml
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\ShadowMap.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\DrawModel.xnb
+C:\Users\Jonathan Chuong\Documents\Visual Studio 2008\Projects\projectawesome\GameEditor\bin\x86\Debug\Content\Simple.xnb
