@@ -10,13 +10,14 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
+using AwesomeEngine;
 
 namespace AfterDarkGame
 {
     /// <summary>
     /// This is the main type for your game
     /// </summary>
-    public class AfterDarkGame : Microsoft.Xna.Framework.Game
+    public class AfterDarkGame : Microsoft.Xna.Framework.Game, ContainsScene
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
@@ -89,5 +90,43 @@ namespace AfterDarkGame
 
             base.Draw(gameTime);
         }
+
+        #region ContainsScene Members
+
+        public SceneManager GetScene()
+        {
+            throw new NotImplementedException();
+        }
+
+        public GraphicsDevice GetGraphics()
+        {
+            throw new NotImplementedException();
+        }
+
+        public ContentManager GetContent()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+
+        #region ContainsScene Members
+
+        SceneManager ContainsScene.GetScene()
+        {
+            throw new NotImplementedException();
+        }
+
+        GraphicsDevice ContainsScene.GetGraphics()
+        {
+            throw new NotImplementedException();
+        }
+
+        ContentManager ContainsScene.GetContent()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
     }
 }
