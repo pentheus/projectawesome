@@ -19,3 +19,4 @@ Content\Models\ShipDiffuse_0.xnb
 Content\Textures\WeaponMachineGunDiffuse_0.xnb
 Content\Textures\PlayerMarineDiffuse_0.xnb
 Content\Textures\PlayerMarineNormal_0.xnb
+Content\Models\testplane_mdl.xnb
