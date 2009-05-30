@@ -159,14 +159,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\PlayerMarine_mdla.fbx">
-      <Name>PlayerMarine_mdla</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>SkinnedModelProcessor</Processor>
-      <ProcessorParameters_TexturePath>./../Textures/</ProcessorParameters_TexturePath>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Models\lamp_mdl.fbx">
       <Name>lamp_mdl</Name>
       <Importer>FbxImporter</Importer>
@@ -201,6 +193,13 @@
   <ItemGroup>
     <Compile Include="Models\test_mdl.FBX">
       <Name>test_mdl</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\circle_mdl.fbx">
+      <Name>circle_mdl</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>

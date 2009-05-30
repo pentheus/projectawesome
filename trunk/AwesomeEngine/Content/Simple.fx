@@ -137,10 +137,10 @@ AnimatedVSOut AnimatedVS(AnimatedVSIn input)
 
     
 //I can probably delete the pixel shader and the AnimatedPSOut because it's identical to the other Pixel shader and struct
-float4 AnimatedPS(AnimatedVSOut input) : COLOR
+float4 AnimatedPS(AnimatedVSOut input, float2 TexCoord : TEXCOORD0) : COLOR
 {
     float diffuseLightingFactor = saturate(dot(input.Light, input.Norm))*xLightIntensity;
-	float4 diffuseColor = tex2D(TextureSampler, input.TexCoord);
+	float4 diffuseColor = tex2D(TextureSampler, TexCoord);
     if(xTextureEnabled == false)
 		diffuseColor = xDiffuseColor;
     return xAmbientColor*xAmbientIntensity + diffuseColor * diffuseLightingFactor;
