@@ -123,10 +123,12 @@ namespace AwesomeEngine
 
                 foreach (Effect effect in mesh.Effects)
                 {
-                    effect.CurrentTechnique = drawModelEffect.Techniques["Flat"];
+                    effect.CurrentTechnique = drawModelEffect.Techniques["LambertTest"];
                     effect.Parameters["xWorld"].SetValue(modelTransforms[mesh.ParentBone.Index] * model.WorldMatrix);
                     effect.Parameters["xView"].SetValue(mainCamera.View);
                     effect.Parameters["xProjection"].SetValue(mainCamera.Projection);
+                    //effect.Parameters["xWorldViewProjection"].SetValue(modelTransforms[mesh.ParentBone.Index] * model.WorldMatrix *
+                    //                                                   mainCamera.View * mainCamera.Projection);
                     effect.Parameters["xCenter"].SetValue(model.Position);
                     effect.Parameters["xRange"].SetValue(4f);
                 }
@@ -146,7 +148,7 @@ namespace AwesomeEngine
                 foreach (ModelMeshPart part in mesh.MeshParts)
                 {
                     //Effect e = drawModelEffect.Clone(graphicsService.GraphicsDevice);
-                    part.Effect.CurrentTechnique = drawModelEffect.Techniques["Flat"];
+                    part.Effect.CurrentTechnique = drawModelEffect.Techniques["LambertTest"];
                     part.Effect.Parameters["xWorld"].SetValue(modelTransforms[mesh.ParentBone.Index] * model.WorldMatrix);
                     part.Effect.Parameters["xView"].SetValue(mainCamera.View);
                     part.Effect.Parameters["xProjection"].SetValue(mainCamera.Projection);
