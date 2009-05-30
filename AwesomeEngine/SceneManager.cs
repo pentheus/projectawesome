@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using XNAnimation;
 
 namespace AwesomeEngine
 {
@@ -127,8 +128,36 @@ namespace AwesomeEngine
                     effect.Parameters["xWorld"].SetValue(modelTransforms[mesh.ParentBone.Index] * model.WorldMatrix);
                     effect.Parameters["xView"].SetValue(mainCamera.View);
                     effect.Parameters["xProjection"].SetValue(mainCamera.Projection);
-                    //effect.Parameters["xWorldViewProjection"].SetValue(modelTransforms[mesh.ParentBone.Index] * model.WorldMatrix *
-                    //                                                   mainCamera.View * mainCamera.Projection);
+                    effect.Parameters["xCenter"].SetValue(model.Position);
+                    effect.Parameters["xRange"].SetValue(4f);
+                }
+                mesh.Draw();
+            }
+        }
+
+
+        //Draws an animated model based on a AnimModelInfo object
+        public void DrawAnimatedModel(AnimModelInfo model)
+        {
+            SkinnedModel skinnedModel = model.AnimatedModel;
+            Matrix[] modelTransforms = new Matrix[model.Model.Bones.Count];// = model.AnimationController.SkinnedBoneTransforms;
+            model.Model.CopyAbsoluteBoneTransformsTo(modelTransforms);
+            Vector3 center = model.Position;
+
+            foreach (ModelMesh mesh in skinnedModel.Model.Meshes)
+            {
+                foreach (ModelMeshPart part in mesh.MeshParts)
+                {
+                    part.Effect.Parameters["xTexture"].SetValue(this.Textures[part]);
+                    part.Effect.Parameters["matBones"].SetValue(model.AnimationController.SkinnedBoneTransforms);
+                    part.Effect.Parameters["xTextureEnabled"].SetValue(true);
+                }
+                foreach (Effect effect in mesh.Effects)
+                {
+                    effect.CurrentTechnique = drawModelEffect.Techniques["AnimatedLambertTest"];
+                    effect.Parameters["xWorld"].SetValue(model.WorldMatrix);
+                    effect.Parameters["xView"].SetValue(mainCamera.View);
+                    effect.Parameters["xProjection"].SetValue(mainCamera.Projection);
                     effect.Parameters["xCenter"].SetValue(model.Position);
                     effect.Parameters["xRange"].SetValue(4f);
                 }
