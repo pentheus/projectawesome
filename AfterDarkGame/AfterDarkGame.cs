@@ -29,7 +29,6 @@ namespace AfterDarkGame
     {
         GraphicsDeviceManager graphics;
 
-
         //Game Specific Variables
         SpriteBatch spriteBatch;
         BasicEffect basicEffect;
@@ -58,10 +57,10 @@ namespace AfterDarkGame
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             sceneMgr = new SceneManager(this);
+            //sceneMgr.UpdateOrder = 0;
             Components.Add(sceneMgr);
-            this.IsMouseVisible = true;
+            this.IsMouseVisible = false;
             parser = new XMLParser(this);
-
 
             InitializePhysics();
         }
@@ -85,7 +84,9 @@ namespace AfterDarkGame
             basicEffect = new BasicEffect(GraphicsDevice, null);
             mainCamera = new ThirdPersonCamera(new Vector3(35f, -24f, -30f), Vector3.Zero, GraphicsDevice.Viewport.AspectRatio, 1f, 10000f);
             fontPos = new Vector2(1.0f, 1.0f);
-
+            player = new Player(this);
+            //player.UpdateOrder = 1;
+            this.Components.Add(player);
             base.Initialize();
         }
 
@@ -140,6 +141,7 @@ namespace AfterDarkGame
 
                 Console.WriteLine(f.ToString());
             }
+            
 
             OpenLevel("C:\\Users\\Spike\\Desktop\\projectawesomeNew\\scene.xml");
             // TODO: use this.Content to load your game content here
@@ -208,6 +210,7 @@ namespace AfterDarkGame
             mainCamera.LookAt = translationVector;
 
             oldMouseState = currentMouseState;
+          
             base.Update(gameTime);
         }
 
@@ -250,6 +253,7 @@ namespace AfterDarkGame
             // TODO: Add your drawing code here
             DrawText();
             sceneMgr.DrawModel(cursor);
+            player.Draw();
             base.Draw(gameTime);
         }
 

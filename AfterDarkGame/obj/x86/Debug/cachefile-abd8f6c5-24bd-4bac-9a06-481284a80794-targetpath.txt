@@ -28,3 +28,6 @@ Content\Textures\WeaponMachineGunDiffuse.xnb
 Content\Models\ShipDiffuse_0.xnb
 Content\Textures\WeaponMachineGunDiffuse_0.xnb
 Content\Models\Player.xnb
+Content\Textures\PlayerMarineDiffuse_0.xnb
+Content\Models\PlayerMarine_mdla.xnb
+Content\Textures\PlayerMarineNormal_0.xnb

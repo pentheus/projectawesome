@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline" xmlns:Graphics="Microsoft.Xna.Framework.Graphics" xmlns:Processors="Microsoft.Xna.Framework.Content.Pipeline.Processors">
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
   <Asset Type="Pipeline:BuildItemCollection">
     <Item>
       <Source>Effects\parallax_normal_mapping.fx</Source>
@@ -7,8 +7,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Effects\parallax_normal_mapping.xnb</Output>
-      <Time>2009-05-25T22:57:32.015625-07:00</Time>
+      <Output>C:\Users\Spike\Desktop\projectawesomeNew\GameEditor\bin\x86\Debug\Content\Effects\parallax_normal_mapping.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Fonts\DemoFont.spritefont</Source>
@@ -16,8 +16,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Fonts\DemoFont.xnb</Output>
-      <Time>2009-05-25T22:58:28.796875-07:00</Time>
+      <Output>C:\Users\Spike\Desktop\projectawesomeNew\GameEditor\bin\x86\Debug\Content\Fonts\DemoFont.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Fonts\Arial.spritefont</Source>
@@ -25,8 +25,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Fonts\Arial.xnb</Output>
-      <Time>2009-05-30T14:51:32.90625-07:00</Time>
+      <Output>C:\Users\Spike\Desktop\projectawesomeNew\GameEditor\bin\x86\Debug\Content\Fonts\Arial.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Fonts\Calibri.spritefont</Source>
@@ -34,8 +34,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Fonts\Calibri.xnb</Output>
-      <Time>2009-05-30T14:51:32.90625-07:00</Time>
+      <Output>C:\Users\Spike\Desktop\projectawesomeNew\GameEditor\bin\x86\Debug\Content\Fonts\Calibri.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\floor_color_map.dds</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Textures\floor_color_map.xnb</Output>
-      <Time>2009-05-25T22:58:28.546875-07:00</Time>
+      <Output>C:\Users\Spike\Desktop\projectawesomeNew\GameEditor\bin\x86\Debug\Content\Textures\floor_color_map.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\floor_height_map.dds</Source>
@@ -52,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Textures\floor_height_map.xnb</Output>
-      <Time>2009-05-25T22:58:28.53125-07:00</Time>
+      <Output>C:\Users\Spike\Desktop\projectawesomeNew\GameEditor\bin\x86\Debug\Content\Textures\floor_height_map.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\floor_normal_map.dds</Source>
@@ -61,8 +61,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Textures\floor_normal_map.xnb</Output>
-      <Time>2009-05-25T22:58:28.53125-07:00</Time>
+      <Output>C:\Users\Spike\Desktop\projectawesomeNew\GameEditor\bin\x86\Debug\Content\Textures\floor_normal_map.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\EnemyBeastDiffuse.jpg</Source>
@@ -70,8 +70,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Textures\EnemyBeastDiffuse.xnb</Output>
-      <Time>2009-05-30T14:51:31.953125-07:00</Time>
+      <Output>C:\Users\Spike\Desktop\projectawesomeNew\GameEditor\bin\x86\Debug\Content\Textures\EnemyBeastDiffuse.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\EnemyBeastNormal.png</Source>
@@ -79,8 +79,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Textures\EnemyBeastNormal.xnb</Output>
-      <Time>2009-05-30T14:51:32-07:00</Time>
+      <Output>C:\Users\Spike\Desktop\projectawesomeNew\GameEditor\bin\x86\Debug\Content\Textures\EnemyBeastNormal.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\EnemyBeastSpecular.jpg</Source>
@@ -88,8 +88,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Textures\EnemyBeastSpecular.xnb</Output>
-      <Time>2009-05-30T14:51:32.03125-07:00</Time>
+      <Output>C:\Users\Spike\Desktop\projectawesomeNew\GameEditor\bin\x86\Debug\Content\Textures\EnemyBeastSpecular.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\PlayerMarineDiffuse.jpg</Source>
@@ -97,8 +97,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Textures\PlayerMarineDiffuse.xnb</Output>
-      <Time>2009-05-30T14:51:32.09375-07:00</Time>
+      <Output>C:\Users\Spike\Desktop\projectawesomeNew\GameEditor\bin\x86\Debug\Content\Textures\PlayerMarineDiffuse.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\WeaponMachineGunDiffuse.jpg</Source>
@@ -106,8 +106,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Textures\WeaponMachineGunDiffuse.xnb</Output>
-      <Time>2009-05-30T14:51:32.109375-07:00</Time>
+      <Output>C:\Users\Spike\Desktop\projectawesomeNew\GameEditor\bin\x86\Debug\Content\Textures\WeaponMachineGunDiffuse.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\null_normal.tga</Source>
@@ -115,8 +115,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Textures\null_normal.xnb</Output>
-      <Time>2009-05-30T14:51:32.0625-07:00</Time>
+      <Output>C:\Users\Spike\Desktop\projectawesomeNew\GameEditor\bin\x86\Debug\Content\Textures\null_normal.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\PlayerMarineNormal.tga</Source>
@@ -124,8 +124,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Textures\PlayerMarineNormal.xnb</Output>
-      <Time>2009-05-30T14:51:32.046875-07:00</Time>
+      <Output>C:\Users\Spike\Desktop\projectawesomeNew\GameEditor\bin\x86\Debug\Content\Textures\PlayerMarineNormal.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\rockbump.tga</Source>
@@ -133,8 +133,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Textures\rockbump.xnb</Output>
-      <Time>2009-05-30T14:51:32.078125-07:00</Time>
+      <Output>C:\Users\Spike\Desktop\projectawesomeNew\GameEditor\bin\x86\Debug\Content\Textures\rockbump.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Models\ShipDiffuse.tga</Source>
@@ -142,8 +142,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Models\ShipDiffuse.xnb</Output>
-      <Time>2009-05-30T14:51:24.71875-07:00</Time>
+      <Output>C:\Users\Spike\Desktop\projectawesomeNew\GameEditor\bin\x86\Debug\Content\Models\ShipDiffuse.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Models\Floor_mdl.fbx</Source>
@@ -151,12 +151,8 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Models\Floor_mdl.xnb</Output>
-      <Time>2009-05-30T14:51:24.9375-07:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\Floor_mdl_0.xml</Key>
-        <Value>2009-05-30T17:13:19.59375-07:00</Value>
-      </Dependency>
+      <Output>C:\Users\Spike\Desktop\projectawesomeNew\GameEditor\bin\x86\Debug\Content\Models\Floor_mdl.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Models\Ship_mdl.fbx</Source>
@@ -164,13 +160,8 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Models\Ship_mdl.xnb</Output>
-      <Time>2009-05-30T14:51:26.140625-07:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\Ship_mdl_0.xml</Key>
-        <Value>2009-05-30T17:13:21.6875-07:00</Value>
-      </Dependency>
-      <Request>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Models\ShipDiffuse_0.xnb</Request>
+      <Output>C:\Users\Spike\Desktop\projectawesomeNew\GameEditor\bin\x86\Debug\Content\Models\Ship_mdl.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Models\Tank_mdl.fbx</Source>
@@ -178,12 +169,8 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Models\Tank_mdl.xnb</Output>
-      <Time>2009-05-30T14:51:24.890625-07:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\Tank_mdl_0.xml</Key>
-        <Value>2009-05-30T17:13:22.59375-07:00</Value>
-      </Dependency>
+      <Output>C:\Users\Spike\Desktop\projectawesomeNew\GameEditor\bin\x86\Debug\Content\Models\Tank_mdl.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Models\testscene_mdl.fbx</Source>
@@ -191,12 +178,8 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Models\testscene_mdl.xnb</Output>
-      <Time>2009-05-30T14:51:24.90625-07:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\testscene_mdl_0.xml</Key>
-        <Value>2009-05-30T17:13:22.765625-07:00</Value>
-      </Dependency>
+      <Output>C:\Users\Spike\Desktop\projectawesomeNew\GameEditor\bin\x86\Debug\Content\Models\testscene_mdl.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Models\WeaponMachineGun_mdl.fbx</Source>
@@ -204,13 +187,8 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Models\WeaponMachineGun_mdl.xnb</Output>
-      <Time>2009-05-30T14:51:24.640625-07:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\WeaponMachineGun_mdl_0.xml</Key>
-        <Value>2009-05-30T17:13:23.140625-07:00</Value>
-      </Dependency>
-      <Request>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Textures\WeaponMachineGunDiffuse_0.xnb</Request>
+      <Output>C:\Users\Spike\Desktop\projectawesomeNew\GameEditor\bin\x86\Debug\Content\Models\WeaponMachineGun_mdl.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Models\lamp_mdl.fbx</Source>
@@ -218,12 +196,8 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Models\lamp_mdl.xnb</Output>
-      <Time>2009-05-30T14:51:24.78125-07:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\lamp_mdl_0.xml</Key>
-        <Value>2009-05-30T17:13:23.484375-07:00</Value>
-      </Dependency>
+      <Output>C:\Users\Spike\Desktop\projectawesomeNew\GameEditor\bin\x86\Debug\Content\Models\lamp_mdl.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Models\refrigerator_mdl.fbx</Source>
@@ -231,12 +205,8 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Models\refrigerator_mdl.xnb</Output>
-      <Time>2009-05-30T14:51:24.84375-07:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\refrigerator_mdl_0.xml</Key>
-        <Value>2009-05-30T17:13:23.53125-07:00</Value>
-      </Dependency>
+      <Output>C:\Users\Spike\Desktop\projectawesomeNew\GameEditor\bin\x86\Debug\Content\Models\refrigerator_mdl.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Models\toilet_mdl.fbx</Source>
@@ -244,12 +214,8 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Models\toilet_mdl.xnb</Output>
-      <Time>2009-05-30T14:51:24.9375-07:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\toilet_mdl_0.xml</Key>
-        <Value>2009-05-30T17:13:23.59375-07:00</Value>
-      </Dependency>
+      <Output>C:\Users\Spike\Desktop\projectawesomeNew\GameEditor\bin\x86\Debug\Content\Models\toilet_mdl.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Models\tv_mdl.fbx</Source>
@@ -257,12 +223,8 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Models\tv_mdl.xnb</Output>
-      <Time>2009-05-30T14:51:24.8125-07:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\tv_mdl_0.xml</Key>
-        <Value>2009-05-30T17:13:23.609375-07:00</Value>
-      </Dependency>
+      <Output>C:\Users\Spike\Desktop\projectawesomeNew\GameEditor\bin\x86\Debug\Content\Models\tv_mdl.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Models\washer_mdl.fbx</Source>
@@ -270,12 +232,8 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Models\washer_mdl.xnb</Output>
-      <Time>2009-05-30T14:51:24.828125-07:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\washer_mdl_0.xml</Key>
-        <Value>2009-05-30T17:13:23.6875-07:00</Value>
-      </Dependency>
+      <Output>C:\Users\Spike\Desktop\projectawesomeNew\GameEditor\bin\x86\Debug\Content\Models\washer_mdl.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Models\test_mdl.FBX</Source>
@@ -283,261 +241,23 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Models\test_mdl.xnb</Output>
-      <Time>2009-05-30T14:51:24.921875-07:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\test_mdl_0.xml</Key>
-        <Value>2009-05-30T17:13:23.75-07:00</Value>
-      </Dependency>
+      <Output>C:\Users\Spike\Desktop\projectawesomeNew\GameEditor\bin\x86\Debug\Content\Models\test_mdl.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
-    <Item>
-      <Source>Models\Floor_mdl.fbx</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\Floor_mdl_0.xml</Output>
-      <Time>2009-05-30T14:51:24.9375-07:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\Ship_mdl.fbx</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\Ship_mdl_0.xml</Output>
-      <Time>2009-05-30T14:51:26.140625-07:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\ShipDiffuse.tga</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Models\ShipDiffuse_0.xnb</Output>
-      <Time>2009-05-30T14:51:24.71875-07:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\Tank_mdl.fbx</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\Tank_mdl_0.xml</Output>
-      <Time>2009-05-30T14:51:24.890625-07:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\testscene_mdl.fbx</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\testscene_mdl_0.xml</Output>
-      <Time>2009-05-30T14:51:24.90625-07:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\WeaponMachineGun_mdl.fbx</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\WeaponMachineGun_mdl_0.xml</Output>
-      <Time>2009-05-30T14:51:24.640625-07:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\WeaponMachineGunDiffuse.jpg</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Textures\WeaponMachineGunDiffuse_0.xnb</Output>
-      <Time>2009-05-30T14:51:32.109375-07:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\lamp_mdl.fbx</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\lamp_mdl_0.xml</Output>
-      <Time>2009-05-30T14:51:24.78125-07:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\refrigerator_mdl.fbx</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\refrigerator_mdl_0.xml</Output>
-      <Time>2009-05-30T14:51:24.84375-07:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\toilet_mdl.fbx</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\toilet_mdl_0.xml</Output>
-      <Time>2009-05-30T14:51:24.9375-07:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\tv_mdl.fbx</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\tv_mdl_0.xml</Output>
-      <Time>2009-05-30T14:51:24.8125-07:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\washer_mdl.fbx</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\washer_mdl_0.xml</Output>
-      <Time>2009-05-30T14:51:24.828125-07:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\test_mdl.FBX</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\test_mdl_0.xml</Output>
-      <Time>2009-05-30T14:51:24.921875-07:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\PlayerMarine.fbx</Source>
-      <Name>Models\PlayerMarine</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>SkinnedModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Models\PlayerMarine.xnb</Output>
-      <Time>2009-05-26T19:34:52.015625-07:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\PlayerMarine_0.xml</Key>
-        <Value>2009-05-31T14:57:53.125-07:00</Value>
-      </Dependency>
-      <Request>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Textures\PlayerMarineDiffuse_0.xnb</Request>
-      <Request>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Textures\PlayerMarineNormal_0.xnb</Request>
-    </Item>
-    <Item>
-      <Source>Models\Cube.FBX</Source>
-      <Name>Models\Cube</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Models\Cube.xnb</Output>
-      <Time>2009-05-22T13:02:38-07:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\Cube_0.xml</Key>
-        <Value>2009-05-31T14:57:54.6875-07:00</Value>
-      </Dependency>
-    </Item>
-    <Item>
-      <Source>Models\PlayerMarine.fbx</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\PlayerMarine_0.xml</Output>
-      <Time>2009-05-26T19:34:52.015625-07:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\PlayerMarineDiffuse.jpg</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Textures\PlayerMarineDiffuse_0.xnb</Output>
-      <Time>2009-05-30T14:51:32.09375-07:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\PlayerMarineNormal.tga</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Textures\PlayerMarineNormal_0.xnb</Output>
-      <Time>2009-05-30T14:51:32.046875-07:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\Cube.FBX</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\Cube_0.xml</Output>
-      <Time>2009-05-22T13:02:38-07:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\EnemyBeast.fbx</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\EnemyBeast_0.xml</Output>
-      <Time>2009-05-22T13:02:40-07:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\EnemyBeast.fbx</Source>
-      <Name>Models\EnemyBeast</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>SkinnedModelProcessor</Processor>
-      <Parameters>
-        <Data Key="TexturePath">../Textures</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Models\EnemyBeast.xnb</Output>
-      <Time>2009-05-22T13:02:40-07:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\EnemyBeast_0.xml</Key>
-        <Value>2009-05-31T14:58:04.921875-07:00</Value>
-      </Dependency>
-      <Request>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Textures\EnemyBeastDiffuse_0.xnb</Request>
-      <Request>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Textures\EnemyBeastNormal_0.xnb</Request>
-    </Item>
-    <Item>
-      <Source>Textures\EnemyBeastDiffuse.jpg</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Textures\EnemyBeastDiffuse_0.xnb</Output>
-      <Time>2009-05-30T14:51:31.953125-07:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\EnemyBeastNormal.png</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Textures\EnemyBeastNormal_0.xnb</Output>
-      <Time>2009-05-30T14:51:32-07:00</Time>
-    </Item>
-    <BuildSuccessful>true</BuildSuccessful>
+    <BuildSuccessful>false</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\Content\</RootDirectory>
-      <LoggerRootDirectory>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Spike\Desktop\projectawesomeNew\GameEditor\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Spike\Desktop\projectawesomeNew\GameEditor\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Spike\Desktop\projectawesomeNew\GameEditor\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Spike\Desktop\projectawesomeNew\GameEditor\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
-        <Key>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\DLLs\XNAnimationPipeline.dll</Key>
-        <Value>2009-05-22T13:05:20.354191-07:00</Value>
+        <Key>C:\Users\Spike\Desktop\projectawesomeNew\DLLs\XNAnimationPipeline.dll</Key>
+        <Value>2009-05-30T16:08:10.634-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
@@ -560,8 +280,8 @@
         <Value>2008-10-10T17:48:50-07:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\WINDOWS\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.0.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2009-04-10T10:05:26.421875-07:00</Value>
+        <Key>C:\Windows\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.0.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2009-04-07T21:17:49.095-07:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>
