@@ -40,6 +40,7 @@ namespace AwesomeEngine
             objects = new List<ModelInfo>();
             enemies = new List<Enemy>();
             items = new List<Item>();
+            entities = new List<LogicEntity>();
             boundingBox = new BoundingBox(min, max);
         }
 

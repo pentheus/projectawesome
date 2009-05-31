@@ -7,13 +7,14 @@ using Microsoft.Xna.Framework;
 using AwesomeEngine;
 using AwesomeEngine.Items;
 using Microsoft.Xna.Framework.Graphics;
+using XNAnimation;
 
-namespace AwesomeEngine
+namespace AfterDarkGame
 {
-    class Player:DrawableGameComponent
+    public class Player:DrawableGameComponent
     {
-        AfterDarkGame.AfterDarkGame game;
-        ModelInfo model;
+        AfterDarkGame game;
+        AnimModelInfo model;
         BoundingSphere boundary;
         int health;
         List<Item> inventory;
@@ -23,7 +24,7 @@ namespace AwesomeEngine
         public Player(Game game):
             base(game)
         {
-            this.game = (AfterDarkGame.AfterDarkGame)game;
+            this.game = (AfterDarkGame)game;
             LoadContent();
             health = 3;
             inventory = new List<Item>();
@@ -33,17 +34,28 @@ namespace AwesomeEngine
         public Player(Game game, List<Item> inv, FlashLightItem light):
             base(game)
         {
-            this.game = (AfterDarkGame.AfterDarkGame)game;
+            this.game = (AfterDarkGame)game;
             LoadContent();
             health = 3;
             inventory = inv;
             flashlight = light;
         }
 
-        public override void LoadContent()
+        public void LoadContent()
         {
-            Model playermodel = new Model();
+            SkinnedModel playermodel = new SkinnedModel();
             ModelInfo.LoadModel(ref playermodel, game.GetScene().Textures, game.GetContent(), game.GetGraphics(), "Player", game.GetScene().Effect);
+            model = new AnimModelInfo(Vector3.Zero, Vector3.Zero, Vector3.Zero, playermodel, "Player");
+        }
+
+        public void Update()
+        {
+
+        }
+
+        public void Draw()
+        {
+
         }
     }
 }
