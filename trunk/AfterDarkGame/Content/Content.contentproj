@@ -332,6 +332,11 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+<<<<<<< .mine
+  </ItemGroup>
+  <ItemGroup>
+=======
+>>>>>>> .r192
     <Compile Include="Textures\PlayerMarineNormal.tga">
       <Name>PlayerMarineNormal</Name>
       <Importer>TextureImporter</Importer>
@@ -394,6 +399,21 @@
     <Folder Include="Textures\.svn\tmp\prop-base\" />
     <Folder Include="Textures\.svn\tmp\props\" />
     <Folder Include="Textures\.svn\tmp\text-base\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Textures\PlayerMarineDiffuse.jpg">
+      <Name>PlayerMarineDiffuse</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\PlayerMarine_mdla.fbx">
+      <Name>PlayerMarine_mdla</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>SkinnedModelProcessor</Processor>
+      <ProcessorParameters_TexturePath>../Textures</ProcessorParameters_TexturePath>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\v3.0\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -17,12 +17,25 @@ namespace AwesomeEngine.Enemies
 
         }
 
-        public override void ActIdle()        {                    }        public override void ActSeeking()
+        public override void ActIdle()
+        {
+            
+        }
+        public override void ActSeeking()
         {
             //if (this.enemyAOE.Intersects(playershadow enemy's second bounding sphere (or whatever mesh) is intersected by the player
             {
                 this.MoveTowards(playerPOS);
             }
-        }        public override void ActAttacking()        {        }        public override void ActDamaged()        {            // if shadow enemy's         }
+        }
+        public override void ActAttacking()
+        {
+
+        }
+        public override void ActDamaged()
+        {
+            // if shadow enemy's 
+        }
+
     }
 }
