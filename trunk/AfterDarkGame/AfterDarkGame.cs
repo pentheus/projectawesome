@@ -12,8 +12,11 @@ using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
 using AwesomeEngine;
 using AwesomeEngine.Camera;
+using JigLibX.Physics;
 using AwesomeEngine.Items;
+using JigLibX.Geometry;
 using System.IO;
+using JigLibX.Collision;
 using XNAnimation;
 
 
@@ -59,7 +62,16 @@ namespace AfterDarkGame
             this.IsMouseVisible = true;
             parser = new XMLParser(this);
 
+
+            InitializePhysics();
         }
+
+        private void InitializePhysics()
+        {
+            PhysicsSystem world = new PhysicsSystem();
+            world.CollisionSystem = new CollisionSystemSAP();
+        }
+
 
         /// <summary>
         /// Allows the game to perform any initialization it needs to before starting to run.
@@ -155,6 +167,10 @@ namespace AfterDarkGame
             //
             player.Update(gameTime);
 
+            // integrating timeStep
+            float timeStep = (float)gameTime.ElapsedGameTime.Ticks / TimeSpan.TicksPerSecond;
+            PhysicsSystem.CurrentPhysicsSystem.Integrate(timeStep);
+            
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
