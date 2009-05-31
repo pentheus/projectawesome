@@ -11,12 +11,12 @@ float xRange;
 float4x4 xWorldViewProjection;  
 bool xTextureEnabled;
 
-float4 xAmbientColor = {0.1,0,0,1};
+float4 xAmbientColor = {0.3,0.3,0.3,1};
 float xAmbientIntensity = 0.1f;
 
-float4 xDirectionalColor = {0.7,0.7,0.7,1};
+float4 xDirectionalColor = {1,1,1,1};
 float3 xLightDirection = {1,1,1};
-float xLightIntensity = 0.7;
+float xLightIntensity = 0.5;
 
 float4 xDiffuseColor = { 1, 0, 0, 1};
  
@@ -50,7 +50,7 @@ struct VS_OUTPUT
 
 VS_OUTPUT VS(float4 Pos : POSITION, float3 Normal : NORMAL, float2 TexCoord : TEXCOORD0)
 {
-    VS_OUTPUT Out = (VS_OUTPUT)0;
+    VS_OUTPUT Out = (VS_OUTPUT)1;
     Out.Pos = mul(Pos, mul(xWorld, mul(xView,xProjection))); // transform Position
     Out.Light = xLightDirection; // output light vector
     Out.Norm = normalize(mul(Normal, xWorld)); // transform       Normal and normalize it
@@ -62,11 +62,14 @@ VS_OUTPUT VS(float4 Pos : POSITION, float3 Normal : NORMAL, float2 TexCoord : TE
 
 float4 PS(VS_OUTPUT input) : COLOR
 {
-    float diffuseLightingFactor = saturate(dot(input.Light, input.Norm))*xLightIntensity;
 	float4 diffuseColor = tex2D(TextureSampler, input.TexCoord);
     if(xTextureEnabled == false)
 		diffuseColor = xDiffuseColor;
-    return xAmbientColor*xAmbientIntensity + diffuseColor * diffuseLightingFactor;
+	float NdL = saturate(dot(input.Norm, input.Light));
+	float4 DirLightColor = xDirectionalColor * xLightIntensity;
+	float4 AmbiColor = xAmbientColor * xAmbientIntensity;
+		
+    return diffuseColor*(NdL*DirLightColor + AmbiColor);
 }
 
 
@@ -103,7 +106,7 @@ struct AnimatedVSOut
 
 AnimatedVSOut AnimatedVS(AnimatedVSIn input)
 {
-	AnimatedVSOut Output = (AnimatedVSOut)0;
+	AnimatedVSOut Output = (AnimatedVSOut)1;
 	
 	float4x3 matSmoothSkin = 0;
     matSmoothSkin += matBones[input.inBoneIndex.x] * input.inBoneWeight.x;
@@ -137,13 +140,16 @@ AnimatedVSOut AnimatedVS(AnimatedVSIn input)
 
     
 //I can probably delete the pixel shader and the AnimatedPSOut because it's identical to the other Pixel shader and struct
-float4 AnimatedPS(AnimatedVSOut input, float2 TexCoord : TEXCOORD0) : COLOR
+float4 AnimatedPS(AnimatedVSOut input) : COLOR
 {
-    float diffuseLightingFactor = saturate(dot(input.Light, input.Norm))*xLightIntensity;
-	float4 diffuseColor = tex2D(TextureSampler, TexCoord);
+    float4 diffuseColor = tex2D(TextureSampler, input.TexCoord);
     if(xTextureEnabled == false)
 		diffuseColor = xDiffuseColor;
-    return xAmbientColor*xAmbientIntensity + diffuseColor * diffuseLightingFactor;
+	float NdL = saturate(dot(input.Norm, input.Light));
+	float4 DirLightColor = xDirectionalColor * xLightIntensity;
+	float4 AmbiColor = xAmbientColor * xAmbientIntensity;
+		
+    return diffuseColor*(NdL*DirLightColor + AmbiColor);
 }
 
 technique AnimatedLambertTest    
