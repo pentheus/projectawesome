@@ -137,5 +137,20 @@ namespace AfterDarkGame
             get { return flashlight; }
             set { flashlight = value; }
         }
+
+        public BoundingSphere BoundingSphere
+        {
+            get { return boundary.Transform(WorldMatrix); }
+        }
+
+        public Matrix WorldMatrix
+        {
+            get
+            {
+                return (Matrix.CreateRotationX(MathHelper.ToRadians(model.Rotation.X)) *
+                    Matrix.CreateRotationY(model.Rotation.Y) * Matrix.CreateRotationZ(MathHelper.ToRadians(model.Rotation.Z)) *
+                    Matrix.CreateScale(model.Scale.X, model.Scale.Y, model.Scale.Z) * Matrix.CreateTranslation(model.Position));
+            }
+        }
     }
 }

@@ -10,6 +10,8 @@ namespace AwesomeEngine
     public abstract class Enemy:GameComponent
     {
         public enum state { Idle, Seeking, Attacking, Damaged };
+        public BoundingSphere enemyAOE;
+        private int radius;
 
         AnimModelInfo model;
         SceneManager scene;
@@ -20,6 +22,14 @@ namespace AwesomeEngine
             this.scene = scene;
             this.model = model;
             currentstate = state.Idle;
+            radius = 0; // initialize radius in each of the enemy classes
+            enemyAOE = new BoundingSphere(this.model.Position, radius);
+        }
+
+        public void updateAOE(int rad)
+        {
+            radius = rad;
+            enemyAOE = new BoundingSphere(model.Position, radius);
         }
 
         public AnimModelInfo Model
@@ -120,5 +130,20 @@ namespace AwesomeEngine
         public abstract void ActSeeking();
         public abstract void ActAttacking();
         public abstract void ActDamaged();
+
+        public BoundingSphere BoundingSphere
+        {
+            get { return enemyAOE.Transform(WorldMatrix); }
+        }
+
+        public Matrix WorldMatrix
+        {
+            get
+            {
+                return (Matrix.CreateRotationX(MathHelper.ToRadians(model.Rotation.X)) *
+                    Matrix.CreateRotationY(model.Rotation.Y) * Matrix.CreateRotationZ(MathHelper.ToRadians(model.Rotation.Z)) *
+                    Matrix.CreateScale(model.Scale.X, model.Scale.Y, model.Scale.Z) * Matrix.CreateTranslation(model.Position));
+            }
+        }
     }
 }

@@ -12,7 +12,7 @@ namespace AwesomeEngine
         public ModelInfo model;
         public bool movable, pickable, picked;
         public BoundingSphere itemAOE; // bounding sphere for the object. when intersected, it is either picked up or pushed
-        public int radius; // INITIALIZE THIS FIRST
+        private int radius; // INITIALIZE THIS FIRST
 
         public Item(Game game, ModelInfo model) // initializing movable, pickable, picked as false
             : base(game)
@@ -21,7 +21,14 @@ namespace AwesomeEngine
             movable = false;
             pickable = false;
             picked = false;
-            //itemAOE = new BoundingSphere(model.pos, radius); // CHECK IF RADIUS IS INITIALIZED
+            radius = 0; // initialized to zero, change it in each of the items classes
+            itemAOE = new BoundingSphere(this.model.Position, radius); // must initialize radius in each items class
+        }
+
+        public void updateAOE(int rad)
+        {
+            radius = rad;
+            itemAOE = new BoundingSphere(model.Position, radius);
         }
 
         public ModelInfo Model
@@ -54,8 +61,8 @@ namespace AwesomeEngine
             get
             {
                 return (Matrix.CreateRotationX(MathHelper.ToRadians(model.Rotation.X)) *
-                    Matrix.CreateRotationY(Model.Rotation.Y) * Matrix.CreateRotationZ(MathHelper.ToRadians(Model.Rotation.Z)) *
-                    Matrix.CreateScale(Model.Scale.X, Model.Scale.Y, Model.Scale.Z) * Matrix.CreateTranslation(Model.Position));
+                    Matrix.CreateRotationY(model.Rotation.Y) * Matrix.CreateRotationZ(MathHelper.ToRadians(model.Rotation.Z)) *
+                    Matrix.CreateScale(model.Scale.X, model.Scale.Y, model.Scale.Z) * Matrix.CreateTranslation(model.Position));
             }
         }
     }
