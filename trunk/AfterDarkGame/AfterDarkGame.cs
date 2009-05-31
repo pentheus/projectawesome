@@ -122,5 +122,11 @@ namespace AfterDarkGame
             get { return mainCamera; }
             set { mainCamera = value; }
         }
+
+        public Player Player
+        {
+            get { return player; }
+            set { player = value; }
+        }
     }
 }
