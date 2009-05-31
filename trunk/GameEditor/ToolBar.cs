@@ -22,6 +22,7 @@ namespace GameEditor
             InitializeComponent();
             this.gameEditor = gameEditor;
             openDialog.InitialDirectory = gameEditor.Content.RootDirectory;
+            saveDialog.InitialDirectory = gameEditor.Content.RootDirectory;
         }
 
         public TreeView TreeView

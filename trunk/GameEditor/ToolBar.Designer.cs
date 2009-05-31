@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Props");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Items");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Logic Entities");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Props");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Items");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Logic Entities");
             this.menuBar = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -101,27 +101,27 @@
             this.saveToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // panel1
@@ -558,27 +558,29 @@
             this.treeView1.FullRowSelect = true;
             this.treeView1.Location = new System.Drawing.Point(6, 19);
             this.treeView1.Name = "treeView1";
-            treeNode7.Name = "Props";
-            treeNode7.Text = "Props";
-            treeNode8.Name = "Items";
-            treeNode8.Text = "Items";
-            treeNode9.Name = "LogicEntities";
-            treeNode9.Text = "Logic Entities";
+            treeNode1.Name = "Props";
+            treeNode1.Text = "Props";
+            treeNode2.Name = "Items";
+            treeNode2.Text = "Items";
+            treeNode3.Name = "LogicEntities";
+            treeNode3.Text = "Logic Entities";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode7,
-            treeNode8,
-            treeNode9});
+            treeNode1,
+            treeNode2,
+            treeNode3});
             this.treeView1.Size = new System.Drawing.Size(168, 174);
             this.treeView1.TabIndex = 0;
             this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_AfterSelect);
             // 
             // openDialog
             // 
+            this.openDialog.DefaultExt = "xml";
             this.openDialog.FileName = "openFileDialog1";
             this.openDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.openDialog_FileOK);
             // 
             // saveDialog
             // 
+            this.saveDialog.DefaultExt = "xml";
             this.saveDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.saveDialog_FileOk);
             // 
             // ToolBar
