@@ -9,7 +9,7 @@ namespace AwesomeEngine
 {
     public abstract class Enemy:GameComponent
     {
-        enum state { Idle, Seeking, Attacking, Damaged };
+        public enum state { Idle, Seeking, Attacking, Damaged };
 
         AnimModelInfo model;
         SceneManager scene;
@@ -74,7 +74,7 @@ namespace AwesomeEngine
             }
             else
             {
-                if (enemyX <= playerX && enemyY <= playerZ) // first quadrant
+                if (enemyX <= playerX && enemyZ <= playerZ) // first quadrant
                 {
                     quadrant = 1;
                     adjacent = playerZ - enemyZ;
@@ -103,7 +103,7 @@ namespace AwesomeEngine
                     quadAngle = 360;
                 }
 
-                angle = Math.Atan(opposite / adjacent);
+                angle = (float)Math.Atan(opposite / adjacent);
 
                 return (quadAngle - angle);
             }
