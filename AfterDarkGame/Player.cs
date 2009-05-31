@@ -53,13 +53,16 @@ namespace AfterDarkGame
             drawModelEffect = game.Content.Load<Effect>("Simple");
         }
 
-        public void Update()
+        public void Update(GameTime gameTime)
         {
-
+            //TODO: Possibly need to update flashlight's position
+            model.AnimationController.Update(gameTime.ElapsedGameTime, Matrix.Identity);
+            base.Update(gameTime);
         }
 
         public void Draw()
         {
+            //Draw Animated Model
             SkinnedModel skinnedModel = model.AnimatedModel;
             Matrix[] modelTransforms = new Matrix[model.Model.Bones.Count];// = model.AnimationController.SkinnedBoneTransforms;
             model.Model.CopyAbsoluteBoneTransformsTo(modelTransforms);
@@ -86,6 +89,53 @@ namespace AfterDarkGame
                 }
                 mesh.Draw();
             }
+
+            //Draw Flashlight
+            ModelInfo flashmodel = flashlight.Model;
+            modelTransforms = new Matrix[flashmodel.Model.Bones.Count];
+            flashmodel.Model.CopyAbsoluteBoneTransformsTo(modelTransforms);
+            center = model.Position;
+
+            foreach (ModelMesh mesh in flashmodel.Model.Meshes)
+            {
+                foreach (ModelMeshPart part in mesh.MeshParts)
+                    part.Effect.Parameters["xTexture"].SetValue(game.GetScene().Textures[part]);
+
+                foreach (Effect effect in mesh.Effects)
+                {
+                    effect.CurrentTechnique = drawModelEffect.Techniques["LambertTest"];
+                    effect.Parameters["xWorld"].SetValue(modelTransforms[mesh.ParentBone.Index] * model.WorldMatrix);
+                    effect.Parameters["xView"].SetValue(game.MainCamera.View);
+                    effect.Parameters["xProjection"].SetValue(game.MainCamera.Projection);
+                    effect.Parameters["xCenter"].SetValue(model.Position);
+                    effect.Parameters["xRange"].SetValue(4f);
+                }
+                mesh.Draw();
+            }
+        }
+
+        public List<Item> Inventory
+        {
+            get { return inventory; }
+            set { inventory = value; }
+        }
+
+        public AfterDarkGame Game
+        {
+            get { return game; }
+            set { game = value; }
+        }
+
+        public int Health
+        {
+            get { return health; }
+            set { health = value; }
+        }
+
+        public FlashLightItem FlashLight
+        {
+            get { return flashlight; }
+            set { flashlight = value; }
         }
     }
 }
