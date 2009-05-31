@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
 using AwesomeEngine;
+using AwesomeEngine.Camera;
 
 namespace AfterDarkGame
 {
@@ -23,11 +24,13 @@ namespace AfterDarkGame
         SpriteBatch spriteBatch;
         SceneManager sceneMgr;
         Player player;
+        Camera mainCamera;
 
         public AfterDarkGame()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            mainCamera = new ThirdPersonCamera(new Vector3(35f, -24f, -30f), Vector3.Zero, GraphicsDevice.Viewport.AspectRatio, 1f, 10000f);
         }
 
         /// <summary>
@@ -112,6 +115,12 @@ namespace AfterDarkGame
         public ContentManager GetContent()
         {
             return Content;
+        }
+
+        public Camera MainCamera
+        {
+            get { return mainCamera; }
+            set { mainCamera = value; }
         }
     }
 }

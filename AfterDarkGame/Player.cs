@@ -21,6 +21,8 @@ namespace AfterDarkGame
         FlashLightItem flashlight;
         Item currentitem;
 
+        Effect drawModelEffect;
+
         public Player(Game game):
             base(game)
         {
@@ -46,6 +48,9 @@ namespace AfterDarkGame
             SkinnedModel playermodel = new SkinnedModel();
             ModelInfo.LoadModel(ref playermodel, game.GetScene().Textures, game.GetContent(), game.GetGraphics(), "Player", game.GetScene().Effect);
             model = new AnimModelInfo(Vector3.Zero, Vector3.Zero, Vector3.Zero, playermodel, "Player");
+
+            //Load shaders
+            drawModelEffect = game.Content.Load<Effect>("Simple");
         }
 
         public void Update()
@@ -55,7 +60,32 @@ namespace AfterDarkGame
 
         public void Draw()
         {
+            SkinnedModel skinnedModel = model.AnimatedModel;
+            Matrix[] modelTransforms = new Matrix[model.Model.Bones.Count];// = model.AnimationController.SkinnedBoneTransforms;
+            model.Model.CopyAbsoluteBoneTransformsTo(modelTransforms);
+            Vector3 center = model.Position;
 
+            foreach (ModelMesh mesh in skinnedModel.Model.Meshes)
+            {
+                foreach (ModelMeshPart part in mesh.MeshParts)
+                {
+                    //May be more efficient in future to store player textures in new dictionary and load them from there
+                    //Would require new LoadModel function somewhere in this namespace
+                    part.Effect.Parameters["xTexture"].SetValue(game.GetScene().Textures[part]);
+                    part.Effect.Parameters["matBones"].SetValue(model.AnimationController.SkinnedBoneTransforms);
+                    part.Effect.Parameters["xTextureEnabled"].SetValue(true);
+                }
+                foreach (Effect effect in mesh.Effects)
+                {
+                    effect.CurrentTechnique = drawModelEffect.Techniques["AnimatedLambertTest"];
+                    effect.Parameters["xWorld"].SetValue(model.WorldMatrix);
+                    effect.Parameters["xView"].SetValue(game.MainCamera.View);
+                    effect.Parameters["xProjection"].SetValue(game.MainCamera.Projection);
+                    effect.Parameters["xCenter"].SetValue(model.Position);
+                    effect.Parameters["xRange"].SetValue(4f);
+                }
+                mesh.Draw();
+            }
         }
     }
 }
