@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Props");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Items");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Logic Entities");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Props");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Items");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Logic Entities");
             this.menuBar = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,6 +40,7 @@
             this.objectGroupBox = new System.Windows.Forms.GroupBox();
             this.setGeoButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.transformBSphere = new System.Windows.Forms.CheckBox();
             this.uniScale = new System.Windows.Forms.CheckBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -107,21 +108,21 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -159,6 +160,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.transformBSphere);
             this.panel2.Controls.Add(this.uniScale);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
@@ -185,6 +187,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(262, 170);
             this.panel2.TabIndex = 25;
+            // 
+            // transformBSphere
+            // 
+            this.transformBSphere.AutoSize = true;
+            this.transformBSphere.Location = new System.Drawing.Point(7, 150);
+            this.transformBSphere.Name = "transformBSphere";
+            this.transformBSphere.Size = new System.Drawing.Size(158, 17);
+            this.transformBSphere.TabIndex = 47;
+            this.transformBSphere.Text = "Transform Bounding Sphere";
+            this.transformBSphere.UseVisualStyleBackColor = true;
+            this.transformBSphere.CheckedChanged += new System.EventHandler(this.transformBSphere_CheckedChanged);
             // 
             // uniScale
             // 
@@ -559,16 +572,16 @@
             this.treeView1.FullRowSelect = true;
             this.treeView1.Location = new System.Drawing.Point(6, 19);
             this.treeView1.Name = "treeView1";
-            treeNode4.Name = "Props";
-            treeNode4.Text = "Props";
-            treeNode5.Name = "Items";
-            treeNode5.Text = "Items";
-            treeNode6.Name = "LogicEntities";
-            treeNode6.Text = "Logic Entities";
+            treeNode1.Name = "Props";
+            treeNode1.Text = "Props";
+            treeNode2.Name = "Items";
+            treeNode2.Text = "Items";
+            treeNode3.Name = "LogicEntities";
+            treeNode3.Text = "Logic Entities";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode4,
-            treeNode5,
-            treeNode6});
+            treeNode1,
+            treeNode2,
+            treeNode3});
             this.treeView1.Size = new System.Drawing.Size(168, 174);
             this.treeView1.TabIndex = 0;
             this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_AfterSelect);
@@ -652,5 +665,6 @@
         private System.Windows.Forms.NumericUpDown posX;
         private System.Windows.Forms.Button setGeoButton;
         private System.Windows.Forms.SaveFileDialog saveDialog;
+        private System.Windows.Forms.CheckBox transformBSphere;
     }
 }
