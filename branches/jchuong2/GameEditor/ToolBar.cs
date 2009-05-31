@@ -59,17 +59,38 @@ namespace GameEditor
 
         private void posX_ValueChanged(object sender, EventArgs e)
         {
-            gameEditor.GetCursor().Position = new Vector3((float)posX.Value, (float)posY.Value, (float)posZ.Value);
+            if (transformBSphere.CheckState == CheckState.Checked)
+            {
+                BoundingSphere bSphere = gameEditor.GetCursor().BoundingSphere;
+                bSphere.Center = new Vector3((float)posX.Value, (float)posY.Value, (float)posZ.Value);
+                gameEditor.GetCursor().BoundingSphere = bSphere;
+            }
+            else
+                gameEditor.GetCursor().Position = new Vector3((float)posX.Value, (float)posY.Value, (float)posZ.Value);
         }
 
         private void posY_ValueChanged(object sender, EventArgs e)
         {
-            gameEditor.GetCursor().Position = new Vector3((float)posX.Value, (float)posY.Value, (float)posZ.Value);
+            if (transformBSphere.CheckState == CheckState.Checked)
+            {
+                BoundingSphere bSphere = gameEditor.GetCursor().BoundingSphere;
+                bSphere.Center = new Vector3((float)posX.Value, (float)posY.Value, (float)posZ.Value);
+                gameEditor.GetCursor().BoundingSphere = bSphere;
+            }
+            else
+                gameEditor.GetCursor().Position = new Vector3((float)posX.Value, (float)posY.Value, (float)posZ.Value);
         }
 
         private void posZ_ValueChanged(object sender, EventArgs e)
         {
-            gameEditor.GetCursor().Position = new Vector3((float)posX.Value, (float)posY.Value, (float)posZ.Value);
+            if (transformBSphere.CheckState == CheckState.Checked)
+            {
+                BoundingSphere bSphere = gameEditor.GetCursor().BoundingSphere;
+                bSphere.Center = new Vector3((float)posX.Value, (float)posY.Value, (float)posZ.Value);
+                gameEditor.GetCursor().BoundingSphere = bSphere;
+            }
+            else
+                gameEditor.GetCursor().Position = new Vector3((float)posX.Value, (float)posY.Value, (float)posZ.Value);
         }
 
         private void rotX_ValueChanged_1(object sender, EventArgs e)
@@ -114,6 +135,7 @@ namespace GameEditor
                 scaleX.Value = scaleZ.Value;
                 scaleY.Value = scaleZ.Value;
             }
+
             gameEditor.GetCursor().Scale = new Vector3((float)scaleX.Value, (float)scaleY.Value, (float)scaleZ.Value);
         }
 
@@ -144,6 +166,22 @@ namespace GameEditor
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             gameEditor.Exit();
+        }
+
+        private void transformBSphere_CheckedChanged(object sender, EventArgs e)
+        {
+            if (transformBSphere.CheckState == CheckState.Unchecked)
+            {
+                posX.Value = (decimal)gameEditor.GetCursor().Position.X;
+                posY.Value = (decimal)gameEditor.GetCursor().Position.Y;
+                posZ.Value = (decimal)gameEditor.GetCursor().Position.Z;
+            }
+            else
+            {
+                posX.Value = (decimal)gameEditor.GetCursor().BoundingSphere.Center.X;
+                posY.Value = (decimal)gameEditor.GetCursor().BoundingSphere.Center.Y;
+                posZ.Value = (decimal)gameEditor.GetCursor().BoundingSphere.Center.Z;
+            }
         }
    
     }
