@@ -149,6 +149,15 @@ namespace AfterDarkGame
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            //Check the player's bounding sphere and camera's frustom for intersections with nodes in the octree (including children nodes)
+            //For each component that needs to be updated, add it to the this.Components
+            //Each component should check to see if it's disappeared, if it has, remove it from the components list
+            //
+            player.Update(gameTime);
+
+            // Allows the game to exit
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
+                this.Exit();
             KeyboardState k = Keyboard.GetState();
             MouseState currentMouseState = Mouse.GetState();
 
@@ -249,10 +258,9 @@ namespace AfterDarkGame
         }
 
 
-        public ThirdPersonCamera MainCamera
+        public ThirdPersonCamera GetCamera()
         {
-            get { return mainCamera; }
-            set { mainCamera = value; }
+            return mainCamera;
         }
 
         public Player Player

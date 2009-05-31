@@ -9,6 +9,7 @@ namespace AwesomeEngine
 {
     public abstract class Item:GameComponent
     {
+        ContainsScene afgame;
         public ModelInfo model;
         public bool movable, pickable, picked;
         public BoundingSphere itemAOE; // bounding sphere for the object. when intersected, it is either picked up or pushed
@@ -17,6 +18,7 @@ namespace AwesomeEngine
         public Item(Game game, ModelInfo model) // initializing movable, pickable, picked as false
             : base(game)
         {
+            afgame = (ContainsScene)game;
             this.model = model;
             movable = false;
             pickable = false;

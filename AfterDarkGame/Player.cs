@@ -13,7 +13,7 @@ namespace AfterDarkGame
 {
     public class Player:DrawableGameComponent
     {
-        AfterDarkGame game;
+        ContainsScene game;
         AnimModelInfo model;
         BoundingSphere boundary;
         int health;
@@ -26,7 +26,7 @@ namespace AfterDarkGame
         public Player(Game game):
             base(game)
         {
-            this.game = (AfterDarkGame)game;
+            this.game = (ContainsScene)game;
             LoadContent();
             health = 3;
             inventory = new List<Item>();
@@ -36,7 +36,7 @@ namespace AfterDarkGame
         public Player(Game game, List<Item> inv, FlashLightItem light):
             base(game)
         {
-            this.game = (AfterDarkGame)game;
+            this.game = (ContainsScene)game;
             LoadContent();
             health = 3;
             inventory = inv;
@@ -50,7 +50,7 @@ namespace AfterDarkGame
             model = new AnimModelInfo(Vector3.Zero, Vector3.Zero, Vector3.Zero, playermodel, "Player");
 
             //Load shaders
-            drawModelEffect = game.Content.Load<Effect>("Simple");
+            drawModelEffect = game.GetScene().Effect;
         }
 
         public void Update(GameTime gameTime)
@@ -82,8 +82,8 @@ namespace AfterDarkGame
                 {
                     effect.CurrentTechnique = drawModelEffect.Techniques["AnimatedLambertTest"];
                     effect.Parameters["xWorld"].SetValue(model.WorldMatrix);
-                    effect.Parameters["xView"].SetValue(game.MainCamera.View);
-                    effect.Parameters["xProjection"].SetValue(game.MainCamera.Projection);
+                    effect.Parameters["xView"].SetValue(game.GetCamera().View);
+                    effect.Parameters["xProjection"].SetValue(game.GetCamera().Projection);
                     effect.Parameters["xCenter"].SetValue(model.Position);
                     effect.Parameters["xRange"].SetValue(4f);
                 }
