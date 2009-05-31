@@ -47,6 +47,12 @@ namespace AwesomeEngine
             textures = new Dictionary<ModelMeshPart, Texture2D>();
             CreateBoundingSphere(out boundingSphere);
             //LoadModelTextures(model);
+
+
+            //Not sure if this will work.   - Mark
+            _body = new Body();
+            _skin = new CollisionSkin(_body);
+            _body.CollisionSkin = _skin;
             
         }
 
@@ -139,6 +145,24 @@ namespace AwesomeEngine
             get
             {
                 return boundingSphere.Transform(WorldMatrix);
+            }
+        }
+
+        private Body _body;
+        public Body Body
+        {
+            get
+            {
+                return _body;
+            }
+        }
+
+        private CollisionSkin _skin;
+        public CollisionSkin Skin
+        {
+            get
+            {
+                return _skin;
             }
         }
 
