@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Graphics="Microsoft.Xna.Framework.Content.Pipeline.Graphics" xmlns:Framework="Microsoft.Xna.Framework">
+  <Asset Type="Graphics:NodeContent">
+    <Name>blend_root</Name>
+    <Identity>
+      <SourceFilename>C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\Content\Models\testscene_mdl.fbx</SourceFilename>
+      <SourceTool>FbxImporter</SourceTool>
+    </Identity>
+    <Transform>100 0 0 0 0 100 0 0 0 0 100 0 0 0 0 1</Transform>
+    <Children>
+      <Child Type="Graphics:MeshContent">
+        <Name>Cube</Name>
+        <Transform>1 0 0 0 0 6.123032E-17 -1 0 0 1 6.123032E-17 0 0 1.55997264 -6.818857E-08 1</Transform>
+        <Positions>1 1 -1 1 -1 -1 -1 -1 -1 -1 1 -1 1 0.999999 1 0.999999 -1.000001 1 -1 -1 1 -1 1 1</Positions>
+        <Geometry>
+          <Batch>
+            <Indices>2 1 0 0 3 2 6 5 4 4 7 6 7 4 0 0 1 7 6 7 1 1 2 6 5 6 2 2 3 5 3 0 4 4 5 3</Indices>
+            <Vertices>
+              <PositionIndices>0 1 2 3 4 7 6 5</PositionIndices>
+              <Channels>
+                <VertexChannel Name="Normal0" ElementType="Framework:Vector3">0.5773492 0.5773492 -0.5773492 0.5773492 -0.5773492 -0.5773492 -0.5773492 -0.5773492 -0.5773492 -0.5773492 0.5773492 -0.5773492 0.5773492 0.5773492 0.5773492 -0.5773492 0.5773492 0.5773492 -0.5773492 -0.5773492 0.5773492 0.5773492 -0.5773492 0.5773492</VertexChannel>
+              </Channels>
+            </Vertices>
+          </Batch>
+        </Geometry>
+      </Child>
+      <Child Type="Graphics:MeshContent">
+        <Name>Plane</Name>
+        <Transform>13.688962 0 0 0 0 8.381795E-16 -13.688962 0 0 13.688962 8.381795E-16 0 0 0 0 1</Transform>
+        <Positions>1 1 0 1 -1 0 -1 -1 0 -1 1 0</Positions>
+        <Geometry>
+          <Batch>
+            <Indices>2 1 0 0 3 2</Indices>
+            <Vertices>
+              <PositionIndices>0 3 2 1</PositionIndices>
+              <Channels>
+                <VertexChannel Name="Normal0" ElementType="Framework:Vector3">0 0 1 0 0 1 0 0 1 0 0 1</VertexChannel>
+              </Channels>
+            </Vertices>
+          </Batch>
+        </Geometry>
+      </Child>
+    </Children>
+  </Asset>
+</XnaContent>
