@@ -21,6 +21,8 @@ namespace AfterDarkGame
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        SceneManager sceneMgr;
+        Player player;
 
         public AfterDarkGame()
         {
@@ -78,6 +80,12 @@ namespace AfterDarkGame
             base.Update(gameTime);
         }
 
+        public void OpenLevel()
+        {
+            XMLParser parser = new XMLParser(this);
+            sceneMgr.SceneGraph = parser.ReadScene("Something");
+        }
+
         /// <summary>
         /// This is called when the game should draw itself.
         /// </summary>
@@ -91,42 +99,19 @@ namespace AfterDarkGame
             base.Draw(gameTime);
         }
 
-        #region ContainsScene Members
-
         public SceneManager GetScene()
         {
-            throw new NotImplementedException();
+            return sceneMgr;
         }
 
         public GraphicsDevice GetGraphics()
         {
-            throw new NotImplementedException();
+            return graphics.GraphicsDevice;
         }
 
         public ContentManager GetContent()
         {
-            throw new NotImplementedException();
+            return Content;
         }
-
-        #endregion
-
-        #region ContainsScene Members
-
-        SceneManager ContainsScene.GetScene()
-        {
-            throw new NotImplementedException();
-        }
-
-        GraphicsDevice ContainsScene.GetGraphics()
-        {
-            throw new NotImplementedException();
-        }
-
-        ContentManager ContainsScene.GetContent()
-        {
-            throw new NotImplementedException();
-        }
-
-        #endregion
     }
 }
