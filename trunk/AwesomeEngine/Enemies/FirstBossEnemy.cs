@@ -14,6 +14,8 @@ namespace AwesomeEngine.Enemies
             base(game, scene, model)
         {
             
+
+            public override void ActIdle()            {            }            public override void ActSeeking()            {            }            public override void ActAttack()            {            }            public override void ActDamaged()            {            }
         }
     }
 }
