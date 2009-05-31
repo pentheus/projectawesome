@@ -27,9 +27,11 @@ namespace AwesomeEngine
         private Vector3 scale;
         private Model model;
         private BoundingSphere boundingSphere;
+        ContainsScene afgame;
 
         public LogicEntity(Game game, Model model, Vector3 position, Vector3 scale) : base(game)
         {
+            afgame = (ContainsScene)game;
             this.position = position;
             this.scale = scale;
             this.model = model;

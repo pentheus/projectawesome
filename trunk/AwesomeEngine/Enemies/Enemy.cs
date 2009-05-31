@@ -16,9 +16,11 @@ namespace AwesomeEngine
         AnimModelInfo model;
         SceneManager scene;
         state currentstate;
+        ContainsScene afgame;
 
         public Enemy(Game game, SceneManager scene, AnimModelInfo model): base(game)
         {
+            afgame = (ContainsScene)game;
             this.scene = scene;
             this.model = model;
             currentstate = state.Idle;

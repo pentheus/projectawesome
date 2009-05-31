@@ -10,10 +10,11 @@ namespace AwesomeEngine.Enemies
     public class ShadowEnemy:Enemy
     {
         Vector3 playerPOS;
-        public ShadowEnemy(Vector3 playerPOS, SceneManager scene, AnimModelInfo model): 
+
+        public ShadowEnemy(Game game, SceneManager scene, AnimModelInfo model): 
             base(game, scene, model)
         {
-            this.playerPOS = playerPOS;
+
         }
 
         public override void ActIdle()        {                    }        public override void ActSeeking()

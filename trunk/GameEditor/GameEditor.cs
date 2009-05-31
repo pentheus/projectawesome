@@ -51,7 +51,7 @@ namespace GameEditor
         Vector2 fontPos;
         MouseState oldMouseState = new MouseState();
         //This is for testing and can be deleted
-        //AnimModelInfo testmarine;
+        AnimModelInfo testmarine;
 
         public GameEditor()
         {
@@ -135,9 +135,9 @@ namespace GameEditor
                 Console.WriteLine(f.ToString());
             }
 
-            //SkinnedModel marinemodel = new SkinnedModel();
-            //ModelInfo.LoadAnimatedModel(ref marinemodel, sceneMgr.Textures, Content, graphics.GraphicsDevice, "PlayerMarine_mdla", sceneMgr.Effect);
-            //testmarine = new AnimModelInfo(new Vector3(0f, 0f, 0f), Vector3.Zero, new Vector3(0.1f), marinemodel, "PlayerMarine_mdla");
+            SkinnedModel marinemodel = new SkinnedModel();
+            ModelInfo.LoadModel(ref marinemodel, sceneMgr.Textures, Content, graphics.GraphicsDevice, "PlayerMarine", sceneMgr.Effect);
+            testmarine = new AnimModelInfo(new Vector3(0f, 0f, 0f), Vector3.Zero, new Vector3(1f), marinemodel, "PlayerMarine");
 
             grid = new ReferenceGrid(GraphicsDevice, 10, 100, Color.LimeGreen);
             // TODO: use this.Content to load your game content here
@@ -192,6 +192,11 @@ namespace GameEditor
 
             mainCamera.LookAt = translationVector;
 
+            //Update enemies to animate models
+            List<Enemy> enemies = sceneMgr.SceneGraph.GetEnemies();
+            foreach (Enemy enemy in enemies)
+                enemy.Update();
+
             oldMouseState = currentMouseState;
             base.Update(gameTime); 
         }
@@ -230,6 +235,7 @@ namespace GameEditor
             DrawText();
             sceneMgr.DrawModel(cursor);
             BoundingSphereRenderer.Render(cursor.BoundingSphere, GraphicsDevice, mainCamera.View, mainCamera.Projection, Color.Red);
+            sceneMgr.DrawAnimatedModel(testmarine);
             grid.Draw(mainCamera.View, mainCamera.Projection);
             base.Draw(gameTime);
         }
@@ -317,6 +323,11 @@ namespace GameEditor
         public XMLParser GetSceneParser()
         {
             return parser;
+        }
+
+        public ThirdPersonCamera GetCamera()
+        {
+            return mainCamera;
         }
     }
 }
