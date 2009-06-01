@@ -14,6 +14,8 @@ namespace AwesomeEngine
 {
     public class Player : DrawableGameComponent
     {
+
+        public enum state { Idle, Running, Damaged };
         ContainsScene game;
         AnimModelInfo model;
         BoundingSphere boundary;
@@ -21,6 +23,7 @@ namespace AwesomeEngine
         List<Item> inventory;
         FlashLightItem flashlight;
         Item currentitem;
+        state currentplayerstate;
 
         Vector3 playerPosition = Vector3.Zero;
         float playerRotation = 0.0f;
@@ -82,24 +85,35 @@ namespace AwesomeEngine
 
             bool add = false;
 
+            state oldstate = currentplayerstate;
+
             if (currentState.IsKeyDown(Keys.K))
             {
                 modelVelocityAdd *= .5f;
                 add = true;
-                model.animateModel("Run");
+                currentplayerstate = state.Running;
             }
 
             if (currentState.IsKeyDown(Keys.I))
             {
                 modelVelocityAdd *= -.5f;
                 add = true;
-                model.animateModel("Run");
+                currentplayerstate = state.Running;
             }
 
             if (!add)
             {
                 modelVelocityAdd *= .00f;
-                model.animateModel("Idle");
+                currentplayerstate = state.Idle;
+            }
+
+            //Start animations if necessary
+            if (oldstate != currentplayerstate)
+            {
+                if (currentplayerstate == state.Running)
+                    model.animateModel("Run");
+                else if (currentplayerstate == state.Idle)
+                    model.animateModel("Idle");
             }
 
             // Finally, add this vector to our velocity.
