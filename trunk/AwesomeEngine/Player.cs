@@ -165,5 +165,10 @@ namespace AwesomeEngine
                 mesh.Draw();
             }
         }
+
+        public Vector3 Position
+        {
+            get { return playerPosition; }
+        }
     }
 }
