@@ -3,7 +3,7 @@
   <Asset Type="Graphics:MeshContent">
     <Name>cube</Name>
     <Identity>
-      <SourceFilename>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\Content\Models\Floor_mdl.fbx</SourceFilename>
+      <SourceFilename>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\Content\Models\Floor_mdl.fbx</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <Transform>4 0 0 0 0 0.1 0 0 0 0 4 0 0 0 0 1</Transform>
@@ -26,7 +26,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>cube</Name>
       <Identity>
-        <SourceFilename>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\Content\Models\Floor_mdl.fbx</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\Content\Models\Floor_mdl.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
