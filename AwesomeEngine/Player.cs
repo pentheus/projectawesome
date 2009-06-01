@@ -58,7 +58,6 @@ namespace AwesomeEngine
 
         public override void Update(GameTime gameTime)
         {
-            model.AnimationController.Update(gameTime.ElapsedGameTime, Matrix.Identity);
             KeyboardState currentState = Keyboard.GetState(PlayerIndex.One);
 
             // Rotate the model using the left thumbstick, and scale it down.
@@ -115,7 +114,6 @@ namespace AwesomeEngine
 
             playerPosition += playerVelocity;
             playerVelocity *= 0f;
-
             model.AnimationController.Update(gameTime.ElapsedGameTime, Matrix.Identity);
 
             base.Update(gameTime);
@@ -123,12 +121,11 @@ namespace AwesomeEngine
 
         public void Draw()
         {
-            SkinnedModel skinnedModel = model.AnimatedModel;
-            Matrix[] modelTransforms = new Matrix[model.Model.Bones.Count];// = model.AnimationController.SkinnedBoneTransforms;
-            modelTransforms = model.AnimationController.SkinnedBoneTransforms;
+            Matrix[] modelTransforms = new Matrix[model.Model.Bones.Count];
+            model.Model.CopyAbsoluteBoneTransformsTo(modelTransforms);
             Vector3 center = model.Position;
 
-            foreach (ModelMesh mesh in skinnedModel.Model.Meshes)
+            foreach (ModelMesh mesh in model.Model.Meshes)
             {
                 foreach (ModelMeshPart part in mesh.MeshParts)
                 {

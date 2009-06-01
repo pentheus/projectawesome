@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<SceneInfo>
+  <size>200</size>
+  <WorldGeometry>
+    <scalex>2</scalex>
+    <scaley>2</scaley>
+    <scalez>2</scalez>
+    <model>testscene_mdl</model>
+  </WorldGeometry>
+  <Content>
+    <Object>
+      <posx>20</posx>
+      <posy>15</posy>
+      <posz>20</posz>
+      <rotx>10</rotx>
+      <roty>50</roty>
+      <rotz>10</rotz>
+      <scalex>1</scalex>
+      <scaley>1</scaley>
+      <scalez>1</scalez>
+      <model>toilet_mdl</model>
+    </Object>
+  </Content>
+</SceneInfo>

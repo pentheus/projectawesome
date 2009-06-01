@@ -140,7 +140,7 @@ namespace AwesomeEngine
         public void DrawAnimatedModel(AnimModelInfo model)
         {
             SkinnedModel skinnedModel = model.AnimatedModel;
-            Matrix[] modelTransforms = new Matrix[model.Model.Bones.Count];// = model.AnimationController.SkinnedBoneTransforms;
+            Matrix[] modelTransforms = new Matrix[model.Model.Bones.Count];
             model.Model.CopyAbsoluteBoneTransformsTo(modelTransforms);
             Vector3 center = model.Position;
 

@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>RootNode</Name>
     <Identity>
-      <SourceFilename>C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\Content\Models\washer_mdl.fbx</SourceFilename>
+      <SourceFilename>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\Content\Models\washer_mdl.fbx</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
@@ -200,7 +200,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>lambert1</Name>
       <Identity>
-        <SourceFilename>C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\Content\Models\washer_mdl.fbx</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\Content\Models\washer_mdl.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
