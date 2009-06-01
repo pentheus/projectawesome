@@ -25,6 +25,8 @@ namespace AwesomeEngine
         Vector3 pos;
         Vector3 rotation;
         Vector3 scale;
+        float bSphereRadius;
+        float bSphereScale = 1f;
         Model model;
         Node node;
         String fileName;
@@ -47,7 +49,7 @@ namespace AwesomeEngine
             textures = new Dictionary<ModelMeshPart, Texture2D>();
             CreateBoundingSphere(out boundingSphere);
             //LoadModelTextures(model);
-
+            bSphereRadius = boundingSphere.Radius;
 
             //Not sure if this will work.   - Mark
             _body = new Body();
@@ -144,8 +146,10 @@ namespace AwesomeEngine
         {
             get
             {
+                boundingSphere.Radius = bSphereRadius * bSphereScale;
                 return boundingSphere.Transform(WorldMatrix);
             }
+            set { boundingSphere = value; }
         }
 
         private Body _body;
@@ -192,6 +196,12 @@ namespace AwesomeEngine
                     Matrix.CreateRotationY(rotation.Y) *Matrix.CreateRotationZ(MathHelper.ToRadians(rotation.Z)) * 
                     Matrix.CreateScale(scale.X, scale.Y, scale.Z)*Matrix.CreateTranslation(pos));
             }
+        }
+
+        public float BSphereScale
+        {
+            get { return bSphereScale; }
+            set { bSphereScale = value; }
         }
 
         public Model Model
