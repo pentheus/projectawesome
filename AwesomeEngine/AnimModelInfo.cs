@@ -36,7 +36,7 @@ namespace AwesomeEngine
             animationController.StartClip(animatedModel.AnimationClips["Idle"]);
         }
 
-        public void CreateBoundingSphere(out BoundingSphere mergedSphere)
+        public new void CreateBoundingSphere(out BoundingSphere mergedSphere)
         {
             mergedSphere = new BoundingSphere();
             foreach(ModelMesh mesh in AnimatedModel.Model.Meshes)

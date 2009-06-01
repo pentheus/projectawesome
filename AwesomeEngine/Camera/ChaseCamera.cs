@@ -14,7 +14,7 @@ using Microsoft.Xna.Framework.Storage;
 
 namespace AwesomeEngine.Camera
 {
-    public class ChaseCamera// : Camera
+    public class ChaseCamera : Camera
     {
         private Vector3 chasePosition;
         private Vector3 chaseDirection;
@@ -35,7 +35,7 @@ namespace AwesomeEngine.Camera
         private Matrix view;
         private Matrix projection;
 
-        //public ChaseCamera()
+        public ChaseCamera()
         {
         }
 

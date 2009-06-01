@@ -124,12 +124,12 @@ namespace AwesomeEngine
 
                 foreach (Effect effect in mesh.Effects)
                 {
-                    effect.CurrentTechnique = drawModelEffect.Techniques["LambertTest"];
+                    effect.CurrentTechnique = drawModelEffect.Techniques["LightShaftTest"];
                     effect.Parameters["xWorld"].SetValue(modelTransforms[mesh.ParentBone.Index] * model.WorldMatrix);
                     effect.Parameters["xView"].SetValue(mainCamera.View);
                     effect.Parameters["xProjection"].SetValue(mainCamera.Projection);
-                    effect.Parameters["xCenter"].SetValue(model.Position);
-                    effect.Parameters["xRange"].SetValue(4f);
+                    effect.Parameters["xCenter"].SetValue(model.Position-(new Vector3(0,0,-10)));
+                    effect.Parameters["xRange"].SetValue(6f);
                 }
                 mesh.Draw();
             }

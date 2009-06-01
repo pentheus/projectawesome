@@ -6,3 +6,4 @@ C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\PATrunk\GameEditor\Conte
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\asd\GameEditor\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Spike\Desktop\projectawesomeNew\GameEditor\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\GameEditor\Content\obj\x86\Debug\ResolveAssemblyReference.cache

@@ -64,17 +64,6 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="Models\Cube.FBX">
-      <Name>Cube</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-    <Compile Include="Models\EnemyBeast.fbx">
-      <Name>EnemyBeast</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>SkinnedModelProcessor</Processor>
-      <ProcessorParameters_TexturePath>../Textures</ProcessorParameters_TexturePath>
-    </Compile>
     <Compile Include="Models\Floor_mdl.fbx">
       <Name>Floor_mdl</Name>
       <Importer>FbxImporter</Importer>
@@ -85,15 +74,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="Models\PlayerMarine.fbx">
-      <Name>PlayerMarine</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>SkinnedModelProcessor</Processor>
-    </Compile>
     <Compile Include="Models\PlayerMarine_mdla.fbx">
       <Name>PlayerMarine_mdla</Name>
       <Importer>FbxImporter</Importer>
       <Processor>SkinnedModelProcessor</Processor>
+      <ProcessorParameters_TexturePath>..\Textures\</ProcessorParameters_TexturePath>
     </Compile>
     <Compile Include="Models\refrigerator_mdl.fbx">
       <Name>refrigerator_mdl</Name>
@@ -177,11 +162,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Models\EnemyBeastAnimations.xml">
-      <Name>EnemyBeastAnimations</Name>
-      <Importer>XmlImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
-    </None>
     <Compile Include="Textures\EnemyBeastDiffuse.jpg">
       <Name>EnemyBeastDiffuse</Name>
       <Importer>TextureImporter</Importer>

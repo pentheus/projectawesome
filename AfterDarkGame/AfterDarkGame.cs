@@ -203,10 +203,10 @@ namespace AfterDarkGame
             float y = (float)(radius * Math.Cos(MathHelper.ToRadians(phi)));
             float z = (float)(radius * Math.Cos(MathHelper.ToRadians(theta)) * Math.Sin(MathHelper.ToRadians(phi)));
 
-            mainCamera.Pos = (new Vector3(x, y, z));
-            mainCamera.Pos = Vector3.Transform(mainCamera.Pos, Matrix.CreateTranslation(translationVector));
+            mainCamera.Pos = (new Vector3(x, y, z)) + player.Position;
+            //mainCamera.Pos = Vector3.Transform(mainCamera.Pos, Matrix.CreateTranslation(player.Position));
 
-            mainCamera.LookAt = translationVector;
+            mainCamera.LookAt = player.Position;
 
             oldMouseState = currentMouseState;
             base.Update(gameTime);

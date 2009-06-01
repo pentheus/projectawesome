@@ -18,7 +18,7 @@ float4 xDirectionalColor = {1,1,1,1};
 float3 xLightDirection = {1,1,1};
 float xLightIntensity = 0.5;
 
-float4 xDiffuseColor = { 1, 0, 0, 1};
+float4 xDiffuseColor = { 1, 1, .5, 1};
  
 //------- Texture Samplers --------    
 Texture xTexture;       // Input a texture from XNA code via effect.Parameters["xTexture"].SetValue(texture)  
@@ -159,5 +159,49 @@ technique AnimatedLambertTest
 		CullMode = None;
         VertexShader = compile vs_3_0 AnimatedVS();   // Vertex Shader Version  
         PixelShader = compile ps_3_0 AnimatedPS(); 
+    }  
+} 
+
+////////////////////////ATTENUATED LIGHTSHAFT//////////////////////////
+
+struct LightShaftVS_Out
+{
+	float4 Position : POSITION;
+    float2 Position3D : TEXCOORD0;
+    float2 TexCoord : TEXCOORD1;
+};
+
+LightShaftVS_Out LightShaftVS(float4 Pos : POSITION, float2 TexCoord : TEXCOORD1 )
+{
+	LightShaftVS_Out Output = (LightShaftVS_Out)0;
+	Output.Position = mul(Pos, mul(xWorld, mul(xView, xProjection)));
+	Output.Position3D = mul(Pos, xWorld);
+	Output.TexCoord = TexCoord;
+	return Output;
+}
+
+float4 LightShaftPS(LightShaftVS_Out input) : COLOR0
+{
+	float4 color; 
+	if(xTextureEnabled)
+		color = tex2D(TextureSampler, input.TexCoord);
+	else
+		color = xDiffuseColor;
+	float att = max(0, (xRange-distance(input.Position3D, xCenter))/xRange);
+	return color*att;
+}
+
+technique LightShaftTest
+{  
+    pass Pass0      // Always Start at Pass 0  
+    {   
+		ZEnable = false;
+		ZWriteEnable = false;
+		AlphaBlendEnable = true;
+		SrcBlend = One;
+		DestBlend = One;
+		CullMode = ccw;
+        VertexShader = compile vs_3_0 LightShaftVS();   // Vertex Shader Version  
+        PixelShader = compile ps_3_0 LightShaftPS(); 
     }  
 } 
