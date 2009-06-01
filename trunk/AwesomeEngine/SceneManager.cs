@@ -124,7 +124,7 @@ namespace AwesomeEngine
 
                 foreach (Effect effect in mesh.Effects)
                 {
-                    effect.CurrentTechnique = drawModelEffect.Techniques["LightShaftTest"];
+                    effect.CurrentTechnique = drawModelEffect.Techniques["LambertTest"];
                     effect.Parameters["xWorld"].SetValue(modelTransforms[mesh.ParentBone.Index] * model.WorldMatrix);
                     effect.Parameters["xView"].SetValue(mainCamera.View);
                     effect.Parameters["xProjection"].SetValue(mainCamera.Projection);

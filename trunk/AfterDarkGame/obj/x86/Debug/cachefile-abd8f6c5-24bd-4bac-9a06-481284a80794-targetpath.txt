@@ -3,9 +3,9 @@ Content\Fonts\Arial.xnb
 Content\Fonts\Calibri.xnb
 Content\Fonts\DemoFont.xnb
 Content\Models\bigship1.xnb
-Content\Models\Cube.xnb
 Content\Models\Floor_mdl.xnb
 Content\Models\lamp_mdl.xnb
+Content\Models\PlayerMarine_mdla.xnb
 Content\Models\refrigerator_mdl.xnb
 Content\Models\Ship_mdl.xnb
 Content\Models\Tank_mdl.xnb
@@ -27,12 +27,7 @@ Content\Textures\EnemyBeastNormal.xnb
 Content\Textures\EnemyBeastSpecular.xnb
 Content\Textures\PlayerMarineDiffuse.xnb
 Content\Textures\WeaponMachineGunDiffuse.xnb
-Content\Models\EnemyBeast.xnb
-Content\Textures\EnemyBeastDiffuse_0.xnb
-Content\Textures\EnemyBeastNormal_0.xnb
 Content\Textures\PlayerMarineDiffuse_0.xnb
+Content\Textures\PlayerMarineNormal_0.xnb
 Content\Models\ShipDiffuse_0.xnb
 Content\Textures\WeaponMachineGunDiffuse_0.xnb
-Content\Models\PlayerMarine.xnb
-Content\PlayerMarineNormal_0.xnb
-Content\Models\PlayerMarine_mdla.xnb
