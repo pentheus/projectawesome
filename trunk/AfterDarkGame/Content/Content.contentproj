@@ -332,11 +332,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-<<<<<<< .mine
   </ItemGroup>
   <ItemGroup>
-=======
->>>>>>> .r192
     <Compile Include="Textures\PlayerMarineNormal.tga">
       <Name>PlayerMarineNormal</Name>
       <Importer>TextureImporter</Importer>
