@@ -67,6 +67,7 @@
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.openDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveDialog = new System.Windows.Forms.SaveFileDialog();
+            this.transBSphere = new System.Windows.Forms.CheckBox();
             this.menuBar.SuspendLayout();
             this.panel1.SuspendLayout();
             this.objectGroupBox.SuspendLayout();
@@ -101,27 +102,27 @@
             this.saveToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // panel1
@@ -158,6 +159,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.transBSphere);
             this.panel2.Controls.Add(this.uniScale);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
@@ -583,6 +585,17 @@
             this.saveDialog.DefaultExt = "xml";
             this.saveDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.saveDialog_FileOk);
             // 
+            // transBSphere
+            // 
+            this.transBSphere.AutoSize = true;
+            this.transBSphere.Location = new System.Drawing.Point(7, 150);
+            this.transBSphere.Name = "transBSphere";
+            this.transBSphere.Size = new System.Drawing.Size(158, 17);
+            this.transBSphere.TabIndex = 47;
+            this.transBSphere.Text = "Transform Bounding Sphere";
+            this.transBSphere.UseVisualStyleBackColor = true;
+            this.transBSphere.CheckedChanged += new System.EventHandler(this.transBSphere_CheckedChanged);
+            // 
             // ToolBar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -653,5 +666,6 @@
         private System.Windows.Forms.NumericUpDown posX;
         private System.Windows.Forms.Button setGeoButton;
         private System.Windows.Forms.SaveFileDialog saveDialog;
+        private System.Windows.Forms.CheckBox transBSphere;
     }
 }
