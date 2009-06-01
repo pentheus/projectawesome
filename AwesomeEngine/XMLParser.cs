@@ -270,6 +270,8 @@ namespace AwesomeEngine
             SaveItems(scenesaver, items);
             //Write logic entity to the file
             SaveEntities(scenesaver, entities);
+            //Close the Content
+            scenesaver.WriteEndElement();
 
             scenesaver.WriteEndDocument();
             scenesaver.Flush();
@@ -299,9 +301,9 @@ namespace AwesomeEngine
 
         private void SaveObjects(XmlTextWriter scenesaver, List<ModelInfo> objects)
         {
+            scenesaver.WriteStartElement("Conent");
             foreach (ModelInfo obj in objects)
             {
-                scenesaver.WriteStartElement("Conent");
                 scenesaver.WriteStartElement("Object");
 
                 scenesaver.WriteStartElement("posx");
@@ -337,7 +339,6 @@ namespace AwesomeEngine
                 scenesaver.WriteStartElement("model");
                 scenesaver.WriteString(obj.FileName);
                 scenesaver.WriteEndElement();
-
                 scenesaver.WriteEndElement();
             }
         }
@@ -391,8 +392,6 @@ namespace AwesomeEngine
                 scenesaver.WriteStartElement("itemtype");
                 scenesaver.WriteString(itemtype.ToString());
                 scenesaver.WriteEndElement();
-
-
 
                 scenesaver.WriteEndElement();
             }
