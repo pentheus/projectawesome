@@ -50,8 +50,6 @@ namespace GameEditor
         SpriteFont spriteFont;
         Vector2 fontPos;
         MouseState oldMouseState = new MouseState();
-        //This is for testing and can be deleted
-        AnimModelInfo testmarine;
 
         public GameEditor()
         {
@@ -134,11 +132,6 @@ namespace GameEditor
 
                 Console.WriteLine(f.ToString());
             }
-
-            SkinnedModel marinemodel = new SkinnedModel();
-            ModelInfo.LoadModel(ref marinemodel, sceneMgr.Textures, Content, graphics.GraphicsDevice, "PlayerMarine", sceneMgr.Effect);
-            testmarine = new AnimModelInfo(new Vector3(0f, 0f, 0f), Vector3.Zero, new Vector3(1f), marinemodel, "PlayerMarine");
-
             grid = new ReferenceGrid(GraphicsDevice, 10, 100, Color.LimeGreen);
             // TODO: use this.Content to load your game content here
         }
@@ -193,7 +186,6 @@ namespace GameEditor
             mainCamera.LookAt = translationVector;
 
             oldMouseState = currentMouseState;
-            testmarine.AnimationController.Update(gameTime.ElapsedGameTime, Matrix.Identity);
 
             base.Update(gameTime); 
         }
@@ -232,7 +224,6 @@ namespace GameEditor
             DrawText();
             sceneMgr.DrawModel(cursor);
             BoundingSphereRenderer.Render(cursor.BoundingSphere, GraphicsDevice, mainCamera.View, mainCamera.Projection, Color.Red);
-            sceneMgr.DrawAnimatedModel(testmarine);
             grid.Draw(mainCamera.View, mainCamera.Projection);
             base.Draw(gameTime);
         }
