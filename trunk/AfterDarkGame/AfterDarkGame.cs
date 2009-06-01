@@ -262,7 +262,12 @@ namespace AfterDarkGame
             return sceneMgr;
         }
 
-        public void SetScene(Octree scene)
+        public Player GetPlayer()
+        {
+            return player;
+        }
+
+        public void SetScene(AwesomeEngine.Octree scene)
         {
             sceneMgr.SceneGraph = scene;
         }

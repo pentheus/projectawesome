@@ -43,3 +43,16 @@ C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\Mod
 C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\Models\PlayerMarine_mdla.xnb
 C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\Textures\PlayerMarineDiffuse_0.xnb
 C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\Textures\PlayerMarineNormal_0.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\obj\x86\Debug\AfterDarkGame.exe
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\obj\x86\Debug\AfterDarkGame.pdb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\ShadowMap.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\DrawModel.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Simple.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\AfterDarkGame.exe
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\AfterDarkGame.pdb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\AwesomeEngine.dll
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\JigLibX.dll
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\XNAnimation.dll
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\AwesomeEngine.pdb

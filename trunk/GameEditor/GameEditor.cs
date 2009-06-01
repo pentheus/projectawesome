@@ -192,12 +192,9 @@ namespace GameEditor
 
             mainCamera.LookAt = translationVector;
 
-            //Update enemies to animate models
-            List<Enemy> enemies = sceneMgr.SceneGraph.GetEnemies();
-            foreach (Enemy enemy in enemies)
-                enemy.Update();
-
             oldMouseState = currentMouseState;
+            testmarine.AnimationController.Update(gameTime.ElapsedGameTime, Matrix.Identity);
+
             base.Update(gameTime); 
         }
 
@@ -303,6 +300,11 @@ namespace GameEditor
         public SceneManager GetScene()
         {
             return sceneMgr;
+        }
+
+        public Player GetPlayer()
+        {
+            return null;
         }
 
         public void SetScene(Octree scene)
