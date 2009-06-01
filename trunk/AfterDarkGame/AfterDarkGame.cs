@@ -141,9 +141,9 @@ namespace AfterDarkGame
 
                 Console.WriteLine(f.ToString());
             }
-            
 
-            OpenLevel("C:\\Users\\Spike\\Desktop\\projectawesomeNew\\scene.xml");
+            Console.WriteLine(Content.RootDirectory);
+            OpenLevel(Content.RootDirectory + "/scene.xml");
             // TODO: use this.Content to load your game content here
         }
 
@@ -167,7 +167,6 @@ namespace AfterDarkGame
             //For each component that needs to be updated, add it to the this.Components
             //Each component should check to see if it's disappeared, if it has, remove it from the components list
             //
-            player.Update(gameTime);
 
             // integrating timeStep
             float timeStep = (float)gameTime.ElapsedGameTime.Ticks / TimeSpan.TicksPerSecond;
@@ -210,7 +209,6 @@ namespace AfterDarkGame
             mainCamera.LookAt = translationVector;
 
             oldMouseState = currentMouseState;
-          
             base.Update(gameTime);
         }
 
@@ -230,12 +228,6 @@ namespace AfterDarkGame
                 DrawOctree(child);
             }
         }
-
-        public void OpenLevel()
-        {
-            XMLParser parser = new XMLParser(this);
-            sceneMgr.SceneGraph = parser.ReadScene("Something");
-        }        
 
         public void OpenLevel(string level)
         {
