@@ -110,6 +110,7 @@
     <Compile Include="Items\GlowStickItem.cs" />
     <Compile Include="Items\Item.cs" />
     <Compile Include="Items\LanternItem.cs" />
+    <Compile Include="LightShaft.cs" />
     <Compile Include="ModelInfo.cs" />
     <Compile Include="Node.cs" />
     <Compile Include="Octree.cs" />
