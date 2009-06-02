@@ -146,8 +146,13 @@ namespace AwesomeEngine
         {
             get
             {
-                boundingSphere.Radius = bSphereRadius * bSphereScale;
-                return boundingSphere.Transform(WorldMatrix);
+                BoundingSphere sphere = boundingSphere;
+                Matrix world = Matrix.CreateScale(Scale.X) * Matrix.CreateTranslation(Position)*Matrix.CreateRotationX(MathHelper.ToRadians(rotation.X)) * 
+                    Matrix.CreateRotationY(rotation.Y) *Matrix.CreateRotationZ(MathHelper.ToRadians(rotation.Z));
+                sphere.Radius = bSphereRadius * bSphereScale;
+                Vector3 newCenter = Vector3.Transform(boundingSphere.Center, world);
+                sphere.Center = newCenter;
+                return sphere;
             }
             set { boundingSphere = value; }
         }
