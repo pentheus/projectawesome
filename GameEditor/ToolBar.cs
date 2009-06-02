@@ -60,41 +60,51 @@ namespace GameEditor
 
         private void posX_ValueChanged(object sender, EventArgs e)
         {
-            if (transBSphere.CheckState == CheckState.Checked)
+            if (posX.Enabled)
             {
-                BoundingSphere bSphere = gameEditor.GetCursor().BoundingSphere;
-                Vector3 offset = new Vector3((float)posX.Value, (float)posY.Value, (float)posZ.Value);
-                bSphere.Center = gameEditor.GetCursor().Position + offset;
-                gameEditor.GetCursor().BoundingSphere = bSphere;
+                if (transBSphere.CheckState == CheckState.Checked)
+                {
+                    BoundingSphere bSphere = gameEditor.GetCursor().BoundingSphere;
+                    Vector3 offset = new Vector3((float)posX.Value, (float)posY.Value, (float)posZ.Value);
+                    bSphere.Center = gameEditor.GetCursor().Position + offset;
+                    gameEditor.GetCursor().BoundingSphere = bSphere;
+                }
+                else
+                    gameEditor.GetCursor().Position = new Vector3((float)posX.Value, (float)posY.Value, (float)posZ.Value);
+                Console.WriteLine("Value Changed");
             }
-            else
-                gameEditor.GetCursor().Position = new Vector3((float)posX.Value, (float)posY.Value, (float)posZ.Value);
         }
 
         private void posY_ValueChanged(object sender, EventArgs e)
         {
-            if (transBSphere.CheckState == CheckState.Checked)
+            if (posY.Enabled)
             {
-                BoundingSphere bSphere = gameEditor.GetCursor().BoundingSphere;
-                Vector3 offset = new Vector3((float)posX.Value, (float)posY.Value, (float)posZ.Value);
-                bSphere.Center = gameEditor.GetCursor().Position + offset;
-                gameEditor.GetCursor().BoundingSphere = bSphere;
+                if (transBSphere.CheckState == CheckState.Checked)
+                {
+                    BoundingSphere bSphere = gameEditor.GetCursor().BoundingSphere;
+                    Vector3 offset = new Vector3((float)posX.Value, (float)posY.Value, (float)posZ.Value);
+                    bSphere.Center = gameEditor.GetCursor().Position + offset;
+                    gameEditor.GetCursor().BoundingSphere = bSphere;
+                }
+                else
+                    gameEditor.GetCursor().Position = new Vector3((float)posX.Value, (float)posY.Value, (float)posZ.Value);
             }
-            else
-                gameEditor.GetCursor().Position = new Vector3((float)posX.Value, (float)posY.Value, (float)posZ.Value);
         }
 
         private void posZ_ValueChanged(object sender, EventArgs e)
         {
-            if (transBSphere.CheckState == CheckState.Checked)
+            if (posZ.Enabled)
             {
-                BoundingSphere bSphere = gameEditor.GetCursor().BoundingSphere;
-                Vector3 offset = new Vector3((float)posX.Value, (float)posY.Value, (float)posZ.Value);
-                bSphere.Center = gameEditor.GetCursor().Position + offset;
-                gameEditor.GetCursor().BoundingSphere = bSphere;
+                if (transBSphere.CheckState == CheckState.Checked)
+                {
+                    BoundingSphere bSphere = gameEditor.GetCursor().BoundingSphere;
+                    Vector3 offset = new Vector3((float)posX.Value, (float)posY.Value, (float)posZ.Value);
+                    bSphere.Center = gameEditor.GetCursor().Position + offset;
+                    gameEditor.GetCursor().BoundingSphere = bSphere;
+                }
+                else
+                    gameEditor.GetCursor().Position = new Vector3((float)posX.Value, (float)posY.Value, (float)posZ.Value);
             }
-            else
-                gameEditor.GetCursor().Position = new Vector3((float)posX.Value, (float)posY.Value, (float)posZ.Value);
         }
 
         private void rotX_ValueChanged_1(object sender, EventArgs e)
@@ -189,6 +199,14 @@ namespace GameEditor
         {
             if (transBSphere.CheckState == CheckState.Checked)
             {
+                posX.Enabled = false;
+                posY.Enabled = false;
+                posZ.Enabled = false;
+
+                scaleX.Enabled = false;
+                scaleX.Enabled = false;
+                scaleX.Enabled = false;
+
                 posX.Value = (decimal)gameEditor.GetCursor().BoundingSphere.Center.X;
                 posY.Value = (decimal)gameEditor.GetCursor().BoundingSphere.Center.Y;
                 posZ.Value = (decimal)gameEditor.GetCursor().BoundingSphere.Center.Z;
@@ -196,17 +214,41 @@ namespace GameEditor
                 scaleX.Value = (decimal)gameEditor.GetCursor().BSphereScale;
                 scaleY.Value = (decimal)gameEditor.GetCursor().BSphereScale;
                 scaleZ.Value = (decimal)gameEditor.GetCursor().BSphereScale;
+
+                posX.Enabled = true;
+                posY.Enabled = true;
+                posZ.Enabled = true;
+
+                scaleX.Enabled = true;
+                scaleX.Enabled = true;
+                scaleX.Enabled = true;
             }
 
             else
             {
+                posX.Enabled = false;
+                posY.Enabled = false;
+                posZ.Enabled = false;
+
+                scaleX.Enabled = false;
+                scaleX.Enabled = false;
+                scaleX.Enabled = false;
+
                 posX.Value = (decimal)gameEditor.GetCursor().Position.X;
                 posY.Value = (decimal)gameEditor.GetCursor().Position.Y;
                 posZ.Value = (decimal)gameEditor.GetCursor().Position.Z;
-
+                
                 scaleX.Value = (decimal)gameEditor.GetCursor().Scale.X;
                 scaleY.Value = (decimal)gameEditor.GetCursor().Scale.Y;
                 scaleZ.Value = (decimal)gameEditor.GetCursor().Scale.Z;
+
+                posX.Enabled = true;
+                posY.Enabled = true;
+                posZ.Enabled = true;
+
+                scaleX.Enabled = true;
+                scaleX.Enabled = true;
+                scaleX.Enabled = true;
             }
         }
         

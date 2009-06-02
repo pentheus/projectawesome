@@ -400,3 +400,4 @@ C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\GameEditor
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\GameEditor\obj\x86\Debug\GameEditor.csproj.GenerateResource.Cache
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\GameEditor\bin\x86\Debug\Content\Models\cone_mdl.xnb
 C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\GameEditor\bin\x86\Debug\Content\Models\cone_mdl.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\GameEditor\bin\x86\Debug\Content\cone_mdl.xnb
