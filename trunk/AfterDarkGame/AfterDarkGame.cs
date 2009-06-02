@@ -51,14 +51,19 @@ namespace AfterDarkGame
         SpriteFont spriteFont;
         Vector2 fontPos;
         MouseState oldMouseState = new MouseState();
+        LightShaft lightShaft;
 
         public AfterDarkGame()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             sceneMgr = new SceneManager(this);
+            lightShaft = new LightShaft(this);
             //sceneMgr.UpdateOrder = 0;
             Components.Add(sceneMgr);
+            Components.Add(lightShaft);
+            sceneMgr.DrawOrder=0;
+            lightShaft.DrawOrder=10;
             this.IsMouseVisible = false;
             parser = new XMLParser(this);
 

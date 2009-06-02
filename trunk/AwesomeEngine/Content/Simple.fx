@@ -79,6 +79,9 @@ technique LambertTest
 {  
     pass Pass0      // Always Start at Pass 0  
     {   
+		ZEnable = true;
+		ZWriteEnable = true;
+		AlphaBlendEnable = false;
 		CullMode = None;
         VertexShader = compile vs_3_0 VS();   // Vertex Shader Version  
         PixelShader = compile ps_3_0 PS(); 
@@ -156,6 +159,9 @@ technique AnimatedLambertTest
 {  
     pass Pass0      // Always Start at Pass 0  
     {   
+		ZEnable = true;
+		ZWriteEnable = true;
+		AlphaBlendEnable = false;
 		CullMode = None;
         VertexShader = compile vs_3_0 AnimatedVS();   // Vertex Shader Version  
         PixelShader = compile ps_3_0 AnimatedPS(); 
