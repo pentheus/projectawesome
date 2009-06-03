@@ -32,6 +32,12 @@ namespace AwesomeEngine
             enemyAttackingSphere = new BoundingSphere(this.model.Position, attackRadius);
         }
 
+        public state State
+        {
+            get { return currentstate; }
+            set { currentstate = value; }
+        }
+
         public ContainsScene AFgame
         {
             get { return afgame; }
