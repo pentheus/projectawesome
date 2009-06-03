@@ -170,5 +170,26 @@ namespace AwesomeEngine
         {
             get { return playerPosition; }
         }
+
+
+        public BoundingSphere BoundingSphere
+        {
+            get { return boundary.Transform(WorldMatrix); }
+        }
+
+        public Matrix WorldMatrix
+        {
+            get
+            {
+                return (Matrix.CreateRotationX(MathHelper.ToRadians(model.Rotation.X)) *
+                    Matrix.CreateRotationY(model.Rotation.Y) * Matrix.CreateRotationZ(MathHelper.ToRadians(model.Rotation.Z)) *
+                    Matrix.CreateScale(model.Scale.X, model.Scale.Y, model.Scale.Z) * Matrix.CreateTranslation(model.Position));
+            }
+        }
+
+        public AnimModelInfo Model
+        {
+            get { return this.model; }
+        }
     }
 }
