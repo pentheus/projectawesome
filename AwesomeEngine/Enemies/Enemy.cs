@@ -10,28 +10,48 @@ namespace AwesomeEngine
     public abstract class Enemy:GameComponent
     {
         public enum state { Idle, Seeking, Attacking, Damaged };
-        public BoundingSphere enemyAOE;
-        private int radius;
+        public BoundingSphere enemySeekingSphere, enemyAttackingSphere;
+        private int seekRadius, attackRadius;
 
         AnimModelInfo model;
         SceneManager scene;
         state currentstate;
         ContainsScene afgame;
+        Player player;
 
         public Enemy(Game game, SceneManager scene, AnimModelInfo model): base(game)
         {
             afgame = (ContainsScene)game;
+            player = afgame.GetPlayer();
             this.scene = scene;
             this.model = model;
             currentstate = state.Idle;
-            radius = 0; // initialize radius in each of the enemy classes
-            enemyAOE = new BoundingSphere(this.model.Position, radius);
+            seekRadius = 0; // initialize radius in each of the enemy classes
+            attackRadius = 0;
+            enemySeekingSphere = new BoundingSphere(this.model.Position, seekRadius);
+            enemyAttackingSphere = new BoundingSphere(this.model.Position, attackRadius);
         }
 
-        public void updateAOE(int rad)
+        public ContainsScene AFgame
         {
-            radius = rad;
-            enemyAOE = new BoundingSphere(model.Position, radius);
+            get { return afgame; }
+        }
+
+        public Player Player
+        {
+            get { return player; }
+        }
+
+        public void updateSeekingSphere(int rad)
+        {
+            seekRadius = rad;
+            enemySeekingSphere = new BoundingSphere(model.Position, seekRadius);
+        }
+
+        public void updateAttackingSphere(int rad)
+        {
+            attackRadius = rad;
+            enemyAttackingSphere = new BoundingSphere(model.Position, attackRadius);
         }
 
         public AnimModelInfo Model
@@ -133,9 +153,14 @@ namespace AwesomeEngine
         public abstract void ActAttacking();
         public abstract void ActDamaged();
 
-        public BoundingSphere BoundingSphere
+        public BoundingSphere SeekingBoundingSphere
         {
-            get { return enemyAOE.Transform(WorldMatrix); }
+            get { return enemySeekingSphere.Transform(WorldMatrix); }
+        }
+
+        public BoundingSphere AttackingBoundingSphere
+        {
+            get { return enemyAttackingSphere.Transform(WorldMatrix); }
         }
 
         public Matrix WorldMatrix

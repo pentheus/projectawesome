@@ -9,12 +9,11 @@ namespace AwesomeEngine.Enemies
 {
     public class ShadowEnemy:Enemy
     {
-        Vector3 playerPOS;
-
         public ShadowEnemy(Game game, SceneManager scene, AnimModelInfo model): 
             base(game, scene, model)
         {
-
+            this.updateSeekingSphere(30); // updated the seeking bounding sphere's radius to 30 units
+            this.updateAttackingSphere(8); // updated the attacking bounding sphere's radius to 8 units
         }
 
         public override void ActIdle()
@@ -23,9 +22,9 @@ namespace AwesomeEngine.Enemies
         }
         public override void ActSeeking()
         {
-            //if (this.enemyAOE.Intersects(playershadow enemy's second bounding sphere (or whatever mesh) is intersected by the player
+            if (this.enemySeekingSphere.Intersects(this.Player.BoundingSphere))
             {
-                this.MoveTowards(playerPOS);
+                this.MoveTowards(this.Player.Position);
             }
         }
         public override void ActAttacking()
