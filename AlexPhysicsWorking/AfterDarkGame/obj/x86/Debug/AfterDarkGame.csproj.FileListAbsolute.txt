@@ -1,0 +1,139 @@
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\AfterDarkGame.exe
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\AfterDarkGame.pdb
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\obj\x86\Debug\AfterDarkGame.exe
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\obj\x86\Debug\AfterDarkGame.pdb
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\ShadowMap.xnb
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\DrawModel.xnb
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\Simple.xnb
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\AwesomeEngine.dll
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\XNAnimation.dll
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\AwesomeEngine.pdb
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\Effects\parallax_normal_mapping.xnb
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\Fonts\Arial.xnb
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\Fonts\Calibri.xnb
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\Fonts\DemoFont.xnb
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\Models\Floor_mdl.xnb
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\Models\lamp_mdl.xnb
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\Models\refrigerator_mdl.xnb
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\Models\Ship_mdl.xnb
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\Models\Tank_mdl.xnb
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\Models\test_mdl.xnb
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\Models\testscene_mdl.xnb
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\Models\toilet_mdl.xnb
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\Models\tv_mdl.xnb
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\Models\washer_mdl.xnb
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\Models\WeaponMachineGun_mdl.xnb
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\Models\ShipDiffuse.xnb
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\Textures\EnemyBeastDiffuse.xnb
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\Textures\EnemyBeastNormal.xnb
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\Textures\EnemyBeastSpecular.xnb
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\Textures\floor_color_map.xnb
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\Textures\floor_height_map.xnb
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\Textures\floor_normal_map.xnb
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\Textures\null_normal.xnb
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\Textures\PlayerMarineDiffuse.xnb
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\Textures\PlayerMarineNormal.xnb
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\Textures\rockbump.xnb
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\Textures\WeaponMachineGunDiffuse.xnb
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\Models\ShipDiffuse_0.xnb
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\Textures\WeaponMachineGunDiffuse_0.xnb
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\Models\Player.xnb
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\Models\PlayerMarine_mdla.xnb
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\Textures\PlayerMarineDiffuse_0.xnb
+C:\Users\Spike\Desktop\projectawesomeNew\AfterDarkGame\bin\x86\Debug\Content\Textures\PlayerMarineNormal_0.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\obj\x86\Debug\AfterDarkGame.exe
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\obj\x86\Debug\AfterDarkGame.pdb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\ShadowMap.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\DrawModel.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Simple.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\AfterDarkGame.exe
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\AfterDarkGame.pdb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\AwesomeEngine.dll
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\JigLibX.dll
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\XNAnimation.dll
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\AwesomeEngine.pdb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Effects\parallax_normal_mapping.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Fonts\Arial.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Fonts\Calibri.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Fonts\DemoFont.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Models\bigship1.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Models\Floor_mdl.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Models\lamp_mdl.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Models\PlayerMarine_mdla.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Models\refrigerator_mdl.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Models\Ship_mdl.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Models\Tank_mdl.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Models\testscene_mdl.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Models\test_mdl.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Models\toilet_mdl.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Models\tv_mdl.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Models\washer_mdl.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Models\WeaponMachineGun_mdl.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Models\ShipDiffuse.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Textures\floor_color_map.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Textures\floor_height_map.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Textures\floor_normal_map.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Textures\null_normal.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Textures\PlayerMarineNormal.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Textures\rockbump.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Textures\EnemyBeastDiffuse.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Textures\EnemyBeastNormal.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Textures\EnemyBeastSpecular.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Textures\PlayerMarineDiffuse.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Textures\WeaponMachineGunDiffuse.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Textures\PlayerMarineDiffuse_0.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Models\ShipDiffuse_0.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Textures\WeaponMachineGunDiffuse_0.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Textures\PlayerMarineNormal_0.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\ShadowMap.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\DrawModel.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Simple.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Effects\parallax_normal_mapping.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Fonts\Arial.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Fonts\Calibri.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Fonts\DemoFont.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Models\bigship1.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Models\Floor_mdl.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Models\lamp_mdl.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Models\PlayerMarine_mdla.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Models\refrigerator_mdl.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Models\Ship_mdl.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Models\Tank_mdl.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Models\testscene_mdl.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Models\test_mdl.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Models\toilet_mdl.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Models\tv_mdl.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Models\washer_mdl.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Models\WeaponMachineGun_mdl.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Models\ShipDiffuse.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Textures\floor_color_map.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Textures\floor_height_map.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Textures\floor_normal_map.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Textures\null_normal.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Textures\PlayerMarineNormal.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Textures\rockbump.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Textures\EnemyBeastDiffuse.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Textures\EnemyBeastNormal.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Textures\EnemyBeastSpecular.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Textures\PlayerMarineDiffuse.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Textures\WeaponMachineGunDiffuse.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Textures\PlayerMarineDiffuse_0.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Textures\PlayerMarineNormal_0.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Models\ShipDiffuse_0.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Textures\WeaponMachineGunDiffuse_0.xnb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\AfterDarkGame.exe
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\AfterDarkGame.pdb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\AwesomeEngine.dll
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\JigLibX.dll
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\XNAnimation.dll
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\AwesomeEngine.pdb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\obj\x86\Debug\AfterDarkGame.exe
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\obj\x86\Debug\AfterDarkGame.pdb
+C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\cone_mdl.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\projectawesome\AfterDarkGame\bin\x86\Debug\Content\cone_mdl.xnb
