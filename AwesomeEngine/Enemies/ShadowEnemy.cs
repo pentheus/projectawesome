@@ -18,11 +18,24 @@ namespace AwesomeEngine.Enemies
 
         public override void ActIdle()
         {
-            
+            if (this.enemyAttackingSphere.Intersects(this.enemyAttackingSphere))
+            {
+                this.State = state.Attacking;
+            }
+
+            else if (this.enemySeekingSphere.Intersects(this.Player.BoundingSphere))
+            {
+                this.State = state.Seeking;
+            }
         }
         public override void ActSeeking()
         {
-            if (this.enemySeekingSphere.Intersects(this.Player.BoundingSphere))
+            if (this.enemyAttackingSphere.Intersects(this.enemyAttackingSphere))
+            {
+                this.State = state.Attacking;
+            }
+
+            else if (this.enemySeekingSphere.Intersects(this.Player.BoundingSphere))
             {
                 this.MoveTowards(this.Player.Position);
             }
