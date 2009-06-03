@@ -57,7 +57,7 @@ namespace AwesomeEngine
             Vector3 geoscale = new Vector3(geoscalex, geoscaley, geoscalez);
 
             ModelInfo geometry = new ModelInfo(new Vector3(0), new Vector3(0), geoscale,
-                objmodel, modelname, (Game)this.game);
+                objmodel, modelname);
             scene.addGeometry(geometry);
         }
 
@@ -100,7 +100,7 @@ namespace AwesomeEngine
                     }
 
                     //Create the ModelInfo object
-                    ModelInfo obj = new ModelInfo(objvect, objrot, objscale, objmodel, modelname, (Game)this.game);
+                    ModelInfo obj = new ModelInfo(objvect, objrot, objscale, objmodel, modelname);
                     scene.AddObject(obj);
                 }
                 catch (FormatException)
@@ -150,7 +150,7 @@ namespace AwesomeEngine
                     }
 
                     //Create the ModelInfo object
-                    ModelInfo obj = new ModelInfo(objvect, objrot, objscale, objmodel, modelname, (Game)game);
+                    ModelInfo obj = new ModelInfo(objvect, objrot, objscale, objmodel, modelname);
                     
                     //Create the Item object
                     Item item;
@@ -403,7 +403,7 @@ namespace AwesomeEngine
             foreach (LogicEntity entity in entities)
             {
                 //Store the item's ModelInfo information
-                obj = new ModelInfo(entity.Position, Vector3.Zero, entity.Scale, entity.Model, "entity", (Game)game);
+                obj = new ModelInfo(entity.Position, Vector3.Zero, entity.Scale, entity.Model, "entity");
 
                 scenesaver.WriteStartElement("Entity");
 

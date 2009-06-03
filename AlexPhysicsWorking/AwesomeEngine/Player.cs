@@ -130,7 +130,6 @@ namespace AwesomeEngine
             playerVelocity *= 0f;
             model.AnimationController.Update(gameTime.ElapsedGameTime, Matrix.Identity);
             model.Position = playerPosition;
-            model.Body.MoveTo(playerPosition, Matrix.CreateTranslation(playerPosition));
             base.Update(gameTime);
         }
 

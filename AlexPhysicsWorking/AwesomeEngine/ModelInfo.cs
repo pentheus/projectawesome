@@ -20,7 +20,7 @@ namespace AwesomeEngine
     /// model. For example, its position, rotation, scale, the model itself, the bounding volume,
     /// and a pointer to the node in which in resides.
     /// </summary>
-    public class ModelInfo: PhysicObject
+    public class ModelInfo
     {
         protected Vector3 pos;
         protected Vector3 rotation;
@@ -40,14 +40,12 @@ namespace AwesomeEngine
 
         public delegate void RenderHandler();
 
-        public ModelInfo(Game game):
-            base(game)
+        public ModelInfo()
         {
 
         }
         
-        public ModelInfo(Vector3 pos, Vector3 rotation, Vector3 scale, Model model, String fileName, Game game):
-            base(game)
+        public ModelInfo(Vector3 pos, Vector3 rotation, Vector3 scale, Model model, String fileName)
         {
             this.pos = pos;
             this.rotation = rotation;
@@ -61,20 +59,21 @@ namespace AwesomeEngine
 
             //Collision parts
             body = new Body();
-            skin = new CollisionSkin(null);
+            skin = new CollisionSkin(body);
             body.CollisionSkin = skin;
             triangleMesh = new TriangleMesh();
 
             List<Vector3> vertexList = new List<Vector3>();
             List<TriangleVertexIndices> indexList = new List<TriangleVertexIndices>();
             ExtractData(vertexList, indexList, model);
-
             triangleMesh.CreateMesh(vertexList, indexList, 4, 1.0f);
             skin.AddPrimitive(triangleMesh, new MaterialProperties(0.8f, 0.7f, 0.6f));
-            PhysicsSystem.CurrentPhysicsSystem.CollisionSystem.AddCollisionSkin(skin);
+
+            Vector3 com = SetMass(1.0f);
+
+            body.MoveTo(pos, Matrix.Identity);
+            skin.ApplyLocalTransform(new Transform(-com, Matrix.Identity));
             body.EnableBody();
-            
-            game.Components.Add(this);
         }
 
         public static void LoadModel(ref Model model, Dictionary<ModelMeshPart, Texture2D> textures, ContentManager Content, GraphicsDevice graphics, String assetName, Effect effect)
@@ -193,9 +192,11 @@ namespace AwesomeEngine
         {
             get
             {
-                return ( Matrix.CreateRotationX(MathHelper.ToRadians(rotation.X)) * 
-                    Matrix.CreateRotationY(rotation.Y) *Matrix.CreateRotationZ(MathHelper.ToRadians(rotation.Z)) * 
-                    Matrix.CreateScale(scale.X, scale.Y, scale.Z)*Matrix.CreateTranslation(pos));
+                return
+            Matrix.CreateScale(scale) *
+            skin.GetPrimitiveLocal(0).Transform.Orientation *
+            body.Orientation *
+            Matrix.CreateTranslation(body.Position);
             }
         }
 
@@ -290,16 +291,6 @@ namespace AwesomeEngine
                     indices.AddRange(tvi);
                 }
             }
-        }
-
-        public override void ApplyEffects(BasicEffect effect)
-        {
-
-        }
-
-        public override void Draw(GameTime gameTime)
-        {
-            
         }
     }
 

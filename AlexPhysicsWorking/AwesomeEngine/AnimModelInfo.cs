@@ -14,6 +14,7 @@ using XNAnimation.Controllers;
 using JigLibX.Physics;
 using JigLibX.Collision;
 using JigLibX.Geometry;
+using JigLibX.Math;
 
 namespace AwesomeEngine
 {
@@ -30,23 +31,21 @@ namespace AwesomeEngine
          * */
         
         public AnimModelInfo(Vector3 pos, Vector3 rotation, Vector3 scale, SkinnedModel mod, String fileName, Game game):
-            base(pos, rotation, scale, mod.Model, fileName, game)
+            base(pos, rotation, scale, mod.Model, fileName)
         {
             animatedModel = mod;
             animationController = new AnimationController(animatedModel.SkeletonBones);
             animationController.StartClip(animatedModel.AnimationClips["Idle"]);
 
             //Collision parts
-            body = new Body();
-            skin = new CollisionSkin(null);
-            skin.AddPrimitive(new Sphere(Vector3.Zero * 5.0f, 45), new MaterialProperties(0.5f, 0.7f, 0.6f));
-            body.CollisionSkin = this.skin;
-            Vector3 com = SetMass(10.0f);
-            body.MoveTo(pos + com, WorldMatrix);
-            // collision.ApplyLocalTransform(new Transform(-com, Matrix.Identity));
-            body.EnableBody();
-            this.scale = Vector3.One * bSphereRadius;
-            PhysicsSystem.CurrentPhysicsSystem.CollisionSystem.AddCollisionSkin(skin);
+            skin.RemoveAllPrimitives();
+            Capsule capsulemesh = new Capsule(pos, Matrix.Identity, 15, 30);
+            skin.AddPrimitive(capsulemesh, new MaterialProperties(0.8f, 0.7f, 0.6f));
+
+            Vector3 com = SetMass(1.0f);
+
+            body.MoveTo(pos, Matrix.Identity);
+            skin.ApplyLocalTransform(new Transform(-com, Matrix.Identity));
             body.EnableBody();
         }
 

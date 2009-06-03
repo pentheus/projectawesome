@@ -53,7 +53,7 @@ namespace GameEditor
 
         public GameEditor()
         {
-            cursor = new ModelInfo(this);
+            cursor = new ModelInfo();
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             sceneMgr = new SceneManager(this);
@@ -101,7 +101,7 @@ namespace GameEditor
                 Model model = new Model();
                 ModelInfo.LoadModel(ref model, sceneMgr.Textures, Content, graphics.GraphicsDevice, split[0], sceneMgr.Effect);
           
-                ModelInfo modelInfo = new ModelInfo(new Vector3(0f, 0f, 0f), Vector3.Zero, new Vector3(0.1f), model, split[0], this);
+                ModelInfo modelInfo = new ModelInfo(new Vector3(0f, 0f, 0f), Vector3.Zero, new Vector3(0.1f), model, split[0]);
                 if (split[0].ToLower().Contains("item"))
                 {
                     if (split[0].ToLower().Contains("battery"))
@@ -270,7 +270,7 @@ namespace GameEditor
         {
             try
             {
-                cursor = new ModelInfo(Vector3.Zero, Vector3.Zero, Vector3.One, props[name], name, this);
+                cursor = new ModelInfo(Vector3.Zero, Vector3.Zero, Vector3.One, props[name], name);
                 cursor.UpdateBoundingSphere();
             }
             catch (KeyNotFoundException e)

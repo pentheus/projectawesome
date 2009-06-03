@@ -41,7 +41,7 @@ namespace AwesomeEngine
         protected override void LoadContent()
         {
             lightModel = Game.Content.Load<Model>("cone_mdl");
-            lightShaft = new ModelInfo(Vector3.Zero, Vector3.Zero, new Vector3(0.1f), lightModel, "cone_mdl", (Game)this.game);
+            lightShaft = new ModelInfo(Vector3.Zero, Vector3.Zero, new Vector3(0.1f), lightModel, "cone_mdl");
             lightEffect = Game.Content.Load<Effect>("Simple");
             base.LoadContent();
         }
