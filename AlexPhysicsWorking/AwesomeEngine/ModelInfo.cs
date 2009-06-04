@@ -70,9 +70,9 @@ namespace AwesomeEngine
             skin.AddPrimitive(triangleMesh, new MaterialProperties(0.8f, 0.7f, 0.6f));
 
             Vector3 com = SetMass(1.0f);
-
             body.MoveTo(pos, Matrix.Identity);
             skin.ApplyLocalTransform(new Transform(-com, Matrix.Identity));
+            body.Immovable = true;
             body.EnableBody();
         }
 
@@ -138,6 +138,14 @@ namespace AwesomeEngine
                     }
                     part.Effect = e;
                 }
+        }
+
+        public void EnableBody(bool isEnabled)
+        {
+            if (isEnabled)
+                body.EnableBody();
+            else
+                body.DisableBody();
         }
 
         public void CreateBoundingSphere(out BoundingSphere mergedSphere)
