@@ -26,8 +26,8 @@ namespace AwesomeEngine
         state currentplayerstate;
 
         Vector3 playerPosition = Vector3.Zero;
-        float playerRotation = 0.0f;
         Vector3 playerVelocity = Vector3.Zero;
+        float playerRotation = 0.0f;
 
         Effect drawModelEffect;
 
@@ -66,44 +66,36 @@ namespace AwesomeEngine
             // Rotate the model using the left thumbstick, and scale it down.
             if (currentState.IsKeyDown(Keys.L))
             {
-                playerRotation -= 0.075f;
+                playerRotation -= 3f;
             }
             if (currentState.IsKeyDown(Keys.J))
             {
-                playerRotation += 0.075f;
+                playerRotation += 3f;
             }
-
-
-            // Create some velocity if the right trigger is down.
-            Vector3 modelVelocityAdd = Vector3.Zero;
-
-            // Find out what direction we should be thrusting, using rotation.
-            modelVelocityAdd.X = -(float)Math.Sin(playerRotation);
-            modelVelocityAdd.Z = -(float)Math.Cos(playerRotation);
 
             // Now scale our direction by how hard the trigger is down.
 
-            bool add = false;
+            bool isIdle = true;
 
             state oldstate = currentplayerstate;
 
             if (currentState.IsKeyDown(Keys.K))
             {
-                modelVelocityAdd *= .5f;
-                add = true;
+                playerVelocity = new Vector3(0, 0, -1);
+                isIdle = false;
                 currentplayerstate = state.Running;
             }
 
             if (currentState.IsKeyDown(Keys.I))
             {
-                modelVelocityAdd *= -.5f;
-                add = true;
+                playerVelocity = new Vector3(0, 0, 1);
+                isIdle = false;
                 currentplayerstate = state.Running;
             }
 
-            if (!add)
+            if (isIdle)
             {
-                modelVelocityAdd *= .00f;
+                playerVelocity = Vector3.Zero;
                 currentplayerstate = state.Idle;
             }
 
@@ -116,9 +108,6 @@ namespace AwesomeEngine
                     model.animateModel("Idle");
             }
 
-            // Finally, add this vector to our velocity.
-            playerVelocity += modelVelocityAdd;
-
             if (currentState.IsKeyDown(Keys.Home))
             {
                 playerPosition = Vector3.Zero;
@@ -126,10 +115,10 @@ namespace AwesomeEngine
                 playerRotation = 0.0f;
             }
 
-            playerPosition += playerVelocity;
-            playerVelocity *= 0f;
+            playerPosition += Vector3.Transform(playerVelocity, Matrix.CreateRotationY(MathHelper.ToRadians(playerRotation)));
             model.AnimationController.Update(gameTime.ElapsedGameTime, Matrix.Identity);
             model.Position = playerPosition;
+            model.Rotation = new Vector3(0, playerRotation, 0);
             base.Update(gameTime);
         }
 
@@ -152,7 +141,7 @@ namespace AwesomeEngine
                 foreach (Effect effect in mesh.Effects)
                 {
                     effect.CurrentTechnique = drawModelEffect.Techniques["AnimatedLambertTest"];
-                    effect.Parameters["xWorld"].SetValue(Matrix.CreateRotationY(playerRotation) * Matrix.CreateTranslation(playerPosition));
+                    effect.Parameters["xWorld"].SetValue(Matrix.CreateRotationY(MathHelper.ToRadians(playerRotation)) * Matrix.CreateTranslation(playerPosition));
                     effect.Parameters["xView"].SetValue(game.GetCamera().View);
                     effect.Parameters["xProjection"].SetValue(game.GetCamera().Projection);
                     effect.Parameters["xCenter"].SetValue(model.Position);

@@ -181,13 +181,22 @@ namespace AwesomeEngine
         public Vector3 Position
         {
             get{ return pos; }
-            set{ pos = value; }
+            set
+            { 
+                pos = value;
+                body.Position = value;
+            }
         }
 
         public Vector3 Rotation
         {
             get{ return rotation; }
-            set{ rotation = value; }
+            set{ 
+                   rotation = value;
+                   body.Orientation = Matrix.CreateRotationX(value.X) 
+                                    * Matrix.CreateRotationY(value.Y) 
+                                    * Matrix.CreateRotationZ(value.Z);
+               }
         }
 
         public Vector3 Scale
