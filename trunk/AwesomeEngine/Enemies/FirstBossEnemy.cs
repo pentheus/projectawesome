@@ -14,10 +14,55 @@ namespace AwesomeEngine.Enemies
         public FirstBossEnemy(Game game, SceneManager scene, AnimModelInfo model): 
             base(game, scene, model)
         {
-
+            this.updateSeekingSphere(50);
+            this.updateAttackingSphere(11);
         }
-        
 
-        public override void ActIdle()        {        }        public override void ActSeeking()        {        }        public override void ActAttacking()        {        }        public override void ActDamaged()        {        }
+
+        public override void ActIdle()
+        {
+            if (this.enemyAttackingSphere.Intersects(this.enemyAttackingSphere))
+            {
+                this.State = state.Attacking;
+            }
+
+            else if (this.enemySeekingSphere.Intersects(this.Player.BoundingSphere))
+            {
+                this.State = state.Seeking;
+            }
+        }
+        public override void ActSeeking()
+        {
+            if (this.enemyAttackingSphere.Intersects(this.Player.BoundingSphere))
+            {
+                this.State = state.Attacking;
+            }
+
+            else if (this.enemySeekingSphere.Intersects(this.Player.BoundingSphere))
+            {
+                this.MoveTowards(this.Player.Position);
+            }
+        }
+        public override void ActAttacking()
+        {
+            if (this.enemyAttackingSphere.Intersects(this.Player.BoundingSphere))
+            {
+                Attack();
+            }
+
+            else if (this.enemySeekingSphere.Intersects(this.Player.BoundingSphere))
+            {
+                this.State = state.Seeking;
+            }
+        }
+        public override void ActDamaged()
+        {
+            // if shadow enemy's 
+        }
+
+        public override void Attack()
+        {
+            this.Player.TakeBossDamage();
+        }
     }
 }
