@@ -30,7 +30,7 @@ namespace AwesomeEngine.Enemies
         }
         public override void ActSeeking()
         {
-            if (this.enemyAttackingSphere.Intersects(this.enemyAttackingSphere))
+            if (this.enemyAttackingSphere.Intersects(this.Player.BoundingSphere))
             {
                 this.State = state.Attacking;
             }
@@ -42,11 +42,24 @@ namespace AwesomeEngine.Enemies
         }
         public override void ActAttacking()
         {
+            if (this.enemyAttackingSphere.Intersects(this.Player.BoundingSphere))
+            {
+                Attack();
+            }
 
+            else if (this.enemySeekingSphere.Intersects(this.Player.BoundingSphere))
+            {
+                this.State = state.Seeking;
+            }
         }
         public override void ActDamaged()
         {
             // if shadow enemy's 
+        }
+
+        public override void Attack()
+        {
+            this.Player.TakeRegularDamage();
         }
 
     }

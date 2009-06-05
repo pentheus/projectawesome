@@ -11,7 +11,7 @@ namespace AwesomeEngine
     {
         public enum state { Idle, Seeking, Attacking, Damaged };
         public BoundingSphere enemySeekingSphere, enemyAttackingSphere;
-        private int seekRadius, attackRadius;
+        private int seekRadius, attackRadius, health;
 
         AnimModelInfo model;
         SceneManager scene;
@@ -30,7 +30,15 @@ namespace AwesomeEngine
             attackRadius = 0;
             enemySeekingSphere = new BoundingSphere(this.model.Position, seekRadius);
             enemyAttackingSphere = new BoundingSphere(this.model.Position, attackRadius);
+            health = 100;
         }
+
+        public void TakeDamage()
+        {
+            health -= 5;
+        }
+
+        public abstract void Attack();
 
         public state State
         {
