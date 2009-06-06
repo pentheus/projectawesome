@@ -175,6 +175,7 @@ struct LightShaftVS_Out
 	float4 Position : POSITION;
     float2 Position3D : TEXCOORD0;
     float2 TexCoord : TEXCOORD1;
+    float3 Center : TEXCOORD2;
 };
 
 LightShaftVS_Out LightShaftVS(float4 Pos : POSITION, float2 TexCoord : TEXCOORD1 )
@@ -201,7 +202,7 @@ technique LightShaftTest
 {  
     pass Pass0      // Always Start at Pass 0  
     {   
-		ZEnable = false;
+		ZEnable = true;
 		ZWriteEnable = false;
 		AlphaBlendEnable = true;
 		SrcBlend = One;
