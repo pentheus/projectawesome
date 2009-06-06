@@ -23,6 +23,7 @@ namespace AwesomeEngine
         Model lightModel;
         Effect lightEffect;
         ContainsScene game;
+        
         public LightShaft(Game game)
             : base(game)
         {
@@ -41,8 +42,9 @@ namespace AwesomeEngine
         protected override void LoadContent()
         {
             lightModel = Game.Content.Load<Model>("cone_mdl");
-            lightShaft = new ModelInfo(Vector3.Zero, Vector3.Zero, new Vector3(0.1f), lightModel, "cone_mdl");
+            lightShaft = new ModelInfo(Vector3.Zero, new Vector3(0,90,0), new Vector3(10f), lightModel, "cone_mdl");
             lightEffect = Game.Content.Load<Effect>("Simple");
+
             base.LoadContent();
         }
 
@@ -53,7 +55,9 @@ namespace AwesomeEngine
         public override void Update(GameTime gameTime)
         {
             // TODO: Add your update code here
-            
+            //Calculate Translated Position
+            lightShaft.Position = game.GetPlayer().Position + Vector3.Transform((new Vector3(0, 15f, 35f)), Matrix.CreateRotationY(MathHelper.ToRadians(game.GetPlayer().Rotation.Y)));
+            lightShaft.Rotation = game.GetPlayer().Rotation;
             base.Update(gameTime);
         }
 
@@ -62,18 +66,18 @@ namespace AwesomeEngine
             Matrix[] modelTransforms = new Matrix[lightShaft.Model.Bones.Count];
             lightShaft.Model.CopyAbsoluteBoneTransformsTo(modelTransforms);
             Vector3 center = lightShaft.Position;
-            
+            Vector3 adjustedCenter = lightShaft.Position + Vector3.Transform(new Vector3(0, 0, -35), Matrix.CreateRotationY(MathHelper.ToRadians(game.GetPlayer().Rotation.Y)));
             foreach (ModelMesh mesh in lightShaft.Model.Meshes)
             {
                 foreach (ModelMeshPart part in mesh.MeshParts)
                 {
                     Effect effect = lightEffect.Clone(Game.GraphicsDevice);
                     effect.CurrentTechnique = effect.Techniques["LightShaftTest"];
-                    effect.Parameters["xWorld"].SetValue(modelTransforms[mesh.ParentBone.Index] * lightShaft.WorldMatrix);
+                    effect.Parameters["xWorld"].SetValue(Matrix.CreateScale(lightShaft.Scale)*Matrix.CreateRotationY(MathHelper.ToRadians(game.GetPlayer().Rotation.Y))*Matrix.CreateTranslation(lightShaft.Position));
                     effect.Parameters["xView"].SetValue(game.GetCamera().View);
                     effect.Parameters["xProjection"].SetValue(game.GetCamera().Projection);
-                    effect.Parameters["xCenter"].SetValue(lightShaft.Position - (new Vector3(0, 0, -10)));
-                    effect.Parameters["xRange"].SetValue(6f);
+                    effect.Parameters["xCenter"].SetValue(adjustedCenter);
+                    effect.Parameters["xRange"].SetValue(10f);
                     effect.Parameters["xTextureEnabled"].SetValue(false);
                     part.Effect = effect;
                 }
