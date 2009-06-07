@@ -161,18 +161,6 @@ namespace AwesomeEngine
                 }
                 mesh.Draw();
             }
-
-
-            DebugDrawer drawer = ((ContainsScene)this.game).GetDrawer();
-            if (drawer != null)
-            {
-                VertexPositionColor[] frame = model.Skin.GetLocalSkinWireframe();
-                if (model.Skin != null)
-                {
-                    model.Body.TransformWireframe(frame);
-                }
-                drawer.DrawShape(frame);
-            }
         }
 
         public Vector3 Position
