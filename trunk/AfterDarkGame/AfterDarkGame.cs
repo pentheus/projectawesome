@@ -60,7 +60,6 @@ namespace AfterDarkGame
         Model enemyModel;
         ShadowEnemy shadow;
         PhysicsSystem physics;
-        DebugDrawer debugDrawer;
 
         public AfterDarkGame()
         {
@@ -77,10 +76,6 @@ namespace AfterDarkGame
             parser = new XMLParser(this);
             
             InitializePhysics();
-            debugDrawer = new DebugDrawer(this);
-            debugDrawer.Enabled = false;
-            debugDrawer.DrawOrder = 15;
-            Components.Add(debugDrawer);
         }
 
         private void InitializePhysics()
@@ -323,16 +318,6 @@ namespace AfterDarkGame
         {
             get { return player; }
             set { player = value; }
-        }
-
-        public DebugDrawer Drawer
-        {
-            get { return debugDrawer; }
-        }
-
-        public DebugDrawer GetDrawer()
-        {
-            return Drawer;
         }
     }
 }

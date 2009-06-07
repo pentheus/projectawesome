@@ -16,6 +16,5 @@ namespace AwesomeEngine
         ContentManager GetContent();
         ThirdPersonCamera GetCamera();
         Player GetPlayer();
-        DebugDrawer GetDrawer();
     }
 }

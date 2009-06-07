@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>blend_root</Name>
     <Identity>
-      <SourceFilename>C:\Documents and Settings\Alex\My Documents\Inf 125\projectawesome\AfterDarkGame\Content\Models\testscene_mdl.fbx</SourceFilename>
+      <SourceFilename>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\Content\Models\testscene_mdl.fbx</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <Transform>100 0 0 0 0 100 0 0 0 0 100 0 0 0 0 1</Transform>
