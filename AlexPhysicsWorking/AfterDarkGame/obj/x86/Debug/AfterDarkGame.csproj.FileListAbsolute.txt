@@ -184,3 +184,4 @@ C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AlexPhysicsBranch\AfterD
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AlexPhysicsBranch\AfterDarkGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AlexPhysicsBranch\AfterDarkGame\obj\x86\Debug\AfterDarkGame.exe
 C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AlexPhysicsBranch\AfterDarkGame\obj\x86\Debug\AfterDarkGame.pdb
+C:\Documents and Settings\Alex\My Documents\Inf 125\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Models\sphere_mdl.xnb

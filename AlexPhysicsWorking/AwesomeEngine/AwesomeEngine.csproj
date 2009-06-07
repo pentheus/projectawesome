@@ -95,6 +95,9 @@
     <Compile Include="Camera\OrthoCamera.cs" />
     <Compile Include="Camera\ThirdPersonCamera.cs" />
     <Compile Include="Character.cs" />
+    <Compile Include="DebugDrawer.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Enemies\Enemy.cs" />
     <Compile Include="Enemies\FirstBossEnemy.cs" />
     <Compile Include="Enemies\ShadowEnemy.cs" />

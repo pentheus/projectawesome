@@ -53,7 +53,7 @@ namespace AfterDarkGame
         MouseState oldMouseState = new MouseState();
 
         PhysicsSystem physics;
-        //DebugDrawer debugDrawer;
+        DebugDrawer debugDrawer;
 
         public AfterDarkGame()
         {
@@ -67,15 +67,26 @@ namespace AfterDarkGame
             parser = new XMLParser(this);
 
             InitializePhysics();
-            //debugDrawer = new DebugDrawer(this);
-            //debugDrawer.Enabled = true;
-            //Components.Add(debugDrawer);
+            debugDrawer = new DebugDrawer(this);
+            debugDrawer.Enabled = true;
+            debugDrawer.DrawOrder = 15;
+            Components.Add(debugDrawer);
         }
 
         private void InitializePhysics()
         {
             physics = new PhysicsSystem();
             physics.CollisionSystem = new CollisionSystemSAP();
+            physics.NumCollisionIterations = 8;
+            physics.NumContactIterations = 8;
+
+            physics.CollisionTollerance = 1;
+            physics.AllowedPenetration = 1;
+
+            physics.EnableFreezing = true;
+            physics.SolverType = PhysicsSystem.Solver.Normal;
+            physics.CollisionSystem.UseSweepTests = true;
+            physics.NumPenetrationRelaxtionTimesteps = 15;
         }
 
 
@@ -110,15 +121,16 @@ namespace AfterDarkGame
             sceneMgr.MainCamera = mainCamera;
 
             DirectoryInfo d = new DirectoryInfo(Content.RootDirectory + "\\Models\\");
-            FileInfo[] files = d.GetFiles("*mdl.xnb");
+            //FileInfo[] files = d.GetFiles("*mdl.xnb");
 
+            /*
             foreach (FileInfo f in files)
             {
                 string[] split = f.ToString().Split('.');
                 Model model = new Model();
                 ModelInfo.LoadModel(ref model, sceneMgr.Textures, Content, graphics.GraphicsDevice, split[0], sceneMgr.Effect);
 
-                ModelInfo modelInfo = new ModelInfo(new Vector3(0f, 0f, 0f), Vector3.Zero, new Vector3(0.1f), model, split[0]);
+                ModelInfo modelInfo = new ModelInfo(new Vector3(1f, 1f, 1f), Vector3.Zero, new Vector3(0.1f), model, split[0]);
                 if (split[0].ToLower().Contains("item"))
                 {
                     if (split[0].ToLower().Contains("battery"))
@@ -148,8 +160,8 @@ namespace AfterDarkGame
 
                 Console.WriteLine(f.ToString());
             }
+             * */
 
-            Console.WriteLine(Content.RootDirectory);
             OpenLevel(Content.RootDirectory + "/scene.xml");
             // TODO: use this.Content to load your game content here
         }
@@ -251,7 +263,7 @@ namespace AfterDarkGame
             GraphicsDevice.Clear(Color.Black);
             // TODO: Add your drawing code here
             DrawText();
-            sceneMgr.DrawModel(cursor);
+            //sceneMgr.DrawModel(cursor);
             player.Draw();
             base.Draw(gameTime);
         }
@@ -291,6 +303,16 @@ namespace AfterDarkGame
         {
             get { return player; }
             set { player = value; }
+        }
+
+        public DebugDrawer Drawer
+        {
+            get { return debugDrawer; }
+        }
+
+        public DebugDrawer GetDrawer()
+        {
+            return Drawer;
         }
     }
 }

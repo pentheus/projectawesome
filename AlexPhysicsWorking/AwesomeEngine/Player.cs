@@ -9,6 +9,8 @@ using AwesomeEngine.Items;
 using Microsoft.Xna.Framework.Graphics;
 using XNAnimation;
 using Microsoft.Xna.Framework.Input;
+using JigLibX;
+using JigLibX.Physics;
 
 namespace AwesomeEngine
 {
@@ -25,7 +27,7 @@ namespace AwesomeEngine
         Item currentitem;
         state currentplayerstate;
 
-        Vector3 playerPosition = Vector3.Zero;
+        Vector3 playerPosition = new Vector3(0, 40, 0);
         Vector3 playerVelocity = Vector3.Zero;
         float playerRotation = 0.0f;
 
@@ -53,8 +55,8 @@ namespace AwesomeEngine
         {
             SkinnedModel playermodel = new SkinnedModel();
             ModelInfo.LoadModel(ref playermodel, game.GetScene().Textures, game.GetContent(), game.GetGraphics(), "PlayerMarine_mdla", game.GetScene().Effect);
-            model = new AnimModelInfo(Vector3.Zero, Vector3.Zero, new Vector3(1f), playermodel, "PlayerMarine_mdla", (Game)this.game);
-
+            model = new AnimModelInfo(playerPosition, Vector3.Zero, new Vector3(1f), playermodel, "PlayerMarine_mdla", (Game)this.game);
+            Console.WriteLine(model.Body.Position);
             //Load shaders
             drawModelEffect = game.GetContent().Load<Effect>("Simple");
         }
@@ -81,21 +83,21 @@ namespace AwesomeEngine
 
             if (currentState.IsKeyDown(Keys.K))
             {
-                playerVelocity = new Vector3(0, 0, -1);
+                playerVelocity = new Vector3(0, model.Body.Velocity.Y, -45);
                 isIdle = false;
                 currentplayerstate = state.Running;
             }
 
             if (currentState.IsKeyDown(Keys.I))
             {
-                playerVelocity = new Vector3(0, 0, 1);
+                playerVelocity = new Vector3(0, model.Body.Velocity.Y, 45);
                 isIdle = false;
                 currentplayerstate = state.Running;
             }
 
             if (isIdle)
             {
-                playerVelocity = Vector3.Zero;
+                playerVelocity = new Vector3(0, model.Body.Velocity.Y, 0);
                 currentplayerstate = state.Idle;
             }
 
@@ -115,10 +117,16 @@ namespace AwesomeEngine
                 playerRotation = 0.0f;
             }
 
-            playerPosition += Vector3.Transform(playerVelocity, Matrix.CreateRotationY(MathHelper.ToRadians(playerRotation)));
-            model.AnimationController.Update(gameTime.ElapsedGameTime, Matrix.Identity);
-            model.Position = playerPosition;
             model.Rotation = new Vector3(0, playerRotation, 0);
+            model.AnimationController.Update(gameTime.ElapsedGameTime, Matrix.Identity);
+            playerPosition.Y = model.Body.Position.Y;
+            Console.WriteLine(model.Body.Position);
+            model.Body.Velocity = Vector3.Transform(playerVelocity, Matrix.CreateRotationY(MathHelper.ToRadians(playerRotation)));
+            /*
+            playerPosition += Vector3.Transform(playerVelocity, Matrix.CreateRotationY(MathHelper.ToRadians(playerRotation)));
+
+            model.Body.MoveTo(playerPosition, Matrix.Identity);
+             * */
             base.Update(gameTime);
         }
 
@@ -141,7 +149,7 @@ namespace AwesomeEngine
                 foreach (Effect effect in mesh.Effects)
                 {
                     effect.CurrentTechnique = drawModelEffect.Techniques["AnimatedLambertTest"];
-                    effect.Parameters["xWorld"].SetValue(Matrix.CreateRotationY(MathHelper.ToRadians(playerRotation)) * Matrix.CreateTranslation(playerPosition));
+                    effect.Parameters["xWorld"].SetValue(Matrix.CreateRotationY(MathHelper.ToRadians(playerRotation)) * Matrix.CreateTranslation(model.Body.Position));
                     effect.Parameters["xView"].SetValue(game.GetCamera().View);
                     effect.Parameters["xProjection"].SetValue(game.GetCamera().Projection);
                     effect.Parameters["xCenter"].SetValue(model.Position);
@@ -153,11 +161,28 @@ namespace AwesomeEngine
                 }
                 mesh.Draw();
             }
+
+
+            DebugDrawer drawer = ((ContainsScene)this.game).GetDrawer();
+            if (drawer != null)
+            {
+                VertexPositionColor[] frame = model.Skin.GetLocalSkinWireframe();
+                if (model.Skin != null)
+                {
+                    model.Body.TransformWireframe(frame);
+                }
+                drawer.DrawShape(frame);
+            }
         }
 
         public Vector3 Position
         {
-            get { return playerPosition; }
+            get { return model.Body.Position; }
+        }
+
+        public AnimModelInfo Model
+        {
+            get { return model; }
         }
     }
 }

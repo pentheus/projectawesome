@@ -39,14 +39,24 @@ namespace AwesomeEngine
 
             //Collision parts
             skin.RemoveAllPrimitives();
-            Capsule capsulemesh = new Capsule(pos, Matrix.Identity, 15, 30);
-            skin.AddPrimitive(capsulemesh, new MaterialProperties(0.8f, 0.7f, 0.6f));
+            Box boxmesh;
+            
+            //Hardcoded Bounding Box values
+            if (fileName == "PlayerMarine_mdla")
+                boxmesh = new Box(new Vector3(0, 0, 0), Matrix.Identity, new Vector3(12, 15f, 12));
+            else
+                boxmesh = null;
 
-            Vector3 com = SetMass(1.0f);
+            if(boxmesh != null)
+                skin.AddPrimitive(boxmesh, new MaterialProperties(0f, 0f, 0f));
 
-            body.MoveTo(pos, Matrix.Identity);
+            Vector3 com = SetMass(100.0f);
+
+            body.MoveTo(new Vector3(pos.X, pos.Y+15, pos.Z), Matrix.Identity);
             skin.ApplyLocalTransform(new Transform(-com, Matrix.Identity));
             body.EnableBody();
+            body.AllowFreezing = false;
+            body.Immovable = false;
         }
 
         public new void CreateBoundingSphere(out BoundingSphere mergedSphere)

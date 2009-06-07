@@ -323,5 +323,10 @@ namespace GameEditor
         {
             return mainCamera;
         }
+
+        public DebugDrawer GetDrawer()
+        {
+            return null;
+        }
     }
 }

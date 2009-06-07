@@ -67,13 +67,18 @@ namespace AwesomeEngine
             List<TriangleVertexIndices> indexList = new List<TriangleVertexIndices>();
             ExtractData(vertexList, indexList, model);
             triangleMesh.CreateMesh(vertexList, indexList, 4, 1.0f);
-            skin.AddPrimitive(triangleMesh, new MaterialProperties(0.8f, 0.7f, 0.6f));
+            skin.AddPrimitive(triangleMesh, new MaterialProperties(0f, 0f, 0f));
+            /*
+            Sphere spheremesh = new Sphere(new Vector3(0, 12, 0), 15);
+            skin.AddPrimitive(spheremesh, new MaterialProperties(1.0f, 1.0f, 1.0f));
+             * */
 
-            Vector3 com = SetMass(1.0f);
+            Vector3 com = SetMass(20.0f);
             body.MoveTo(pos, Matrix.Identity);
             skin.ApplyLocalTransform(new Transform(-com, Matrix.Identity));
             body.Immovable = true;
             body.EnableBody();
+            body.Immovable = true;
         }
 
         public static void LoadModel(ref Model model, Dictionary<ModelMeshPart, Texture2D> textures, ContentManager Content, GraphicsDevice graphics, String assetName, Effect effect)
@@ -184,7 +189,7 @@ namespace AwesomeEngine
             set
             { 
                 pos = value;
-                body.Position = value;
+                body.MoveTo(value, body.Orientation);
             }
         }
 
@@ -193,9 +198,9 @@ namespace AwesomeEngine
             get{ return rotation; }
             set{ 
                    rotation = value;
-                   body.Orientation = Matrix.CreateRotationX(value.X) 
-                                    * Matrix.CreateRotationY(value.Y) 
-                                    * Matrix.CreateRotationZ(value.Z);
+                   body.Orientation = Matrix.CreateScale(scale) * Matrix.CreateRotationX(MathHelper.ToRadians(value.X))
+                                    * Matrix.CreateRotationY(MathHelper.ToRadians(value.Y))
+                                    * Matrix.CreateRotationZ(MathHelper.ToRadians(value.Z));
                }
         }
 
@@ -283,6 +288,7 @@ namespace AwesomeEngine
             foreach (ModelMesh mm in model.Meshes)
             {
                 Matrix xform = bones_[mm.ParentBone.Index];
+                xform *= Matrix.CreateScale(scale);
                 foreach (ModelMeshPart mmp in mm.MeshParts)
                 {
                     int offset = vertices.Count;
