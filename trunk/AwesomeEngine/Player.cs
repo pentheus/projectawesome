@@ -216,9 +216,9 @@ namespace AwesomeEngine
             get { return health; }
         }
 
-        public AnimModelInfo Model
+        public Vector3 Rotation
         {
-            get { return model; }
+            get { return model.Rotation; }
         }
     }
 }

@@ -60,7 +60,6 @@ C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame
 C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Fonts\Arial.xnb
 C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Fonts\Calibri.xnb
 C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Fonts\DemoFont.xnb
-C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Models\bigship1.xnb
 C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Models\Floor_mdl.xnb
 C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Models\lamp_mdl.xnb
 C:\Documents and Settings\Alex\My Documents\Inf 125\ProjectAwesome\AfterDarkGame\bin\x86\Debug\Content\Models\PlayerMarine_mdla.xnb
@@ -184,3 +183,6 @@ C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Deb
 C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\XNAnimation.dll
 C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\AwesomeEngine.pdb
 C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\obj\x86\Debug\AfterDarkGame.pdb
+C:\Documents and Settings\Alex\My Documents\Inf 125\projectawesome\AfterDarkGame\bin\x86\Debug\Content\cone_mdl.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Models\cone_mdl.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Models\interiormockup_mdl.xnb
