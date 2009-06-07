@@ -9,47 +9,68 @@ namespace AwesomeEngine.Enemies
 {
     public class ShadowEnemy:Enemy
     {
-        public ShadowEnemy(Game game, SceneManager scene, AnimModelInfo model): 
+        private int oldTime, currentTime, cooldown;
+        public ShadowEnemy(Game game, SceneManager scene, ModelInfo model):
+        //public ShadowEnemy(Game game, SceneManager scene, AnimModelInfo model): 
             base(game, scene, model)
         {
-            this.updateSeekingSphere(30); // updated the seeking bounding sphere's radius to 30 units
-            this.updateAttackingSphere(8); // updated the attacking bounding sphere's radius to 8 units
+            this.updateSeekingSphere(120); // updated the seeking bounding sphere's radius to 30 units
+            this.updateAttackingSphere(20); // updated the attacking bounding sphere's radius to 8 units
+            oldTime = 0;
+            cooldown = 2;
         }
 
         public override void ActIdle()
         {
-            if (this.enemyAttackingSphere.Intersects(this.enemyAttackingSphere))
+            if (this.enemyAttackingSphere.Contains(this.Player.Position) == ContainmentType.Contains)
             {
                 this.State = state.Attacking;
             }
 
-            else if (this.enemySeekingSphere.Intersects(this.Player.BoundingSphere))
+            else if (this.enemySeekingSphere.Contains(this.Player.Position) == ContainmentType.Contains)
             {
                 this.State = state.Seeking;
             }
         }
         public override void ActSeeking()
         {
-            if (this.enemyAttackingSphere.Intersects(this.Player.BoundingSphere))
+            if (this.enemyAttackingSphere.Contains(this.Player.Position) == ContainmentType.Contains)
             {
                 this.State = state.Attacking;
             }
 
-            else if (this.enemySeekingSphere.Intersects(this.Player.BoundingSphere))
+            else if (this.enemySeekingSphere.Contains(this.Player.Position) == ContainmentType.Contains)
             {
                 this.MoveTowards(this.Player.Position);
             }
-        }
-        public override void ActAttacking()
-        {
-            if (this.enemyAttackingSphere.Intersects(this.Player.BoundingSphere))
+
+            else // if it is not in either the attacking sphere or the seeking sphere
             {
-                Attack();
+                this.State = state.Idle;
+            }
+        }
+        public override void ActAttacking(GameTime gameTime)
+        {
+            currentTime = gameTime.TotalGameTime.Seconds;
+            Console.WriteLine(oldTime + " Old Time");
+            Console.WriteLine(currentTime + " Current Time");
+            if (this.enemyAttackingSphere.Contains(this.Player.Position) == ContainmentType.Contains)
+            {
+                if ((currentTime - oldTime) >= cooldown)
+                {
+                    Attack();
+                    oldTime = currentTime;
+                }
             }
 
-            else if (this.enemySeekingSphere.Intersects(this.Player.BoundingSphere))
+            else if (this.enemySeekingSphere.Contains(this.Player.Position) == ContainmentType.Contains)
             {
                 this.State = state.Seeking;
+            }
+
+            else
+            {
+                this.State = state.Idle;
             }
         }
         public override void ActDamaged()

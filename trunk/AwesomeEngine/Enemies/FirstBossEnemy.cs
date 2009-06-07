@@ -17,8 +17,7 @@ namespace AwesomeEngine.Enemies
             this.updateSeekingSphere(50);
             this.updateAttackingSphere(11);
         }
-
-
+        
         public override void ActIdle()
         {
             if (this.enemyAttackingSphere.Intersects(this.enemyAttackingSphere))
@@ -43,7 +42,7 @@ namespace AwesomeEngine.Enemies
                 this.MoveTowards(this.Player.Position);
             }
         }
-        public override void ActAttacking()
+        public override void ActAttacking(GameTime gameTime)
         {
             if (this.enemyAttackingSphere.Intersects(this.Player.BoundingSphere))
             {

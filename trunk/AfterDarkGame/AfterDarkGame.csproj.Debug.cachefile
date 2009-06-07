@@ -2,7 +2,6 @@ Content\Effects\parallax_normal_mapping.xnb
 Content\Fonts\Arial.xnb
 Content\Fonts\Calibri.xnb
 Content\Fonts\DemoFont.xnb
-Content\Models\bigship1.xnb
 Content\Models\Floor_mdl.xnb
 Content\Models\lamp_mdl.xnb
 Content\Models\PlayerMarine_mdla.xnb
@@ -15,6 +14,8 @@ Content\Models\toilet_mdl.xnb
 Content\Models\tv_mdl.xnb
 Content\Models\washer_mdl.xnb
 Content\Models\WeaponMachineGun_mdl.xnb
+Content\Models\cone_mdl.xnb
+Content\Models\interiormockup_mdl.xnb
 Content\Models\ShipDiffuse.xnb
 Content\Textures\floor_color_map.xnb
 Content\Textures\floor_height_map.xnb

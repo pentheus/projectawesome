@@ -35,7 +35,7 @@ namespace AwesomeEngine
             base(game)
         {
             this.game = (ContainsScene)game;
-            health = 300;
+            health = 230;
             inventory = new List<Item>();
             flashlight = null;
         }
@@ -44,7 +44,7 @@ namespace AwesomeEngine
             base(game)
         {
             this.game = (ContainsScene)game;
-            health = 300;
+            health = 230;
             inventory = inv;
             flashlight = light;
         }
@@ -200,6 +200,11 @@ namespace AwesomeEngine
         public void TakeBossDamage()
         {
             health -= 8;
+        }
+
+        public int Health
+        {
+            get { return health; }
         }
     }
 }

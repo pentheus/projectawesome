@@ -18,6 +18,7 @@ using JigLibX.Geometry;
 using System.IO;
 using JigLibX.Collision;
 using XNAnimation;
+using AwesomeEngine.Enemies;
 
 
 namespace AfterDarkGame
@@ -28,6 +29,8 @@ namespace AfterDarkGame
     public class AfterDarkGame : Microsoft.Xna.Framework.Game, ContainsScene
     {
         GraphicsDeviceManager graphics;
+
+        //ShadowEnemy shadow; // TESTING SHADOWENEMY
 
         //Game Specific Variables
         SpriteBatch spriteBatch;
@@ -53,6 +56,10 @@ namespace AfterDarkGame
         MouseState oldMouseState = new MouseState();
         LightShaft lightShaft;
 
+        ModelInfo enemyModelInfo;
+        //AnimModelInfo enemyModelInfo;
+        Model enemyModel;
+        ShadowEnemy shadow;
         public AfterDarkGame()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -66,7 +73,7 @@ namespace AfterDarkGame
             lightShaft.DrawOrder=10;
             this.IsMouseVisible = false;
             parser = new XMLParser(this);
-
+            
             InitializePhysics();
         }
 
@@ -105,6 +112,13 @@ namespace AfterDarkGame
             spriteBatch = new SpriteBatch(GraphicsDevice);
             spriteFont = Content.Load<SpriteFont>(@"Fonts\DemoFont");
 
+            //AnimModelInfo.LoadModel(ref enemyModel, sceneMgr.Textures, Content, GraphicsDevice, "PlayerMarine_mdla", sceneMgr.Effect);
+            ModelInfo.LoadModel(ref enemyModel, sceneMgr.Textures, Content,GraphicsDevice, "tv_mdl", sceneMgr.Effect);
+            enemyModelInfo = new ModelInfo(new Vector3(50, 0, 50), Vector3.Zero, Vector3.One,enemyModel , "tv_mdl");
+            //enemyModelInfo = new AnimModelInfo(new Vector3(10, 10, 10), Vector3.Zero, Vector3.One, player.Model.AnimatedModel, "PlayerMarine_mdla");
+            shadow = new ShadowEnemy(this, sceneMgr, enemyModelInfo);
+            Components.Add(shadow);
+            
             sceneMgr.MainCamera = mainCamera;
 
             DirectoryInfo d = new DirectoryInfo(Content.RootDirectory + "\\Models\\");
@@ -250,7 +264,10 @@ namespace AfterDarkGame
             // TODO: Add your drawing code here
             DrawText();
             sceneMgr.DrawModel(cursor);
+            sceneMgr.DrawModel(shadow.Model);
             player.Draw();
+            
+            //sceneMgr.DrawAnimatedModel(shadow.Model);
             base.Draw(gameTime);
         }
 

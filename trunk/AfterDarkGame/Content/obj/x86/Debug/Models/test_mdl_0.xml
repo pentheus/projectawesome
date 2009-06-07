@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>RootNode</Name>
     <Identity>
-      <SourceFilename>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\Content\Models\test_mdl.FBX</SourceFilename>
+      <SourceFilename>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\Content\Models\test_mdl.FBX</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
@@ -56,7 +56,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>lambert1</Name>
       <Identity>
-        <SourceFilename>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkGame\Content\Models\test_mdl.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\Content\Models\test_mdl.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
