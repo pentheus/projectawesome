@@ -94,6 +94,10 @@
     <Compile Include="Camera\Camera.cs" />
     <Compile Include="Camera\OrthoCamera.cs" />
     <Compile Include="Camera\ThirdPersonCamera.cs" />
+    <Compile Include="Character.cs" />
+    <Compile Include="DebugDrawer.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Enemies\Enemy.cs" />
     <Compile Include="Enemies\FirstBossEnemy.cs" />
     <Compile Include="Enemies\ShadowEnemy.cs" />
@@ -110,11 +114,13 @@
     <Compile Include="Items\GlowStickItem.cs" />
     <Compile Include="Items\Item.cs" />
     <Compile Include="Items\LanternItem.cs" />
+    <Compile Include="Light.cs" />
     <Compile Include="LightShaft.cs" />
     <Compile Include="ModelInfo.cs" />
     <Compile Include="Node.cs" />
     <Compile Include="Octree.cs" />
     <Compile Include="Camera\FirstPersonCamera.cs" />
+    <Compile Include="PhysicObject.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="SceneManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

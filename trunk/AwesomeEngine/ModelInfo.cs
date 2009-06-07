@@ -22,21 +22,27 @@ namespace AwesomeEngine
     /// </summary>
     public class ModelInfo
     {
-        Vector3 pos;
-        Vector3 rotation;
-        Vector3 scale;
-        float bSphereRadius;
-        float bSphereScale = 1f;
-        Model model;
-        Node node;
-        String fileName;
-        BoundingSphere boundingSphere;
-        Dictionary<ModelMeshPart,Texture2D> textures;
+        protected Vector3 pos;
+        protected Vector3 rotation;
+        protected Vector3 scale;
+        protected float bSphereRadius;
+        protected float bSphereScale = 1f;
+        protected Model model;
+        protected Node node;
+        protected String fileName;
+        protected BoundingSphere boundingSphere;
+        protected Dictionary<ModelMeshPart, Texture2D> textures;
+
+        //Collision Variables
+        protected Body body;
+        protected CollisionSkin skin;
+        protected TriangleMesh triangleMesh;
 
         public delegate void RenderHandler();
 
         public ModelInfo()
         {
+
         }
         
         public ModelInfo(Vector3 pos, Vector3 rotation, Vector3 scale, Model model, String fileName)
@@ -51,11 +57,28 @@ namespace AwesomeEngine
             //LoadModelTextures(model);
             bSphereRadius = boundingSphere.Radius;
 
-            //Not sure if this will work.   - Mark
-            _body = new Body();
-            _skin = new CollisionSkin(_body);
-            _body.CollisionSkin = _skin;
-            
+            //Collision parts
+            body = new Body();
+            skin = new CollisionSkin(body);
+            body.CollisionSkin = skin;
+            triangleMesh = new TriangleMesh();
+
+            List<Vector3> vertexList = new List<Vector3>();
+            List<TriangleVertexIndices> indexList = new List<TriangleVertexIndices>();
+            ExtractData(vertexList, indexList, model);
+            triangleMesh.CreateMesh(vertexList, indexList, 4, 1.0f);
+            skin.AddPrimitive(triangleMesh, new MaterialProperties(0f, 0f, 0f));
+            /*
+            Sphere spheremesh = new Sphere(new Vector3(0, 12, 0), 15);
+            skin.AddPrimitive(spheremesh, new MaterialProperties(1.0f, 1.0f, 1.0f));
+             * */
+
+            Vector3 com = SetMass(20.0f);
+            body.MoveTo(pos, Matrix.Identity);
+            skin.ApplyLocalTransform(new Transform(-com, Matrix.Identity));
+            body.Immovable = true;
+            body.EnableBody();
+            body.Immovable = true;
         }
 
         public static void LoadModel(ref Model model, Dictionary<ModelMeshPart, Texture2D> textures, ContentManager Content, GraphicsDevice graphics, String assetName, Effect effect)
@@ -122,6 +145,14 @@ namespace AwesomeEngine
                 }
         }
 
+        public void EnableBody(bool isEnabled)
+        {
+            if (isEnabled)
+                body.EnableBody();
+            else
+                body.DisableBody();
+        }
+
         public void CreateBoundingSphere(out BoundingSphere mergedSphere)
         {
             mergedSphere = new BoundingSphere();
@@ -146,45 +177,31 @@ namespace AwesomeEngine
         {
             get
             {
-                BoundingSphere sphere = boundingSphere;
-                Matrix world = Matrix.CreateScale(Scale.X) * Matrix.CreateTranslation(Position)*Matrix.CreateRotationX(MathHelper.ToRadians(rotation.X)) * 
-                    Matrix.CreateRotationY(rotation.Y) *Matrix.CreateRotationZ(MathHelper.ToRadians(rotation.Z));
-                sphere.Radius = bSphereRadius * bSphereScale;
-                Vector3 newCenter = Vector3.Transform(boundingSphere.Center, world);
-                sphere.Center = newCenter;
-                return sphere;
+                boundingSphere.Radius = bSphereRadius * bSphereScale;
+                return boundingSphere.Transform(WorldMatrix);
             }
             set { boundingSphere = value; }
-        }
-
-        private Body _body;
-        public Body Body
-        {
-            get
-            {
-                return _body;
-            }
-        }
-
-        private CollisionSkin _skin;
-        public CollisionSkin Skin
-        {
-            get
-            {
-                return _skin;
-            }
         }
 
         public Vector3 Position
         {
             get{ return pos; }
-            set{ pos = value; }
+            set
+            { 
+                pos = value;
+                body.MoveTo(value, body.Orientation);
+            }
         }
 
         public Vector3 Rotation
         {
             get{ return rotation; }
-            set{ rotation = value; }
+            set{ 
+                   rotation = value;
+                   body.Orientation = Matrix.CreateScale(scale) * Matrix.CreateRotationX(MathHelper.ToRadians(value.X))
+                                    * Matrix.CreateRotationY(MathHelper.ToRadians(value.Y))
+                                    * Matrix.CreateRotationZ(MathHelper.ToRadians(value.Z));
+               }
         }
 
         public Vector3 Scale
@@ -197,9 +214,11 @@ namespace AwesomeEngine
         {
             get
             {
-                return ( Matrix.CreateRotationX(MathHelper.ToRadians(rotation.X)) * 
-                    Matrix.CreateRotationY(rotation.Y) *Matrix.CreateRotationZ(MathHelper.ToRadians(rotation.Z)) * 
-                    Matrix.CreateScale(scale.X, scale.Y, scale.Z)*Matrix.CreateTranslation(pos));
+                return
+            Matrix.CreateScale(scale) *
+            skin.GetPrimitiveLocal(0).Transform.Orientation *
+            body.Orientation *
+            Matrix.CreateTranslation(body.Position);
             }
         }
 
@@ -230,6 +249,71 @@ namespace AwesomeEngine
         public Dictionary<ModelMeshPart, Texture2D> Textures
         {
             get { return textures; }
+        }
+
+        public Body Body
+        {
+            get
+            {
+                return body;
+            }
+        }
+
+        public CollisionSkin Skin
+        {
+            get
+            {
+                return skin;
+            }
+        }
+
+        protected Vector3 SetMass(float mass)
+        {
+            PrimitiveProperties primitiveProperties =
+                new PrimitiveProperties(PrimitiveProperties.MassDistributionEnum.Solid, PrimitiveProperties.MassTypeEnum.Density, mass);
+
+            float junk; Vector3 com; Matrix it, itCoM;
+
+            skin.GetMassProperties(primitiveProperties, out junk, out com, out it, out itCoM);
+            body.BodyInertia = itCoM;
+            body.Mass = junk;
+
+            return com;
+        }
+
+        public void ExtractData(List<Vector3> vertices, List<TriangleVertexIndices> indices, Model model)
+        {
+            Matrix[] bones_ = new Matrix[model.Bones.Count];
+            model.CopyAbsoluteBoneTransformsTo(bones_);
+            foreach (ModelMesh mm in model.Meshes)
+            {
+                Matrix xform = bones_[mm.ParentBone.Index];
+                xform *= Matrix.CreateScale(scale);
+                foreach (ModelMeshPart mmp in mm.MeshParts)
+                {
+                    int offset = vertices.Count;
+                    Vector3[] a = new Vector3[mmp.NumVertices];
+                    mm.VertexBuffer.GetData<Vector3>(mmp.StreamOffset + mmp.BaseVertex * mmp.VertexStride,
+                        a, 0, mmp.NumVertices, mmp.VertexStride);
+                    for (int i = 0; i != a.Length; ++i)
+                        Vector3.Transform(ref a[i], ref xform, out a[i]);
+                    vertices.AddRange(a);
+
+                    if (mm.IndexBuffer.IndexElementSize != IndexElementSize.SixteenBits)
+                        throw new Exception(
+                            String.Format("Model uses 32-bit indices, which are not supported."));
+                    short[] s = new short[mmp.PrimitiveCount * 3];
+                    mm.IndexBuffer.GetData<short>(mmp.StartIndex * 2, s, 0, mmp.PrimitiveCount * 3);
+                    JigLibX.Geometry.TriangleVertexIndices[] tvi = new JigLibX.Geometry.TriangleVertexIndices[mmp.PrimitiveCount];
+                    for (int i = 0; i != tvi.Length; ++i)
+                    {
+                        tvi[i].I0 = s[i * 3 + 2] + offset;
+                        tvi[i].I1 = s[i * 3 + 1] + offset;
+                        tvi[i].I2 = s[i * 3 + 0] + offset;
+                    }
+                    indices.AddRange(tvi);
+                }
+            }
         }
     }
 

@@ -9,13 +9,15 @@ using AwesomeEngine.Items;
 using Microsoft.Xna.Framework.Graphics;
 using XNAnimation;
 using Microsoft.Xna.Framework.Input;
+using JigLibX;
+using JigLibX.Physics;
 
 namespace AwesomeEngine
 {
     public class Player : DrawableGameComponent
     {
 
-        public enum state { Idle, Running, Damaged };
+        public enum state { Idle, Running, Attacking, Damaged };
         ContainsScene game;
         AnimModelInfo model;
         BoundingSphere boundary;
@@ -25,9 +27,9 @@ namespace AwesomeEngine
         Item currentitem;
         state currentplayerstate;
 
-        Vector3 playerPosition = Vector3.Zero;
-        float playerRotation = 0.0f;
+        Vector3 playerPosition = new Vector3(0, 40, 0);
         Vector3 playerVelocity = Vector3.Zero;
+        float playerRotation = 0.0f;
 
         Effect drawModelEffect;
 
@@ -53,8 +55,8 @@ namespace AwesomeEngine
         {
             SkinnedModel playermodel = new SkinnedModel();
             ModelInfo.LoadModel(ref playermodel, game.GetScene().Textures, game.GetContent(), game.GetGraphics(), "PlayerMarine_mdla", game.GetScene().Effect);
-            model = new AnimModelInfo(Vector3.Zero, Vector3.Zero, new Vector3(1f), playermodel, "PlayerMarine_mdla");
-
+            model = new AnimModelInfo(playerPosition, Vector3.Zero, new Vector3(1f), playermodel, "PlayerMarine_mdla", (Game)this.game);
+            Console.WriteLine(model.Body.Position);
             //Load shaders
             drawModelEffect = game.GetContent().Load<Effect>("Simple");
         }
@@ -66,44 +68,36 @@ namespace AwesomeEngine
             // Rotate the model using the left thumbstick, and scale it down.
             if (currentState.IsKeyDown(Keys.L))
             {
-                playerRotation -= 0.075f;
+                playerRotation -= 3f;
             }
             if (currentState.IsKeyDown(Keys.J))
             {
-                playerRotation += 0.075f;
+                playerRotation += 3f;
             }
-
-
-            // Create some velocity if the right trigger is down.
-            Vector3 modelVelocityAdd = Vector3.Zero;
-
-            // Find out what direction we should be thrusting, using rotation.
-            modelVelocityAdd.X = -(float)Math.Sin(playerRotation);
-            modelVelocityAdd.Z = -(float)Math.Cos(playerRotation);
 
             // Now scale our direction by how hard the trigger is down.
 
-            bool add = false;
+            bool isIdle = true;
 
             state oldstate = currentplayerstate;
 
             if (currentState.IsKeyDown(Keys.K))
             {
-                modelVelocityAdd *= .5f;
-                add = true;
+                playerVelocity = new Vector3(0, model.Body.Velocity.Y, -45);
+                isIdle = false;
                 currentplayerstate = state.Running;
             }
 
             if (currentState.IsKeyDown(Keys.I))
             {
-                modelVelocityAdd *= -.5f;
-                add = true;
+                playerVelocity = new Vector3(0, model.Body.Velocity.Y, 45);
+                isIdle = false;
                 currentplayerstate = state.Running;
             }
 
-            if (!add)
+            if (isIdle)
             {
-                modelVelocityAdd *= .00f;
+                playerVelocity = new Vector3(0, model.Body.Velocity.Y, 0);
                 currentplayerstate = state.Idle;
             }
 
@@ -116,9 +110,6 @@ namespace AwesomeEngine
                     model.animateModel("Idle");
             }
 
-            // Finally, add this vector to our velocity.
-            playerVelocity += modelVelocityAdd;
-
             if (currentState.IsKeyDown(Keys.Home))
             {
                 playerPosition = Vector3.Zero;
@@ -126,10 +117,16 @@ namespace AwesomeEngine
                 playerRotation = 0.0f;
             }
 
-            playerPosition += playerVelocity;
-            playerVelocity *= 0f;
+            model.Rotation = new Vector3(0, playerRotation, 0);
             model.AnimationController.Update(gameTime.ElapsedGameTime, Matrix.Identity);
+            playerPosition.Y = model.Body.Position.Y;
+            Console.WriteLine(model.Body.Position);
+            model.Body.Velocity = Vector3.Transform(playerVelocity, Matrix.CreateRotationY(MathHelper.ToRadians(playerRotation)));
+            /*
+            playerPosition += Vector3.Transform(playerVelocity, Matrix.CreateRotationY(MathHelper.ToRadians(playerRotation)));
 
+            model.Body.MoveTo(playerPosition, Matrix.Identity);
+             * */
             base.Update(gameTime);
         }
 
@@ -152,7 +149,7 @@ namespace AwesomeEngine
                 foreach (Effect effect in mesh.Effects)
                 {
                     effect.CurrentTechnique = drawModelEffect.Techniques["AnimatedLambertTest"];
-                    effect.Parameters["xWorld"].SetValue(Matrix.CreateRotationY(playerRotation) * Matrix.CreateTranslation(playerPosition));
+                    effect.Parameters["xWorld"].SetValue(Matrix.CreateRotationY(MathHelper.ToRadians(playerRotation)) * Matrix.CreateTranslation(model.Body.Position));
                     effect.Parameters["xView"].SetValue(game.GetCamera().View);
                     effect.Parameters["xProjection"].SetValue(game.GetCamera().Projection);
                     effect.Parameters["xCenter"].SetValue(model.Position);
@@ -164,11 +161,23 @@ namespace AwesomeEngine
                 }
                 mesh.Draw();
             }
+
+
+            DebugDrawer drawer = ((ContainsScene)this.game).GetDrawer();
+            if (drawer != null)
+            {
+                VertexPositionColor[] frame = model.Skin.GetLocalSkinWireframe();
+                if (model.Skin != null)
+                {
+                    model.Body.TransformWireframe(frame);
+                }
+                drawer.DrawShape(frame);
+            }
         }
 
         public Vector3 Position
         {
-            get { return playerPosition; }
+            get { return model.Body.Position; }
         }
 
 
@@ -205,6 +214,11 @@ namespace AwesomeEngine
         public int Health
         {
             get { return health; }
+        }
+
+        public AnimModelInfo Model
+        {
+            get { return model; }
         }
     }
 }
