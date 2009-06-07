@@ -9,15 +9,15 @@ namespace AwesomeEngine.Enemies
 {
     public class ShadowEnemy:Enemy
     {
-        private int oldTime, currentTime, cooldown;
+        private int accumulator, currentTime, cooldown;
         public ShadowEnemy(Game game, SceneManager scene, ModelInfo model):
         //public ShadowEnemy(Game game, SceneManager scene, AnimModelInfo model): 
             base(game, scene, model)
         {
             this.updateSeekingSphere(120); // updated the seeking bounding sphere's radius to 30 units
             this.updateAttackingSphere(20); // updated the attacking bounding sphere's radius to 8 units
-            oldTime = 0;
-            cooldown = 2;
+            accumulator = 0;
+            cooldown = 2000;
         }
 
         public override void ActIdle()
@@ -51,15 +51,14 @@ namespace AwesomeEngine.Enemies
         }
         public override void ActAttacking(GameTime gameTime)
         {
-            currentTime = gameTime.TotalGameTime.Seconds;
-            Console.WriteLine(oldTime + " Old Time");
-            Console.WriteLine(currentTime + " Current Time");
+            accumulator += gameTime.ElapsedGameTime.Milliseconds;
+            Console.WriteLine(accumulator + " Accumulator");
             if (this.enemyAttackingSphere.Contains(this.Player.Position) == ContainmentType.Contains)
             {
-                if ((currentTime - oldTime) >= cooldown)
+                if (accumulator >= cooldown)
                 {
                     Attack();
-                    oldTime = currentTime;
+                    accumulator -= cooldown;
                 }
             }
 
