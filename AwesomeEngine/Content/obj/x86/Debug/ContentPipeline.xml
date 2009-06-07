@@ -7,8 +7,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AwesomeEngine\bin\x86\Debug\Content\ShadowMap.xnb</Output>
-      <Time>2009-05-31T19:29:08.41-07:00</Time>
+      <Output>C:\Documents and Settings\Mark\Desktop\Project Awesome\AwesomeEngine\bin\x86\Debug\Content\ShadowMap.xnb</Output>
+      <Time>2009-06-03T11:27:13.140625-07:00</Time>
     </Item>
     <Item>
       <Source>DrawModel.fx</Source>
@@ -16,8 +16,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AwesomeEngine\bin\x86\Debug\Content\DrawModel.xnb</Output>
-      <Time>2009-05-31T19:29:08.413-07:00</Time>
+      <Output>C:\Documents and Settings\Mark\Desktop\Project Awesome\AwesomeEngine\bin\x86\Debug\Content\DrawModel.xnb</Output>
+      <Time>2009-06-03T11:27:13.25-07:00</Time>
     </Item>
     <Item>
       <Source>Simple.fx</Source>
@@ -25,8 +25,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AwesomeEngine\bin\x86\Debug\Content\Simple.xnb</Output>
-      <Time>2009-06-01T19:34:04.743-07:00</Time>
+      <Output>C:\Documents and Settings\Mark\Desktop\Project Awesome\AwesomeEngine\bin\x86\Debug\Content\Simple.xnb</Output>
+      <Time>2009-06-03T11:27:13.25-07:00</Time>
     </Item>
     <Item>
       <Source>cone_mdl.fbx</Source>
@@ -34,11 +34,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AwesomeEngine\bin\x86\Debug\Content\cone_mdl.xnb</Output>
-      <Time>2009-06-01T19:32:52.471-07:00</Time>
+      <Output>C:\Documents and Settings\Mark\Desktop\Project Awesome\AwesomeEngine\bin\x86\Debug\Content\cone_mdl.xnb</Output>
+      <Time>2009-06-03T11:27:13.359375-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\cone_mdl_0.xml</Key>
-        <Value>2009-06-01T19:32:54.994-07:00</Value>
+        <Value>2009-06-06T17:09:18.0423777-07:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -46,46 +46,46 @@
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\cone_mdl_0.xml</Output>
-      <Time>2009-06-01T19:32:52.471-07:00</Time>
+      <Time>2009-06-03T11:27:13.359375-07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AwesomeEngine\Content\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AwesomeEngine\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AwesomeEngine\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AwesomeEngine\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Documents and Settings\Mark\Desktop\Project Awesome\AwesomeEngine\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Documents and Settings\Mark\Desktop\Project Awesome\AwesomeEngine\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Documents and Settings\Mark\Desktop\Project Awesome\AwesomeEngine\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Documents and Settings\Mark\Desktop\Project Awesome\AwesomeEngine\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
-        <Key>C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\DLLs\XNAnimationPipeline.dll</Key>
-        <Value>2009-05-31T19:32:50.13-07:00</Value>
+        <Key>C:\Documents and Settings\Mark\Desktop\Project Awesome\DLLs\XNAnimationPipeline.dll</Key>
+        <Value>2009-06-03T11:28:07.953125-07:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
         <Value>2008-10-10T17:42:32-07:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
         <Value>2008-10-10T17:43:28-07:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
         <Value>2008-10-10T17:43:18-07:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
         <Value>2008-10-10T17:48:18-07:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
         <Value>2008-10-10T17:48:50-07:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Windows\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.0.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2009-04-02T17:25:46.112-07:00</Value>
+        <Key>C:\WINDOWS\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.0.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2009-05-30T16:55:15.828125-07:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

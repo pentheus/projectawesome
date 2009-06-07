@@ -13,13 +13,15 @@ namespace AwesomeEngine
         public BoundingSphere enemySeekingSphere, enemyAttackingSphere;
         private int seekRadius, attackRadius, health;
 
-        AnimModelInfo model;
+        ModelInfo model;
+        //AnimModelInfo model;
         SceneManager scene;
         state currentstate;
         ContainsScene afgame;
         Player player;
 
-        public Enemy(Game game, SceneManager scene, AnimModelInfo model): base(game)
+        public Enemy(Game game, SceneManager scene, ModelInfo model): base(game)
+        //public Enemy(Game game, SceneManager scene, AnimModelInfo model): base(game)
         {
             afgame = (ContainsScene)game;
             player = afgame.GetPlayer();
@@ -68,40 +70,66 @@ namespace AwesomeEngine
             enemyAttackingSphere = new BoundingSphere(model.Position, attackRadius);
         }
 
-        public AnimModelInfo Model
+        public void updateSpheres()
+        {
+            enemySeekingSphere.Center = model.Position;
+            enemyAttackingSphere.Center = model.Position;
+        }
+
+        public ModelInfo Model
+        //public AnimModelInfo Model
         {
             get { return model; }
             set { model = value; }
         }
 
-        public void Update()
+        public override void Update(GameTime gameTime)
         {
             switch (currentstate)
             {
                 case state.Idle:
                     ActIdle();
+                    Console.WriteLine("Idling");
                     break;
                 case state.Seeking:
                     ActSeeking();
+                    Console.WriteLine("Seeking");
                     break;
                 case state.Attacking:
-                    ActAttacking();
+                    ActAttacking(gameTime);
+                    Console.WriteLine("Attacking");
                     break;
                 case state.Damaged:
                     ActDamaged();
+                    Console.WriteLine("Taking Damage");
                     break;
             }
-
+            Console.WriteLine(player.Health + " - Health");
+            updateSpheres();
         }
 
         public void MoveTowards(Vector3 pos)
         {
-            float newRotation = CalculateNewRotation(pos);
-            model.Position = Vector3.Transform(Model.Position, 
-                Matrix.CreateTranslation(model.Position) * 
-                Matrix.CreateRotationY(MathHelper.ToRadians(newRotation)) * 
-                Matrix.CreateTranslation(new Vector3(1f, 0, 0)));
-       
+            /*float newRotation = CalculateNewRotation(pos);
+            float moveX = 0;
+            float moveZ = 0;
+            Matrix rotMatrix = Matrix.CreateRotationY(MathHelper.ToRadians(newRotation));
+            */
+            float opposite, adjacent, hypotenuse, angle;
+            Matrix rotation;
+            Vector3 moveVector;
+
+            opposite = player.Position.Z - model.Position.Z;
+            adjacent = player.Position.X - model.Position.X;
+            hypotenuse = (float) Math.Sqrt((opposite * opposite) + (adjacent * adjacent));
+            angle = (float) Math.Asin(opposite / hypotenuse);
+
+            Console.WriteLine(angle + "angle");
+            rotation = Matrix.CreateRotationY(MathHelper.ToRadians(angle));
+            model.Rotation = new Vector3(0, angle + (float)Math.PI/2, 0);
+            moveVector = new Vector3((float)(player.Position.X-model.Position.X)/450, 0, (float)(player.Position.Z-model.Position.Z)/450);
+            model.Position = model.Position + moveVector;
+            updateSpheres();
         }
 
         public float CalculateNewRotation(Vector3 pos)
@@ -164,11 +192,12 @@ namespace AwesomeEngine
 
         public abstract void ActIdle();
         public abstract void ActSeeking();
-        public abstract void ActAttacking();
+        public abstract void ActAttacking(GameTime g);
         public abstract void ActDamaged();
 
         public BoundingSphere SeekingBoundingSphere
         {
+            
             get { return enemySeekingSphere.Transform(WorldMatrix); }
         }
 
@@ -186,5 +215,6 @@ namespace AwesomeEngine
                     Matrix.CreateScale(model.Scale.X, model.Scale.Y, model.Scale.Z) * Matrix.CreateTranslation(model.Position));
             }
         }
+
     }
 }
