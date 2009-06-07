@@ -43,7 +43,7 @@ namespace GameEditor
         
         //Editor Variables
         ToolBar toolBar;
-        ModelInfo cursor = new ModelInfo();
+        ModelInfo cursor;
         Dictionary<String, Model> props = new Dictionary<String, Model>();
         List<Item> items = new List<Item>();
         ReferenceGrid grid;
@@ -53,6 +53,7 @@ namespace GameEditor
 
         public GameEditor()
         {
+            cursor = new ModelInfo();
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             sceneMgr = new SceneManager(this);
@@ -321,6 +322,11 @@ namespace GameEditor
         public ThirdPersonCamera GetCamera()
         {
             return mainCamera;
+        }
+
+        public DebugDrawer GetDrawer()
+        {
+            return null;
         }
     }
 }

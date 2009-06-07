@@ -48,25 +48,27 @@ namespace AfterDarkGame
         Vector3 translationVector = Vector3.Zero;
 
         //Editor Variables
-        ModelInfo cursor = new ModelInfo();
+        ModelInfo cursor;
         Dictionary<String, Model> props = new Dictionary<String, Model>();
         List<Item> items = new List<Item>();
         SpriteFont spriteFont;
         Vector2 fontPos;
         MouseState oldMouseState = new MouseState();
         LightShaft lightShaft;
-
         ModelInfo enemyModelInfo;
         //AnimModelInfo enemyModelInfo;
         Model enemyModel;
         ShadowEnemy shadow;
+        PhysicsSystem physics;
+        DebugDrawer debugDrawer;
+
         public AfterDarkGame()
         {
+            cursor = new ModelInfo();
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             sceneMgr = new SceneManager(this);
-            lightShaft = new LightShaft(this);
-            //sceneMgr.UpdateOrder = 0;
+            lightShaft = new LightShaft(this);            //sceneMgr.UpdateOrder = 0;
             Components.Add(sceneMgr);
             Components.Add(lightShaft);
             sceneMgr.DrawOrder=0;
@@ -75,12 +77,26 @@ namespace AfterDarkGame
             parser = new XMLParser(this);
             
             InitializePhysics();
+            debugDrawer = new DebugDrawer(this);
+            debugDrawer.Enabled = false;
+            debugDrawer.DrawOrder = 15;
+            Components.Add(debugDrawer);
         }
 
         private void InitializePhysics()
         {
-            PhysicsSystem world = new PhysicsSystem();
-            world.CollisionSystem = new CollisionSystemSAP();
+            physics = new PhysicsSystem();
+            physics.CollisionSystem = new CollisionSystemSAP();
+            physics.NumCollisionIterations = 8;
+            physics.NumContactIterations = 8;
+
+            physics.CollisionTollerance = 1;
+            physics.AllowedPenetration = 1;
+
+            physics.EnableFreezing = true;
+            physics.SolverType = PhysicsSystem.Solver.Normal;
+            physics.CollisionSystem.UseSweepTests = true;
+            physics.NumPenetrationRelaxtionTimesteps = 15;
         }
 
 
@@ -122,15 +138,16 @@ namespace AfterDarkGame
             sceneMgr.MainCamera = mainCamera;
 
             DirectoryInfo d = new DirectoryInfo(Content.RootDirectory + "\\Models\\");
-            FileInfo[] files = d.GetFiles("*mdl.xnb");
+            //FileInfo[] files = d.GetFiles("*mdl.xnb");
 
+            /*
             foreach (FileInfo f in files)
             {
                 string[] split = f.ToString().Split('.');
                 Model model = new Model();
                 ModelInfo.LoadModel(ref model, sceneMgr.Textures, Content, graphics.GraphicsDevice, split[0], sceneMgr.Effect);
 
-                ModelInfo modelInfo = new ModelInfo(new Vector3(0f, 0f, 0f), Vector3.Zero, new Vector3(0.1f), model, split[0]);
+                ModelInfo modelInfo = new ModelInfo(new Vector3(1f, 1f, 1f), Vector3.Zero, new Vector3(0.1f), model, split[0]);
                 if (split[0].ToLower().Contains("item"))
                 {
                     if (split[0].ToLower().Contains("battery"))
@@ -160,8 +177,8 @@ namespace AfterDarkGame
 
                 Console.WriteLine(f.ToString());
             }
+             * */
 
-            Console.WriteLine(Content.RootDirectory);
             OpenLevel(Content.RootDirectory + "/scene.xml");
             // TODO: use this.Content to load your game content here
         }
@@ -187,9 +204,6 @@ namespace AfterDarkGame
             //Each component should check to see if it's disappeared, if it has, remove it from the components list
             //
 
-            // integrating timeStep
-            float timeStep = (float)gameTime.ElapsedGameTime.Ticks / TimeSpan.TicksPerSecond;
-            PhysicsSystem.CurrentPhysicsSystem.Integrate(timeStep);
             
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
@@ -228,6 +242,9 @@ namespace AfterDarkGame
             mainCamera.LookAt = player.Position;
 
             oldMouseState = currentMouseState;
+            //Integrating phyiscs system
+            float timeStep = (float)gameTime.ElapsedGameTime.Ticks / TimeSpan.TicksPerSecond;
+            PhysicsSystem.CurrentPhysicsSystem.Integrate(timeStep);
             base.Update(gameTime);
         }
 
@@ -263,7 +280,7 @@ namespace AfterDarkGame
             GraphicsDevice.Clear(Color.Black);
             // TODO: Add your drawing code here
             DrawText();
-            sceneMgr.DrawModel(cursor);
+            //sceneMgr.DrawModel(cursor);
             sceneMgr.DrawModel(shadow.Model);
             player.Draw();
             
@@ -306,6 +323,16 @@ namespace AfterDarkGame
         {
             get { return player; }
             set { player = value; }
+        }
+
+        public DebugDrawer Drawer
+        {
+            get { return debugDrawer; }
+        }
+
+        public DebugDrawer GetDrawer()
+        {
+            return Drawer;
         }
     }
 }

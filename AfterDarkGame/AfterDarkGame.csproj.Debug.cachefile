@@ -32,6 +32,7 @@ Content\Textures\PlayerMarineDiffuse_0.xnb
 Content\Textures\PlayerMarineNormal_0.xnb
 Content\Models\ShipDiffuse_0.xnb
 Content\Textures\WeaponMachineGunDiffuse_0.xnb
+Content\Models\sphere_mdl.xnb
 Content\ShadowMap.xnb
 Content\DrawModel.xnb
 Content\Simple.xnb

@@ -6,6 +6,9 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using XNAnimation;
+using JigLibX;
+using JigLibX.Physics;
+
 
 namespace AwesomeEngine
 {
@@ -133,6 +136,18 @@ namespace AwesomeEngine
                 }
                 mesh.Draw();
             }
+
+            DebugDrawer drawer = ((ContainsScene)this.game).GetDrawer();
+            if (drawer != null)
+            {
+                VertexPositionColor[] frame = model.Skin.GetLocalSkinWireframe();
+                if (model.Skin != null)
+                {
+                    model.Body.TransformWireframe(frame);
+                }
+
+                drawer.DrawShape(frame);
+            }
         }
 
 
@@ -161,7 +176,18 @@ namespace AwesomeEngine
                     effect.Parameters["xCenter"].SetValue(model.Position);
                     effect.Parameters["xRange"].SetValue(4f);
                 }
-                mesh.Draw();
+                //mesh.Draw();
+            }
+
+            DebugDrawer drawer = ((ContainsScene)this.game).GetDrawer();
+            if (drawer != null)
+            {
+                VertexPositionColor[] frame = model.Skin.GetLocalSkinWireframe();
+                if (model.Skin != null)
+                {
+                    model.Body.TransformWireframe(frame);
+                }
+                drawer.DrawShape(frame);
             }
         }
 
