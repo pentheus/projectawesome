@@ -110,11 +110,6 @@ namespace AwesomeEngine
 
         public void MoveTowards(Vector3 pos)
         {
-            /*float newRotation = CalculateNewRotation(pos);
-            float moveX = 0;
-            float moveZ = 0;
-            Matrix rotMatrix = Matrix.CreateRotationY(MathHelper.ToRadians(newRotation));
-            */
             float opposite, adjacent, hypotenuse, angle;
             Matrix rotation;
             Vector3 moveVector;
@@ -126,7 +121,10 @@ namespace AwesomeEngine
 
             Console.WriteLine(angle + "angle");
             rotation = Matrix.CreateRotationY(MathHelper.ToRadians(angle));
-            model.Rotation = new Vector3(0, angle + (float)Math.PI/2, 0);
+            if (angle + (float)Math.PI / 2 > 0 && angle + (float)Math.PI / 2 <= Math.PI)
+            {
+                model.Rotation = new Vector3(0, angle + (float)Math.PI / 2, 0);
+            }
             moveVector = new Vector3((float)(player.Position.X-model.Position.X)/450, 0, (float)(player.Position.Z-model.Position.Z)/450);
             model.Position = model.Position + moveVector;
             updateSpheres();
