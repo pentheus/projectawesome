@@ -7,8 +7,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\Effects\parallax_normal_mapping.xnb</Output>
-      <Time>2009-06-05T11:46:00.9375-07:00</Time>
+      <Output>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Effects\parallax_normal_mapping.xnb</Output>
+      <Time>2009-05-31T19:43:00.152-07:00</Time>
     </Item>
     <Item>
       <Source>Fonts\Arial.spritefont</Source>
@@ -16,8 +16,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\Fonts\Arial.xnb</Output>
-      <Time>2009-06-05T11:46:01.078125-07:00</Time>
+      <Output>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Fonts\Arial.xnb</Output>
+      <Time>2009-05-31T19:43:00.914-07:00</Time>
     </Item>
     <Item>
       <Source>Fonts\Calibri.spritefont</Source>
@@ -25,8 +25,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\Fonts\Calibri.xnb</Output>
-      <Time>2009-06-05T11:46:01.078125-07:00</Time>
+      <Output>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Fonts\Calibri.xnb</Output>
+      <Time>2009-05-31T19:43:00.915-07:00</Time>
     </Item>
     <Item>
       <Source>Fonts\DemoFont.spritefont</Source>
@@ -34,8 +34,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\Fonts\DemoFont.xnb</Output>
-      <Time>2009-06-05T11:46:01.125-07:00</Time>
+      <Output>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Fonts\DemoFont.xnb</Output>
+      <Time>2009-05-31T19:43:00.916-07:00</Time>
     </Item>
     <Item>
       <Source>Models\Floor_mdl.fbx</Source>
@@ -43,11 +43,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\Models\Floor_mdl.xnb</Output>
-      <Time>2009-06-05T11:46:05.953125-07:00</Time>
+      <Output>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Models\Floor_mdl.xnb</Output>
+      <Time>2009-05-31T19:43:01.451-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Floor_mdl_0.xml</Key>
-        <Value>2009-06-07T16:25:38.9512024-07:00</Value>
+        <Value>2009-06-08T12:58:57.065-07:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -56,11 +56,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\Models\lamp_mdl.xnb</Output>
-      <Time>2009-06-05T11:46:06.59375-07:00</Time>
+      <Output>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Models\lamp_mdl.xnb</Output>
+      <Time>2009-05-31T19:43:01.452-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\lamp_mdl_0.xml</Key>
-        <Value>2009-06-07T16:25:39.1074524-07:00</Value>
+        <Value>2009-06-08T12:58:57.27-07:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -72,14 +72,14 @@
         <Data Key="TexturePath">..\Textures\</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\Models\PlayerMarine_mdla.xnb</Output>
-      <Time>2009-06-05T11:46:07.734375-07:00</Time>
+      <Output>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Models\PlayerMarine_mdla.xnb</Output>
+      <Time>2009-05-31T19:45:20.478-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\PlayerMarine_mdla_0.xml</Key>
-        <Value>2009-06-07T16:25:46.6387024-07:00</Value>
+        <Value>2009-06-08T12:59:06.043-07:00</Value>
       </Dependency>
-      <Request>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\Textures\PlayerMarineDiffuse_0.xnb</Request>
-      <Request>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\Textures\PlayerMarineNormal_0.xnb</Request>
+      <Request>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Textures\PlayerMarineDiffuse_0.xnb</Request>
+      <Request>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Textures\PlayerMarineNormal_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\refrigerator_mdl.fbx</Source>
@@ -87,11 +87,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\Models\refrigerator_mdl.xnb</Output>
-      <Time>2009-06-05T11:46:07.796875-07:00</Time>
+      <Output>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Models\refrigerator_mdl.xnb</Output>
+      <Time>2009-05-31T19:43:01.461-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\refrigerator_mdl_0.xml</Key>
-        <Value>2009-06-07T16:25:48.9668274-07:00</Value>
+        <Value>2009-06-08T12:59:08.395-07:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -100,13 +100,13 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\Models\Ship_mdl.xnb</Output>
-      <Time>2009-06-05T11:46:08.296875-07:00</Time>
+      <Output>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Models\Ship_mdl.xnb</Output>
+      <Time>2009-05-31T19:43:01.466-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ship_mdl_0.xml</Key>
-        <Value>2009-06-07T16:25:52.1074524-07:00</Value>
+        <Value>2009-06-08T12:59:11.958-07:00</Value>
       </Dependency>
-      <Request>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\Models\ShipDiffuse_0.xnb</Request>
+      <Request>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Models\ShipDiffuse_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\Tank_mdl.fbx</Source>
@@ -114,11 +114,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\Models\Tank_mdl.xnb</Output>
-      <Time>2009-06-05T11:46:09.875-07:00</Time>
+      <Output>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Models\Tank_mdl.xnb</Output>
+      <Time>2009-05-31T19:43:01.47-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Tank_mdl_0.xml</Key>
-        <Value>2009-06-07T16:25:53.5918274-07:00</Value>
+        <Value>2009-06-08T12:59:13.883-07:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -127,11 +127,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\Models\testscene_mdl.xnb</Output>
-      <Time>2009-06-05T11:46:09.9375-07:00</Time>
+      <Output>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Models\testscene_mdl.xnb</Output>
+      <Time>2009-05-31T19:43:01.473-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\testscene_mdl_0.xml</Key>
-        <Value>2009-06-07T16:25:54.0137024-07:00</Value>
+        <Value>2009-06-08T12:59:14.192-07:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -140,11 +140,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\Models\test_mdl.xnb</Output>
-      <Time>2009-06-05T11:46:09.984375-07:00</Time>
+      <Output>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Models\test_mdl.xnb</Output>
+      <Time>2009-05-31T19:43:01.475-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\test_mdl_0.xml</Key>
-        <Value>2009-06-07T16:25:54.1230774-07:00</Value>
+        <Value>2009-06-08T12:59:14.32-07:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -153,11 +153,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\Models\toilet_mdl.xnb</Output>
-      <Time>2009-06-05T11:46:10.078125-07:00</Time>
+      <Output>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Models\toilet_mdl.xnb</Output>
+      <Time>2009-05-31T19:43:01.478-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\toilet_mdl_0.xml</Key>
-        <Value>2009-06-07T16:25:54.2012024-07:00</Value>
+        <Value>2009-06-08T12:59:14.42-07:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -166,11 +166,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\Models\tv_mdl.xnb</Output>
-      <Time>2009-06-05T11:46:12.90625-07:00</Time>
+      <Output>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Models\tv_mdl.xnb</Output>
+      <Time>2009-05-31T19:43:01.48-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\tv_mdl_0.xml</Key>
-        <Value>2009-06-07T16:25:54.2324524-07:00</Value>
+        <Value>2009-06-08T12:59:14.468-07:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -179,11 +179,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\Models\washer_mdl.xnb</Output>
-      <Time>2009-06-05T11:46:13.03125-07:00</Time>
+      <Output>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Models\washer_mdl.xnb</Output>
+      <Time>2009-05-31T19:43:01.482-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\washer_mdl_0.xml</Key>
-        <Value>2009-06-07T16:25:54.3418274-07:00</Value>
+        <Value>2009-06-08T12:59:14.626-07:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -192,13 +192,13 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\Models\WeaponMachineGun_mdl.xnb</Output>
-      <Time>2009-06-05T11:46:13.140625-07:00</Time>
+      <Output>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Models\WeaponMachineGun_mdl.xnb</Output>
+      <Time>2009-05-31T19:43:01.483-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\WeaponMachineGun_mdl_0.xml</Key>
-        <Value>2009-06-07T16:25:54.8887024-07:00</Value>
+        <Value>2009-06-08T12:59:15.31-07:00</Value>
       </Dependency>
-      <Request>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\Textures\WeaponMachineGunDiffuse_0.xnb</Request>
+      <Request>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Textures\WeaponMachineGunDiffuse_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\cone_mdl.fbx</Source>
@@ -206,24 +206,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\Models\cone_mdl.xnb</Output>
-      <Time>2009-06-05T11:46:05.859375-07:00</Time>
+      <Output>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Models\cone_mdl.xnb</Output>
+      <Time>2009-06-03T11:23:50.273-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\cone_mdl_0.xml</Key>
-        <Value>2009-06-07T16:25:55.4199524-07:00</Value>
-      </Dependency>
-    </Item>
-    <Item>
-      <Source>Models\interiormockup_mdl.fbx</Source>
-      <Name>Models\interiormockup_mdl</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\Models\interiormockup_mdl.xnb</Output>
-      <Time>2009-06-05T11:46:06.265625-07:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\interiormockup_mdl_0.xml</Key>
-        <Value>2009-06-07T16:25:56.2793274-07:00</Value>
+        <Value>2009-06-08T12:59:16.162-07:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -232,8 +219,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\Models\ShipDiffuse.xnb</Output>
-      <Time>2009-06-05T11:46:07.875-07:00</Time>
+      <Output>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Models\ShipDiffuse.xnb</Output>
+      <Time>2009-05-31T19:43:01.462-07:00</Time>
     </Item>
     <Item>
       <Source>Textures\floor_color_map.dds</Source>
@@ -241,8 +228,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\Textures\floor_color_map.xnb</Output>
-      <Time>2009-06-05T11:46:18.078125-07:00</Time>
+      <Output>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Textures\floor_color_map.xnb</Output>
+      <Time>2009-05-31T19:43:02.385-07:00</Time>
     </Item>
     <Item>
       <Source>Textures\floor_height_map.dds</Source>
@@ -250,8 +237,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\Textures\floor_height_map.xnb</Output>
-      <Time>2009-06-05T11:46:18.234375-07:00</Time>
+      <Output>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Textures\floor_height_map.xnb</Output>
+      <Time>2009-05-31T19:43:02.387-07:00</Time>
     </Item>
     <Item>
       <Source>Textures\floor_normal_map.dds</Source>
@@ -259,8 +246,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\Textures\floor_normal_map.xnb</Output>
-      <Time>2009-06-05T11:46:18.53125-07:00</Time>
+      <Output>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Textures\floor_normal_map.xnb</Output>
+      <Time>2009-05-31T19:43:02.389-07:00</Time>
     </Item>
     <Item>
       <Source>Textures\null_normal.tga</Source>
@@ -268,8 +255,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\Textures\null_normal.xnb</Output>
-      <Time>2009-06-05T11:46:18.53125-07:00</Time>
+      <Output>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Textures\null_normal.xnb</Output>
+      <Time>2009-05-31T19:43:02.39-07:00</Time>
     </Item>
     <Item>
       <Source>Textures\PlayerMarineNormal.tga</Source>
@@ -277,8 +264,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\Textures\PlayerMarineNormal.xnb</Output>
-      <Time>2009-06-05T11:46:18.890625-07:00</Time>
+      <Output>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Textures\PlayerMarineNormal.xnb</Output>
+      <Time>2009-05-31T19:43:02.398-07:00</Time>
     </Item>
     <Item>
       <Source>Textures\rockbump.tga</Source>
@@ -286,8 +273,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\Textures\rockbump.xnb</Output>
-      <Time>2009-06-05T11:46:18.984375-07:00</Time>
+      <Output>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Textures\rockbump.xnb</Output>
+      <Time>2009-05-31T19:43:02.4-07:00</Time>
     </Item>
     <Item>
       <Source>Textures\EnemyBeastDiffuse.jpg</Source>
@@ -295,8 +282,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\Textures\EnemyBeastDiffuse.xnb</Output>
-      <Time>2009-06-05T11:46:17.109375-07:00</Time>
+      <Output>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Textures\EnemyBeastDiffuse.xnb</Output>
+      <Time>2009-05-31T19:43:02.372-07:00</Time>
     </Item>
     <Item>
       <Source>Textures\EnemyBeastNormal.png</Source>
@@ -304,8 +291,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\Textures\EnemyBeastNormal.xnb</Output>
-      <Time>2009-06-05T11:46:17.796875-07:00</Time>
+      <Output>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Textures\EnemyBeastNormal.xnb</Output>
+      <Time>2009-05-31T19:43:02.379-07:00</Time>
     </Item>
     <Item>
       <Source>Textures\EnemyBeastSpecular.jpg</Source>
@@ -313,8 +300,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\Textures\EnemyBeastSpecular.xnb</Output>
-      <Time>2009-06-05T11:46:18-07:00</Time>
+      <Output>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Textures\EnemyBeastSpecular.xnb</Output>
+      <Time>2009-05-31T19:43:02.384-07:00</Time>
     </Item>
     <Item>
       <Source>Textures\PlayerMarineDiffuse.jpg</Source>
@@ -322,8 +309,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\Textures\PlayerMarineDiffuse.xnb</Output>
-      <Time>2009-06-05T11:46:18.890625-07:00</Time>
+      <Output>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Textures\PlayerMarineDiffuse.xnb</Output>
+      <Time>2009-05-31T19:43:02.397-07:00</Time>
     </Item>
     <Item>
       <Source>Textures\WeaponMachineGunDiffuse.jpg</Source>
@@ -331,29 +318,29 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\Textures\WeaponMachineGunDiffuse.xnb</Output>
-      <Time>2009-06-05T11:46:19.078125-07:00</Time>
+      <Output>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Textures\WeaponMachineGunDiffuse.xnb</Output>
+      <Time>2009-05-31T19:43:02.405-07:00</Time>
     </Item>
     <Item>
       <Source>Models\Floor_mdl.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Floor_mdl_0.xml</Output>
-      <Time>2009-06-05T11:46:05.953125-07:00</Time>
+      <Time>2009-05-31T19:43:01.451-07:00</Time>
     </Item>
     <Item>
       <Source>Models\lamp_mdl.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\lamp_mdl_0.xml</Output>
-      <Time>2009-06-05T11:46:06.59375-07:00</Time>
+      <Time>2009-05-31T19:43:01.452-07:00</Time>
     </Item>
     <Item>
       <Source>Models\PlayerMarine_mdla.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\PlayerMarine_mdla_0.xml</Output>
-      <Time>2009-06-05T11:46:07.734375-07:00</Time>
+      <Time>2009-05-31T19:45:20.478-07:00</Time>
     </Item>
     <Item>
       <Source>Textures\PlayerMarineDiffuse.jpg</Source>
@@ -367,8 +354,8 @@
         <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\Textures\PlayerMarineDiffuse_0.xnb</Output>
-      <Time>2009-06-05T11:46:18.890625-07:00</Time>
+      <Output>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Textures\PlayerMarineDiffuse_0.xnb</Output>
+      <Time>2009-05-31T19:43:02.397-07:00</Time>
     </Item>
     <Item>
       <Source>Textures\PlayerMarineNormal.tga</Source>
@@ -382,22 +369,22 @@
         <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\Textures\PlayerMarineNormal_0.xnb</Output>
-      <Time>2009-06-05T11:46:18.890625-07:00</Time>
+      <Output>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Textures\PlayerMarineNormal_0.xnb</Output>
+      <Time>2009-05-31T19:43:02.398-07:00</Time>
     </Item>
     <Item>
       <Source>Models\refrigerator_mdl.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\refrigerator_mdl_0.xml</Output>
-      <Time>2009-06-05T11:46:07.796875-07:00</Time>
+      <Time>2009-05-31T19:43:01.461-07:00</Time>
     </Item>
     <Item>
       <Source>Models\Ship_mdl.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Ship_mdl_0.xml</Output>
-      <Time>2009-06-05T11:46:08.296875-07:00</Time>
+      <Time>2009-05-31T19:43:01.466-07:00</Time>
     </Item>
     <Item>
       <Source>Models\ShipDiffuse.tga</Source>
@@ -411,57 +398,57 @@
         <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\Models\ShipDiffuse_0.xnb</Output>
-      <Time>2009-06-05T11:46:07.875-07:00</Time>
+      <Output>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Models\ShipDiffuse_0.xnb</Output>
+      <Time>2009-05-31T19:43:01.462-07:00</Time>
     </Item>
     <Item>
       <Source>Models\Tank_mdl.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Tank_mdl_0.xml</Output>
-      <Time>2009-06-05T11:46:09.875-07:00</Time>
+      <Time>2009-05-31T19:43:01.47-07:00</Time>
     </Item>
     <Item>
       <Source>Models\testscene_mdl.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\testscene_mdl_0.xml</Output>
-      <Time>2009-06-05T11:46:09.9375-07:00</Time>
+      <Time>2009-05-31T19:43:01.473-07:00</Time>
     </Item>
     <Item>
       <Source>Models\test_mdl.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\test_mdl_0.xml</Output>
-      <Time>2009-06-05T11:46:09.984375-07:00</Time>
+      <Time>2009-05-31T19:43:01.475-07:00</Time>
     </Item>
     <Item>
       <Source>Models\toilet_mdl.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\toilet_mdl_0.xml</Output>
-      <Time>2009-06-05T11:46:10.078125-07:00</Time>
+      <Time>2009-05-31T19:43:01.478-07:00</Time>
     </Item>
     <Item>
       <Source>Models\tv_mdl.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\tv_mdl_0.xml</Output>
-      <Time>2009-06-05T11:46:12.90625-07:00</Time>
+      <Time>2009-05-31T19:43:01.48-07:00</Time>
     </Item>
     <Item>
       <Source>Models\washer_mdl.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\washer_mdl_0.xml</Output>
-      <Time>2009-06-05T11:46:13.03125-07:00</Time>
+      <Time>2009-05-31T19:43:01.482-07:00</Time>
     </Item>
     <Item>
       <Source>Models\WeaponMachineGun_mdl.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\WeaponMachineGun_mdl_0.xml</Output>
-      <Time>2009-06-05T11:46:13.140625-07:00</Time>
+      <Time>2009-05-31T19:43:01.483-07:00</Time>
     </Item>
     <Item>
       <Source>Textures\WeaponMachineGunDiffuse.jpg</Source>
@@ -475,61 +462,54 @@
         <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\Textures\WeaponMachineGunDiffuse_0.xnb</Output>
-      <Time>2009-06-05T11:46:19.078125-07:00</Time>
+      <Output>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\Textures\WeaponMachineGunDiffuse_0.xnb</Output>
+      <Time>2009-05-31T19:43:02.405-07:00</Time>
     </Item>
     <Item>
       <Source>Models\cone_mdl.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\cone_mdl_0.xml</Output>
-      <Time>2009-06-05T11:46:05.859375-07:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\interiormockup_mdl.fbx</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\interiormockup_mdl_0.xml</Output>
-      <Time>2009-06-05T11:46:06.265625-07:00</Time>
+      <Time>2009-06-03T11:23:50.273-07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\Content\</RootDirectory>
-      <LoggerRootDirectory>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
-        <Key>C:\Documents and Settings\Mark\Desktop\Project Awesome\DLLs\XNAnimationPipeline.dll</Key>
-        <Value>2009-06-03T11:28:07.953125-07:00</Value>
+        <Key>C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\DLLs\XNAnimationPipeline.dll</Key>
+        <Value>2009-05-31T19:32:50.13-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
-        <Value>2008-10-10T17:42:32-07:00</Value>
+        <Value>2008-10-10T18:42:32-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
-        <Value>2008-10-10T17:43:28-07:00</Value>
+        <Value>2008-10-10T18:43:28-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
-        <Value>2008-10-10T17:43:18-07:00</Value>
+        <Value>2008-10-10T18:43:18-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
-        <Value>2008-10-10T17:48:18-07:00</Value>
+        <Value>2008-10-10T18:48:18-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
-        <Value>2008-10-10T17:48:50-07:00</Value>
+        <Value>2008-10-10T18:48:50-07:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\WINDOWS\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.0.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2009-05-30T16:55:15.828125-07:00</Value>
+        <Key>C:\Windows\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.0.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2008-12-22T19:09:43.284-08:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

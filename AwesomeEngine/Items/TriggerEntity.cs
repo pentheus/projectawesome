@@ -10,8 +10,8 @@ namespace AwesomeEngine
 {
     public class TriggerEntity : LogicEntity
     {
-        public TriggerEntity(Game game, Model model, Vector3 position, Vector3 scale): 
-            base(game, model,position,scale)
+        public TriggerEntity(Game game, Model model, Vector3 position): 
+            base(game, model,position)
         {
             
         }
