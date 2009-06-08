@@ -10,6 +10,9 @@ namespace AwesomeEngine.Enemies
     public class ShadowEnemy:Enemy
     {
         private int accumulator, currentTime, cooldown;
+        private int hp = 10;
+        private SpawnEntity spawnPoint;
+
         public ShadowEnemy(Game game, SceneManager scene, ModelInfo model):
         //public ShadowEnemy(Game game, SceneManager scene, AnimModelInfo model): 
             base(game, scene, model)
@@ -74,12 +77,24 @@ namespace AwesomeEngine.Enemies
         }
         public override void ActDamaged()
         {
-            // if shadow enemy's 
+            //Insert dmg timers
+            //hp--;
+            if (hp <= 0)
+            {
+                spawnPoint.IsAlive = false;
+                Game.Components.Remove(this);
+            }
         }
 
         public override void Attack()
         {
             this.Player.TakeRegularDamage();
+        }
+
+        public SpawnEntity SpawnPoint
+        {
+            get { return spawnPoint; }
+            set { spawnPoint = value; }
         }
 
     }

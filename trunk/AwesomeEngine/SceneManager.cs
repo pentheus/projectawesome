@@ -25,7 +25,7 @@ namespace AwesomeEngine
         Camera.Camera mainCamera;
         IGraphicsDeviceService graphicsService;
         Dictionary<ModelMeshPart, Texture2D> textures;
-
+        
 
         public SceneManager(Game game)
             : base(game)

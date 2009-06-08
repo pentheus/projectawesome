@@ -24,16 +24,14 @@ namespace AwesomeEngine
         -Basically do just like adding and getting items, but with LogicEntities*/
 
         private Vector3 position;
-        private Vector3 scale;
         private Model model;
         private BoundingSphere boundingSphere;
         ContainsScene afgame;
 
-        public LogicEntity(Game game, Model model, Vector3 position, Vector3 scale) : base(game)
+        public LogicEntity(Game game, Model model, Vector3 position) : base(game)
         {
             afgame = (ContainsScene)game;
             this.position = position;
-            this.scale = scale;
             this.model = model;
             this.boundingSphere = new BoundingSphere(position, 5f);
         }
@@ -42,12 +40,6 @@ namespace AwesomeEngine
         {
             get { return model; }
             set { model = value; }
-        }
-
-        public Vector3 Scale
-        {
-            get { return scale; }
-            set { scale = value; }
         }
 
         public Vector3 Position
