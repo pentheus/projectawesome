@@ -24,12 +24,8 @@ namespace AwesomeEngine.Items
         // if picked up, turn on, turn off
         public override void runScript()
         {
-            if (picked)
-            {
-            }
-            else // if not picked
-            {
-            }
+            this.Player.Pickup(this);
+            this.picked = true;
         }
     }
 }

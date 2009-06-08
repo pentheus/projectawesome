@@ -24,6 +24,8 @@ namespace AwesomeEngine
         int health;
         List<Item> inventory;
         FlashLightItem flashlight;
+        FuseItem fuse;
+        Boolean hasFlashLight, hasFuse;
         Item currentitem;
         state currentplayerstate;
 
@@ -40,6 +42,9 @@ namespace AwesomeEngine
             health = 230;
             inventory = new List<Item>();
             flashlight = null;
+            fuse = null;
+            hasFlashLight = false;
+            hasFuse = false;
         }
 
         public Player(Game game, List<Item> inv, FlashLightItem light) :
@@ -49,6 +54,18 @@ namespace AwesomeEngine
             health = 230;
             inventory = inv;
             flashlight = light;
+        }
+
+        public void Pickup(FlashLightItem fl)
+        {
+            flashlight = fl;
+            hasFlashLight = true;
+        }
+
+        public void Pickup(FuseItem fi)
+        {
+            fuse = fi;
+            hasFuse = true;
         }
 
         protected override void LoadContent()
