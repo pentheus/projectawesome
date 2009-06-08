@@ -283,6 +283,41 @@ namespace AfterDarkGame
             base.Draw(gameTime);
         }
 
+        public void DrawBoundingBox(BoundingBox boundingBox)
+        {
+            VertexPositionColor[] points = new VertexPositionColor[8];
+            Vector3[] corners = boundingBox.GetCorners();
+
+            points[0] = new VertexPositionColor(corners[1], Color.Red);
+            points[1] = new VertexPositionColor(corners[0], Color.Red);
+            points[2] = new VertexPositionColor(corners[2], Color.Red);
+            points[3] = new VertexPositionColor(corners[3], Color.Red);
+            points[4] = new VertexPositionColor(corners[5], Color.Red);
+            points[5] = new VertexPositionColor(corners[4], Color.Red);
+            points[6] = new VertexPositionColor(corners[6], Color.Red);
+            points[7] = new VertexPositionColor(corners[7], Color.Red);
+
+            short[] inds = {0, 1, 0, 2, 1, 3, 2, 3,
+                            4, 5, 4, 6, 5, 7, 6, 7,
+                            0, 4, 1, 5, 2, 6, 3, 7};
+
+            GraphicsDevice.VertexDeclaration = new VertexDeclaration(GraphicsDevice, VertexPositionColor.VertexElements);
+
+            basicEffect.World = Matrix.Identity;
+            basicEffect.View = mainCamera.View;
+            basicEffect.Projection = mainCamera.Projection;
+            basicEffect.DiffuseColor = new Vector3(0.6f, 0f, 0f);
+
+            basicEffect.Begin(SaveStateMode.SaveState);
+            for (int pass = 0; pass < basicEffect.CurrentTechnique.Passes.Count; pass++)
+            {
+                basicEffect.CurrentTechnique.Passes[pass].Begin();
+                GraphicsDevice.DrawUserIndexedPrimitives<VertexPositionColor>(PrimitiveType.LineList, points, 0, 8, inds, 0, 12);
+                basicEffect.CurrentTechnique.Passes[pass].End();
+            }
+            basicEffect.End();
+        }
+
         public SceneManager GetScene()
         {
             return sceneMgr;
