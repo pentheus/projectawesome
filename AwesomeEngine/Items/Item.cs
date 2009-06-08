@@ -14,11 +14,13 @@ namespace AwesomeEngine
         public bool movable, pickable, picked;
         public BoundingSphere itemAOE; // bounding sphere for the object. when intersected, it is either picked up or pushed
         private int radius; // INITIALIZE THIS FIRST
+        Player player;
 
         public Item(Game game, ModelInfo model) // initializing movable, pickable, picked as false
             : base(game)
         {
             afgame = (ContainsScene)game;
+            player = afgame.GetPlayer();
             this.model = model;
             movable = false;
             pickable = false;
@@ -50,8 +52,22 @@ namespace AwesomeEngine
         }
 
         public abstract void runScript();
-        
 
+        public override void Update(GameTime gameTime)
+        {
+            if (pickable && !picked)
+            {
+                if (itemAOE.Contains(player.Position) == ContainmentType.Contains)
+                {
+                    runScript();
+                }
+            }
+        }
+
+        public Player Player
+        {
+            get { return player; }
+        }
 
         public BoundingSphere BoundingSphere
         {

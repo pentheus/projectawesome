@@ -120,11 +120,12 @@ namespace AwesomeEngine
             angle = (float) Math.Asin(opposite / hypotenuse);
 
             Console.WriteLine(angle + "angle");
-            rotation = Matrix.CreateRotationY(MathHelper.ToRadians(angle));
-            if (angle + (float)Math.PI / 2 > 0 && angle + (float)Math.PI / 2 <= Math.PI)
-            {
-                model.Rotation = new Vector3(0, angle + (float)Math.PI / 2, 0);
-            }
+            //rotation = Matrix.CreateRotationY(MathHelper.ToRadians(angle));
+            //if (MathHelper.ToDegrees(angle) >= 0 && MathHelper.ToDegrees(angle) <= 45)
+            //{
+            //    model.Rotation = new Vector3(0, MathHelper.ToDegrees(angle), 0);
+            //}
+            model.Rotation = new Vector3(0, CalculateNewRotation(player.Position), 0);
             moveVector = new Vector3((float)(player.Position.X-model.Position.X)/450, 0, (float)(player.Position.Z-model.Position.Z)/450);
             model.Position = model.Position + moveVector;
             updateSpheres();
@@ -151,33 +152,33 @@ namespace AwesomeEngine
                     quadrant = 1;
                     adjacent = playerZ - enemyZ;
                     opposite = playerX - enemyX;
-                    quadAngle = 90;
+                    quadAngle = 180;
                 }
                 else if (enemyX >= playerX && enemyZ <= playerZ) // second quadrant
                 {
                     quadrant = 2;
                     adjacent = enemyX - playerX;
                     opposite = playerZ - enemyZ;
-                    quadAngle = 180;
+                    quadAngle = 90;
                 }
                 else if (enemyX >= playerX && enemyZ >= playerZ) // third quadrant
                 {
                     quadrant = 3;
                     adjacent = enemyZ - playerZ;
                     opposite = enemyX - playerX;
-                    quadAngle = 270;
+                    quadAngle = 0;
                 }
                 else //if (enemyX <= playerX && enemyZ >= playerZ) // fourth quadrant
                 {
                     quadrant = 4;
                     adjacent = playerX - enemyX;
                     opposite = enemyZ - playerZ;
-                    quadAngle = 360;
+                    quadAngle = -90;
                 }
 
                 angle = (float)Math.Atan(opposite / adjacent);
 
-                return (quadAngle - angle);
+                return (quadAngle + MathHelper.ToDegrees(angle));
             }
             
 
