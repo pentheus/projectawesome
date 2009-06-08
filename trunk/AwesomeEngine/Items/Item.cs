@@ -72,6 +72,7 @@ namespace AwesomeEngine
         public BoundingSphere BoundingSphere
         {
             get { return itemAOE.Transform(WorldMatrix); }
+            set { model.BoundingSphere = value; }
         }
 
         public Matrix WorldMatrix

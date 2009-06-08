@@ -101,6 +101,7 @@ namespace AwesomeEngine
 
                     //Create the ModelInfo object
                     ModelInfo obj = new ModelInfo(objvect, objrot, objscale, objmodel, modelname);
+                    obj.BoundingSphere = ReadSphere(node.SelectSingleNode("BoundingSphere"));
                     scene.AddObject(obj);
                 }
                 catch (FormatException)
@@ -172,8 +173,12 @@ namespace AwesomeEngine
                             item = null;
                             break;
                     }
-                    if(item!=null)
+                    if (item != null)
+                    {
+
+                        item.BoundingSphere = ReadSphere(node.SelectSingleNode("BoundingSphere"));
                         scene.AddItem(item);
+                    }
                 }
                 catch (FormatException)
                 {
@@ -198,11 +203,6 @@ namespace AwesomeEngine
                     float objz = (float)Convert.ToDouble(node.SelectSingleNode("posz").InnerText);
                     Vector3 objvect = new Vector3(objx, objy, objz);
 
-                    float objscalex = (float)Convert.ToDouble(node.SelectSingleNode("scalex").InnerText);
-                    float objscaley = (float)Convert.ToDouble(node.SelectSingleNode("scaley").InnerText);
-                    float objscalez = (float)Convert.ToDouble(node.SelectSingleNode("scalez").InnerText);
-                    Vector3 objscale = new Vector3(objscalex, objscaley, objscalez);
-
                     String modelname = node.SelectSingleNode("model").InnerText;
                     Model objmodel;
                     if (modelsloaded.Contains(modelname))
@@ -224,26 +224,45 @@ namespace AwesomeEngine
                     switch (itemtype)
                     {
                         case "SpawnEntity":
-                            entity = new SpawnEntity((Game)game, objmodel, objvect, objscale);
-                            break;
-                        case "EnemySpawnEntity":
-                            entity = new EnemySpawnEntity((Game)game, objmodel, objvect, objscale);
+                            entity = new SpawnEntity((Game)game, objmodel, objvect);
                             break;
                         case "TriggerEntity":
-                            entity = new TriggerEntity((Game)game, objmodel, objvect, objscale);
+                            entity = new TriggerEntity((Game)game, objmodel, objvect);
                             break;
                         default:
                             entity = null;
                             break;
                     }
-                    if(entity!=null)
+                    if (entity != null)
+                    {
+                        entity.BoundingSphere = ReadSphere(node.SelectSingleNode("BoundingSphere"));
                         scene.AddEntity(entity);
+                    }
                 }
                 catch (FormatException)
                 {
                     Console.WriteLine("XML not properly formatted: Value in object with model "
                         + node.SelectSingleNode("model").InnerText);
                 }
+            }
+        }
+
+        private BoundingSphere ReadSphere(XmlNode node)
+        {
+            try
+            {
+                float spherex = (float)Convert.ToDouble(node.SelectSingleNode("sphereposx").InnerText);
+                float spherey = (float)Convert.ToDouble(node.SelectSingleNode("sphereposy").InnerText);
+                float spherez = (float)Convert.ToDouble(node.SelectSingleNode("sphereposz").InnerText);
+                Vector3 spherepos = new Vector3(spherex, spherey, spherez);
+                float sphererad = (float)Convert.ToDouble(node.SelectSingleNode("sphereradius").InnerText);
+                BoundingSphere newsphere = new BoundingSphere(spherepos, sphererad);
+                return newsphere;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Bounding sphere reading failed.");
+                return new BoundingSphere();
             }
         }
 
@@ -339,7 +358,10 @@ namespace AwesomeEngine
                 scenesaver.WriteStartElement("model");
                 scenesaver.WriteString(obj.FileName);
                 scenesaver.WriteEndElement();
+                //Save prop's bounding sphere
+                SaveSphere(scenesaver, obj);
                 scenesaver.WriteEndElement();
+
             }
         }
 
@@ -393,6 +415,9 @@ namespace AwesomeEngine
                 scenesaver.WriteString(itemtype.ToString());
                 scenesaver.WriteEndElement();
 
+                //Save item's bounding sphere
+                SaveSphere(scenesaver, obj);
+
                 scenesaver.WriteEndElement();
             }
         }
@@ -403,10 +428,10 @@ namespace AwesomeEngine
             foreach (LogicEntity entity in entities)
             {
                 //Store the item's ModelInfo information
-                obj = new ModelInfo(entity.Position, Vector3.Zero, entity.Scale, entity.Model, "entity");
+                obj = new ModelInfo(entity.Position, Vector3.Zero, Vector3.Zero, entity.Model, "entity");
 
                 scenesaver.WriteStartElement("Entity");
-
+                
                 scenesaver.WriteStartElement("posx");
                 scenesaver.WriteString(obj.Position.X.ToString());
                 scenesaver.WriteEndElement();
@@ -415,16 +440,6 @@ namespace AwesomeEngine
                 scenesaver.WriteEndElement();
                 scenesaver.WriteStartElement("posz");
                 scenesaver.WriteString(obj.Position.Z.ToString());
-                scenesaver.WriteEndElement();
-
-                scenesaver.WriteStartElement("scalex");
-                scenesaver.WriteString(obj.Scale.X.ToString());
-                scenesaver.WriteEndElement();
-                scenesaver.WriteStartElement("scaley");
-                scenesaver.WriteString(obj.Scale.Y.ToString());
-                scenesaver.WriteEndElement();
-                scenesaver.WriteStartElement("scalez");
-                scenesaver.WriteString(obj.Scale.Z.ToString());
                 scenesaver.WriteEndElement();
 
                 scenesaver.WriteStartElement("model");
@@ -437,8 +452,32 @@ namespace AwesomeEngine
                 scenesaver.WriteString(entitytype.ToString());
                 scenesaver.WriteEndElement();
 
+                //Write the entity's bounding sphere
+                SaveSphere(scenesaver, obj);
+
                 scenesaver.WriteEndElement();
             }
+        }
+
+        private void SaveSphere(XmlTextWriter scenesaver, ModelInfo obj)
+        {
+            scenesaver.WriteStartElement("BoundingSphere");
+
+            scenesaver.WriteStartElement("sphereposx");
+            scenesaver.WriteString(obj.BoundingSphere.Center.X.ToString());
+            scenesaver.WriteEndElement();
+            scenesaver.WriteStartElement("sphereposy");
+            scenesaver.WriteString(obj.BoundingSphere.Center.Y.ToString());
+            scenesaver.WriteEndElement();
+            scenesaver.WriteStartElement("sphereposz");
+            scenesaver.WriteString(obj.BoundingSphere.Center.Z.ToString());
+            scenesaver.WriteEndElement();
+
+            scenesaver.WriteStartElement("sphereradius");
+            scenesaver.WriteString(obj.BoundingSphere.Radius.ToString());
+            scenesaver.WriteEndElement();
+
+            scenesaver.WriteEndElement();
         }
     }
 }

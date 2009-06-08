@@ -22,7 +22,7 @@ namespace AwesomeEngine
 
         public override void Update(GameTime gameTime)
         {
-            if ((Game as ContainsScene).GetPlayer != null)
+            if ((Game as ContainsScene).GetPlayer() != null)
             {
                 if (timer <= 3000 && !isSpawnAlive)
                     Spawn();
