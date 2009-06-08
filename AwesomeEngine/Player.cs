@@ -29,7 +29,7 @@ namespace AwesomeEngine
         Item currentitem;
         state currentplayerstate;
 
-        Vector3 playerPosition = new Vector3(0, 40, 0);
+        Vector3 playerPosition = new Vector3(0, 4, 0);
         Vector3 playerVelocity = Vector3.Zero;
         float playerRotation = 0.0f;
 

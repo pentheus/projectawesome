@@ -2,23 +2,65 @@
 <SceneInfo>
   <size>200</size>
   <WorldGeometry>
-    <scalex>2</scalex>
-    <scaley>2</scaley>
-    <scalez>2</scalez>
+    <scalex>1</scalex>
+    <scaley>1</scaley>
+    <scalez>1</scalez>
     <model>testscene_mdl</model>
   </WorldGeometry>
-  <Content>
+  <Conent>
     <Object>
-      <posx>20</posx>
-      <posy>15</posy>
-      <posz>20</posz>
-      <rotx>10</rotx>
-      <roty>50</roty>
-      <rotz>10</rotz>
+      <posx>0</posx>
+      <posy>0</posy>
+      <posz>0</posz>
+      <rotx>0</rotx>
+      <roty>0</roty>
+      <rotz>0</rotz>
+      <scalex>1</scalex>
+      <scaley>1</scaley>
+      <scalez>1</scalez>
+      <model>lamp_mdl</model>
+      <BoundingSphere>
+        <sphereposx>0.04038211</sphereposx>
+        <sphereposy>0.04710542</sphereposy>
+        <sphereposz>1.002445</sphereposz>
+        <sphereradius>6.715214</sphereradius>
+      </BoundingSphere>
+    </Object>
+    <Object>
+      <posx>17.5</posx>
+      <posy>0</posy>
+      <posz>0</posz>
+      <rotx>0</rotx>
+      <roty>0</roty>
+      <rotz>0</rotz>
+      <scalex>1</scalex>
+      <scaley>1</scaley>
+      <scalez>1</scalez>
+      <model>refrigerator_mdl</model>
+      <BoundingSphere>
+        <sphereposx>20.0416</sphereposx>
+        <sphereposy>4.207889</sphereposy>
+        <sphereposz>4.381783</sphereposz>
+        <sphereradius>25.59914</sphereradius>
+      </BoundingSphere>
+    </Object>
+    <Object>
+      <posx>17.5</posx>
+      <posy>0</posy>
+      <posz>-46.5</posz>
+      <rotx>0</rotx>
+      <roty>0</roty>
+      <rotz>0</rotz>
       <scalex>1</scalex>
       <scaley>1</scaley>
       <scalez>1</scalez>
       <model>toilet_mdl</model>
+      <BoundingSphere>
+        <sphereposx>19.9256</sphereposx>
+        <sphereposy>-1.112826</sphereposy>
+        <sphereposz>-44.5314</sphereposz>
+        <sphereradius>15.21343</sphereradius>
+      </BoundingSphere>
     </Object>
-  </Content>
+  </Conent>
 </SceneInfo>
