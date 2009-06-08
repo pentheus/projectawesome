@@ -175,7 +175,6 @@ struct LightShaftVS_Out
 	float4 Position : POSITION;
     float2 Position3D : TEXCOORD0;
     float2 TexCoord : TEXCOORD1;
-    float3 Center : TEXCOORD2;
 };
 
 LightShaftVS_Out LightShaftVS(float4 Pos : POSITION, float2 TexCoord : TEXCOORD1 )
@@ -194,8 +193,8 @@ float4 LightShaftPS(LightShaftVS_Out input) : COLOR0
 		color = tex2D(TextureSampler, input.TexCoord);
 	else
 		color = xDiffuseColor;
-	float att = max(0, (xRange-distance(input.Position3D, xCenter))/xRange);
-	return color*att;
+	//float att = smoothstep(0, xRange, distance(xCenter, input.Position3D));
+	return color*0.8;
 }
 
 technique LightShaftTest
