@@ -124,7 +124,7 @@ namespace AwesomeEngine
         {
             foreach (Ray ray in GetRays())
             {
-                if (ray.Intersects(boundingSphere))
+                //if (ray.Intersects(boundingSphere))
                     return true;
             }
             return false;

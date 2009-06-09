@@ -73,7 +73,7 @@ namespace AwesomeEngine
             skin.AddPrimitive(spheremesh, new MaterialProperties(1.0f, 1.0f, 1.0f));
              * */
 
-            Vector3 com = SetMass(20.0f);
+            Vector3 com = SetMass(100.0f);
             body.MoveTo(pos, Matrix.Identity);
             skin.ApplyLocalTransform(new Transform(-com, Matrix.Identity));
             body.Immovable = true;

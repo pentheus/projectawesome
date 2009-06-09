@@ -201,7 +201,7 @@
     <Compile Include="Models\shadowmonster.fbx">
       <Name>shadowmonster</Name>
       <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
+      <Processor>SkinnedModelProcessor</Processor>
     </Compile>
     <Compile Include="Textures\shadowmonster_Plane.tga">
       <Name>shadowmonster_Plane</Name>

@@ -63,5 +63,10 @@ namespace AwesomeEngine.Enemies
         {
             this.Player.TakeBossDamage();
         }
+
+        public override void TakeDamage(int damage)
+        {
+            health -= damage;
+        }
     }
 }

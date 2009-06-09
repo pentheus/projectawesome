@@ -44,6 +44,8 @@ namespace AwesomeEngine
             //Hardcoded Bounding Box values
             if (fileName == "PlayerMarine_mdla")
                 boxmesh = new Box(new Vector3(0, 0, 0), Matrix.Identity, new Vector3(12, 15f, 12));
+            else if (fileName == "shadowmonster")
+                boxmesh = new Box(new Vector3(0, 0, 0), Matrix.Identity, new Vector3(12, 15f, 12));
             else
                 boxmesh = null;
 
