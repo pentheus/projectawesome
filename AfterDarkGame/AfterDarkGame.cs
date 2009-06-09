@@ -235,8 +235,8 @@ namespace AfterDarkGame
             DrawText();
             //sceneMgr.DrawModel(cursor);
             player.Draw();
-            //DrawRays();
-            sceneMgr.DrawModel(shadow.Model);
+            DrawRays();
+            sceneMgr.DrawAnimatedModel(shadow.Model);
             //sceneMgr.DrawAnimatedModel(shadow.Model);
             base.Draw(gameTime);
         }
@@ -266,7 +266,7 @@ namespace AfterDarkGame
                 for (int pass = 0; pass < basicEffect.CurrentTechnique.Passes.Count; pass++)
                 {
                     basicEffect.CurrentTechnique.Passes[pass].Begin();
-                    //GraphicsDevice.DrawUserIndexedPrimitives<VertexPositionColor>(Microsoft.Xna.Framework.Graphics.PrimitiveType.LineList, points, 0, 8, inds, 0, 12);
+                    GraphicsDevice.DrawUserIndexedPrimitives<VertexPositionColor>(Microsoft.Xna.Framework.Graphics.PrimitiveType.LineList, points, 0, 4, inds, 0, 3);
                     basicEffect.CurrentTechnique.Passes[pass].End();
                 }
                 basicEffect.End();

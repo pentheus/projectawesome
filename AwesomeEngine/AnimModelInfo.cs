@@ -45,7 +45,7 @@ namespace AwesomeEngine
             if (fileName == "PlayerMarine_mdla")
                 boxmesh = new Box(new Vector3(0, 0, 0), Matrix.Identity, new Vector3(12, 15f, 12));
             else if (fileName == "shadowmonster")
-                boxmesh = new Box(new Vector3(0, 0, 0), Matrix.Identity, new Vector3(12, 15f, 12));
+                boxmesh = new Box(new Vector3(0, 0, 0), Matrix.Identity, new Vector3(22f, 31f, 12f));
             else
                 boxmesh = null;
 
@@ -54,7 +54,7 @@ namespace AwesomeEngine
 
             Vector3 com = SetMass(5.0f);
 
-            body.MoveTo(new Vector3(pos.X, pos.Y+15, pos.Z), Matrix.Identity);
+            body.MoveTo(new Vector3(pos.X, pos.Y, pos.Z), Matrix.Identity);
             skin.ApplyLocalTransform(new Transform(-com, Matrix.Identity));
             body.EnableBody();
             body.AllowFreezing = false;

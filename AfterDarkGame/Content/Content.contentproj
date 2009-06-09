@@ -202,6 +202,8 @@
       <Name>shadowmonster</Name>
       <Importer>FbxImporter</Importer>
       <Processor>SkinnedModelProcessor</Processor>
+      <ProcessorParameters_TexturePath>../Textures</ProcessorParameters_TexturePath>
+      <ProcessorParameters_ModelRotate>265, 180, 0</ProcessorParameters_ModelRotate>
     </Compile>
     <Compile Include="Textures\shadowmonster_Plane.tga">
       <Name>shadowmonster_Plane</Name>

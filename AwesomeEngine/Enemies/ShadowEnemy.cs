@@ -18,7 +18,7 @@ namespace AwesomeEngine.Enemies
         //public ShadowEnemy(Game game, SceneManager scene, AnimModelInfo model): 
             base(game, scene, model)
         {
-            this.updateSeekingSphere(120); // updated the seeking bounding sphere's radius to 30 units
+            this.updateSeekingSphere(220); // updated the seeking bounding sphere's radius to 30 units
             this.updateAttackingSphere(20); // updated the attacking bounding sphere's radius to 8 units
             accumulator = 0;
             cooldown = 2000;
@@ -107,7 +107,7 @@ namespace AwesomeEngine.Enemies
 
         public override void TakeDamage(int damage)
         {
-            damagetimer = 1000;
+            damagetimer = 120;
             SetState(state.Damaged);
             Model.animateModel("Damage");
         }
