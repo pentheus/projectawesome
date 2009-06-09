@@ -12,8 +12,9 @@ namespace AwesomeEngine.Enemies
         private int accumulator, currentTime, cooldown;
         private int hp = 10;
         private SpawnEntity spawnPoint;
+        private int damagetimer = 0;
 
-        public ShadowEnemy(Game game, SceneManager scene, ModelInfo model):
+        public ShadowEnemy(Game game, SceneManager scene, AnimModelInfo model):
         //public ShadowEnemy(Game game, SceneManager scene, AnimModelInfo model): 
             base(game, scene, model)
         {
@@ -61,6 +62,7 @@ namespace AwesomeEngine.Enemies
                 if (accumulator >= cooldown)
                 {
                     Attack();
+                    Model.animateModel("Attack");
                     accumulator -= cooldown;
                 }
             }
@@ -68,6 +70,7 @@ namespace AwesomeEngine.Enemies
             else if (this.enemySeekingSphere.Contains(this.Player.Position) == ContainmentType.Contains)
             {
                 this.State = state.Seeking;
+                Model.animateModel("Walk");
             }
 
             else
@@ -77,18 +80,34 @@ namespace AwesomeEngine.Enemies
         }
         public override void ActDamaged()
         {
-            //Insert dmg timers
-            //hp--;
+            if (damagetimer == 0)
+            {
+                SetState(state.Idle);
+                Model.animateModel("Idle");
+                return;
+            }
+
             if (hp <= 0)
             {
                 spawnPoint.IsAlive = false;
                 Game.Components.Remove(this);
             }
+
+            damagetimer--;
+            
         }
 
         public override void Attack()
         {
             this.Player.TakeRegularDamage();
+        }
+
+        public new void TakeDamage(int damage)
+        {
+            damagetimer = 1000;
+            SetState(state.Damaged);
+            Model.animateModel("Damage");
+            base.TakeDamage(damage);
         }
 
         public SpawnEntity SpawnPoint
