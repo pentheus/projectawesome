@@ -73,7 +73,6 @@ namespace AwesomeEngine
             SkinnedModel playermodel = new SkinnedModel();
             ModelInfo.LoadModel(ref playermodel, game.GetScene().Textures, game.GetContent(), game.GetGraphics(), "PlayerMarine_mdla", game.GetScene().Effect);
             model = new AnimModelInfo(playerPosition, Vector3.Zero, new Vector3(1f), playermodel, "PlayerMarine_mdla", (Game)this.game);
-            Console.WriteLine(model.Body.Position);
             Model lightmodel = new Model();
             ModelInfo.LoadModel(ref lightmodel, game.GetScene().Textures, game.GetContent(), game.GetGraphics(), "sphere_mdl", game.GetScene().Effect);
             ModelInfo tempinfo = new ModelInfo(Vector3.Zero, Vector3.Zero, Vector3.One, lightmodel, "sphere_mdl");
@@ -144,7 +143,6 @@ namespace AwesomeEngine
             model.Rotation = new Vector3(0, playerRotation, 0);
             model.AnimationController.Update(gameTime.ElapsedGameTime, Matrix.Identity);
             playerPosition.Y = model.Body.Position.Y;
-            Console.WriteLine(model.Body.Position);
             model.Body.Velocity = Vector3.Transform(playerVelocity, Matrix.CreateRotationY(MathHelper.ToRadians(playerRotation)));
             /*
             playerPosition += Vector3.Transform(playerVelocity, Matrix.CreateRotationY(MathHelper.ToRadians(playerRotation)));

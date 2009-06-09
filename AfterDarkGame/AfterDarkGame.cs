@@ -122,56 +122,14 @@ namespace AfterDarkGame
             spriteBatch = new SpriteBatch(GraphicsDevice);
             spriteFont = Content.Load<SpriteFont>(@"Fonts\DemoFont");
 
-            //AnimModelInfo.LoadModel(ref enemyModel, sceneMgr.Textures, Content, GraphicsDevice, "PlayerMarine_mdla", sceneMgr.Effect);
             ModelInfo.LoadModel(ref enemyModel, sceneMgr.Textures, Content, GraphicsDevice, "shadowmonster", sceneMgr.Effect);
-            enemyModelInfo = new AnimModelInfo(new Vector3(50, 0, 50), Vector3.Zero, Vector3.One, enemyModel, "shadowmonster", this);
-            //enemyModelInfo = new AnimModelInfo(new Vector3(10, 10, 10), Vector3.Zero, Vector3.One, player.Model.AnimatedModel, "PlayerMarine_mdla");
+            enemyModelInfo = new AnimModelInfo(new Vector3(25, 15, 15), Vector3.Zero, new Vector3(15), enemyModel, "shadowmonster", this);
             shadow = new ShadowEnemy(this, sceneMgr, enemyModelInfo);
             Components.Add(shadow);
             
             sceneMgr.MainCamera = mainCamera;
 
             DirectoryInfo d = new DirectoryInfo(Content.RootDirectory + "\\Models\\");
-            //FileInfo[] files = d.GetFiles("*mdl.xnb");
-
-            /*
-            foreach (FileInfo f in files)
-            {
-                string[] split = f.ToString().Split('.');
-                Model model = new Model();
-                ModelInfo.LoadModel(ref model, sceneMgr.Textures, Content, graphics.GraphicsDevice, split[0], sceneMgr.Effect);
-
-                ModelInfo modelInfo = new ModelInfo(new Vector3(1f, 1f, 1f), Vector3.Zero, new Vector3(0.1f), model, split[0]);
-                if (split[0].ToLower().Contains("item"))
-                {
-                    if (split[0].ToLower().Contains("battery"))
-                    {
-                        items.Add(new BatteryItem(this, modelInfo));
-                    }
-                    else if (split[0].ToLower().Contains("fuse"))
-                    {
-                        items.Add(new FuseItem(this, modelInfo));
-                    }
-                    else if (split[0].ToLower().Contains("glowstick"))
-                    {
-                        items.Add(new GlowStickItem(this, modelInfo));
-                    }
-                    else if (split[0].ToLower().Contains("flash"))
-                    {
-                        //items.Add(new FuseItem(this, modelInfo));
-                    }
-
-                }
-                else
-                {
-                    props.Add(modelInfo.FileName, model);
-                    Console.WriteLine("Object added");
-                    cursor = modelInfo;
-                }
-
-                Console.WriteLine(f.ToString());
-            }
-             * */
 
             OpenLevel(Content.RootDirectory + "/scene.xml");
             // TODO: use this.Content to load your game content here
@@ -239,6 +197,7 @@ namespace AfterDarkGame
             //Integrating phyiscs system
             float timeStep = (float)gameTime.ElapsedGameTime.Ticks / TimeSpan.TicksPerSecond;
             PhysicsSystem.CurrentPhysicsSystem.Integrate(timeStep);
+            Console.WriteLine("Shadow's position" + shadow.Model.Position);
             base.Update(gameTime);
         }
 
@@ -275,9 +234,9 @@ namespace AfterDarkGame
             // TODO: Add your drawing code here
             DrawText();
             //sceneMgr.DrawModel(cursor);
-            sceneMgr.DrawModel(shadow.Model);
             player.Draw();
-            DrawRays();
+            //DrawRays();
+            sceneMgr.DrawModel(shadow.Model);
             //sceneMgr.DrawAnimatedModel(shadow.Model);
             base.Draw(gameTime);
         }

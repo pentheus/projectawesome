@@ -83,7 +83,7 @@ namespace AwesomeEngine.Enemies
         }
         public override void ActDamaged()
         {
-            if (damagetimer == 0)
+            if (damagetimer <= 0)
             {
                 SetState(state.Idle);
                 Model.animateModel("Idle");
@@ -105,12 +105,11 @@ namespace AwesomeEngine.Enemies
             this.Player.TakeRegularDamage();
         }
 
-        public new void TakeDamage(int damage)
+        public override void TakeDamage(int damage)
         {
             damagetimer = 1000;
             SetState(state.Damaged);
             Model.animateModel("Damage");
-            base.TakeDamage(damage);
         }
 
         public SpawnEntity SpawnPoint

@@ -35,10 +35,7 @@ namespace AwesomeEngine
             health = 100;
         }
 
-        public void TakeDamage(int damage)
-        {
-            health -= damage;
-        }
+        public abstract void TakeDamage(int damage);
 
         public abstract void Attack();
 
@@ -104,9 +101,12 @@ namespace AwesomeEngine
                     Console.WriteLine("Taking Damage");
                     break;
             }
-            if(this.player.DidDamage(this.enemyAttackingSphere) && currentstate != state.Damaged)
-                TakeDamage(player.Flashlight.Damage);
-            Console.WriteLine(health + " - Health");
+            if (this.player.DidDamage(this.enemyAttackingSphere) && currentstate == state.Damaged)
+            {
+                this.TakeDamage(player.Flashlight.Damage);
+                Console.WriteLine("Took damage");
+            }
+            model.AnimationController.Update(gameTime.ElapsedGameTime, Matrix.Identity);
             updateSpheres();
         }
 
@@ -121,7 +121,7 @@ namespace AwesomeEngine
             hypotenuse = (float) Math.Sqrt((opposite * opposite) + (adjacent * adjacent));
             angle = (float) Math.Asin(opposite / hypotenuse);
 
-            Console.WriteLine(angle + "angle");
+            //Console.WriteLine(angle + "angle");
             //rotation = Matrix.CreateRotationY(MathHelper.ToRadians(angle));
             //if (MathHelper.ToDegrees(angle) >= 0 && MathHelper.ToDegrees(angle) <= 45)
             //{

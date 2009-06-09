@@ -33,3 +33,5 @@ Content\Textures\PlayerMarineNormal_0.xnb
 Content\Models\ShipDiffuse_0.xnb
 Content\Textures\WeaponMachineGunDiffuse_0.xnb
 Content\Textures\shadowmonster_Plane.xnb
+Content\Models\shadowmonster_Plane_0.xnb
+Content\Models\shadowmonster.xnb
