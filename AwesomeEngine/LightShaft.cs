@@ -121,5 +121,15 @@ namespace AwesomeEngine
             rays[2] = rightRay;
             return rays;
         }
+
+        public Boolean Intersects(BoundingSphere boundingSphere)
+        {
+            foreach (Ray ray in GetRays())
+            {
+                if (ray.Intersects(boundingSphere))
+                    return true;
+            }
+            return false;
+        }
     }
 }
