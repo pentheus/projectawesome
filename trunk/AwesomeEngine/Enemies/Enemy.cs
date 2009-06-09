@@ -33,6 +33,7 @@ namespace AwesomeEngine
             enemySeekingSphere = new BoundingSphere(this.model.Position, seekRadius);
             enemyAttackingSphere = new BoundingSphere(this.model.Position, attackRadius);
             health = 100;
+            model.Body.DisableBody();
         }
 
         public abstract void TakeDamage(int damage);
@@ -101,7 +102,7 @@ namespace AwesomeEngine
                     Console.WriteLine("Taking Damage");
                     break;
             }
-            if (this.player.DidDamage(this.enemyAttackingSphere) && currentstate == state.Damaged)
+            if (this.player.DidDamage(this.enemyAttackingSphere) && currentstate != state.Damaged && currentstate != state.Attacking)
             {
                 this.TakeDamage(player.Flashlight.Damage);
                 Console.WriteLine("Took damage");

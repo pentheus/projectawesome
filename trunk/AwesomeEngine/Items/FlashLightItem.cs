@@ -72,5 +72,11 @@ namespace AwesomeEngine.Items
         {
             get { return dps; }
         }
+
+        public int BatteryLife
+        {
+            get { return battLife; }
+            set { battLife = value; }
+        }
     }
 }

@@ -235,4 +235,4 @@ C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\obj\x86\De
 C:\Documents and Settings\Alex\My Documents\Inf 125\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Models\sphere_mdl.xnb
 C:\Documents and Settings\Alex\My Documents\Inf 125\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Textures\shadowmonster_Plane.xnb
 C:\Documents and Settings\Alex\My Documents\Inf 125\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Models\shadowmonster.xnb
-C:\Documents and Settings\Alex\My Documents\Inf 125\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Models\shadowmonster_Plane_0.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Textures\shadowmonster_Plane_0.xnb

@@ -29,7 +29,7 @@ namespace AwesomeEngine
         Item currentitem;
         state currentplayerstate;
 
-        Vector3 playerPosition = new Vector3(0, 4, 0);
+        Vector3 playerPosition = new Vector3(0, 9, 0);
         Vector3 playerVelocity = Vector3.Zero;
         float playerRotation = 0.0f;
 
@@ -191,7 +191,7 @@ namespace AwesomeEngine
 
         public bool DidDamage(BoundingSphere enemysphere)
         {
-            return true;//flashlight.Light.Intersects(enemysphere);
+            return flashlight.Light.Intersects(enemysphere);
         }
 
         public Vector3 Position

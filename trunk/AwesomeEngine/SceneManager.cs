@@ -158,13 +158,13 @@ namespace AwesomeEngine
                 foreach (Effect effect in mesh.Effects)
                 {
                     effect.CurrentTechnique = drawModelEffect.Techniques["AnimatedLambertTest"];
-                    effect.Parameters["xWorld"].SetValue(model.WorldMatrix);
+                    effect.Parameters["xWorld"].SetValue(Matrix.CreateRotationY(MathHelper.ToRadians(model.Rotation.Y)) * Matrix.CreateTranslation(model.Body.Position));
                     effect.Parameters["xView"].SetValue(mainCamera.View);
                     effect.Parameters["xProjection"].SetValue(mainCamera.Projection);
                     effect.Parameters["xCenter"].SetValue(model.Position);
                     effect.Parameters["xRange"].SetValue(4f);
                 }
-                //mesh.Draw();
+                mesh.Draw();
             }
         }
 

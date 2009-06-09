@@ -63,15 +63,16 @@ namespace AwesomeEngine
 
             //Update light rays
             Vector3 origin = game.GetPlayer().Position;
-            Vector3 uniZ = new Vector3(0, lightShaft.Position.Y, 1);
+            origin.Y = 0;
+            Vector3 direction = new Vector3(0, lightShaft.Position.Y, 63);
             leftRay.Position = new Vector3(origin.X, lightShaft.Position.Y, origin.Z);
             centerRay.Position = new Vector3(origin.X, lightShaft.Position.Y, origin.Z);
             rightRay.Position = new Vector3(origin.X, lightShaft.Position.Y, origin.Z);
 
             float rot = game.GetPlayer().Rotation.Y;
-            leftRay.Direction = Vector3.Transform(uniZ, Matrix.CreateRotationY(MathHelper.ToRadians(rot + 15f)));
-            centerRay.Direction = Vector3.Transform(uniZ, Matrix.CreateRotationY(MathHelper.ToRadians(rot)));
-            rightRay.Direction = Vector3.Transform(uniZ, Matrix.CreateRotationY(MathHelper.ToRadians(rot - 15f)));
+            leftRay.Direction = Vector3.Transform(direction, Matrix.CreateRotationY(MathHelper.ToRadians(rot+8)))+origin;
+            centerRay.Direction = Vector3.Transform(direction, Matrix.CreateRotationY(MathHelper.ToRadians(rot)))+origin;
+            rightRay.Direction = Vector3.Transform(direction, Matrix.CreateRotationY(MathHelper.ToRadians(rot-8)))+origin;
         
             base.Update(gameTime);
         }
@@ -124,7 +125,7 @@ namespace AwesomeEngine
         {
             foreach (Ray ray in GetRays())
             {
-                //if (ray.Intersects(boundingSphere))
+                if (ray.Intersects(boundingSphere).HasValue)
                     return true;
             }
             return false;
