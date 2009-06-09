@@ -22,6 +22,7 @@ namespace AwesomeEngine
             afgame = (ContainsScene)game;
             player = afgame.GetPlayer();
             this.model = model;
+            this.model.Body.DisableBody();
             movable = false;
             pickable = false;
             picked = false;

@@ -74,8 +74,14 @@ namespace AwesomeEngine
             ModelInfo.LoadModel(ref playermodel, game.GetScene().Textures, game.GetContent(), game.GetGraphics(), "PlayerMarine_mdla", game.GetScene().Effect);
             model = new AnimModelInfo(playerPosition, Vector3.Zero, new Vector3(1f), playermodel, "PlayerMarine_mdla", (Game)this.game);
             Console.WriteLine(model.Body.Position);
+            Model lightmodel = new Model();
+            ModelInfo.LoadModel(ref lightmodel, game.GetScene().Textures, game.GetContent(), game.GetGraphics(), "sphere_mdl", game.GetScene().Effect);
+            ModelInfo tempinfo = new ModelInfo(Vector3.Zero, Vector3.Zero, Vector3.One, lightmodel, "sphere_mdl");
+            flashlight = new FlashLightItem((Game) game, tempinfo);
+            hasFlashLight = true;
             //Load shaders
             drawModelEffect = game.GetContent().Load<Effect>("Simple");
+            //Get worldTransforms, id = 16
         }
 
         public override void Update(GameTime gameTime)
@@ -144,6 +150,8 @@ namespace AwesomeEngine
 
             model.Body.MoveTo(playerPosition, Matrix.Identity);
              * */
+            if (flashlight != null)
+                flashlight.model.Position = model.AnimationController.SkinnedBoneTransforms[12].Translation;
             base.Update(gameTime);
         }
 
@@ -178,6 +186,13 @@ namespace AwesomeEngine
                 }
                 mesh.Draw();
             }
+            if (flashlight != null)
+                game.GetScene().DrawModel(flashlight.model);
+        }
+
+        public bool DidDamage(BoundingSphere enemysphere)
+        {
+            return flashlight.Light.Intersects(enemysphere);
         }
 
         public Vector3 Position
@@ -224,6 +239,11 @@ namespace AwesomeEngine
         public Vector3 Rotation
         {
             get { return model.Rotation; }
+        }
+
+        public FlashLightItem Flashlight
+        {
+            get { return flashlight; }
         }
     }
 }

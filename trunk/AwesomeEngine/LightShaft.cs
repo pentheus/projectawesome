@@ -23,11 +23,14 @@ namespace AwesomeEngine
         Model lightModel;
         Effect lightEffect;
         ContainsScene game;
+        Ray leftRay, centerRay, rightRay;
         
         public LightShaft(Game game)
             : base(game)
         {
             this.game = (ContainsScene)game;
+            new Vector3(lightShaft.Position.X + 5, lightShaft.Position.Y + 5, lightShaft.Position.Z + 20);
+            
         }
 
         /// <summary>
@@ -36,6 +39,7 @@ namespace AwesomeEngine
         /// </summary>
         public override void Initialize()
         {
+            initRays();
             base.Initialize();
         }
 
@@ -58,6 +62,19 @@ namespace AwesomeEngine
             //Calculate Translated Position
             lightShaft.Position = game.GetPlayer().Position + Vector3.Transform((new Vector3(0, 15f, 35f)), Matrix.CreateRotationY(MathHelper.ToRadians(game.GetPlayer().Rotation.Y)));
             lightShaft.Rotation = game.GetPlayer().Rotation;
+
+            //Update light rays
+            Vector3 origin = game.GetPlayer().Position;
+            Vector3 uniZ = new Vector3(0, lightShaft.Position.Y, 1);
+            leftRay.Position = new Vector3(origin.X, lightShaft.Position.Y, origin.Z);
+            centerRay.Position = new Vector3(origin.X, lightShaft.Position.Y, origin.Z);
+            rightRay.Position = new Vector3(origin.X, lightShaft.Position.Y, origin.Z);
+
+            float rot = game.GetPlayer().Rotation.Y;
+            leftRay.Direction = Vector3.Transform(uniZ, Matrix.CreateRotationY(MathHelper.ToRadians(rot + 15f)));
+            centerRay.Direction = Vector3.Transform(uniZ, Matrix.CreateRotationY(MathHelper.ToRadians(rot)));
+            rightRay.Direction = Vector3.Transform(uniZ, Matrix.CreateRotationY(MathHelper.ToRadians(rot - 15f)));
+        
             base.Update(gameTime);
         }
 
@@ -84,6 +101,25 @@ namespace AwesomeEngine
                 mesh.Draw();
             }
             base.Draw(gameTime);
+        }
+
+        public void initRays()
+        {
+            Vector3 uniZ = Vector3.UnitZ;
+            Vector3 origin = game.GetPlayer().Position;
+            float rot = game.GetPlayer().Rotation.Y;
+            leftRay = new Ray(origin, Vector3.Transform(uniZ, Matrix.CreateRotationY(MathHelper.ToRadians(rot+15f))));
+            centerRay = new Ray(origin, Vector3.Transform(uniZ, Matrix.CreateRotationY(MathHelper.ToRadians(rot))));
+            rightRay = new Ray(origin, Vector3.Transform(uniZ, Matrix.CreateRotationY(MathHelper.ToRadians(rot-15f))));
+        }
+
+        public Ray[] GetRays()
+        {
+            Ray[] rays = new Ray[3];
+            rays[0] = leftRay;
+            rays[1] = centerRay;
+            rays[2] = rightRay;
+            return rays;
         }
     }
 }

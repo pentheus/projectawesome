@@ -50,7 +50,7 @@ namespace AwesomeEngine
             if(boxmesh != null)
                 skin.AddPrimitive(boxmesh, new MaterialProperties(0f, 0f, 0f));
 
-            Vector3 com = SetMass(100.0f);
+            Vector3 com = SetMass(5.0f);
 
             body.MoveTo(new Vector3(pos.X, pos.Y+15, pos.Z), Matrix.Identity);
             skin.ApplyLocalTransform(new Transform(-com, Matrix.Identity));

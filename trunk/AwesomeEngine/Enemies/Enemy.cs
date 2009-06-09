@@ -11,16 +11,16 @@ namespace AwesomeEngine
     {
         public enum state { Idle, Seeking, Attacking, Damaged };
         public BoundingSphere enemySeekingSphere, enemyAttackingSphere;
-        private int seekRadius, attackRadius, health;
+        protected int seekRadius, attackRadius, health;
 
-        ModelInfo model;
+        protected AnimModelInfo model;
         //AnimModelInfo model;
-        SceneManager scene;
-        state currentstate;
-        ContainsScene afgame;
-        Player player;
+        protected SceneManager scene;
+        protected state currentstate;
+        protected ContainsScene afgame;
+        protected Player player;
 
-        public Enemy(Game game, SceneManager scene, ModelInfo model): base(game)
+        public Enemy(Game game, SceneManager scene, AnimModelInfo model): base(game)
         //public Enemy(Game game, SceneManager scene, AnimModelInfo model): base(game)
         {
             afgame = (ContainsScene)game;
@@ -35,9 +35,9 @@ namespace AwesomeEngine
             health = 100;
         }
 
-        public void TakeDamage()
+        public void TakeDamage(int damage)
         {
-            health -= 5;
+            health -= damage;
         }
 
         public abstract void Attack();
@@ -76,7 +76,7 @@ namespace AwesomeEngine
             enemyAttackingSphere.Center = model.Position;
         }
 
-        public ModelInfo Model
+        public AnimModelInfo Model
         //public AnimModelInfo Model
         {
             get { return model; }
@@ -104,7 +104,9 @@ namespace AwesomeEngine
                     Console.WriteLine("Taking Damage");
                     break;
             }
-            Console.WriteLine(player.Health + " - Health");
+            if(this.player.DidDamage(this.enemyAttackingSphere) && currentstate != state.Damaged)
+                TakeDamage(player.Flashlight.Damage);
+            Console.WriteLine(health + " - Health");
             updateSpheres();
         }
 
