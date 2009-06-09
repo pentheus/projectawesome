@@ -15,6 +15,7 @@ Content\Models\tv_mdl.xnb
 Content\Models\washer_mdl.xnb
 Content\Models\WeaponMachineGun_mdl.xnb
 Content\Models\cone_mdl.xnb
+Content\Models\sphere_mdl.xnb
 Content\Models\ShipDiffuse.xnb
 Content\Textures\floor_color_map.xnb
 Content\Textures\floor_height_map.xnb
@@ -31,7 +32,7 @@ Content\Textures\PlayerMarineDiffuse_0.xnb
 Content\Textures\PlayerMarineNormal_0.xnb
 Content\Models\ShipDiffuse_0.xnb
 Content\Textures\WeaponMachineGunDiffuse_0.xnb
-Content\Models\sphere_mdl.xnb
+Content\Textures\shadowmonster_Plane.xnb
 Content\ShadowMap.xnb
 Content\DrawModel.xnb
 Content\Simple.xnb

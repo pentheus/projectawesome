@@ -29,8 +29,6 @@ namespace AwesomeEngine
             : base(game)
         {
             this.game = (ContainsScene)game;
-            new Vector3(lightShaft.Position.X + 5, lightShaft.Position.Y + 5, lightShaft.Position.Z + 20);
-            
         }
 
         /// <summary>

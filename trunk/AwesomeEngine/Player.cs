@@ -78,6 +78,7 @@ namespace AwesomeEngine
             ModelInfo.LoadModel(ref lightmodel, game.GetScene().Textures, game.GetContent(), game.GetGraphics(), "sphere_mdl", game.GetScene().Effect);
             ModelInfo tempinfo = new ModelInfo(Vector3.Zero, Vector3.Zero, Vector3.One, lightmodel, "sphere_mdl");
             flashlight = new FlashLightItem((Game) game, tempinfo);
+            (this.game as Game).Components.Add(flashlight);
             hasFlashLight = true;
             //Load shaders
             drawModelEffect = game.GetContent().Load<Effect>("Simple");
@@ -192,7 +193,7 @@ namespace AwesomeEngine
 
         public bool DidDamage(BoundingSphere enemysphere)
         {
-            return flashlight.Light.Intersects(enemysphere);
+            return true;//flashlight.Light.Intersects(enemysphere);
         }
 
         public Vector3 Position
