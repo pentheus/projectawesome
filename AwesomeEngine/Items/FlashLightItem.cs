@@ -13,6 +13,8 @@ namespace AwesomeEngine.Items
         private int dps, battLife;
         private LightShaft light;
         private int battdraincounter = 1000;
+        Game game;
+        public bool firing = false;
 
         public FlashLightItem(Game game, ModelInfo model) :
             base(game, model)
@@ -20,9 +22,15 @@ namespace AwesomeEngine.Items
             this.setPickable(true);
             dps = 3; // medium damage per second
             battLife = 10; // initialized flashlight battery life to 10
-            light = new LightShaft(game);
+            this.game = game;
         }
 
+        public override void Initialize()
+        {
+            light = new LightShaft(game);
+            game.Components.Add(light);
+            base.Initialize();
+        }
         // scripts
         // if not picked up, if bounding spheres intersect, pick up
         // if picked up, turn on, turn off
@@ -48,7 +56,10 @@ namespace AwesomeEngine.Items
                 {
                     battdraincounter -= 1;
                 }
+                firing = true;
             }
+            else
+                firing = false;
             base.Update(gameTime);
         }
 

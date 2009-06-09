@@ -69,7 +69,6 @@ namespace AfterDarkGame
             sceneMgr = new SceneManager(this);
             lightShaft = new LightShaft(this);            //sceneMgr.UpdateOrder = 0;
             Components.Add(sceneMgr);
-            Components.Add(lightShaft);
             sceneMgr.DrawOrder=0;
             lightShaft.DrawOrder=10;
             this.IsMouseVisible = false;
@@ -124,8 +123,8 @@ namespace AfterDarkGame
             spriteFont = Content.Load<SpriteFont>(@"Fonts\DemoFont");
 
             //AnimModelInfo.LoadModel(ref enemyModel, sceneMgr.Textures, Content, GraphicsDevice, "PlayerMarine_mdla", sceneMgr.Effect);
-            ModelInfo.LoadModel(ref enemyModel, sceneMgr.Textures, Content,GraphicsDevice, "tv_mdl", sceneMgr.Effect);
-            enemyModelInfo = new AnimModelInfo(new Vector3(50, 0, 50), Vector3.Zero, Vector3.One,enemyModel , "tv_mdl", this);
+            ModelInfo.LoadModel(ref enemyModel, sceneMgr.Textures, Content, GraphicsDevice, "shadowmonster", sceneMgr.Effect);
+            enemyModelInfo = new AnimModelInfo(new Vector3(50, 0, 50), Vector3.Zero, Vector3.One, enemyModel, "shadowmonster", this);
             //enemyModelInfo = new AnimModelInfo(new Vector3(10, 10, 10), Vector3.Zero, Vector3.One, player.Model.AnimatedModel, "PlayerMarine_mdla");
             shadow = new ShadowEnemy(this, sceneMgr, enemyModelInfo);
             Components.Add(shadow);
@@ -285,66 +284,72 @@ namespace AfterDarkGame
 
         public void DrawRays()
         {
-            Microsoft.Xna.Framework.Ray[] rays = player.FlashLight.Light.GetRays();
-            VertexPositionColor[] points = new VertexPositionColor[4];
-
-            points[0] = new VertexPositionColor(rays[0].Position, Color.Red);
-            points[1] = new VertexPositionColor(rays[0].Direction, Color.Red);
-            points[2] = new VertexPositionColor(rays[1].Direction, Color.Red);
-            points[3] = new VertexPositionColor(rays[2].Direction, Color.Red);
-
-            short[] inds = {0, 1, 0, 2, 0, 3};
-
-            GraphicsDevice.VertexDeclaration = new VertexDeclaration(GraphicsDevice, VertexPositionColor.VertexElements);
-
-            basicEffect.World = Matrix.Identity;
-            basicEffect.View = mainCamera.View;
-            basicEffect.Projection = mainCamera.Projection;
-            basicEffect.DiffuseColor = new Vector3(0.6f, 0f, 0f);
-
-            basicEffect.Begin(SaveStateMode.SaveState);
-            for (int pass = 0; pass < basicEffect.CurrentTechnique.Passes.Count; pass++)
+            if (this.player.Position != null && this.player.Flashlight.Light != null)
             {
-                basicEffect.CurrentTechnique.Passes[pass].Begin();
-                GraphicsDevice.DrawUserIndexedPrimitives<VertexPositionColor>(Microsoft.Xna.Framework.Graphics.PrimitiveType.LineList, points, 0, 8, inds, 0, 12);
-                basicEffect.CurrentTechnique.Passes[pass].End();
+                Microsoft.Xna.Framework.Ray[] rays = player.Flashlight.Light.GetRays();
+                VertexPositionColor[] points = new VertexPositionColor[4];
+
+                points[0] = new VertexPositionColor(rays[0].Position, Color.Red);
+                points[1] = new VertexPositionColor(rays[0].Direction, Color.Red);
+                points[2] = new VertexPositionColor(rays[1].Direction, Color.Red);
+                points[3] = new VertexPositionColor(rays[2].Direction, Color.Red);
+
+                short[] inds = { 0, 1, 0, 2, 0, 3 };
+
+                GraphicsDevice.VertexDeclaration = new VertexDeclaration(GraphicsDevice, VertexPositionColor.VertexElements);
+
+                basicEffect.World = Matrix.Identity;
+                basicEffect.View = mainCamera.View;
+                basicEffect.Projection = mainCamera.Projection;
+                basicEffect.DiffuseColor = new Vector3(0.6f, 0f, 0f);
+
+                basicEffect.Begin(SaveStateMode.SaveState);
+                for (int pass = 0; pass < basicEffect.CurrentTechnique.Passes.Count; pass++)
+                {
+                    basicEffect.CurrentTechnique.Passes[pass].Begin();
+                    //GraphicsDevice.DrawUserIndexedPrimitives<VertexPositionColor>(Microsoft.Xna.Framework.Graphics.PrimitiveType.LineList, points, 0, 8, inds, 0, 12);
+                    basicEffect.CurrentTechnique.Passes[pass].End();
+                }
+                basicEffect.End();
             }
-            basicEffect.End();
         }
 
         public void DrawBoundingBox(BoundingBox boundingBox)
         {
-            VertexPositionColor[] points = new VertexPositionColor[8];
-            Vector3[] corners = boundingBox.GetCorners();
-
-            points[0] = new VertexPositionColor(corners[1], Color.Red);
-            points[1] = new VertexPositionColor(corners[0], Color.Red);
-            points[2] = new VertexPositionColor(corners[2], Color.Red);
-            points[3] = new VertexPositionColor(corners[3], Color.Red);
-            points[4] = new VertexPositionColor(corners[5], Color.Red);
-            points[5] = new VertexPositionColor(corners[4], Color.Red);
-            points[6] = new VertexPositionColor(corners[6], Color.Red);
-            points[7] = new VertexPositionColor(corners[7], Color.Red);
-
-            short[] inds = {0, 1, 0, 2, 1, 3, 2, 3,
-                            4, 5, 4, 6, 5, 7, 6, 7,
-                            0, 4, 1, 5, 2, 6, 3, 7};
-
-            GraphicsDevice.VertexDeclaration = new VertexDeclaration(GraphicsDevice, VertexPositionColor.VertexElements);
-
-            basicEffect.World = Matrix.Identity;
-            basicEffect.View = mainCamera.View;
-            basicEffect.Projection = mainCamera.Projection;
-            basicEffect.DiffuseColor = new Vector3(0.6f, 0f, 0f);
-
-            basicEffect.Begin(SaveStateMode.SaveState);
-            for (int pass = 0; pass < basicEffect.CurrentTechnique.Passes.Count; pass++)
+            if (this.player.Position != null && this.player.Flashlight.Light != null)
             {
-                basicEffect.CurrentTechnique.Passes[pass].Begin();
-                GraphicsDevice.DrawUserIndexedPrimitives<VertexPositionColor>(PrimitiveType.LineList, points, 0, 8, inds, 0, 12);
-                basicEffect.CurrentTechnique.Passes[pass].End();
+                VertexPositionColor[] points = new VertexPositionColor[8];
+                Vector3[] corners = boundingBox.GetCorners();
+
+                points[0] = new VertexPositionColor(corners[1], Color.Red);
+                points[1] = new VertexPositionColor(corners[0], Color.Red);
+                points[2] = new VertexPositionColor(corners[2], Color.Red);
+                points[3] = new VertexPositionColor(corners[3], Color.Red);
+                points[4] = new VertexPositionColor(corners[5], Color.Red);
+                points[5] = new VertexPositionColor(corners[4], Color.Red);
+                points[6] = new VertexPositionColor(corners[6], Color.Red);
+                points[7] = new VertexPositionColor(corners[7], Color.Red);
+
+                short[] inds = {0, 1, 0, 2, 1, 3, 2, 3,
+                                4, 5, 4, 6, 5, 7, 6, 7,
+                                0, 4, 1, 5, 2, 6, 3, 7};
+
+                GraphicsDevice.VertexDeclaration = new VertexDeclaration(GraphicsDevice, VertexPositionColor.VertexElements);
+
+                basicEffect.World = Matrix.Identity;
+                basicEffect.View = mainCamera.View;
+                basicEffect.Projection = mainCamera.Projection;
+                basicEffect.DiffuseColor = new Vector3(0.6f, 0f, 0f);
+
+                basicEffect.Begin(SaveStateMode.SaveState);
+                for (int pass = 0; pass < basicEffect.CurrentTechnique.Passes.Count; pass++)
+                {
+                    basicEffect.CurrentTechnique.Passes[pass].Begin();
+                    GraphicsDevice.DrawUserIndexedPrimitives<VertexPositionColor>(Microsoft.Xna.Framework.Graphics.PrimitiveType.LineList, points, 0, 8, inds, 0, 12);
+                    basicEffect.CurrentTechnique.Passes[pass].End();
+                }
+                basicEffect.End();
             }
-            basicEffect.End();
         }
 
         public SceneManager GetScene()

@@ -34,6 +34,7 @@ namespace AwesomeEngine.Enemies
             else if (this.enemySeekingSphere.Contains(this.Player.Position) == ContainmentType.Contains)
             {
                 this.State = state.Seeking;
+                Model.animateModel("Walk");
             }
         }
         public override void ActSeeking()
@@ -51,6 +52,7 @@ namespace AwesomeEngine.Enemies
             else // if it is not in either the attacking sphere or the seeking sphere
             {
                 this.State = state.Idle;
+                Model.animateModel("Idle");
             }
         }
         public override void ActAttacking(GameTime gameTime)
@@ -76,6 +78,7 @@ namespace AwesomeEngine.Enemies
             else
             {
                 this.State = state.Idle;
+                Model.animateModel("Idle");
             }
         }
         public override void ActDamaged()
