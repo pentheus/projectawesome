@@ -30,7 +30,6 @@ namespace AfterDarkGame
     {
         GraphicsDeviceManager graphics;
 
-        //ShadowEnemy shadow; // TESTING SHADOWENEMY
 
         //Game Specific Variables
         SpriteBatch spriteBatch;
@@ -58,7 +57,6 @@ namespace AfterDarkGame
         AnimModelInfo enemyModelInfo;
         //AnimModelInfo enemyModelInfo;
         SkinnedModel enemyModel;
-        ShadowEnemy shadow;
         PhysicsSystem physics;
 
         //Trigger spheres
@@ -137,9 +135,7 @@ namespace AfterDarkGame
 
             ModelInfo.LoadModel(ref enemyModel, sceneMgr.Textures, Content, GraphicsDevice, "shadowmonster", sceneMgr.Effect);
             enemyModelInfo = new AnimModelInfo(new Vector3(0, 20, 0), Vector3.Zero, new Vector3(15), enemyModel, "shadowmonster", this);
-            shadow = new ShadowEnemy(this, sceneMgr, enemyModelInfo);
-            Components.Add(shadow);
-            
+
             sceneMgr.MainCamera = mainCamera;
 
             DirectoryInfo d = new DirectoryInfo(Content.RootDirectory + "\\Models\\");
@@ -148,22 +144,22 @@ namespace AfterDarkGame
             // TODO: use this.Content to load your game content here
 
             Model triggermodel = Content.Load<Model>("Models/ent_mdl");
-            rushtrigger = new TriggerEntity(this, triggermodel, new Vector3(154, -224, 601));
-            rushtrigger.BoundingSphere = new BoundingSphere(rushtrigger.Position, 100);
-            endtrigger = new TriggerEntity(this, triggermodel, new Vector3(663.5f, -220, 231.5f));
-            endtrigger.BoundingSphere = new BoundingSphere(endtrigger.Position, 45);
+            rushtrigger = new TriggerEntity(this, triggermodel, new Vector3(23.5f, -243f, 231.5f));
+            rushtrigger.BoundingSphere = new BoundingSphere(rushtrigger.Position, 40);
+            endtrigger = new TriggerEntity(this, triggermodel, new Vector3(183.5f, -232.5f, 123.5f));
+            endtrigger.BoundingSphere = new BoundingSphere(endtrigger.Position, 25);
 
-            endspawn1 = new SpawnEntity(this, triggermodel, new Vector3(567.5f, -218, 69), enemyModel);
+            endspawn1 = new SpawnEntity(this, triggermodel, new Vector3(133.5f, -243, 59.5f), enemyModel);
             endspawns[0] = endspawn1;
-            endspawn2 = new SpawnEntity(this, triggermodel, new Vector3(447, -218, 15), enemyModel);
+            endspawn2 = new SpawnEntity(this, triggermodel, new Vector3(125f, -243, 170.5f), enemyModel);
             endspawns[1] = endspawn2;
-            endspawn3 = new SpawnEntity(this, triggermodel, new Vector3(467, -218, 210), enemyModel);
+            endspawn3 = new SpawnEntity(this, triggermodel, new Vector3(153, -243, 105), enemyModel);
             endspawns[2] = endspawn3;
-            endspawn4 = new SpawnEntity(this, triggermodel, new Vector3(469.5f, -218, 381), enemyModel);
+            endspawn4 = new SpawnEntity(this, triggermodel, new Vector3(78.5f, -243, 96), enemyModel);
             endspawns[3] = endspawn4;
-            endspawn5 = new SpawnEntity(this, triggermodel, new Vector3(316.5f, -218, 381), enemyModel);
+            endspawn5 = new SpawnEntity(this, triggermodel, new Vector3(85.5f, -243, 34), enemyModel);
             endspawns[4] = endspawn5;
-            endspawn6 = new SpawnEntity(this, triggermodel, new Vector3(304.5f, -218, 263.5f), enemyModel);
+            endspawn6 = new SpawnEntity(this, triggermodel, new Vector3(50f, -243, 162.5f), enemyModel);
             endspawns[5] = endspawn6;
         }
 
@@ -284,11 +280,14 @@ namespace AfterDarkGame
             DrawText();
             //sceneMgr.DrawModel(cursor);
             player.Draw();
-            sceneMgr.DrawAnimatedModel(shadow.Model);
             //sceneMgr.DrawAnimatedModel(shadow.Model);
             BoundingSphereRenderer.Render(player.BoundingSphere, graphics.GraphicsDevice, mainCamera.View, mainCamera.Projection, Color.Red);
             BoundingSphereRenderer.Render(rushtrigger.BoundingSphere, graphics.GraphicsDevice, mainCamera.View, mainCamera.Projection, Color.Red);
             BoundingSphereRenderer.Render(endtrigger.BoundingSphere, graphics.GraphicsDevice, mainCamera.View, mainCamera.Projection, Color.Red);
+            foreach(Enemy enemy in sceneMgr.SceneGraph.GetEnemies())
+            {
+                BoundingSphereRenderer.Render(enemy.SeekingBoundingSphere, graphics.GraphicsDevice, mainCamera.View, mainCamera.Projection, Color.Red);
+            }
             base.Draw(gameTime);
         }
 
@@ -365,6 +364,11 @@ namespace AfterDarkGame
         {
             get { return player; }
             set { player = value; }
+        }
+
+        public Vector3 GetCursorLocation()
+        {
+            return player.Position;
         }
     }
 }

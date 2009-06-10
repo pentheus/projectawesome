@@ -42,7 +42,7 @@ namespace AwesomeEngine.Enemies
             enemySkinnedModel = LoadSkinnedModel("shadowmonster");
             enemyTexture = Game.Content.Load<Texture2D>(".\\Textures\\shadowmonster_Plane");
             enemyModelInfo = new AnimModelInfo(this.model.Position, Vector3.Zero, new Vector3(1), enemySkinnedModel, "shadowmonster", Game);
-            enemyModelInfo.Body.EnableBody();
+            //enemyModelInfo.Body.EnableBody();
             this.Model = enemyModelInfo;
  	        base.LoadContent();
         }

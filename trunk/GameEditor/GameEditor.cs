@@ -76,7 +76,7 @@ namespace GameEditor
             basicEffect = new BasicEffect(GraphicsDevice, null);
             mainCamera = new ThirdPersonCamera(new Vector3(35f, -24f, -30f), Vector3.Zero, GraphicsDevice.Viewport.AspectRatio, 1f, 10000f);
             fontPos = new Vector2(1.0f, 1.0f);
-       
+
             base.Initialize();
         }
 
@@ -89,9 +89,8 @@ namespace GameEditor
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             spriteFont = Content.Load<SpriteFont>(@"Fonts\DemoFont");
-
             sceneMgr.MainCamera = mainCamera;
-            
+
             DirectoryInfo d = new DirectoryInfo(Content.RootDirectory+"\\Models\\");
             FileInfo[] files = d.GetFiles("*mdl.xnb");
 
@@ -322,6 +321,11 @@ namespace GameEditor
         public ThirdPersonCamera GetCamera()
         {
             return mainCamera;
+        }
+
+        public Vector3 GetCursorLocation()
+        {
+            return cursor.Position;
         }
     }
 }

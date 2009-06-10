@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 using AwesomeEngine.Camera;
 using AwesomeEngine;
+using Microsoft.Xna.Framework;
 
 namespace AwesomeEngine
 {
@@ -16,5 +17,6 @@ namespace AwesomeEngine
         ContentManager GetContent();
         ThirdPersonCamera GetCamera();
         Player GetPlayer();
+        Vector3 GetCursorLocation();
     }
 }

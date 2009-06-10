@@ -31,7 +31,7 @@ namespace AwesomeEngine
         state currentplayerstate;
         int battLife;
 
-        Vector3 playerPosition = new Vector3(35, 5, 0);
+        Vector3 playerPosition = new Vector3(183.5f, -232.5f, 123.5f);
         Vector3 playerVelocity = Vector3.Zero;
         float playerRotation = 0.0f;
 
@@ -46,7 +46,7 @@ namespace AwesomeEngine
             flashlight = null;
             fuse = null;
             hasFlashLight = false;
-            hasFuse = false;
+            hasFuse = true;
             battLife = 0;
         }
 

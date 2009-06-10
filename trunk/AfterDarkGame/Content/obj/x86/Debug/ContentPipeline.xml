@@ -546,7 +546,7 @@
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\house_mdl_0.xml</Output>
-      <Time>2009-06-07T14:53:06.828125-07:00</Time>
+      <Time>2009-06-09T16:12:44-07:00</Time>
     </Item>
     <Item>
       <Source>Models\batteryitem_mdl.fbx</Source>
@@ -593,12 +593,15 @@
       <Name>Models\house_mdl</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
+      <Parameters>
+        <Data Key="Scale">2</Data>
+      </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Models\house_mdl.xnb</Output>
-      <Time>2009-06-07T14:53:06.828125-07:00</Time>
+      <Time>2009-06-09T16:12:44-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\house_mdl_0.xml</Key>
-        <Value>2009-06-09T21:19:19.03125-07:00</Value>
+        <Value>2009-06-10T09:12:33.921875-07:00</Value>
       </Dependency>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
