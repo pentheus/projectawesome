@@ -174,7 +174,7 @@ namespace AwesomeEngine
                     effect.Parameters["xWorld"].SetValue(modelTransforms[mesh.ParentBone.Index] * model.WorldMatrix);
                     effect.Parameters["xView"].SetValue(mainCamera.View);
                     effect.Parameters["xProjection"].SetValue(mainCamera.Projection);
-                    effect.Parameters["xCenter"].SetValue(model.Position-(new Vector3(0,0,-10)));
+                    effect.Parameters["xCenter"].SetValue(((ContainsScene)Game).GetPlayer().Position);
                     effect.Parameters["xRange"].SetValue(6f);
                 }
                 mesh.Draw();
