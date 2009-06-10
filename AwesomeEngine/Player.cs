@@ -28,6 +28,7 @@ namespace AwesomeEngine
         Boolean hasFlashLight, hasFuse;
         Item currentitem;
         state currentplayerstate;
+        int battLife;
 
         Vector3 playerPosition = new Vector3(-25, -139, 0);
         Vector3 playerVelocity = Vector3.Zero;
@@ -45,6 +46,7 @@ namespace AwesomeEngine
             fuse = null;
             hasFlashLight = false;
             hasFuse = false;
+            battLife = 0;
         }
 
         public Player(Game game, List<Item> inv, FlashLightItem light) :
@@ -54,18 +56,39 @@ namespace AwesomeEngine
             health = 230;
             inventory = inv;
             flashlight = light;
+            battLife = 0;
         }
 
         public void Pickup(FlashLightItem fl)
         {
             flashlight = fl;
             hasFlashLight = true;
+            if (battLife > 0)
+            {
+                flashlight.BatteryLife += battLife;
+                battLife = 0;
+            }
         }
 
         public void Pickup(FuseItem fi)
         {
             fuse = fi;
             hasFuse = true;
+        }
+
+        public void Pickup(BatteryItem bi)
+        {
+            if (hasFlashLight)
+            {
+                flashlight.BatteryLife += bi.BatteryLife;
+            }
+
+            else // if !hasFlashLight
+            {
+                battLife += bi.BatteryLife;
+            }
+
+            Game.Components.Remove(bi);
         }
 
         protected override void LoadContent()
