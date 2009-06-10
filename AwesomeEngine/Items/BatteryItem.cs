@@ -27,11 +27,17 @@ namespace AwesomeEngine.Items
         // pick up and add value to current item if not full
         public override void runScript()
         {
+<<<<<<< .mine
+           Player.Flashlight.BatteryLife += battLife;
+           this.picked = true;
+           Game.Components.Remove(this);
+=======
             if (this.picked == false)
             {
                 this.Player.Pickup(this);
                 this.picked = true;
             }
+>>>>>>> .r249
         }
     }
 }

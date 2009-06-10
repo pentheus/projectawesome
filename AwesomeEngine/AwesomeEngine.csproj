@@ -91,6 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnimModelInfo.cs" />
+    <Compile Include="BoundingSphereRender.cs" />
     <Compile Include="Camera\Camera.cs" />
     <Compile Include="Camera\OrthoCamera.cs" />
     <Compile Include="Camera\ThirdPersonCamera.cs" />

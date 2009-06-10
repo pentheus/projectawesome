@@ -202,7 +202,7 @@ namespace GameEditor
                 //If bad stuff starts to happen check this block
             else if(fileName.Contains("ent"))
             {
-                LogicEntity ent;
+                LogicEntity ent = null;
 
                 if(fileName.Contains("spawn"))
                 {
@@ -217,6 +217,8 @@ namespace GameEditor
                 }
 
                 gameEditor.entList.Add(gameEditor.GetCursor().Position);
+                if(ent != null)
+                    gameEditor.GetScene().SceneGraph.AddEntity(ent);
             }
             else
                 gameEditor.GetScene().SceneGraph.AddObject(gameEditor.GetCursor());

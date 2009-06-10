@@ -110,25 +110,12 @@ namespace GameEditor
                     Console.WriteLine("Object added");
                     toolBar.TreeView.Nodes["Items"].Nodes.Add(modelInfo.FileName, modelInfo.FileName);
                     toolBar.TreeView.Nodes["Items"].Nodes[modelInfo.FileName].Name = modelInfo.FileName;
-
-                    if (split[0].ToLower().Contains("battery"))
-                    {
-                        props.Add(modelInfo.FileName, model);
-                    }
-                    else if (split[0].ToLower().Contains("fuse"))
-                    {
-                        props.Add(modelInfo.FileName, model);
-                    }
-                    else if (split[0].ToLower().Contains("glowstick"))
-                    {
-                        props.Add(modelInfo.FileName, model);
-                    }
                 }
                 else
                 {
                     props.Add(modelInfo.FileName, model);
                     Console.WriteLine("Object added");
-                    toolBar.TreeView.Nodes["Props"].Nodes.Add(modelInfo.FileName,modelInfo.FileName);
+                    toolBar.TreeView.Nodes["Props"].Nodes.Add(modelInfo.FileName, modelInfo.FileName);
                     toolBar.TreeView.Nodes["Props"].Nodes[modelInfo.FileName].Name = modelInfo.FileName;
                     cursor = modelInfo;
                 }

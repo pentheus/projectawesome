@@ -21,6 +21,7 @@ namespace AwesomeEngine
         ContainsScene game;
         AnimModelInfo model;
         BoundingSphere boundary;
+        BoundingSphere pickuprange;
         int health;
         List<Item> inventory;
         FlashLightItem flashlight;
@@ -30,7 +31,7 @@ namespace AwesomeEngine
         state currentplayerstate;
         int battLife;
 
-        Vector3 playerPosition = new Vector3(-25, -139, 0);
+        Vector3 playerPosition = new Vector3(35, 5, 0);
         Vector3 playerVelocity = Vector3.Zero;
         float playerRotation = 0.0f;
 
@@ -102,10 +103,12 @@ namespace AwesomeEngine
             LightShaft lightshaft = new LightShaft((Game)game);
             flashlight = new FlashLightItem((Game) game, tempinfo);
             (this.game as Game).Components.Add(flashlight);
+            flashlight.picked = true;
             hasFlashLight = true;
             //Load shaders
             drawModelEffect = game.GetContent().Load<Effect>("Simple");
-            boundary = new BoundingSphere(playerPosition, 500);
+            boundary = new BoundingSphere(playerPosition, 300);
+            pickuprange = new BoundingSphere(playerPosition, 20);
             //Get worldTransforms, id = 16
         }
 
@@ -230,8 +233,17 @@ namespace AwesomeEngine
 
         public BoundingSphere BoundingSphere
         {
-            get { boundary.Center = playerPosition;
+            get { boundary.Center = model.Body.Position;
                     return boundary;
+            }
+        }
+
+        public BoundingSphere ItemSphere
+        {
+            get
+            {
+                pickuprange.Center = model.Body.Position;
+                return pickuprange;
             }
         }
 
@@ -273,6 +285,11 @@ namespace AwesomeEngine
         public FlashLightItem Flashlight
         {
             get { return flashlight; }
+        }
+
+        public bool HasFuse()
+        {
+            return hasFuse;
         }
     }
 }

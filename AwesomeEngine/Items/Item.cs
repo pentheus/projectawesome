@@ -24,9 +24,9 @@ namespace AwesomeEngine
             this.model = model;
             this.model.Body.DisableBody();
             movable = false;
-            pickable = false;
+            pickable = true;
             picked = false;
-            radius = 0; // initialized to zero, change it in each of the items classes
+            radius = 3; // initialized to zero, change it in each of the items classes
             itemAOE = new BoundingSphere(this.model.Position, radius); // must initialize radius in each items class
         }
 
@@ -58,7 +58,7 @@ namespace AwesomeEngine
         {
             if (pickable && !picked)
             {
-                if (itemAOE.Contains(player.Position) == ContainmentType.Contains)
+                if (itemAOE.Intersects(((ContainsScene)Game).GetPlayer().ItemSphere))
                 {
                     runScript();
                 }

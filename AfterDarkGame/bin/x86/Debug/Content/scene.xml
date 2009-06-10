@@ -7,5 +7,25 @@
     <scalez>1</scalez>
     <model>house_mdl</model>
   </WorldGeometry>
-  <Conent />
+  <Conent>
+    <Item>
+      <posx>1.5</posx>
+      <posy>1</posy>
+      <posz>0</posz>
+      <rotx>0</rotx>
+      <roty>0</roty>
+      <rotz>0</rotz>
+      <scalex>3</scalex>
+      <scaley>3</scaley>
+      <scalez>3</scalez>
+      <model>batteryitem_mdl</model>
+      <itemtype>AwesomeEngine.Items.BatteryItem</itemtype>
+      <BoundingSphere>
+        <sphereposx>1.540382</sphereposx>
+        <sphereposy>1.047105</sphereposy>
+        <sphereposz>1.002445</sphereposz>
+        <sphereradius>6.715214</sphereradius>
+      </BoundingSphere>
+    </Item>
+  </Conent>
 </SceneInfo>

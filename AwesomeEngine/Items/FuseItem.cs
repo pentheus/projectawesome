@@ -18,12 +18,9 @@ namespace AwesomeEngine.Items
         
         public override void runScript()
         {
-            if (picked == false)
-            {
-                this.Player.Pickup(this);
-                Game.Components.Remove(this);
-                this.picked = true;
-            }
+            this.Player.Pickup(this);
+            Game.Components.Remove(this);
+            this.picked = true;
         }
     }
 }

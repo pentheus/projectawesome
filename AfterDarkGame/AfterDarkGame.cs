@@ -60,6 +60,9 @@ namespace AfterDarkGame
         SkinnedModel enemyModel;
         ShadowEnemy shadow;
         PhysicsSystem physics;
+
+        //Trigger spheres
+        BoundingSphere endsphere;
       
         public AfterDarkGame()
         {
@@ -73,7 +76,8 @@ namespace AfterDarkGame
             lightShaft.DrawOrder=10;
             this.IsMouseVisible = false;
             parser = new XMLParser(this);
-            
+
+            endsphere = new BoundingSphere(new Vector3(73.5f, -215.5f, 600), 40);
             InitializePhysics();
         }
 
@@ -197,7 +201,14 @@ namespace AfterDarkGame
             //Integrating phyiscs system
             float timeStep = (float)gameTime.ElapsedGameTime.Ticks / TimeSpan.TicksPerSecond;
             PhysicsSystem.CurrentPhysicsSystem.Integrate(timeStep);
-            Console.WriteLine("Shadow's position" + shadow.Model.Position);
+            
+            //Check for player's intersection with trigger spheres.
+            if (endsphere.Intersects(player.BoundingSphere) && player.HasFuse())
+            {
+                //end game
+            }
+            Console.WriteLine("Player at " + player.BoundingSphere.Center);
+            //Console.WriteLine("Shadow's position" + shadow.Model.Position);
             base.Update(gameTime);
         }
 
@@ -222,6 +233,8 @@ namespace AfterDarkGame
         {
             XMLParser parser = new XMLParser(this);
             sceneMgr.SceneGraph = parser.ReadScene(level);
+            foreach(Item item in sceneMgr.SceneGraph.GetItems())
+                Components.Add(item);
         }
 
         /// <summary>
@@ -237,6 +250,7 @@ namespace AfterDarkGame
             player.Draw();
             sceneMgr.DrawAnimatedModel(shadow.Model);
             //sceneMgr.DrawAnimatedModel(shadow.Model);
+            BoundingSphereRenderer.Render(player.BoundingSphere, graphics.GraphicsDevice, mainCamera.View, mainCamera.Projection, Color.Red);
             base.Draw(gameTime);
         }
 

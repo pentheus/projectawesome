@@ -496,3 +496,8 @@ C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\GameEditor\obj\x86\Debug
 C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\GameEditor\obj\x86\Debug\GameEditor.csproj.GenerateResource.Cache
 C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\GameEditor\obj\x86\Debug\GameEditor.exe
 C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\GameEditor\obj\x86\Debug\GameEditor.pdb
+C:\Documents and Settings\Alex\My Documents\Inf 125\projectawesome\GameEditor\bin\x86\Debug\Content\Models\ent_mdl.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\projectawesome\GameEditor\bin\x86\Debug\Content\Models\house_mdl.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\projectawesome\GameEditor\bin\x86\Debug\Content\Models\batteryitem_mdl.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\projectawesome\GameEditor\bin\x86\Debug\Content\Models\shadowmonster.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\projectawesome\GameEditor\bin\x86\Debug\Content\Textures\shadowmonster_Plane_0.xnb
