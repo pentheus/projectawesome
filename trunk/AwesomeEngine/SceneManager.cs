@@ -97,7 +97,6 @@ namespace AwesomeEngine
 
         public override void Draw(GameTime gameTime)
         {
-            
             if(sceneGraph.getGeometry() != null)
                 DrawModel(sceneGraph.getGeometry());
             DrawScene(sceneGraph.Root);
@@ -141,7 +140,7 @@ namespace AwesomeEngine
 
             foreach (Item item in node.Items)
             {
-                if (!CheckIfCullable(item.model))
+                if (!CheckIfCullable(item.model) && item.picked == false)
                     DrawModel(item.model);
             }
         }
