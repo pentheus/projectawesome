@@ -184,9 +184,9 @@ namespace AfterDarkGame
             if (k.IsKeyDown(Keys.D))
                 translationVector += new Vector3(1f, 0f, 0f);
 
-            float x = (float)(radius * Math.Sin(MathHelper.ToRadians(theta)) * Math.Sin(MathHelper.ToRadians(phi))); ;
+            float x = (float)(radius * Math.Sin(MathHelper.ToRadians(theta + player.Rotation.Y)) * Math.Sin(MathHelper.ToRadians(phi))); 
             float y = (float)(radius * Math.Cos(MathHelper.ToRadians(phi)));
-            float z = (float)(radius * Math.Cos(MathHelper.ToRadians(theta)) * Math.Sin(MathHelper.ToRadians(phi)));
+            float z = (float)(radius * Math.Cos(MathHelper.ToRadians(theta + player.Rotation.Y)) * Math.Sin(MathHelper.ToRadians(phi)));
 
             mainCamera.Pos = (new Vector3(x, y, z)) + player.Position;
             //mainCamera.Pos = Vector3.Transform(mainCamera.Pos, Matrix.CreateTranslation(player.Position));

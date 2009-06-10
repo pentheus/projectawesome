@@ -25,7 +25,7 @@ namespace GameEditor
     public class GameEditor : Microsoft.Xna.Framework.Game, ContainsScene
     {
         GraphicsDeviceManager graphics;
-        
+        public List<Vector3> entList = new List<Vector3>();
 
         //Game Specific Variables
         SpriteBatch spriteBatch;
@@ -95,8 +95,8 @@ namespace GameEditor
             DirectoryInfo d = new DirectoryInfo(Content.RootDirectory+"\\Models\\");
             FileInfo[] files = d.GetFiles("*mdl.xnb");
 
-            entModel = Content.Load<Model>("entModel");
-
+            
+            ModelInfo.LoadModel(ref entModel, sceneMgr.Textures, Content, graphics.GraphicsDevice, "ent_mdl", sceneMgr.Effect);
             foreach (FileInfo f in files)
             {
                 string[] split = f.ToString().Split('.');
@@ -113,15 +113,15 @@ namespace GameEditor
 
                     if (split[0].ToLower().Contains("battery"))
                     {
-                        props.Add(modelInfo.FileName, new BatteryItem(this, modelInfo));
+                        props.Add(modelInfo.FileName, model);
                     }
                     else if (split[0].ToLower().Contains("fuse"))
                     {
-                        props.Add(modelInfo.FileName, new FuseItem(this, modelInfo));
+                        props.Add(modelInfo.FileName, model);
                     }
                     else if (split[0].ToLower().Contains("glowstick"))
                     {
-                        props.Add(modelInfo.FileName, new GlowStickItem(this, modelInfo));
+                        props.Add(modelInfo.FileName, model);
                     }
                 }
                 else
@@ -228,6 +228,10 @@ namespace GameEditor
             sceneMgr.DrawModel(cursor);
             BoundingSphereRenderer.Render(cursor.BoundingSphere, GraphicsDevice, mainCamera.View, mainCamera.Projection, Color.Red);
             grid.Draw(mainCamera.View, mainCamera.Projection);
+            foreach (Vector3 pos in entList)
+            {
+                sceneMgr.DrawModel(new ModelInfo(pos, Vector3.Zero, Vector3.One, entModel, ""));
+            }
             base.Draw(gameTime);
         }
 

@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework.Content;
 using AwesomeEngine;
 using AwesomeEngine.Items;
 using System.Collections;
+using XNAnimation;
 
 namespace AwesomeEngine
 {
@@ -224,7 +225,8 @@ namespace AwesomeEngine
                     switch (itemtype)
                     {
                         case "SpawnEntity":
-                            entity = new SpawnEntity((Game)game, objmodel, objvect);
+                            SkinnedModel evilmodel = game.GetContent().Load<SkinnedModel>("shadowmonster");
+                            entity = new SpawnEntity((Game)game, objmodel, objvect, evilmodel);
                             break;
                         case "TriggerEntity":
                             entity = new TriggerEntity((Game)game, objmodel, objvect);
