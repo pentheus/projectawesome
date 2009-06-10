@@ -81,6 +81,7 @@ namespace AwesomeEngine
             hasFlashLight = true;
             //Load shaders
             drawModelEffect = game.GetContent().Load<Effect>("Simple");
+            boundary = new BoundingSphere(playerPosition, 500);
             //Get worldTransforms, id = 16
         }
 
@@ -202,7 +203,9 @@ namespace AwesomeEngine
 
         public BoundingSphere BoundingSphere
         {
-            get { return boundary.Transform(WorldMatrix); }
+            get { boundary.Center = playerPosition;
+                    return boundary;
+            }
         }
 
         public Matrix WorldMatrix

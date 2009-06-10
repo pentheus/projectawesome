@@ -104,7 +104,7 @@ namespace AwesomeEngine
                             textures.Add(part, (part.Effect as BasicEffect).Texture);
                             e.Parameters["xTextureEnabled"].SetValue(false);
                         }
-                        e.Parameters["xDiffuseColor"].SetValue((part.Effect as BasicEffect).DiffuseColor);
+                        e.Parameters["xDiffuseColor"].SetValue(new Vector4((part.Effect as BasicEffect).DiffuseColor,1f));
                         part.Effect = e;
                     }
             else
@@ -117,7 +117,7 @@ namespace AwesomeEngine
                             e.Parameters["xTextureEnabled"].SetValue(false);
                         else
                             e.Parameters["xTextureEnabled"].SetValue(true);
-                        e.Parameters["xDiffuseColor"].SetValue((part.Effect as BasicEffect).DiffuseColor);
+                        e.Parameters["xDiffuseColor"].SetValue(new Vector4(1f,0,0,1));
                         part.Effect = e;
                     }
             }
@@ -143,7 +143,7 @@ namespace AwesomeEngine
                         textures.Add(part, (part.Effect as SkinnedModelBasicEffect).DiffuseMap);
                         e.Parameters["xTextureEnabled"].SetValue(false);
                     }
-                    e.Parameters["xDiffuseColor"].SetValue((part.Effect as BasicEffect).DiffuseColor);
+                    e.Parameters["xDiffuseColor"].SetValue(new Vector4((part.Effect as SkinnedModelBasicEffect).Material.DiffuseColor,1));
                     part.Effect = e;
                 }
         }

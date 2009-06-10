@@ -31,6 +31,8 @@ namespace AwesomeEngine
         {
             if ((Game as ContainsScene).GetPlayer() != null)
             {
+                if ((Game as ContainsScene).GetPlayer().BoundingSphere.Contains(this.Position) == ContainmentType.Intersects)
+                    Game.Components.Remove(this);
                 if (timer <= 3000 && !isSpawnAlive)
                     Spawn();
                 timer += gameTime.ElapsedGameTime.Milliseconds;

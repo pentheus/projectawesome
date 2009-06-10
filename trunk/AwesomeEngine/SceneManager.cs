@@ -60,9 +60,33 @@ namespace AwesomeEngine
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         public override void Update(GameTime gameTime)
         {
-            // TODO: Add your update code here
-
+            UpdateEntities(sceneGraph.Root);
             base.Update(gameTime);
+        }
+
+        public void UpdateEntities(Node parent)
+        {
+            AddComponents(parent);
+            if (parent.HasChildren())
+            {
+                foreach (Node child in parent.Children)
+                {
+                    if (child.BoundingBox.Intersects(mainCamera.BoundingFrustum))
+                    {
+                        AddComponents(child);
+                        UpdateEntities(child);
+                    }
+                }
+            }
+        }
+
+        public void AddComponents(Node node)
+        {
+            foreach(LogicEntity ent in node.Entities)
+            {
+                if((Game as ContainsScene).GetPlayer().BoundingSphere.Contains(ent.Position) == ContainmentType.Intersects)
+                    Game.Components.Add(ent);
+            }
         }
 
         public override void Draw(GameTime gameTime)

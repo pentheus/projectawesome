@@ -178,7 +178,7 @@ namespace GameEditor
             String fileName = gameEditor.GetCursor().FileName;
             if(fileName.Contains("item"))
             {
-                Item item;
+                Item item = null;
 
                 if(fileName.Contains("battery"))
                 {
@@ -206,20 +206,21 @@ namespace GameEditor
 
                 if(fileName.Contains("spawn"))
                 {
-                    SkinnedModel enemymodel = gameEditor.GetContent().Load<SkinnedModel>("shadowmonster");
+                    SkinnedModel enemymodel = gameEditor.GetContent().Load<SkinnedModel>(".\\models\\shadowmonster");
                     ent = new  SpawnEntity((Game)gameEditor, gameEditor.GetCursor().Model, gameEditor.GetCursor().Position, enemymodel);
                 }
 
                 else if (fileName.Contains("trigger"))
                 {
                     ent = new TriggerEntity((Game)gameEditor, gameEditor.GetCursor().Model, gameEditor.GetCursor().Position);
+                   
                 }
 
-                
+                gameEditor.entList.Add(gameEditor.GetCursor().Position);
             }
-            gameEditor.GetScene().SceneGraph.AddObject(gameEditor.GetCursor());
-            ;
-            gameEditor.GetScene().SceneGraph.AddEntity();
+            //gameEditor.GetScene().SceneGraph.AddObject(gameEditor.GetCursor());
+            
+            //gameEditor.GetScene().SceneGraph.AddEntity();
         }
 
         private void setGeoButton_Click(object sender, EventArgs e)

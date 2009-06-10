@@ -30,7 +30,9 @@
         {
             System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Props");
             System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Items");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Logic Entities");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("ent_spawn");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Logic Entities", new System.Windows.Forms.TreeNode[] {
+            treeNode3});
             this.menuBar = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,6 +42,7 @@
             this.objectGroupBox = new System.Windows.Forms.GroupBox();
             this.setGeoButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.transBSphere = new System.Windows.Forms.CheckBox();
             this.uniScale = new System.Windows.Forms.CheckBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -67,7 +70,6 @@
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.openDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveDialog = new System.Windows.Forms.SaveFileDialog();
-            this.transBSphere = new System.Windows.Forms.CheckBox();
             this.menuBar.SuspendLayout();
             this.panel1.SuspendLayout();
             this.objectGroupBox.SuspendLayout();
@@ -186,6 +188,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(262, 170);
             this.panel2.TabIndex = 25;
+            // 
+            // transBSphere
+            // 
+            this.transBSphere.AutoSize = true;
+            this.transBSphere.Location = new System.Drawing.Point(7, 150);
+            this.transBSphere.Name = "transBSphere";
+            this.transBSphere.Size = new System.Drawing.Size(158, 17);
+            this.transBSphere.TabIndex = 47;
+            this.transBSphere.Text = "Transform Bounding Sphere";
+            this.transBSphere.UseVisualStyleBackColor = true;
+            this.transBSphere.CheckedChanged += new System.EventHandler(this.transBSphere_CheckedChanged);
             // 
             // uniScale
             // 
@@ -564,12 +577,14 @@
             treeNode1.Text = "Props";
             treeNode2.Name = "Items";
             treeNode2.Text = "Items";
-            treeNode3.Name = "LogicEntities";
-            treeNode3.Text = "Logic Entities";
+            treeNode3.Name = "ent_spawn";
+            treeNode3.Text = "ent_spawn";
+            treeNode4.Name = "LogicEntities";
+            treeNode4.Text = "Logic Entities";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode1,
             treeNode2,
-            treeNode3});
+            treeNode4});
             this.treeView1.Size = new System.Drawing.Size(168, 174);
             this.treeView1.TabIndex = 0;
             this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_AfterSelect);
@@ -584,17 +599,6 @@
             // 
             this.saveDialog.DefaultExt = "xml";
             this.saveDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.saveDialog_FileOk);
-            // 
-            // transBSphere
-            // 
-            this.transBSphere.AutoSize = true;
-            this.transBSphere.Location = new System.Drawing.Point(7, 150);
-            this.transBSphere.Name = "transBSphere";
-            this.transBSphere.Size = new System.Drawing.Size(158, 17);
-            this.transBSphere.TabIndex = 47;
-            this.transBSphere.Text = "Transform Bounding Sphere";
-            this.transBSphere.UseVisualStyleBackColor = true;
-            this.transBSphere.CheckedChanged += new System.EventHandler(this.transBSphere_CheckedChanged);
             // 
             // ToolBar
             // 
