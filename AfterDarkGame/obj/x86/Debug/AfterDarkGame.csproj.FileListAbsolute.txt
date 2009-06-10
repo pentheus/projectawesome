@@ -239,3 +239,63 @@ C:\Documents and Settings\Alex\My Documents\Inf 125\projectawesome\AfterDarkGame
 C:\Documents and Settings\Alex\My Documents\Inf 125\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Models\house_mdl.xnb
 C:\Documents and Settings\Alex\My Documents\Inf 125\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Models\batteryitem_mdl.xnb
 C:\Documents and Settings\Alex\My Documents\Inf 125\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Models\ent_mdl.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\ShadowMap.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\DrawModel.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Simple.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\cone_mdl.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Effects\parallax_normal_mapping.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Fonts\Arial.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Fonts\Calibri.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Fonts\DemoFont.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Models\Floor_mdl.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Models\lamp_mdl.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Models\PlayerMarine_mdla.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Models\refrigerator_mdl.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Models\Ship_mdl.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Models\Tank_mdl.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Models\testscene_mdl.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Models\test_mdl.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Models\toilet_mdl.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Models\tv_mdl.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Models\washer_mdl.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Models\WeaponMachineGun_mdl.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Models\cone_mdl.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Models\sphere_mdl.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Models\shadowmonster.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Models\house_mdl.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Models\batteryitem_mdl.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Models\ent_mdl.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Models\ShipDiffuse.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Textures\floor_color_map.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Textures\floor_height_map.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Textures\floor_normal_map.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Textures\null_normal.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Textures\PlayerMarineNormal.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Textures\rockbump.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Textures\EnemyBeastDiffuse.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Textures\EnemyBeastNormal.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Textures\EnemyBeastSpecular.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Textures\PlayerMarineDiffuse.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Textures\WeaponMachineGunDiffuse.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Textures\shadowmonster_Plane.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Textures\PlayerMarineDiffuse_0.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Textures\PlayerMarineNormal_0.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Models\ShipDiffuse_0.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Textures\WeaponMachineGunDiffuse_0.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Textures\shadowmonster_Plane_0.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\AfterDarkGame.exe
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\AfterDarkGame.pdb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\AwesomeEngine.dll
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\JigLibX.dll
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\XNAnimation.dll
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\AwesomeEngine.pdb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\obj\x86\Debug\AfterDarkGame.exe
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\obj\x86\Debug\AfterDarkGame.pdb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\mischief.xnb
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\mischief.wma
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\bin\x86\Debug\Content\attic.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\projectawesome\AfterDarkGame\bin\x86\Debug\Content\attic.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\projectawesome\AfterDarkGame\bin\x86\Debug\Content\mischief.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\projectawesome\AfterDarkGame\bin\x86\Debug\Content\mischief.wma

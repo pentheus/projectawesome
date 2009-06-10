@@ -94,7 +94,7 @@ namespace AwesomeEngine.Enemies
 
         public override void ActIdle()
         {
-            if (this.enemyAttackingSphere.Contains(this.Player.Position) == ContainmentType.Contains)
+            if (this.enemyAttackingSphere.Intersects(this.Player.ItemSphere))
             {
                 this.State = state.Attacking;
             }
@@ -107,7 +107,7 @@ namespace AwesomeEngine.Enemies
         }
         public override void ActSeeking()
         {
-            if (this.enemyAttackingSphere.Contains(this.Player.Position) == ContainmentType.Contains)
+            if (this.enemyAttackingSphere.Intersects(this.Player.ItemSphere))
             {
                 this.State = state.Attacking;
             }
@@ -127,7 +127,7 @@ namespace AwesomeEngine.Enemies
         {
             accumulator += gameTime.ElapsedGameTime.Milliseconds;
             Console.WriteLine(accumulator + " Accumulator");
-            if (this.enemyAttackingSphere.Contains(this.Player.Position) == ContainmentType.Contains)
+            if (this.enemyAttackingSphere.Intersects(this.Player.ItemSphere))
             {
                 if (accumulator >= cooldown)
                 {

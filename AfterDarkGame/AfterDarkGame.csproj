@@ -78,6 +78,8 @@
   <ItemGroup>
     <Compile Include="AfterDarkGame.cs" />
     <Compile Include="BoundingSphereRender.cs" />
+    <Compile Include="GameUI.cs" />
+    <Compile Include="IntroScreen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
   </ItemGroup>

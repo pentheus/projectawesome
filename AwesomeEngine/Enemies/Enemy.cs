@@ -70,8 +70,8 @@ namespace AwesomeEngine
 
         public void updateSpheres()
         {
-            enemySeekingSphere.Center = model.Position;
-            enemyAttackingSphere.Center = model.Position;
+            enemySeekingSphere.Center = new Vector3(Model.Position.X, model.Position.Y - 10, Model.Position.Z);
+            enemyAttackingSphere.Center = new Vector3(Model.Position.X, model.Position.Y - 10, Model.Position.Z);
         }
 
         public AnimModelInfo Model
@@ -102,6 +102,7 @@ namespace AwesomeEngine
                     Console.WriteLine("Taking Damage");
                     break;
             }
+            model.Position = new Vector3(enemyAttackingSphere.Center.X, enemyAttackingSphere.Center.Y+10, enemyAttackingSphere.Center.Z);
             if (this.player.DidDamage(this.AttackingBoundingSphere) && currentstate != state.Damaged && currentstate != state.Attacking)
             {
                 this.TakeDamage(player.Flashlight.Damage);

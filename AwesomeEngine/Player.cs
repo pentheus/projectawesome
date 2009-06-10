@@ -31,7 +31,7 @@ namespace AwesomeEngine
         state currentplayerstate;
         int battLife;
 
-        Vector3 playerPosition = new Vector3(183.5f, -232.5f, 123.5f);
+        Vector3 playerPosition = new Vector3(-94.5f, 8f, 154.5f);
         Vector3 playerVelocity = Vector3.Zero;
         float playerRotation = 0.0f;
 
@@ -108,7 +108,7 @@ namespace AwesomeEngine
             //Load shaders
             drawModelEffect = game.GetContent().Load<Effect>("Simple");
             boundary = new BoundingSphere(playerPosition, 300);
-            pickuprange = new BoundingSphere(playerPosition, 20);
+            pickuprange = new BoundingSphere(playerPosition, 8);
             //Get worldTransforms, id = 16
         }
 
@@ -117,11 +117,11 @@ namespace AwesomeEngine
             KeyboardState currentState = Keyboard.GetState(PlayerIndex.One);
 
             // Rotate the model using the left thumbstick, and scale it down.
-            if (currentState.IsKeyDown(Keys.L))
+            if (currentState.IsKeyDown(Keys.D))
             {
                 playerRotation -= 3f;
             }
-            if (currentState.IsKeyDown(Keys.J))
+            if (currentState.IsKeyDown(Keys.A))
             {
                 playerRotation += 3f;
             }
@@ -132,14 +132,14 @@ namespace AwesomeEngine
 
             state oldstate = currentplayerstate;
 
-            if (currentState.IsKeyDown(Keys.K))
+            if (currentState.IsKeyDown(Keys.S))
             {
                 playerVelocity = new Vector3(0, model.Body.Velocity.Y, -95);
                 isIdle = false;
                 currentplayerstate = state.Running;
             }
 
-            if (currentState.IsKeyDown(Keys.I))
+            if (currentState.IsKeyDown(Keys.W))
             {
                 playerVelocity = new Vector3(0, model.Body.Velocity.Y, 95);
                 isIdle = false;

@@ -16,6 +16,10 @@ Content\Models\washer_mdl.xnb
 Content\Models\WeaponMachineGun_mdl.xnb
 Content\Models\cone_mdl.xnb
 Content\Models\sphere_mdl.xnb
+Content\Models\shadowmonster.xnb
+Content\Models\house_mdl.xnb
+Content\Models\batteryitem_mdl.xnb
+Content\Models\ent_mdl.xnb
 Content\Models\ShipDiffuse.xnb
 Content\Textures\floor_color_map.xnb
 Content\Textures\floor_height_map.xnb
@@ -29,12 +33,11 @@ Content\Textures\EnemyBeastSpecular.xnb
 Content\Textures\PlayerMarineDiffuse.xnb
 Content\Textures\WeaponMachineGunDiffuse.xnb
 Content\Textures\shadowmonster_Plane.xnb
+Content\attic.xnb
+Content\mischief.xnb
+Content\mischief.wma
 Content\Textures\PlayerMarineDiffuse_0.xnb
 Content\Textures\PlayerMarineNormal_0.xnb
 Content\Models\ShipDiffuse_0.xnb
 Content\Textures\WeaponMachineGunDiffuse_0.xnb
 Content\Textures\shadowmonster_Plane_0.xnb
-Content\Models\shadowmonster.xnb
-Content\Models\batteryitem_mdl.xnb
-Content\Models\ent_mdl.xnb
-Content\Models\house_mdl.xnb

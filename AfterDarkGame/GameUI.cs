@@ -26,7 +26,7 @@ namespace AfterDarkGame
         public GameUI(Game game)
             : base(game)
         {
-            this.game = game;
+            this.game = (AfterDarkGame)game;
         }
 
 
@@ -44,7 +44,7 @@ namespace AfterDarkGame
 
         protected override void LoadContent()
         {
-            font = Game.Content.Load<SpriteFont>("Arial");
+            font = Game.Content.Load<SpriteFont>("Fonts/Arial");
             spriteBatch = new SpriteBatch(GraphicsDevice);
          
             base.LoadContent();
@@ -72,7 +72,7 @@ namespace AfterDarkGame
             string text = "Player Health: " + game.Player.Health + "    Battery Life: " + game.Player.Flashlight.BatteryLife;
 
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
-            spriteBatch.DrawString(spriteFont, text, Vector2(10,10), Color.Yellow);
+            spriteBatch.DrawString(font, text, new Vector2(10,10), Color.Yellow);
             spriteBatch.End();
         }
     }
