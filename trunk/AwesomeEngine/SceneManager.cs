@@ -132,6 +132,12 @@ namespace AwesomeEngine
                     DrawModel(model);
                 }
             }
+
+            foreach (Item item in node.Items)
+            {
+                if (!CheckIfCullable(item.model))
+                    DrawModel(Model);
+            }
         }
 
         /// <summary>
