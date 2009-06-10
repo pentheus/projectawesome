@@ -14,12 +14,13 @@ bool xTextureEnabled;
 float4 xAmbientColor = {0.3,0.3,0.3,1};
 float xAmbientIntensity = 0.1f;
 
-float4 xDirectionalColor = {1,1,1,1};
+float4 xDirectionalColor = {0,0,0.4,1};
 float3 xLightDirection = {1,1,1};
-float xLightIntensity = 0.5;
+float xLightIntensity = 0.2;
 
 float4 xDiffuseColor = { 1, 1, .5, 1};
- 
+float4 xPointColor = {0.7, 0.7, 0.7, 1};
+float xPointIntensity = 2;
 //------- Texture Samplers --------    
 Texture xTexture;       // Input a texture from XNA code via effect.Parameters["xTexture"].SetValue(texture)  
  
@@ -44,6 +45,7 @@ struct VS_OUTPUT
     float3 Light : TEXCOORD2;
     float3 Norm : TEXCOORD1;
     float2 TexCoord : TEXCOORD0;  
+    float4 Position3D : TEXCOORD3;
 };
 
 /////////////////// VERTEX SHADERS //////////////////////////
@@ -55,6 +57,7 @@ VS_OUTPUT VS(float4 Pos : POSITION, float3 Normal : NORMAL, float2 TexCoord : TE
     Out.Light = xLightDirection; // output light vector
     Out.Norm = normalize(mul(Normal, xWorld)); // transform       Normal and normalize it
     Out.TexCoord = TexCoord;
+    Out.Position3D = mul(Pos, xWorld);
     return Out;
 }
 
@@ -63,13 +66,20 @@ VS_OUTPUT VS(float4 Pos : POSITION, float3 Normal : NORMAL, float2 TexCoord : TE
 float4 PS(VS_OUTPUT input) : COLOR
 {
 	float4 diffuseColor = tex2D(TextureSampler, input.TexCoord);
+	float3 LightVector = input.Position3D - xCenter;
+	float dist = length(LightVector);
+	LightVector = normalize(LightVector);
+	
+	
     if(xTextureEnabled == false)
 		diffuseColor = xDiffuseColor;
-	float NdL = saturate(dot(input.Norm, input.Light));
+	float NdL1 = saturate(dot(input.Norm, input.Light));
+	float NdL2 = saturate(dot(input.Norm, -LightVector))/dist;
 	float4 DirLightColor = xDirectionalColor * xLightIntensity;
+	float4 PointLightColor = xPointColor * xPointIntensity;
 	float4 AmbiColor = xAmbientColor * xAmbientIntensity;
 		
-    return diffuseColor*(NdL*DirLightColor + AmbiColor);
+    return diffuseColor*(NdL1*DirLightColor + NdL2*4*PointLightColor + AmbiColor);
 }
 
 
@@ -105,6 +115,7 @@ struct AnimatedVSOut
     float3 Norm : TEXCOORD1;
     float2 TexCoord : TEXCOORD0;
     float4 Position3D : TEXCOORD3;
+    float4 Position2D : TEXCOORD4;
 };
 
 AnimatedVSOut AnimatedVS(AnimatedVSIn input)
@@ -146,13 +157,20 @@ AnimatedVSOut AnimatedVS(AnimatedVSIn input)
 float4 AnimatedPS(AnimatedVSOut input) : COLOR
 {
     float4 diffuseColor = tex2D(TextureSampler, input.TexCoord);
+	float3 LightVector = input.Position2D - xCenter;
+	float dist = length(LightVector);
+	LightVector = normalize(LightVector);
+	
+	
     if(xTextureEnabled == false)
 		diffuseColor = xDiffuseColor;
-	float NdL = saturate(dot(input.Norm, input.Light));
+	float NdL1 = saturate(dot(input.Norm, input.Light));
+	float NdL2 = saturate(dot(input.Norm, -LightVector))/dist;
 	float4 DirLightColor = xDirectionalColor * xLightIntensity;
+	float4 PointLightColor = xPointColor * xPointIntensity;
 	float4 AmbiColor = xAmbientColor * xAmbientIntensity;
 		
-    return diffuseColor*(NdL*DirLightColor + AmbiColor);
+    return diffuseColor*(NdL1*DirLightColor + NdL2*4*PointLightColor + AmbiColor);
 }
 
 technique AnimatedLambertTest    

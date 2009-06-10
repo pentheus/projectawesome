@@ -208,7 +208,7 @@ namespace AwesomeEngine
                     effect.Parameters["xWorld"].SetValue(Matrix.CreateRotationY(MathHelper.ToRadians(playerRotation)) * Matrix.CreateTranslation(model.Body.Position));
                     effect.Parameters["xView"].SetValue(game.GetCamera().View);
                     effect.Parameters["xProjection"].SetValue(game.GetCamera().Projection);
-                    effect.Parameters["xCenter"].SetValue(model.Position);
+                    effect.Parameters["xCenter"].SetValue(playerPosition + new Vector3(0,30,0));
                     effect.Parameters["xRange"].SetValue(4f);
 
 
