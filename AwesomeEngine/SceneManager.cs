@@ -87,6 +87,12 @@ namespace AwesomeEngine
                 if((Game as ContainsScene).GetPlayer().BoundingSphere.Contains(ent.Position) == ContainmentType.Intersects)
                     Game.Components.Add(ent);
             }
+
+            foreach (Item item in node.Items)
+            {
+                if ((Game as ContainsScene).GetPlayer().BoundingSphere.Contains(item.Model.Position) == ContainmentType.Intersects)
+                    Game.Components.Add(item);
+            }
         }
 
         public override void Draw(GameTime gameTime)
@@ -136,7 +142,7 @@ namespace AwesomeEngine
             foreach (Item item in node.Items)
             {
                 if (!CheckIfCullable(item.model))
-                    DrawModel(Model);
+                    DrawModel(item.model);
             }
         }
 
