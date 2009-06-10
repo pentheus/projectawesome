@@ -35,7 +35,8 @@ namespace AwesomeEngine
                     Game.Components.Remove(this);
                 if (timer <= 1000 && !isSpawnAlive)
                     Spawn();
-                timer += gameTime.ElapsedGameTime.Milliseconds;
+                else
+                    timer += gameTime.ElapsedGameTime.Milliseconds;
             }
             base.Update(gameTime);
         }
