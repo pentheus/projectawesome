@@ -29,7 +29,7 @@ namespace AwesomeEngine
         Item currentitem;
         state currentplayerstate;
 
-        Vector3 playerPosition = new Vector3(0, 9, 0);
+        Vector3 playerPosition = new Vector3(-25, -139, 0);
         Vector3 playerVelocity = Vector3.Zero;
         float playerRotation = 0.0f;
 
@@ -76,6 +76,7 @@ namespace AwesomeEngine
             Model lightmodel = new Model();
             ModelInfo.LoadModel(ref lightmodel, game.GetScene().Textures, game.GetContent(), game.GetGraphics(), "sphere_mdl", game.GetScene().Effect);
             ModelInfo tempinfo = new ModelInfo(Vector3.Zero, Vector3.Zero, Vector3.One, lightmodel, "sphere_mdl");
+            LightShaft lightshaft = new LightShaft((Game)game);
             flashlight = new FlashLightItem((Game) game, tempinfo);
             (this.game as Game).Components.Add(flashlight);
             hasFlashLight = true;
@@ -151,7 +152,10 @@ namespace AwesomeEngine
             model.Body.MoveTo(playerPosition, Matrix.Identity);
              * */
             if (flashlight != null)
-                flashlight.model.Position = model.AnimationController.SkinnedBoneTransforms[12].Translation;
+            {
+                flashlight.model.Position = Position + Vector3.Transform((new Vector3(-3, 12f, 2f)), Matrix.CreateRotationY(MathHelper.ToRadians(Rotation.Y)));
+                //flashlight.model.Position = flashlightpos + model.AnimationController.SkinnedBoneTransforms[8].Translation;
+            }
             base.Update(gameTime);
         }
 

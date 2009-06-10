@@ -12,9 +12,8 @@ namespace AwesomeEngine.Items
     {
         private int dps, battLife;
         private LightShaft light;
-        private int battdraincounter = 1000;
+        private int battdraincounter = 150;
         Game game;
-        public bool firing = false;
 
         public FlashLightItem(Game game, ModelInfo model) :
             base(game, model)
@@ -23,12 +22,12 @@ namespace AwesomeEngine.Items
             dps = 3; // medium damage per second
             battLife = 10; // initialized flashlight battery life to 10
             this.game = game;
+            light = new LightShaft(game);
+            game.Components.Add(light);
         }
 
         public override void Initialize()
         {
-            light = new LightShaft(game);
-            game.Components.Add(light);
             base.Initialize();
         }
         // scripts
@@ -36,30 +35,31 @@ namespace AwesomeEngine.Items
         // if picked up, turn on, turn off
         public override void runScript()
         {
-            this.Player.Pickup(this);
-            this.picked = true;
+            if (this.picked == false)
+            {
+                this.Player.Pickup(this);
+                this.picked = true;
+            }
         }
 
         public override void Update(GameTime gameTime)
         {
             KeyboardState currentState = Keyboard.GetState(PlayerIndex.One);
-            if (currentState.IsKeyDown(Keys.Space))
+            if (currentState.IsKeyDown(Keys.Space) && battLife > 0)
             {
                 //Fire the flashlight
                 if (battdraincounter <= 0)
                 {
                     //Drain the battery
                     battLife -= 1;
-                    battdraincounter = 1000;
+                    battdraincounter = 150;
                 }
                 else
-                {
                     battdraincounter -= 1;
-                }
-                firing = true;
+                light.On = true;
             }
             else
-                firing = false;
+                light.On = false;
             base.Update(gameTime);
         }
 

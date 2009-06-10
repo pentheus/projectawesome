@@ -60,7 +60,7 @@ namespace AfterDarkGame
         SkinnedModel enemyModel;
         ShadowEnemy shadow;
         PhysicsSystem physics;
-
+      
         public AfterDarkGame()
         {
             cursor = new ModelInfo();
@@ -123,7 +123,7 @@ namespace AfterDarkGame
             spriteFont = Content.Load<SpriteFont>(@"Fonts\DemoFont");
 
             ModelInfo.LoadModel(ref enemyModel, sceneMgr.Textures, Content, GraphicsDevice, "shadowmonster", sceneMgr.Effect);
-            enemyModelInfo = new AnimModelInfo(new Vector3(25, 15, 15), Vector3.Zero, new Vector3(15), enemyModel, "shadowmonster", this);
+            enemyModelInfo = new AnimModelInfo(new Vector3(-25, -139, 20), Vector3.Zero, new Vector3(15), enemyModel, "shadowmonster", this);
             shadow = new ShadowEnemy(this, sceneMgr, enemyModelInfo);
             Components.Add(shadow);
             
@@ -235,42 +235,9 @@ namespace AfterDarkGame
             DrawText();
             //sceneMgr.DrawModel(cursor);
             player.Draw();
-            DrawRays();
             sceneMgr.DrawAnimatedModel(shadow.Model);
             //sceneMgr.DrawAnimatedModel(shadow.Model);
             base.Draw(gameTime);
-        }
-
-        public void DrawRays()
-        {
-            if (this.player.Position != null && this.player.Flashlight.Light != null)
-            {
-                Microsoft.Xna.Framework.Ray[] rays = player.Flashlight.Light.GetRays();
-                VertexPositionColor[] points = new VertexPositionColor[4];
-
-                points[0] = new VertexPositionColor(rays[0].Position, Color.Red);
-                points[1] = new VertexPositionColor(rays[0].Direction, Color.Red);
-                points[2] = new VertexPositionColor(rays[1].Direction, Color.Red);
-                points[3] = new VertexPositionColor(rays[2].Direction, Color.Red);
-
-                short[] inds = { 0, 1, 0, 2, 0, 3 };
-
-                GraphicsDevice.VertexDeclaration = new VertexDeclaration(GraphicsDevice, VertexPositionColor.VertexElements);
-
-                basicEffect.World = Matrix.Identity;
-                basicEffect.View = mainCamera.View;
-                basicEffect.Projection = mainCamera.Projection;
-                basicEffect.DiffuseColor = new Vector3(0.6f, 0f, 0f);
-
-                basicEffect.Begin(SaveStateMode.SaveState);
-                for (int pass = 0; pass < basicEffect.CurrentTechnique.Passes.Count; pass++)
-                {
-                    basicEffect.CurrentTechnique.Passes[pass].Begin();
-                    GraphicsDevice.DrawUserIndexedPrimitives<VertexPositionColor>(Microsoft.Xna.Framework.Graphics.PrimitiveType.LineList, points, 0, 4, inds, 0, 3);
-                    basicEffect.CurrentTechnique.Passes[pass].End();
-                }
-                basicEffect.End();
-            }
         }
 
         public void DrawBoundingBox(BoundingBox boundingBox)

@@ -73,10 +73,10 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Models\PlayerMarine_mdla.xnb</Output>
-      <Time>2009-06-03T11:02:01.5-07:00</Time>
+      <Time>2009-06-09T15:59:59.75-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\PlayerMarine_mdla_0.xml</Key>
-        <Value>2009-06-09T14:20:35.234375-07:00</Value>
+        <Value>2009-06-09T16:00:11-07:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\Alex\My Documents\Inf 125\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Textures\PlayerMarineDiffuse_0.xnb</Request>
       <Request>C:\Documents and Settings\Alex\My Documents\Inf 125\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Textures\PlayerMarineNormal_0.xnb</Request>
@@ -362,7 +362,7 @@
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\PlayerMarine_mdla_0.xml</Output>
-      <Time>2009-06-03T11:02:01.5-07:00</Time>
+      <Time>2009-06-09T15:59:59.75-07:00</Time>
     </Item>
     <Item>
       <Source>Textures\PlayerMarineDiffuse.jpg</Source>
@@ -506,7 +506,7 @@
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\shadowmonster_0.xml</Output>
-      <Time>2009-06-09T15:01:30.34375-07:00</Time>
+      <Time>2009-06-09T14:44:08-07:00</Time>
     </Item>
     <Item>
       <Source>Textures\shadowmonster_Plane.tga</Source>
@@ -534,12 +534,35 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Models\shadowmonster.xnb</Output>
-      <Time>2009-06-09T15:01:30.34375-07:00</Time>
+      <Time>2009-06-09T14:44:08-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\shadowmonster_0.xml</Key>
-        <Value>2009-06-09T15:01:38.03125-07:00</Value>
+        <Value>2009-06-09T16:01:05.03125-07:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\Alex\My Documents\Inf 125\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Textures\shadowmonster_Plane_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\house_mdl.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\house_mdl_0.xml</Output>
+      <Time>2009-06-09T16:12:44-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\house_mdl.FBX</Source>
+      <Name>Models\house_mdl</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Parameters>
+        <Data Key="Scale">3</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Alex\My Documents\Inf 125\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Models\house_mdl.xnb</Output>
+      <Time>2009-06-09T16:12:44-07:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\house_mdl_0.xml</Key>
+        <Value>2009-06-09T17:47:53.875-07:00</Value>
+      </Dependency>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
