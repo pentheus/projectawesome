@@ -211,9 +211,10 @@ namespace AwesomeEngine
         {
             if (node.HasChildren())
             {
+                Console.WriteLine("Found children.");
                 foreach (Node n in node.Children)
                 {
-                    if (node.BoundingBox.Contains(entity.BoundingSphere) == ContainmentType.Contains)
+                    if (node.BoundingBox.Intersects(entity.BoundingSphere))
                     {
                         AddRecursiveEntity(entity, n);
                         return;
@@ -221,6 +222,7 @@ namespace AwesomeEngine
                 }
             }
             node.Entities.Add(entity);
+            Console.WriteLine("Entity after add: " + node.Entities.Count);
         }
 
 
@@ -336,6 +338,7 @@ namespace AwesomeEngine
         public List<LogicEntity> recurseEntities(List<LogicEntity> entities, Node node)
         {
             entities.AddRange(node.Entities);
+            Console.WriteLine("Entity count: " + node.Entities.Count);
             if (node.HasChildren())
             {
                 foreach (Node n in node.Children)

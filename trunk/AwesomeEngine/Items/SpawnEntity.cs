@@ -37,12 +37,12 @@ namespace AwesomeEngine
                     Spawn();
                 timer += gameTime.ElapsedGameTime.Milliseconds;
             }
-      
             base.Update(gameTime);
         }
 
         public void Spawn()
         {
+            Console.WriteLine("Spawned an enemy.");
             this.isSpawnAlive = true;
             this.timer -= cooldown;
             shadowEnemy.HP = 10;
