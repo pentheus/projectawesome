@@ -216,6 +216,7 @@
       <Name>house_mdl</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
+      <ProcessorParameters_Scale>2</ProcessorParameters_Scale>
     </Compile>
   </ItemGroup>
   <ItemGroup>
