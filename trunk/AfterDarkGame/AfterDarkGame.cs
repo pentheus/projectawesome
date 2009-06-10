@@ -62,7 +62,16 @@ namespace AfterDarkGame
         PhysicsSystem physics;
 
         //Trigger spheres
-        BoundingSphere endsphere;
+        TriggerEntity rushtrigger;
+        TriggerEntity endtrigger;
+        //End spawners
+        SpawnEntity[] endspawns = new SpawnEntity[6];
+        SpawnEntity endspawn1;
+        SpawnEntity endspawn2;
+        SpawnEntity endspawn3;
+        SpawnEntity endspawn4;
+        SpawnEntity endspawn5;
+        SpawnEntity endspawn6;
       
         public AfterDarkGame()
         {
@@ -77,7 +86,6 @@ namespace AfterDarkGame
             this.IsMouseVisible = false;
             parser = new XMLParser(this);
 
-            endsphere = new BoundingSphere(new Vector3(73.5f, -215.5f, 600), 40);
             InitializePhysics();
         }
 
@@ -95,6 +103,7 @@ namespace AfterDarkGame
             physics.SolverType = PhysicsSystem.Solver.Normal;
             physics.CollisionSystem.UseSweepTests = true;
             physics.NumPenetrationRelaxtionTimesteps = 15;
+            physics.Gravity = new Vector3(0, -918, 0);
         }
 
 
@@ -127,7 +136,7 @@ namespace AfterDarkGame
             spriteFont = Content.Load<SpriteFont>(@"Fonts\DemoFont");
 
             ModelInfo.LoadModel(ref enemyModel, sceneMgr.Textures, Content, GraphicsDevice, "shadowmonster", sceneMgr.Effect);
-            enemyModelInfo = new AnimModelInfo(new Vector3(-25, -139, 20), Vector3.Zero, new Vector3(15), enemyModel, "shadowmonster", this);
+            enemyModelInfo = new AnimModelInfo(new Vector3(0, 20, 0), Vector3.Zero, new Vector3(15), enemyModel, "shadowmonster", this);
             shadow = new ShadowEnemy(this, sceneMgr, enemyModelInfo);
             Components.Add(shadow);
             
@@ -137,6 +146,25 @@ namespace AfterDarkGame
 
             OpenLevel(Content.RootDirectory + "/scene.xml");
             // TODO: use this.Content to load your game content here
+
+            Model triggermodel = Content.Load<Model>("Models/ent_mdl");
+            rushtrigger = new TriggerEntity(this, triggermodel, new Vector3(154, -224, 601));
+            rushtrigger.BoundingSphere = new BoundingSphere(rushtrigger.Position, 100);
+            endtrigger = new TriggerEntity(this, triggermodel, new Vector3(663.5f, -220, 231.5f));
+            endtrigger.BoundingSphere = new BoundingSphere(endtrigger.Position, 45);
+
+            endspawn1 = new SpawnEntity(this, triggermodel, new Vector3(567.5f, -218, 69), enemyModel);
+            endspawns[0] = endspawn1;
+            endspawn2 = new SpawnEntity(this, triggermodel, new Vector3(447, -218, 15), enemyModel);
+            endspawns[1] = endspawn2;
+            endspawn3 = new SpawnEntity(this, triggermodel, new Vector3(467, -218, 210), enemyModel);
+            endspawns[2] = endspawn3;
+            endspawn4 = new SpawnEntity(this, triggermodel, new Vector3(469.5f, -218, 381), enemyModel);
+            endspawns[3] = endspawn4;
+            endspawn5 = new SpawnEntity(this, triggermodel, new Vector3(316.5f, -218, 381), enemyModel);
+            endspawns[4] = endspawn5;
+            endspawn6 = new SpawnEntity(this, triggermodel, new Vector3(304.5f, -218, 263.5f), enemyModel);
+            endspawns[5] = endspawn6;
         }
 
         /// <summary>
@@ -203,11 +231,19 @@ namespace AfterDarkGame
             PhysicsSystem.CurrentPhysicsSystem.Integrate(timeStep);
             
             //Check for player's intersection with trigger spheres.
-            if (endsphere.Intersects(player.BoundingSphere) && player.HasFuse())
+            if (rushtrigger.BoundingSphere.Intersects(player.ItemSphere) && player.HasFuse())
             {
-                //end game
+                foreach (SpawnEntity spawner in endspawns)
+                {
+                    if (!this.Components.Contains(spawner))
+                        this.Components.Add(spawner);
+                }
             }
-            Console.WriteLine("Player at " + player.BoundingSphere.Center);
+            if (endtrigger.BoundingSphere.Intersects(player.ItemSphere) && player.HasFuse())
+            {
+                //Win the game
+                Console.WriteLine("Won the game.");
+            }
             //Console.WriteLine("Shadow's position" + shadow.Model.Position);
             base.Update(gameTime);
         }
@@ -251,6 +287,8 @@ namespace AfterDarkGame
             sceneMgr.DrawAnimatedModel(shadow.Model);
             //sceneMgr.DrawAnimatedModel(shadow.Model);
             BoundingSphereRenderer.Render(player.BoundingSphere, graphics.GraphicsDevice, mainCamera.View, mainCamera.Projection, Color.Red);
+            BoundingSphereRenderer.Render(rushtrigger.BoundingSphere, graphics.GraphicsDevice, mainCamera.View, mainCamera.Projection, Color.Red);
+            BoundingSphereRenderer.Render(endtrigger.BoundingSphere, graphics.GraphicsDevice, mainCamera.View, mainCamera.Projection, Color.Red);
             base.Draw(gameTime);
         }
 

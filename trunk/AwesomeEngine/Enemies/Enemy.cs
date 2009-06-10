@@ -106,7 +106,7 @@ namespace AwesomeEngine
             {
                 this.TakeDamage(player.Flashlight.Damage);
                 Console.WriteLine("Took damage");
-            }
+            } 
             model.AnimationController.Update(gameTime.ElapsedGameTime, Matrix.Identity);
             updateSpheres();
         }

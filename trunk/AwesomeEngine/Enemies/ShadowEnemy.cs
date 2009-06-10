@@ -153,6 +153,7 @@ namespace AwesomeEngine.Enemies
         {
             if (damagetimer <= 0)
             {
+                Console.WriteLine("Remaining Health: " + hp);
                 SetState(state.Idle);
                 Model.animateModel("Idle");
                 return;
@@ -160,7 +161,9 @@ namespace AwesomeEngine.Enemies
 
             if (hp <= 0)
             {
-                spawnPoint.IsAlive = false;
+                Console.WriteLine("I died!");
+                if(spawnPoint != null)
+                    spawnPoint.IsAlive = false;
                 Game.Components.Remove(this);
             }
 
@@ -176,6 +179,7 @@ namespace AwesomeEngine.Enemies
         public override void TakeDamage(int damage)
         {
             damagetimer = 120;
+            hp -= damage;
             SetState(state.Damaged);
             Model.animateModel("Damage");
         }

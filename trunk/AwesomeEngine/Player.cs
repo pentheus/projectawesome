@@ -134,14 +134,14 @@ namespace AwesomeEngine
 
             if (currentState.IsKeyDown(Keys.K))
             {
-                playerVelocity = new Vector3(0, model.Body.Velocity.Y, -45);
+                playerVelocity = new Vector3(0, model.Body.Velocity.Y, -95);
                 isIdle = false;
                 currentplayerstate = state.Running;
             }
 
             if (currentState.IsKeyDown(Keys.I))
             {
-                playerVelocity = new Vector3(0, model.Body.Velocity.Y, 45);
+                playerVelocity = new Vector3(0, model.Body.Velocity.Y, 95);
                 isIdle = false;
                 currentplayerstate = state.Running;
             }
@@ -177,6 +177,7 @@ namespace AwesomeEngine
 
             model.Body.MoveTo(playerPosition, Matrix.Identity);
              * */
+            //model.Body.ApplyBodyImpulse(new Vector3(0, -180, 0));
             if (flashlight != null)
             {
                 flashlight.model.Position = Position + Vector3.Transform((new Vector3(-3, 12f, 2f)), Matrix.CreateRotationY(MathHelper.ToRadians(Rotation.Y)));
