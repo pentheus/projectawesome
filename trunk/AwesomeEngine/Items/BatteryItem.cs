@@ -18,15 +18,19 @@ namespace AwesomeEngine.Items
             battLife = 10; //intialized battery life to 10
         }
 
+        public int BatteryLife
+        {
+            get { return battLife; }
+        }
+
         // scripts
         // pick up and add value to current item if not full
         public override void runScript()
         {
-            if (picked)
+            if (this.picked == false)
             {
-            }
-            else // if not picked
-            {
+                this.Player.Pickup(this);
+                this.picked = true;
             }
         }
     }
