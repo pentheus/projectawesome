@@ -45,12 +45,12 @@ namespace GameEditor
         ToolBar toolBar;
         ModelInfo cursor;
         Dictionary<String, Model> props = new Dictionary<String, Model>();
-        List<Item> items = new List<Item>();
+        Model entModel;
         ReferenceGrid grid;
         SpriteFont spriteFont;
         Vector2 fontPos;
         MouseState oldMouseState = new MouseState();
-
+        
         public GameEditor()
         {
             cursor = new ModelInfo();
@@ -94,7 +94,9 @@ namespace GameEditor
             
             DirectoryInfo d = new DirectoryInfo(Content.RootDirectory+"\\Models\\");
             FileInfo[] files = d.GetFiles("*mdl.xnb");
-            
+
+            entModel = Content.Load<Model>("entModel");
+
             foreach (FileInfo f in files)
             {
                 string[] split = f.ToString().Split('.');
@@ -104,23 +106,23 @@ namespace GameEditor
                 ModelInfo modelInfo = new ModelInfo(new Vector3(0f, 0f, 0f), Vector3.Zero, new Vector3(0.1f), model, split[0]);
                 if (split[0].ToLower().Contains("item"))
                 {
+                    props.Add(modelInfo.FileName, model);
+                    Console.WriteLine("Object added");
+                    toolBar.TreeView.Nodes["Items"].Nodes.Add(modelInfo.FileName, modelInfo.FileName);
+                    toolBar.TreeView.Nodes["Items"].Nodes[modelInfo.FileName].Name = modelInfo.FileName;
+
                     if (split[0].ToLower().Contains("battery"))
                     {
-                        items.Add(new BatteryItem(this, modelInfo));
+                        props.Add(modelInfo.FileName, new BatteryItem(this, modelInfo));
                     }
                     else if (split[0].ToLower().Contains("fuse"))
                     {
-                        items.Add(new FuseItem(this, modelInfo));
+                        props.Add(modelInfo.FileName, new FuseItem(this, modelInfo));
                     }
                     else if (split[0].ToLower().Contains("glowstick"))
                     {
-                        items.Add(new GlowStickItem(this, modelInfo));
+                        props.Add(modelInfo.FileName, new GlowStickItem(this, modelInfo));
                     }
-                    else if (split[0].ToLower().Contains("flash"))
-                    {
-                        //items.Add(new FuseItem(this, modelInfo));
-                    }
-
                 }
                 else
                 {
@@ -270,7 +272,14 @@ namespace GameEditor
         {
             try
             {
-                cursor = new ModelInfo(Vector3.Zero, Vector3.Zero, Vector3.One, props[name], name);
+                if(name.Contains("item"))
+                    cursor = new ModelInfo(Vector3.Zero, Vector3.Zero, Vector3.One, props[name], name);
+                else if(name.Contains("mdl"))
+                    cursor = new ModelInfo(Vector3.Zero, Vector3.Zero, Vector3.One, props[name], name);
+                else if(name.Contains("ent"))
+                {
+                    cursor = new ModelInfo(Vector3.Zero, Vector3.Zero, Vector3.One, entModel, name);
+                }
                 cursor.UpdateBoundingSphere();
             }
             catch (KeyNotFoundException e)

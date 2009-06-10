@@ -118,5 +118,11 @@ namespace AwesomeEngine.Enemies
             set { spawnPoint = value; }
         }
 
+        public int HP
+        {
+            get { return hp; }
+            set { hp = value; }
+        }
+
     }
 }
