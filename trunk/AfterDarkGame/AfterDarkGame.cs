@@ -29,7 +29,7 @@ namespace AfterDarkGame
     public class AfterDarkGame : Microsoft.Xna.Framework.Game, ContainsScene
     {
         GraphicsDeviceManager graphics;
-
+        Song song;
 
         //Game Specific Variables
         SpriteBatch spriteBatch;
@@ -37,6 +37,7 @@ namespace AfterDarkGame
         SceneManager sceneMgr;
         XMLParser parser;
         Player player;
+        GameUI gameui;
 
         //Camera Variables
         ThirdPersonCamera mainCamera;
@@ -70,6 +71,7 @@ namespace AfterDarkGame
         SpawnEntity endspawn4;
         SpawnEntity endspawn5;
         SpawnEntity endspawn6;
+        IntroScreen intro;
       
         public AfterDarkGame()
         {
@@ -83,6 +85,10 @@ namespace AfterDarkGame
             lightShaft.DrawOrder=10;
             this.IsMouseVisible = false;
             parser = new XMLParser(this);
+            gameui = new GameUI(this);
+            this.Components.Add(gameui);
+            intro = new IntroScreen(this);
+            this.Components.Add(intro);
 
             InitializePhysics();
         }
@@ -161,6 +167,10 @@ namespace AfterDarkGame
             endspawns[4] = endspawn5;
             endspawn6 = new SpawnEntity(this, triggermodel, new Vector3(50f, -243, 162.5f), enemyModel);
             endspawns[5] = endspawn6;
+
+            song = Content.Load<Song>("mischief");
+            MediaPlayer.Play(song);
+            MediaPlayer.IsRepeating = true;
         }
 
         /// <summary>
@@ -203,14 +213,11 @@ namespace AfterDarkGame
                 }
                 radius -= 0.03f * (currentMouseState.ScrollWheelValue - oldMouseState.ScrollWheelValue);
             }
-            if (k.IsKeyDown(Keys.W))
-                translationVector += new Vector3(0f, 0f, -1f);
-            if (k.IsKeyDown(Keys.S))
-                translationVector += new Vector3(0f, 0f, 1f);
-            if (k.IsKeyDown(Keys.A))
-                translationVector += new Vector3(-1f, 0f, 0f);
-            if (k.IsKeyDown(Keys.D))
-                translationVector += new Vector3(1f, 0f, 0f);
+
+            if (k.IsKeyDown(Keys.Enter) && this.Components.Contains(intro))
+            {
+                this.Components.Remove(intro);
+            }
 
             float x = (float)(radius * Math.Sin(MathHelper.ToRadians(theta + player.Rotation.Y)) * Math.Sin(MathHelper.ToRadians(phi))); 
             float y = (float)(radius * Math.Cos(MathHelper.ToRadians(phi)));
@@ -281,13 +288,10 @@ namespace AfterDarkGame
             //sceneMgr.DrawModel(cursor);
             player.Draw();
             //sceneMgr.DrawAnimatedModel(shadow.Model);
-            BoundingSphereRenderer.Render(player.BoundingSphere, graphics.GraphicsDevice, mainCamera.View, mainCamera.Projection, Color.Red);
-            BoundingSphereRenderer.Render(rushtrigger.BoundingSphere, graphics.GraphicsDevice, mainCamera.View, mainCamera.Projection, Color.Red);
+            //BoundingSphereRenderer.Render(player.ItemSphere, graphics.GraphicsDevice, mainCamera.View, mainCamera.Projection, Color.Red);
+            //BoundingSphereRenderer.Render(rushtrigger.BoundingSphere, graphics.GraphicsDevice, mainCamera.View, mainCamera.Projection, Color.Red);
             BoundingSphereRenderer.Render(endtrigger.BoundingSphere, graphics.GraphicsDevice, mainCamera.View, mainCamera.Projection, Color.Red);
-            foreach(Enemy enemy in sceneMgr.SceneGraph.GetEnemies())
-            {
-                BoundingSphereRenderer.Render(enemy.SeekingBoundingSphere, graphics.GraphicsDevice, mainCamera.View, mainCamera.Projection, Color.Red);
-            }
+            
             base.Draw(gameTime);
         }
 

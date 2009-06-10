@@ -2,3 +2,4 @@ C:\Users\Jonathan\Documents\Visual Studio 2008\Projects\AwesomeTrunks\AfterDarkG
 C:\Documents and Settings\Mark\Desktop\Project Awesome\AfterDarkGame\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Jonathan Chuong\Desktop\Projects\AwesomeTrunks\AfterDarkGame\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Documents and Settings\Alex\My Documents\Inf 125\projectawesome\AfterDarkGame\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Spike\Desktop\Final AfterDark Game\projectawesome\AfterDarkGame\Content\obj\x86\Debug\ResolveAssemblyReference.cache
