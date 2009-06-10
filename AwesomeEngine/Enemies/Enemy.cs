@@ -130,9 +130,9 @@ namespace AwesomeEngine
             //}
             model.Rotation = new Vector3(0, CalculateNewRotation(player.Position), 0);
             moveVector = new Vector3((float)(player.Position.X-model.Position.X)/450, 0, (float)(player.Position.Z-model.Position.Z)/450);
-            //model.Position = model.Position + moveVector;
-            model.Body.ApplyGravity = true;
-            model.Body.MoveTo(model.Position + moveVector, Matrix.CreateRotationY(MathHelper.ToRadians(model.Rotation.Y)));
+            model.Position = model.Position + moveVector;
+            //model.Body.ApplyGravity = true;
+            //model.Body.MoveTo(model.Position + moveVector, Matrix.CreateRotationY(MathHelper.ToRadians(model.Rotation.Y)));
             
             updateSpheres();
         }

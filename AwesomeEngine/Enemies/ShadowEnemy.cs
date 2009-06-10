@@ -12,7 +12,7 @@ namespace AwesomeEngine.Enemies
     public class ShadowEnemy:Enemy
     {
         private int accumulator, currentTime, cooldown;
-        private int hp = 10;
+        private int hp = 5;
         private SpawnEntity spawnPoint;
         private int damagetimer = 0;
 
