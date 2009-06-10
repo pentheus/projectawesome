@@ -213,20 +213,24 @@ namespace AwesomeEngine
                     }
                     else
                     {
+                        objmodel = null;
+                        /*
                         objmodel = new Model();
                         ModelInfo.LoadModel(ref objmodel, game.GetScene().Textures, game.GetContent(), game.GetGraphics(), modelname, game.GetScene().Effect);
                         modelsloaded.Add(modelname, objmodel);
+                         * */
                     }
 
                     //Create the Item object
                     LogicEntity entity;
 
                     //Determine the type of item from what was listed
-                    String itemtype = Convert.ToString(node.SelectSingleNode("itemtype").InnerText);
-                    switch (itemtype)
+                    String entitytype = Convert.ToString(node.SelectSingleNode("entitytype").InnerText);
+                    String[] split = entitytype.ToString().Split('.');
+                    switch (split[1])
                     {
                         case "SpawnEntity":
-                            SkinnedModel evilmodel = game.GetContent().Load<SkinnedModel>("shadowmonster");
+                            SkinnedModel evilmodel = game.GetContent().Load<SkinnedModel>("Models/shadowmonster");
                             entity = new SpawnEntity((Game)game, objmodel, objvect, evilmodel);
                             break;
                         case "TriggerEntity":
@@ -240,6 +244,7 @@ namespace AwesomeEngine
                     {
                         entity.BoundingSphere = ReadSphere(node.SelectSingleNode("BoundingSphere"));
                         scene.AddEntity(entity);
+                        Console.WriteLine("Added an entity");
                     }
                 }
                 catch (FormatException)
@@ -430,23 +435,20 @@ namespace AwesomeEngine
             ModelInfo obj;
             foreach (LogicEntity entity in entities)
             {
-                //Store the item's ModelInfo information
-                obj = new ModelInfo(entity.Position, Vector3.Zero, Vector3.Zero, entity.Model, "entity");
-
                 scenesaver.WriteStartElement("Entity");
-                
+
                 scenesaver.WriteStartElement("posx");
-                scenesaver.WriteString(obj.Position.X.ToString());
+                scenesaver.WriteString(entity.Position.X.ToString());
                 scenesaver.WriteEndElement();
                 scenesaver.WriteStartElement("posy");
-                scenesaver.WriteString(obj.Position.Y.ToString());
+                scenesaver.WriteString(entity.Position.Y.ToString());
                 scenesaver.WriteEndElement();
                 scenesaver.WriteStartElement("posz");
-                scenesaver.WriteString(obj.Position.Z.ToString());
+                scenesaver.WriteString(entity.Position.Z.ToString());
                 scenesaver.WriteEndElement();
 
                 scenesaver.WriteStartElement("model");
-                scenesaver.WriteString(obj.FileName);
+                scenesaver.WriteString("ent_mdl");
                 scenesaver.WriteEndElement();
 
                 //Save what type of item it is based on the exact class type
@@ -456,7 +458,7 @@ namespace AwesomeEngine
                 scenesaver.WriteEndElement();
 
                 //Write the entity's bounding sphere
-                SaveSphere(scenesaver, obj);
+                SaveSphere(scenesaver, new ModelInfo(entity.Position, Vector3.Zero, Vector3.One, entity.Model, "ent_mdl"));
 
                 scenesaver.WriteEndElement();
             }

@@ -50,7 +50,6 @@ namespace AwesomeEngine
         {
             shadowRenderer = new ShadowRenderer(game.Content.Load<Effect>("ShadowMap"));
             drawModelEffect = game.Content.Load<Effect>("Simple");
-
             base.LoadContent();
         }
 
@@ -60,12 +59,21 @@ namespace AwesomeEngine
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         public override void Update(GameTime gameTime)
         {
-            UpdateEntities(sceneGraph.Root);
+            foreach (LogicEntity entity in sceneGraph.GetEntities())
+            {
+                if (!game.Components.Contains(entity))
+                {
+                    game.Components.Add(entity);
+                }
+            }
+            //UpdateEntities(sceneGraph.Root);
             base.Update(gameTime);
         }
 
         public void UpdateEntities(Node parent)
         {
+            /*
+            if(game.Components.cont
             AddComponents(parent);
             if (parent.HasChildren())
             {
@@ -78,6 +86,7 @@ namespace AwesomeEngine
                     }
                 }
             }
+             * */
         }
 
         public void AddComponents(Node node)
