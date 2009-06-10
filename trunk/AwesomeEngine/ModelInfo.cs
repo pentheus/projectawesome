@@ -143,7 +143,7 @@ namespace AwesomeEngine
                         textures.Add(part, (part.Effect as SkinnedModelBasicEffect).DiffuseMap);
                         e.Parameters["xTextureEnabled"].SetValue(false);
                     }
-                    e.Parameters["xDiffuseColor"].SetValue(new Vector4((part.Effect as SkinnedModelBasicEffect).Material.DiffuseColor,1));
+                    e.Parameters["xDiffuseColor"].SetValue(new Vector4((part.Effect as SkinnedModelBasicEffect).Material.DiffuseColor,1f));
                     part.Effect = e;
                 }
         }

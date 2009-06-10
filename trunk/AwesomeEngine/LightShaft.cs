@@ -23,7 +23,8 @@ namespace AwesomeEngine
         Model lightModel;
         Effect lightEffect;
         ContainsScene game;
-        Ray leftRay, centerRay, rightRay;
+        BoundingSphere innersphere, middlesphere, outersphere;
+        Boolean on = false;
         
         public LightShaft(Game game)
             : base(game)
@@ -37,6 +38,14 @@ namespace AwesomeEngine
         /// </summary>
         public override void Initialize()
         {
+            Vector3 uniZ = Vector3.UnitZ;
+            Vector3 innerorigin = game.GetPlayer().Flashlight.model.Position + Vector3.Transform((new Vector3(0, 0, 20f)), Matrix.CreateRotationY(MathHelper.ToRadians(game.GetPlayer().Rotation.Y)));
+            Vector3 centerorigin = game.GetPlayer().Flashlight.model.Position + Vector3.Transform((new Vector3(0, 0, 38f)), Matrix.CreateRotationY(MathHelper.ToRadians(game.GetPlayer().Rotation.Y)));
+            Vector3 outerorigin = game.GetPlayer().Flashlight.model.Position + Vector3.Transform((new Vector3(0, 0, 55f)), Matrix.CreateRotationY(MathHelper.ToRadians(game.GetPlayer().Rotation.Y)));
+            float rot = game.GetPlayer().Rotation.Y;
+            innersphere = new BoundingSphere(innerorigin, 9);
+            middlesphere = new BoundingSphere(centerorigin, 9);
+            outersphere = new BoundingSphere(outerorigin, 9);
             initRays();
             base.Initialize();
         }
@@ -58,22 +67,17 @@ namespace AwesomeEngine
         {
             // TODO: Add your update code here
             //Calculate Translated Position
-            lightShaft.Position = game.GetPlayer().Position + Vector3.Transform((new Vector3(0, 15f, 35f)), Matrix.CreateRotationY(MathHelper.ToRadians(game.GetPlayer().Rotation.Y)));
+            lightShaft.Position = game.GetPlayer().Flashlight.model.Position + Vector3.Transform((new Vector3(0, 0f, 30f)), Matrix.CreateRotationY(MathHelper.ToRadians(game.GetPlayer().Rotation.Y)));
             lightShaft.Rotation = game.GetPlayer().Rotation;
 
-            //Update light rays
-            Vector3 origin = game.GetPlayer().Position;
-            origin.Y = 0;
-            Vector3 direction = new Vector3(0, lightShaft.Position.Y, 63);
-            leftRay.Position = new Vector3(origin.X, lightShaft.Position.Y, origin.Z);
-            centerRay.Position = new Vector3(origin.X, lightShaft.Position.Y, origin.Z);
-            rightRay.Position = new Vector3(origin.X, lightShaft.Position.Y, origin.Z);
 
-            float rot = game.GetPlayer().Rotation.Y;
-            leftRay.Direction = Vector3.Transform(direction, Matrix.CreateRotationY(MathHelper.ToRadians(rot+8)))+origin;
-            centerRay.Direction = Vector3.Transform(direction, Matrix.CreateRotationY(MathHelper.ToRadians(rot)))+origin;
-            rightRay.Direction = Vector3.Transform(direction, Matrix.CreateRotationY(MathHelper.ToRadians(rot-8)))+origin;
-        
+            //Update light spheres
+            Vector3 innerorigin = game.GetPlayer().Flashlight.model.Position + Vector3.Transform((new Vector3(0, 0, 26f)), Matrix.CreateRotationY(MathHelper.ToRadians(game.GetPlayer().Rotation.Y)));
+            Vector3 centerorigin = game.GetPlayer().Flashlight.model.Position + Vector3.Transform((new Vector3(0, 0, 44f)), Matrix.CreateRotationY(MathHelper.ToRadians(game.GetPlayer().Rotation.Y)));
+            Vector3 outerorigin = game.GetPlayer().Flashlight.model.Position + Vector3.Transform((new Vector3(0, 0, 61f)), Matrix.CreateRotationY(MathHelper.ToRadians(game.GetPlayer().Rotation.Y)));
+            innersphere.Center = innerorigin;
+            middlesphere.Center = centerorigin;
+            outersphere.Center = outerorigin;
             base.Update(gameTime);
         }
 
@@ -83,21 +87,24 @@ namespace AwesomeEngine
             lightShaft.Model.CopyAbsoluteBoneTransformsTo(modelTransforms);
             Vector3 center = lightShaft.Position;
             Vector3 adjustedCenter = lightShaft.Position + Vector3.Transform(new Vector3(0, 0, -35), Matrix.CreateRotationY(MathHelper.ToRadians(game.GetPlayer().Rotation.Y)));
-            foreach (ModelMesh mesh in lightShaft.Model.Meshes)
+            if (on == true)
             {
-                foreach (ModelMeshPart part in mesh.MeshParts)
+                foreach (ModelMesh mesh in lightShaft.Model.Meshes)
                 {
-                    Effect effect = lightEffect.Clone(Game.GraphicsDevice);
-                    effect.CurrentTechnique = effect.Techniques["LightShaftTest"];
-                    effect.Parameters["xWorld"].SetValue(Matrix.CreateScale(lightShaft.Scale)*Matrix.CreateRotationY(MathHelper.ToRadians(game.GetPlayer().Rotation.Y))*Matrix.CreateTranslation(lightShaft.Position));
-                    effect.Parameters["xView"].SetValue(game.GetCamera().View);
-                    effect.Parameters["xProjection"].SetValue(game.GetCamera().Projection);
-                    effect.Parameters["xCenter"].SetValue(adjustedCenter);
-                    effect.Parameters["xRange"].SetValue(10f);
-                    effect.Parameters["xTextureEnabled"].SetValue(false);
-                    part.Effect = effect;
+                    foreach (ModelMeshPart part in mesh.MeshParts)
+                    {
+                        Effect effect = lightEffect.Clone(Game.GraphicsDevice);
+                        effect.CurrentTechnique = effect.Techniques["LightShaftTest"];
+                        effect.Parameters["xWorld"].SetValue(Matrix.CreateScale(lightShaft.Scale) * Matrix.CreateRotationY(MathHelper.ToRadians(game.GetPlayer().Rotation.Y)) * Matrix.CreateTranslation(lightShaft.Position));
+                        effect.Parameters["xView"].SetValue(game.GetCamera().View);
+                        effect.Parameters["xProjection"].SetValue(game.GetCamera().Projection);
+                        effect.Parameters["xCenter"].SetValue(adjustedCenter);
+                        effect.Parameters["xRange"].SetValue(10f);
+                        effect.Parameters["xTextureEnabled"].SetValue(false);
+                        part.Effect = effect;
+                    }
+                    mesh.Draw();
                 }
-                mesh.Draw();
             }
             base.Draw(gameTime);
         }
@@ -107,28 +114,37 @@ namespace AwesomeEngine
             Vector3 uniZ = Vector3.UnitZ;
             Vector3 origin = game.GetPlayer().Position;
             float rot = game.GetPlayer().Rotation.Y;
-            leftRay = new Ray(origin, Vector3.Transform(uniZ, Matrix.CreateRotationY(MathHelper.ToRadians(rot+15f))));
-            centerRay = new Ray(origin, Vector3.Transform(uniZ, Matrix.CreateRotationY(MathHelper.ToRadians(rot))));
-            rightRay = new Ray(origin, Vector3.Transform(uniZ, Matrix.CreateRotationY(MathHelper.ToRadians(rot-15f))));
-        }
-
-        public Ray[] GetRays()
-        {
-            Ray[] rays = new Ray[3];
-            rays[0] = leftRay;
-            rays[1] = centerRay;
-            rays[2] = rightRay;
-            return rays;
         }
 
         public Boolean Intersects(BoundingSphere boundingSphere)
         {
-            foreach (Ray ray in GetRays())
+            if (on == true)
             {
-                if (ray.Intersects(boundingSphere).HasValue)
-                    return true;
+                foreach (BoundingSphere sphere in GetSpheres())
+                {
+                    if (sphere.Intersects(boundingSphere))
+                    {
+                        Console.WriteLine("Intersected");
+                        return true;
+                    }
+                }
             }
             return false;
+        }
+
+        public BoundingSphere[] GetSpheres()
+        {
+            BoundingSphere[] spheres = new BoundingSphere[3];
+            spheres[0] = innersphere;
+            spheres[1] = middlesphere;
+            spheres[2] = outersphere;
+            return spheres;
+        }
+
+        public Boolean On
+        {
+            get { return on; }
+            set { on = value; }
         }
     }
 }

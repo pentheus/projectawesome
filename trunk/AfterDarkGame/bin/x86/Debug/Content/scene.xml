@@ -5,7 +5,7 @@
     <scalex>1</scalex>
     <scaley>1</scaley>
     <scalez>1</scalez>
-    <model>testscene_mdl</model>
+    <model>house_mdl</model>
   </WorldGeometry>
   <Conent />
 </SceneInfo>

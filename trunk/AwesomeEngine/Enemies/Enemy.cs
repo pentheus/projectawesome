@@ -102,7 +102,7 @@ namespace AwesomeEngine
                     Console.WriteLine("Taking Damage");
                     break;
             }
-            if (this.player.DidDamage(this.enemyAttackingSphere) && currentstate != state.Damaged && currentstate != state.Attacking)
+            if (this.player.DidDamage(this.AttackingBoundingSphere) && currentstate != state.Damaged && currentstate != state.Attacking)
             {
                 this.TakeDamage(player.Flashlight.Damage);
                 Console.WriteLine("Took damage");
@@ -199,13 +199,13 @@ namespace AwesomeEngine
 
         public BoundingSphere SeekingBoundingSphere
         {
-            
-            get { return enemySeekingSphere.Transform(WorldMatrix); }
+
+            get { return enemySeekingSphere; }
         }
 
         public BoundingSphere AttackingBoundingSphere
         {
-            get { return enemyAttackingSphere.Transform(WorldMatrix); }
+            get { return enemyAttackingSphere; }
         }
 
         public Matrix WorldMatrix

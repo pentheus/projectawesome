@@ -82,7 +82,7 @@ technique LambertTest
 		ZEnable = true;
 		ZWriteEnable = true;
 		AlphaBlendEnable = false;
-		CullMode = None;
+		CullMode = ccw;
         VertexShader = compile vs_3_0 VS();   // Vertex Shader Version  
         PixelShader = compile ps_3_0 PS(); 
     }  
