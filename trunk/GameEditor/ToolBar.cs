@@ -218,7 +218,8 @@ namespace GameEditor
 
                 gameEditor.entList.Add(gameEditor.GetCursor().Position);
             }
-            //gameEditor.GetScene().SceneGraph.AddObject(gameEditor.GetCursor());
+            else
+                gameEditor.GetScene().SceneGraph.AddObject(gameEditor.GetCursor());
             
             //gameEditor.GetScene().SceneGraph.AddEntity();
         }
