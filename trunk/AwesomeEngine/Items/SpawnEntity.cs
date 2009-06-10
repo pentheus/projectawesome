@@ -5,6 +5,8 @@ using System.Text;
 using Microsoft.Xna;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using AwesomeEngine.Enemies;
+using XNAnimation;
 
 namespace AwesomeEngine
 {
@@ -13,11 +15,16 @@ namespace AwesomeEngine
         private const int cooldown = 3000;
         private int timer = cooldown;
         private bool isSpawnAlive = false;
+        Model spawnmodel;
+        ShadowEnemy shadowEnemy;
+        AnimModelInfo enemyModel;
 
-        public SpawnEntity(Game game, Model model, Vector3 position) : 
+        public SpawnEntity(Game game, Model model, Vector3 position, SkinnedModel evilmodel) : 
             base(game, model, position)
         {
-            
+            spawnmodel = model;
+            enemyModel = new AnimModelInfo(position, Vector3.Zero, Vector3.One, evilmodel, "", Game);
+            shadowEnemy = new ShadowEnemy(Game, ((ContainsScene)Game).GetScene(), enemyModel);
         }
 
         public override void Update(GameTime gameTime)
@@ -28,8 +35,7 @@ namespace AwesomeEngine
                     Spawn();
                 timer += gameTime.ElapsedGameTime.Milliseconds;
             }
-
-            
+      
             base.Update(gameTime);
         }
 
@@ -37,6 +43,10 @@ namespace AwesomeEngine
         {
             this.isSpawnAlive = true;
             this.timer -= cooldown;
+            shadowEnemy.HP = 10;
+            shadowEnemy.Model.Position = this.Position;
+            
+            Game.Components.Add(shadowEnemy);
         }
 
         public bool IsAlive

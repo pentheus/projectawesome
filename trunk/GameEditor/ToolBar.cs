@@ -10,6 +10,8 @@ using System.IO;
 
 using AwesomeEngine;
 using Microsoft.Xna.Framework;
+using AwesomeEngine.Items;
+using XNAnimation;
 
 namespace GameEditor
 {
@@ -173,7 +175,51 @@ namespace GameEditor
 
         private void createButton_Click(object sender, EventArgs e)
         {
+            String fileName = gameEditor.GetCursor().FileName;
+            if(fileName.Contains("item"))
+            {
+                Item item;
+
+                if(fileName.Contains("battery"))
+                {
+                    item = new BatteryItem((Game)gameEditor, gameEditor.GetCursor());
+                }
+
+                else if(fileName.Contains("flashlight"))
+                {
+                    item = new FlashLightItem((Game)gameEditor, gameEditor.GetCursor());
+                }
+
+                else if(fileName.Contains("fuse"))
+                {
+                    item = new FuseItem((Game)gameEditor, gameEditor.GetCursor());
+                }
+
+                if (item != null)
+                    gameEditor.GetScene().SceneGraph.AddItem(item);
+            }
+
+                //If bad stuff starts to happen check this block
+            else if(fileName.Contains("ent"))
+            {
+                LogicEntity ent;
+
+                if(fileName.Contains("spawn"))
+                {
+                    SkinnedModel enemymodel = gameEditor.GetContent().Load<SkinnedModel>("shadowmonster");
+                    ent = new  SpawnEntity((Game)gameEditor, gameEditor.GetCursor().Model, gameEditor.GetCursor().Position, enemymodel);
+                }
+
+                else if (fileName.Contains("trigger"))
+                {
+                    ent = new TriggerEntity((Game)gameEditor, gameEditor.GetCursor().Model, gameEditor.GetCursor().Position);
+                }
+
+                
+            }
             gameEditor.GetScene().SceneGraph.AddObject(gameEditor.GetCursor());
+            ;
+            gameEditor.GetScene().SceneGraph.AddEntity();
         }
 
         private void setGeoButton_Click(object sender, EventArgs e)
