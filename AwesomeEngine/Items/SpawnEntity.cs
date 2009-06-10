@@ -47,7 +47,8 @@ namespace AwesomeEngine
             this.timer -= cooldown;
             shadowEnemy.HP = 10;
             shadowEnemy.Model.Position = this.Position;
-            
+            ((ContainsScene)Game).GetScene().SceneGraph.GetEnemies().Add(shadowEnemy);
+            shadowEnemy.Initialize();
             Game.Components.Add(shadowEnemy);
         }
 
