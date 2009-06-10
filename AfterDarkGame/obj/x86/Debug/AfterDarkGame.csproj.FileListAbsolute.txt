@@ -238,3 +238,4 @@ C:\Documents and Settings\Alex\My Documents\Inf 125\projectawesome\AfterDarkGame
 C:\Documents and Settings\Alex\My Documents\Inf 125\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Textures\shadowmonster_Plane_0.xnb
 C:\Documents and Settings\Alex\My Documents\Inf 125\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Models\house_mdl.xnb
 C:\Documents and Settings\Alex\My Documents\Inf 125\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Models\batteryitem_mdl.xnb
+C:\Documents and Settings\Alex\My Documents\Inf 125\projectawesome\AfterDarkGame\bin\x86\Debug\Content\Models\ent_mdl.xnb

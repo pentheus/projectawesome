@@ -46,7 +46,8 @@ namespace AwesomeEngine
             this.isSpawnAlive = true;
             this.timer -= cooldown;
             shadowEnemy.HP = 10;
-            shadowEnemy.Model.Position = this.Position;
+            shadowEnemy.Model.Position = new Vector3(this.Position.X, this.Position.Y + 20, this.Position.Z);
+            shadowEnemy.SpawnPoint = this;
             ((ContainsScene)Game).GetScene().SceneGraph.GetEnemies().Add(shadowEnemy);
             shadowEnemy.Initialize();
             Game.Components.Add(shadowEnemy);

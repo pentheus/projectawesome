@@ -338,7 +338,6 @@ namespace AwesomeEngine
         public List<LogicEntity> recurseEntities(List<LogicEntity> entities, Node node)
         {
             entities.AddRange(node.Entities);
-            Console.WriteLine("Entity count: " + node.Entities.Count);
             if (node.HasChildren())
             {
                 foreach (Node n in node.Children)
