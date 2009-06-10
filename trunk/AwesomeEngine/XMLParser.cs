@@ -159,7 +159,8 @@ namespace AwesomeEngine
                     
                     //Determine the type of item from what was listed
                     String itemtype = Convert.ToString(node.SelectSingleNode("itemtype").InnerText);
-                    switch (itemtype)
+                    string[] split = itemtype.ToString().Split('.');
+                    switch (split[2])
                     {
                         case "BatteryItem":
                             item = new BatteryItem((Game)game, obj);

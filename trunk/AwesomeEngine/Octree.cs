@@ -182,6 +182,7 @@ namespace AwesomeEngine
 
         public void AddItem(Item item)
         {
+            Console.WriteLine("Added an item.");
             AddRecursiveItem(item, root);
         }
 

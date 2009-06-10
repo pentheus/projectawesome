@@ -71,7 +71,7 @@ namespace AwesomeEngine
             {
                 foreach (Node child in parent.Children)
                 {
-                    if (child.BoundingBox.Intersects(mainCamera.BoundingFrustum))
+                    if (child.BoundingBox.Intersects(mainCamera.BoundingFrustum) || child.BoundingBox.Intersects((game as ContainsScene).GetPlayer().BoundingSphere))
                     {
                         AddComponents(child);
                         UpdateEntities(child);
@@ -82,17 +82,13 @@ namespace AwesomeEngine
 
         public void AddComponents(Node node)
         {
-            foreach(LogicEntity ent in node.Entities)
-            {
-                if((Game as ContainsScene).GetPlayer().BoundingSphere.Contains(ent.Position) == ContainmentType.Intersects)
-                    Game.Components.Add(ent);
-            }
-
+            /*
             foreach (Item item in node.Items)
             {
                 if ((Game as ContainsScene).GetPlayer().BoundingSphere.Contains(item.Model.Position) == ContainmentType.Intersects)
                     Game.Components.Add(item);
             }
+             */
         }
 
         public override void Draw(GameTime gameTime)
@@ -142,6 +138,9 @@ namespace AwesomeEngine
             {
                 if (!CheckIfCullable(item.model) && item.picked == false)
                     DrawModel(item.model);
+                else
+                    Console.WriteLine("Picked up is true.");
+                BoundingSphereRenderer.Render(item.itemAOE, game.GraphicsDevice, mainCamera.View, mainCamera.Projection, Color.Red);
             }
         }
 

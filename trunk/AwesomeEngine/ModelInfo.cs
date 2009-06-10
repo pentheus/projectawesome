@@ -85,7 +85,7 @@ namespace AwesomeEngine
         {
             //Check if model has been loaded already
             
-            model = Content.Load<Model>(@"Models\"+assetName);
+            model = Content.Load<Model>(@"Models/"+assetName);
             Texture2D test;
             if (!textures.TryGetValue(model.Meshes[0].MeshParts[0], out test))
                 foreach (ModelMesh mesh in model.Meshes)

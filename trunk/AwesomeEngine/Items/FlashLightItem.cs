@@ -35,11 +35,8 @@ namespace AwesomeEngine.Items
         // if picked up, turn on, turn off
         public override void runScript()
         {
-            if (this.picked == false)
-            {
-                this.Player.Pickup(this);
-                this.picked = true;
-            }
+            this.Player.Pickup(this);
+            this.picked = true;
         }
 
         public override void Update(GameTime gameTime)
